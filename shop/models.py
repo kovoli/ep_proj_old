@@ -7,6 +7,9 @@ from django.template.defaultfilters import slugify
 from unidecode import unidecode
 
 from ckeditor.fields import RichTextField
+# Images
+from imagekit.models import ImageSpecField, ProcessedImageField
+from imagekit.processors import Resize, ResizeCanvas, ResizeToFill, ResizeToCover, ResizeToFit, SmartResize
 
 from django.contrib.postgres.fields import JSONField
 
@@ -32,17 +35,47 @@ class Category(MPTTModel):
         order_insertion_by = ['name']
 
 
+class Shop(models.Model):
+    name = models.CharField(max_length=100)
+    image_store = ProcessedImageField(upload_to='shop_image/',
+                                      blank=True,
+                                      processors=[Resize(200, 200)],
+                                      format='JPEG',
+                                      options={'quality': 80})
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = 'Магазин'
+        verbose_name_plural = 'Магазины'
+
+
+class Price(models.Model):
+    price = models.DecimalField(decimal_places=2, max_digits=10)
+    oldprice = models.DecimalField(decimal_places=2, max_digits=10)
+    url = models.URLField()
+    sales_notes = models.CharField(max_length=255, blank=True, null=True)
+    # relate_models
+    shop = models.ForeignKey(Shop, related_name='shop_prices', on_delete=models.CASCADE)
+
+    class Meta:
+        verbose_name = 'Цена'
+        verbose_name_plural = 'Цены'
+
+
 class Product(models.Model):
     name = models.CharField(max_length=255)
     slug = models.SlugField(max_length=255, unique=True)
     create = models.DateTimeField(auto_now=True)
     description = RichTextField(blank=True, null=True)
-    characteristic = JSONField()
+    characteristic = JSONField(blank=True, null=True)
     video = models.URLField(blank=True, null=True)
     barcode = models.CharField(max_length=30, blank=True, null=True)
     vendorCode = models.CharField(max_length=50, blank=True, null=True)
     # relate_models
     category = TreeForeignKey('Category', related_name='products', on_delete=models.CASCADE, null=True, blank=True)
+    prices = models.ForeignKey(Price, related_name='product_prices', on_delete=models.CASCADE,null=True, blank=True)
 
 
     def get_absolute_url(self):
