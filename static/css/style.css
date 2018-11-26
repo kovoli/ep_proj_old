@@ -1,0 +1,116 @@
+body {
+    font-family: 'Ubuntu', sans-serif!important;
+}
+.logo-text {
+    margin-bottom: 0;
+}
+.form-control {
+    height: calc(3rem + 2px);
+    padding: 0.375rem 1.75rem;
+    border-radius: 1.25rem;
+}
+.btn {
+    padding: 0.375rem 1.75rem;
+    border-radius: 1.25rem;
+}
+.bg-secondary {
+    background-color: #0060ca!important;
+}
+.nav-item {
+    font-size: 1.3rem;
+    color: rgba(255, 255, 255, 0.81);
+}
+.navbar-dark .navbar-nav .nav-link {
+    color: rgba(255, 255, 255, 0.81);
+}
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: #2f2f2f;
+}
+.jumbotron {
+    background-color: #deeeff;
+    padding: 1rem 2rem;
+    margin-bottom: 0;
+}
+.jumbotron-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.padding-y-sm {
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+.card {
+    border: 0px;
+}
+.card-title {
+    font-size: 1.2rem;
+}
+.card-title a {
+    color: #000000;
+}
+.card-title a:hover {
+    text-decoration: none;
+    color: #005cbf;
+}
+
+.price-sale {
+    color: #d84523;
+    font-size: 90%;
+    text-decoration: line-through;
+}
+
+.card-footer {
+    padding: .75rem 1.25rem;
+    background-color: rgb(0, 121, 255);
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: 0 0 calc(.5rem - 1px) calc(.5rem - 1px);
+}
+.card-footer:hover {
+    background-color: rgb(0, 95, 209);
+
+}
+.card-footer:last-child {
+    border-radius: 1.3rem;
+}
+figure.figure-img.d-flex.mx-auto.align-items-center {
+    height: 253px;
+}
+.brands-shops-card {
+    height: 160px!important;
+}
+
+/* Single Products */
+
+.price-wrap {
+    font-size: 1.7rem;
+    font-weight: bolder;
+    color: #000000;
+}
+.old-price {
+    font-size: 1.4rem;
+    color: #fd0000;
+    font-weight: 500;
+    text-decoration: line-through;
+}
+.single-buy-btn {
+    background-color: #0079ff;
+    color: #FFFFFF;
+    padding: 1rem;
+}
+.single-buy-btn:hover {
+    background-color: #0060ca;
+    color: #FFFFFF;
+}
+.single-pro-card {
+    height: 160px!important;
+}
+.single-title {
+    font-size: 0.9rem;
+}
+.price-single {
+    font-size: 0.8rem;
+}
+.compare-pro-card {
+    height: 40px!important;
+}

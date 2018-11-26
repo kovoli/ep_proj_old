@@ -15,7 +15,7 @@ from django.contrib.postgres.fields import JSONField
 
 
 class Category(MPTTModel):
-    name = models.CharField(max_length=100, unique=True)
+    name = models.CharField(max_length=100)
     slug = models.SlugField(max_length=100, unique=True)
     parent = TreeForeignKey('self', on_delete=models.CASCADE, null=True, blank=True, related_name='children')
     description = RichTextField(blank=True, null=True)
@@ -33,6 +33,10 @@ class Category(MPTTModel):
 
     class MPTTMeta:
         order_insertion_by = ['name']
+
+    class Meta:
+        verbose_name = 'Категория'
+        verbose_name_plural = 'Категории'
 
 
 class Shop(models.Model):
@@ -54,6 +58,7 @@ class Shop(models.Model):
 class Price(models.Model):
     price = models.DecimalField(decimal_places=2, max_digits=10)
     oldprice = models.DecimalField(decimal_places=2, max_digits=10)
+    name = models.CharField(max_length=255)
     url = models.URLField()
     sales_notes = models.CharField(max_length=255, blank=True, null=True)
     # relate_models
@@ -74,9 +79,8 @@ class Product(models.Model):
     barcode = models.CharField(max_length=30, blank=True, null=True)
     vendorCode = models.CharField(max_length=50, blank=True, null=True)
     # relate_models
-    category = TreeForeignKey('Category', related_name='products', on_delete=models.CASCADE, null=True, blank=True)
+    category = TreeForeignKey('Category', related_name='products', on_delete=models.CASCADE)
     prices = models.ForeignKey(Price, related_name='product_prices', on_delete=models.CASCADE,null=True, blank=True)
-
 
     def get_absolute_url(self):
         return reverse('shop:product_detail',

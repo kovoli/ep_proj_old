@@ -1,0 +1,109 @@
+<categories>
+  <category id="1133722">Бытовая техника</category>
+  <category id="1155469" parentId="1133722">Климатическая техника</category>
+  <category id="1133729" parentId="1155469">Вентиляторы</category>
+  <category id="1162507" parentId="1155469">Воздухоочистители</category>
+  <category id="1133727" parentId="1155469">Обогреватели</category>
+  <category id="1133728" parentId="1155469">Увлажнители воздуха</category>
+  <category id="1155473" parentId="1133722">Красота и здоровье</category>
+  <category id="1133723" parentId="1155473">Бритвы</category>
+  <category id="1133736" parentId="1155473">Выпрямители и щипцы для волос</category>
+  <category id="1196946" parentId="1155473">Косметологические аппараты</category>
+  <category id="1133737" parentId="1155473">Машинки для стрижки</category>
+  <category id="1182335" parentId="1155473">Триммеры</category>
+  <category id="1133739" parentId="1155473">Фены</category>
+  <category id="1133741" parentId="1155473">Эпиляторы</category>
+  <category id="1162418" parentId="1133722">Крупная бытовая техника</category>
+  <category id="1162422" parentId="1162418">Холодильники и морозильные камеры</category>
+  <category id="1169704" parentId="1162422">Винные шкафы</category>
+  <category id="1169702" parentId="1162422">Морозильные камеры</category>
+  <category id="1169701" parentId="1162422">Холодильники</category>
+  <category id="1169703" parentId="1162422">Холодильные витрины</category>
+  <category id="1162482" parentId="1162418">Стиральные машины и сушильные аппараты</category>
+  <category id="1181156" parentId="1162482">Аксессуары</category>
+  <category id="1169710" parentId="1162482">Стиральные машины</category>
+  <category id="1162420" parentId="1162418">Посудомоечные машины</category>
+  <category id="1162419" parentId="1162418">Вытяжки</category>
+  <category id="1199212" parentId="1162418">Аксессуары</category>
+  <category id="1174294" parentId="1162418">Варочные панели</category>
+  <category id="1174368" parentId="1162418">Духовые шкафы</category>
+  <category id="1180565" parentId="1162418">Подогреватели посуды</category>
+  <category id="1155471" parentId="1133722">Техника для дома</category>
+  <category id="1135627" parentId="1155471">Бытовые аксессуары</category>
+  <category id="1135617" parentId="1155471">Гладильные системы</category>
+  <category id="1133747" parentId="1155471">Напольные весы</category>
+  <category id="1178849" parentId="1155471">Нитрат/Экотестеры</category>
+  <category id="1162514" parentId="1155471">Отпариватели для одежды</category>
+  <category id="1162654" parentId="1155471">Пароочистители</category>
+  <category id="1133734" parentId="1155471">Пылесосы</category>
+  <category id="1172231" parentId="1133734">Бытовые пылесосы</category>
+  <category id="1169395" parentId="1133734">Роботы-пылесосы</category>
+  <category id="1169401" parentId="1133734">Ручные пылесосы</category>
+  <category id="1169398" parentId="1133734">Моющие пылесосы</category>
+  <category id="1173127" parentId="1133734">Паровые швабры</category>
+  <category id="1172232" parentId="1133734">Вертикальные пылесосы</category>
+  <category id="1176790" parentId="1133734">Аксессуары для пылесосов</category>
+  <category id="1176928" parentId="1133734">Электровеники</category>
+  <category id="1133772" parentId="1155471">Радиобудильники и проекционные часы</category>
+  <category id="1133745" parentId="1155471">Светильники</category>
+  <category id="1174789" parentId="1155471">Стеклоочистители</category>
+  <category id="1133738" parentId="1155471">Утюги</category>
+  <category id="1133861" parentId="1155471">Швейные машины и аксессуары</category>
+  <category id="1196606" parentId="1133861">Аксессуары и принадлежности</category>
+  <category id="1196605" parentId="1133861">Швейные машины</category>
+  <category id="1155470" parentId="1133722">Техника для кухни</category>
+  <category id="1133743" parentId="1155470">Аэрогрили</category>
+  <category id="1133732" parentId="1155470">Блендеры и миксеры</category>
+  <category id="1177094" parentId="1133732">Аксессуары</category>
+  <category id="1177075" parentId="1133732">Блендеры</category>
+  <category id="1177076" parentId="1133732">Измельчители</category>
+  <category id="1177077" parentId="1133732">Ломтерезки</category>
+  <category id="1177078" parentId="1133732">Мельнички</category>
+  <category id="1177079" parentId="1133732">Миксеры</category>
+  <category id="1151384" parentId="1155470">Блинницы и вафельницы</category>
+  <category id="1178817" parentId="1155470">Бутербродницы и мультипекари</category>
+  <category id="1151385" parentId="1155470">Йогуртницы</category>
+  <category id="1133730" parentId="1155470">Комбайны и мясорубки</category>
+  <category id="1177097" parentId="1133730">Аксессуары</category>
+  <category id="1177095" parentId="1133730">Кухонные комбайны</category>
+  <category id="1177096" parentId="1133730">Мясорубки</category>
+  <category id="1133731" parentId="1155470">Кофеварки и кофемашины</category>
+  <category id="1155768" parentId="1133731">Кофеварки</category>
+  <category id="1135618" parentId="1133731">Кофемашины</category>
+  <category id="1193883" parentId="1133731">Капсульные кофемашины</category>
+  <category id="1168084" parentId="1133731">Вспениватели молока</category>
+  <category id="1155769" parentId="1133731">Кофемолки</category>
+  <category id="1171599" parentId="1133731">Фильтры и принадлежности для кофемашин и кофеварок</category>
+  <category id="1133724" parentId="1155470">Кухонные весы</category>
+  <category id="1133733" parentId="1155470">Микроволновые печи</category>
+  <category id="1175043" parentId="1155470">Мини-печи</category>
+  <category id="1135615" parentId="1155470">Мультиварки и пароварки</category>
+  <category id="1177084" parentId="1135615">Мультиварки</category>
+  <category id="1177085" parentId="1135615">Мультиварки-скороварки</category>
+  <category id="1177087" parentId="1135615">Пароварки</category>
+  <category id="1177089" parentId="1135615">Скороварки</category>
+  <category id="1177088" parentId="1135615">Рисоварки</category>
+  <category id="1177090" parentId="1135615">Су вид</category>
+  <category id="1177093" parentId="1135615">Аксессуары</category>
+  <category id="1174370" parentId="1155470">Настольные плиты</category>
+  <category id="1135626" parentId="1155470">Прочая техника</category>
+  <category id="1133735" parentId="1155470">Соковыжималки</category>
+  <category id="1165627" parentId="1155470">Техника для вечеринок</category>
+  <category id="1178413" parentId="1155470">Техника для хранения, консервации и заготовок</category>
+  <category id="1180000" parentId="1178413">Вакуумные упаковщики</category>
+  <category id="1198999" parentId="1178413">Проращиватели семян</category>
+  <category id="1180001" parentId="1178413">Стерилизаторы</category>
+  <category id="1180002" parentId="1178413">Электросушилки, маринаторы</category>
+  <category id="1133742" parentId="1155470">Тостеры</category>
+  <category id="1151383" parentId="1155470">Фритюрницы</category>
+  <category id="1135616" parentId="1155470">Хлебопечки</category>
+  <category id="1133740" parentId="1155470">Чайники</category>
+  <category id="1177067" parentId="1133740">Термопоты</category>
+  <category id="1177068" parentId="1133740">Электрические самовары</category>
+  <category id="1177066" parentId="1133740">Электрические чайники</category>
+  <category id="1135628" parentId="1155470">Электрогрили</category>
+  <category id="1179967" parentId="1155470">Электроножи, электрооткрывалки</category>
+  <category id="1170585" parentId="1155470">Кулеры для воды</category>
+  <category id="1155474" parentId="1133722">Часы, погодные станции</category>
+  <category id="1133744" parentId="1155474">Погодные станции</category>
+</categories>

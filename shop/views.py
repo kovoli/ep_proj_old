@@ -3,5 +3,4 @@ from django.utils import timezone
 
 
 def test(request):
-    time = timezone.now()
-    return HttpResponse("<p>The time now is: {}</p>".format(time))
+    return render(request, 'base.html')
