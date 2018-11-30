@@ -1,14 +1,260 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<section class="section-content my-4">
+    <div class="container">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#">Главная</a></li>
+        {% for bc in breadcrumbs %}
+        <li class="breadcrumb-item active"><a href="#">{{ bc.name }}</a></li>
+        {% endfor %}
+      </ol>
+    </nav>
+        <article class="mb-5">
+        <div class="row">
+            <div class="col-lg-4 col-sm-12 d-flex mx-auto align-items-center justify-content-center">
+                <figure class="figure-img ">
+                    <img itemprop="image" class="d-block img-fluid" src="{{ product.product_image.url }}" alt="{{ product.name }}">
+                </figure>
+            </div>
+            <div class="col-lg-8 col-sm-12">
+                <h1 class="title mb-3">{{ product.name }}</h1>
 
-</body>
-</html>
+                <div class="mb-3">
+
+                </div>
+
+                <span class="product-list">Категория: <a href="#">{{ product.category.name }}</a></span><br>
+                <span class="product-list">Бренд: <a href="#">{{ product.vendor.name }}</a></span>
+                <hr>
+            </div>
+        </div>
+        <hr>
+            <div class="mt-4">
+                <h3>Цены</h3>
+            </div>
+            <ul class="list-group list-group-flush">
+              {% for price_list in product.products.all %}
+              <li class="list-group-item px-0">
+                  <div class="container compare-price px-0">
+                      <div class="row">
+                          <div class="col-sm-12 col-lg-7">
+                              <figure class="figure-img d-flex mx-auto align-items-center compare-pro-card float-left pr-2 mb-0">
+                                <a href="#"><img class="d-block img-fluid shadow" src="https://via.placeholder.com/80x40" alt="Скидка на Apple iPhone 6s Plus 32GB, Grey"></a>
+                              </figure>
+                              <h6 class="title-compare mb-0">{{ price_list.name }}</h6>
+                              <span>в <a href="#">{{ price_list.shop.name }}</a></span>
+                          </div>
+                          <div class="col-sm-6 col-lg-3">
+                              <div class="price-wrap float-right">
+                                <span class="price">{{ price_list.price }} <i class="fa fa-ruble"></i></span>
+                                {% if price_list.oldprice %}
+                                <span class="old-price">{{ price_list.oldprice }} <i class="fa fa-ruble"></i></span>
+                                {% endif %}
+                              </div>
+                          </div>
+                          <div class="col-sm-6 col-lg-2 ">
+                              <button type="button" class="btn btn-primary float-right w-100">Купить</button>
+                          </div>
+                      </div>
+                  </div>
+              </li>
+              {% endfor %}
+            </ul>
+
+            <ul class="nav nav-tabs my-4" id="myTab" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="false">Описание</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Характеристики</a>
+              </li>
+            </ul>
+            <div class="tab-content" id="myTabContent">
+
+              <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                  <div>{{ product.description|safe|linebreaks }}</div>
+              </div>
+              <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut l
+              </div>
+              <div class="tab-pane fade" id="comments" role="tabpanel" aria-labelledby="comments-tab">
+
+              </div>
+            </div>
+
+        </article>
+    </div>
+    <div class="container">
+        <div class="padding-y-sm">
+            <h3>Похожие товары</h3>
+            <hr>
+        </div>
+        <div class="row">
+            <div class="col-lg-2 col-md-4 mb-4">
+          <div class="card h-100">
+            <figure class="figure-img d-flex mx-auto align-items-center single-pro-card">
+            <a href="/deal/apple-iphone-6s-plus-32gb-grey_ozonru/"><img class="d-block img-fluid shadow" src="https://via.placeholder.com/160x160" alt="Скидка на Apple iPhone 6s Plus 32GB, Grey"></a>
+            </figure>
+            <div class="card-body p-2">
+              <h4 class="card-title single-title text-center mb-0">
+                <a href="/deal/apple-iphone-6s-plus-32gb-grey_ozonru/">Apple iPhone 6s Plus 32GB, Grey</a>
+              </h4>
+            </div>
+            <h6 class="price price-single p-2 mb-0 text-center">от 34989,60 <i class="fa fa-ruble"></i></h6>
+          </div>
+        </div>
+            <div class="col-lg-2 col-md-4 mb-4">
+          <div class="card h-100">
+            <figure class="figure-img d-flex mx-auto align-items-center single-pro-card">
+            <a href="/deal/apple-iphone-6s-plus-32gb-grey_ozonru/"><img class="d-block img-fluid shadow" src="https://via.placeholder.com/160x160" alt="Скидка на Apple iPhone 6s Plus 32GB, Grey"></a>
+            </figure>
+            <div class="card-body p-2">
+              <h4 class="card-title single-title text-center mb-0">
+                <a href="/deal/apple-iphone-6s-plus-32gb-grey_ozonru/">Apple iPhone 6s Plus 32GB, Grey</a>
+              </h4>
+
+            </div>
+            <h6 class="price price-single p-2 mb-0 text-center"> 34989,60 <i class="fa fa-ruble"></i></h6>
+          </div>
+        </div>
+            <div class="col-lg-2 col-md-4 mb-4">
+          <div class="card h-100">
+            <figure class="figure-img d-flex mx-auto align-items-center single-pro-card">
+            <a href="/deal/apple-iphone-6s-plus-32gb-grey_ozonru/"><img class="d-block img-fluid shadow" src="https://via.placeholder.com/160x160" alt="Скидка на Apple iPhone 6s Plus 32GB, Grey"></a>
+            </figure>
+            <div class="card-body p-2">
+              <h4 class="card-title single-title text-center mb-0">
+                <a href="/deal/apple-iphone-6s-plus-32gb-grey_ozonru/">Apple iPhone 6s Plus 32GB, Grey</a>
+              </h4>
+
+            </div>
+            <h6 class="price price-single p-2 mb-0 text-center"> 34989,60 <i class="fa fa-ruble"></i></h6>
+          </div>
+        </div>
+            <div class="col-lg-2 col-md-4 mb-4">
+          <div class="card h-100">
+            <figure class="figure-img d-flex mx-auto align-items-center single-pro-card">
+            <a href="/deal/apple-iphone-6s-plus-32gb-grey_ozonru/"><img class="d-block img-fluid shadow" src="https://via.placeholder.com/160x160" alt="Скидка на Apple iPhone 6s Plus 32GB, Grey"></a>
+            </figure>
+            <div class="card-body p-2">
+              <h4 class="card-title single-title text-center mb-0">
+                <a href="/deal/apple-iphone-6s-plus-32gb-grey_ozonru/">Apple iPhone 6s Plus 32GB, Grey</a>
+              </h4>
+
+            </div>
+            <h6 class="price price-single p-2 mb-0 text-center"> 34989,60 <i class="fa fa-ruble"></i></h6>
+          </div>
+        </div>
+            <div class="col-lg-2 col-md-4 mb-4">
+          <div class="card h-100">
+            <figure class="figure-img d-flex mx-auto align-items-center single-pro-card">
+            <a href="/deal/apple-iphone-6s-plus-32gb-grey_ozonru/"><img class="d-block img-fluid shadow" src="https://via.placeholder.com/160x160" alt="Скидка на Apple iPhone 6s Plus 32GB, Grey"></a>
+            </figure>
+            <div class="card-body p-2">
+              <h4 class="card-title single-title text-center mb-0">
+                <a href="/deal/apple-iphone-6s-plus-32gb-grey_ozonru/">Apple iPhone 6s Plus 32GB, Grey</a>
+              </h4>
+
+            </div>
+            <h6 class="price price-single p-2 mb-0 text-center"> 34989,60 <i class="fa fa-ruble"></i></h6>
+          </div>
+        </div>
+            <div class="col-lg-2 col-md-4 mb-4">
+          <div class="card h-100">
+            <figure class="figure-img d-flex mx-auto align-items-center single-pro-card">
+            <a href="/deal/apple-iphone-6s-plus-32gb-grey_ozonru/"><img class="d-block img-fluid shadow" src="https://via.placeholder.com/160x160" alt="Скидка на Apple iPhone 6s Plus 32GB, Grey"></a>
+            </figure>
+            <div class="card-body p-2">
+              <h4 class="card-title single-title text-center mb-0">
+                <a href="/deal/apple-iphone-6s-plus-32gb-grey_ozonru/">Apple iPhone 6s Plus 32GB, Grey</a>
+              </h4>
+
+            </div>
+            <h6 class="price price-single p-2 mb-0 text-center"> 34989,60 <i class="fa fa-ruble"></i></h6>
+          </div>
+        </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="padding-y-sm">
+            <h3>Видео обзор</h3>
+            <hr>
+        </div>
+        <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0" allowfullscreen></iframe>
+        </div>
+    <hr>
+    </div>
+
+    <div class="container">
+        <div class="padding-y-sm">
+            <h3 class="d-inline-block">Отзывы</h3>
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#exampleModalCenter">
+              Оставить отзыв
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+              <div class="modal-dialog modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalCenterTitle">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <form>
+                      <div class="form-group">
+                        <label for="exampleInputEmail1">Email</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Введите ваш емайл">
+                        <small id="emailHelp" class="form-text text-muted">Не удет показан</small>
+                      </div>
+                      <div class="form-group">
+                          <label for="comment">Ваш комментарий:</label>
+                          <textarea class="form-control" rows="5" id="comment"></textarea>
+                      </div>
+                      <div class="form-group form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                      </div>
+                      <button type="submit" class="btn btn-primary">Отправить</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <hr>
+        </div>
+
+            <ul class="list-unstyled">
+              <li class="media">
+                <img class="mr-3" src="https://via.placeholder.com/60x60" alt="Generic placeholder image">
+                <div class="media-body"><span class="float-right">12.07.2018</span>
+                  <h5 class="mt-0 mb-1">List-based media object</h5>
+                  Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                </div>
+              </li>
+              <li class="media my-4">
+                <img class="mr-3" src="https://via.placeholder.com/60x60" alt="Generic placeholder image">
+                <div class="media-body">
+                  <h5 class="mt-0 mb-1">List-based media object</h5>
+                  Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                </div>
+              </li>
+              <li class="media">
+                <img class="mr-3" src="https://via.placeholder.com/60x60" alt="Generic placeholder image">
+                <div class="media-body">
+                  <h5 class="mt-0 mb-1">List-based media object</h5>
+                  Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                </div>
+              </li>
+            </ul>
+
+    </div>
+
+</section>
 {% endblock content %}

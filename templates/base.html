@@ -83,7 +83,9 @@
     </header>
 
     <!-- Jumbotron -->
+    {% if url_name == 'home' %}
     {% include 'jumbotron.html' %}
+    {% endif %}
     <!-- End Jumbotron -->
     {% block content %}{% endblock %}
 
