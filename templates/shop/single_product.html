@@ -41,21 +41,21 @@
                       <div class="row">
                           <div class="col-sm-12 col-lg-7">
                               <figure class="figure-img d-flex mx-auto align-items-center compare-pro-card float-left pr-2 mb-0">
-                                <a href="#"><img class="d-block img-fluid shadow" src="https://via.placeholder.com/80x40" alt="Скидка на Apple iPhone 6s Plus 32GB, Grey"></a>
+                                <a href="{{ price_list.url }}"><img class="d-block img-fluid shadow" src="{% if price_list.shop.image_store %}{{ price_list.shop.image_store.url }}{% endif %}" alt="{{ price_list.name }}"></a>
                               </figure>
                               <h6 class="title-compare mb-0">{{ price_list.name }}</h6>
-                              <span>в <a href="#">{{ price_list.shop.name }}</a></span>
+                              <span>в <a href="{{ price_list.url }}">{{ price_list.shop.name }}</a></span>
                           </div>
                           <div class="col-sm-6 col-lg-3">
                               <div class="price-wrap float-right">
-                                <span class="price">{{ price_list.price }} <i class="fa fa-ruble"></i></span>
                                 {% if price_list.oldprice %}
                                 <span class="old-price">{{ price_list.oldprice }} <i class="fa fa-ruble"></i></span>
                                 {% endif %}
+                                <span class="price">{{ price_list.price }} <i class="fa fa-ruble"></i></span>
                               </div>
                           </div>
                           <div class="col-sm-6 col-lg-2 ">
-                              <button type="button" class="btn btn-primary float-right w-100">Купить</button>
+                              <a href="{{ price_list.url }}" target="_blank"><button type="button" class="btn btn-primary float-right w-100">Купить</button></a>
                           </div>
                       </div>
                   </div>
@@ -170,23 +170,24 @@
               <h4 class="card-title single-title text-center mb-0">
                 <a href="/deal/apple-iphone-6s-plus-32gb-grey_ozonru/">Apple iPhone 6s Plus 32GB, Grey</a>
               </h4>
-
             </div>
             <h6 class="price price-single p-2 mb-0 text-center"> 34989,60 <i class="fa fa-ruble"></i></h6>
           </div>
         </div>
         </div>
     </div>
+    {% if product.video %}
     <div class="container">
         <div class="padding-y-sm">
             <h3>Видео обзор</h3>
             <hr>
         </div>
         <div class="embed-responsive embed-responsive-16by9">
-            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0" allowfullscreen></iframe>
+            <iframe class="embed-responsive-item" src="{{ product.video }}" allowfullscreen></iframe>
         </div>
     <hr>
     </div>
+    {% endif %}
 
     <div class="container">
         <div class="padding-y-sm">

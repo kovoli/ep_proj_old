@@ -46,7 +46,7 @@ class Shop(models.Model):
     name = models.CharField(max_length=100)
     image_store = ProcessedImageField(upload_to='shop_image/',
                                       blank=True,
-                                      processors=[ResizeToFit(200, 200)],
+                                      processors=[ResizeToFit(80, None)],
                                       format='JPEG',
                                       options={'quality': 80})
 
@@ -141,5 +141,6 @@ class Price(models.Model):
     class Meta:
         verbose_name = 'Цена'
         verbose_name_plural = 'Цены'
+        ordering = ['price']
         indexes = [models.Index(fields=['product', 'shop'])]
 
