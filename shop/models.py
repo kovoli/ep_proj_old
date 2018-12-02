@@ -1,7 +1,6 @@
 from django.db import models
 from mptt.models import MPTTModel, TreeForeignKey
 
-
 # for slugfield
 from django.urls import reverse
 from django.template.defaultfilters import slugify
@@ -10,7 +9,7 @@ from unidecode import unidecode
 from ckeditor.fields import RichTextField
 # Images
 from imagekit.models import ImageSpecField, ProcessedImageField
-from imagekit.processors import Resize, ResizeCanvas, ResizeToFill, ResizeToCover, ResizeToFit, SmartResize
+from imagekit.processors import ResizeToFit
 
 from django.contrib.postgres.fields import JSONField
 
@@ -144,3 +143,22 @@ class Price(models.Model):
         ordering = ['price']
         indexes = [models.Index(fields=['product', 'shop'])]
 
+
+# ------------ PRODUCT COMMENT -------------
+class Comment(models.Model):
+    product = models.ForeignKey('Product',
+                                on_delete=models.CASCADE,
+                                related_name='comments')
+    name = models.CharField(max_length=80)
+    email = models.EmailField()
+    body = models.TextField()
+    created = models.DateTimeField(auto_now_add=True)
+    active = models.BooleanField(default=True)
+
+    class Meta:
+        ordering = ('created',)
+        verbose_name = 'Комментарий'
+        verbose_name_plural = 'Комментарии'
+
+    def __str__(self):
+        return 'Комментарий от {} {}'.format(self.name, self.product)

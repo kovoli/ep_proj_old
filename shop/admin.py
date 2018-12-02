@@ -1,12 +1,19 @@
 from django.contrib import admin
 from mptt.admin import MPTTModelAdmin
-from .models import Product, Category, Price, Shop, Vendor
+from .models import Product, Category, Price, Shop, Vendor, Comment
 
 
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
     list_display = ['name', 'category', 'vendor']
     readonly_fields = ['slug']
+
+
+@admin.register(Comment)
+class CommentAdmin(admin.ModelAdmin):
+    list_display = ('name', 'email', 'product', 'created', 'active')
+    list_filter = ('active', 'created')
+    search_fields = ('name', 'email', 'body')
 
 
 admin.site.register(Price)
