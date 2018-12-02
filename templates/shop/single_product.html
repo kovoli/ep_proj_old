@@ -176,6 +176,7 @@
         </div>
         </div>
     </div>
+
     {% if product.video %}
     <div class="container">
         <div class="padding-y-sm">
@@ -191,7 +192,9 @@
 
     <div class="container">
         <div class="padding-y-sm">
-            <h3 class="d-inline-block">Отзывы</h3>
+            {% with comments.count as total_comments %}
+            <h3 class="d-inline-block">Отзывы ({{ total_comments }})</h3>
+            {% endwith %}
             <!-- Button trigger modal -->
             <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#exampleModalCenter">
               Оставить отзыв
@@ -202,27 +205,16 @@
               <div class="modal-dialog modal-dialog" role="document">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalCenterTitle">Modal title</h5>
+                    <h5 class="modal-title" id="exampleModalCenterTitle">Оставить отзыв</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                       <span aria-hidden="true">&times;</span>
                     </button>
                   </div>
                   <div class="modal-body">
-                    <form>
-                      <div class="form-group">
-                        <label for="exampleInputEmail1">Email</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Введите ваш емайл">
-                        <small id="emailHelp" class="form-text text-muted">Не удет показан</small>
-                      </div>
-                      <div class="form-group">
-                          <label for="comment">Ваш комментарий:</label>
-                          <textarea class="form-control" rows="5" id="comment"></textarea>
-                      </div>
-                      <div class="form-group form-check">
-                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                        <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                      </div>
-                      <button type="submit" class="btn btn-primary">Отправить</button>
+                    <form action="." method="post">
+                        {{ comment_form.as_p }}
+                        {% csrf_token %}
+                        <p><input type="submit" value="Оставить отзыв"></p>
                     </form>
                   </div>
                 </div>
@@ -232,29 +224,69 @@
         </div>
 
             <ul class="list-unstyled">
+              {% for comment in comments %}
               <li class="media">
                 <img class="mr-3" src="https://via.placeholder.com/60x60" alt="Generic placeholder image">
-                <div class="media-body"><span class="float-right">12.07.2018</span>
-                  <h5 class="mt-0 mb-1">List-based media object</h5>
-                  Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                <div class="media-body"><span class="float-right">{{ comment.created }}</span>
+                  <h5 class="mt-0 mb-1">от {{ comment.name }}</h5>
+                  <div>
+                      {{ comment.body|linebreaks }}
+                  </div>
                 </div>
               </li>
-              <li class="media my-4">
-                <img class="mr-3" src="https://via.placeholder.com/60x60" alt="Generic placeholder image">
-                <div class="media-body">
-                  <h5 class="mt-0 mb-1">List-based media object</h5>
-                  Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-                </div>
-              </li>
-              <li class="media">
-                <img class="mr-3" src="https://via.placeholder.com/60x60" alt="Generic placeholder image">
-                <div class="media-body">
-                  <h5 class="mt-0 mb-1">List-based media object</h5>
-                  Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-                </div>
-              </li>
+              {% empty %}
+                  <p>Отзывов пока нет. Станьте первым кто оставит отзыв.</p>
+              {% endfor %}
+              {% if new_comment %}
+                  <h3>Ваш комментарий был добавлен.</h3>
+              {% endif %}
             </ul>
+        <ul class="nav nav-tabs my-4" id="myTab" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" id="rewiew-tab" data-toggle="tab" href="#rewiew" role="tab" aria-controls="rewiew" aria-selected="false">
+                {% with comments.count as total_comments %}
+                    Отзывы ({{ total_comments }})
+                {% endwith %}
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="make_rewiew-tab" data-toggle="tab" href="#make_rewiew" role="tab" aria-controls="make_rewiew" aria-selected="false">
+                Оставить Отзыв
+            </a>
+          </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
 
+          <div class="tab-pane fade show active" id="rewiew" role="tabpanel" aria-labelledby="rewiew-tab">
+              <div>
+                  <ul class="list-unstyled">
+                  {% for comment in comments %}
+                  <li class="media">
+                    <img class="mr-3" src="https://via.placeholder.com/60x60" alt="Generic placeholder image">
+                    <div class="media-body"><span class="float-right">{{ comment.created }}</span>
+                      <h5 class="mt-0 mb-1">от {{ comment.name }}</h5>
+                      <div>
+                          {{ comment.body|linebreaks }}
+                      </div>
+                    </div>
+                  </li>
+                  {% empty %}
+                      <p>Отзывов пока нет. Станьте первым кто оставит отзыв.</p>
+                  {% endfor %}
+                  {% if new_comment %}
+                      <h3>Ваш комментарий был добавлен.</h3>
+                  {% endif %}
+                </ul>
+              </div>
+          </div>
+          <div class="tab-pane fade" id="make_rewiew" role="tabpanel" aria-labelledby="make_rewiew-tab">
+              <form action="." method="post">
+                {{ comment_form.as_p }}
+                {% csrf_token %}
+                <p><input type="submit" class="btn btn-primary" value="Оставить отзыв"></p>
+            </form>
+          </div>
+        </div>
     </div>
 
 </section>
