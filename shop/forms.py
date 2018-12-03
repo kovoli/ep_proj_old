@@ -5,7 +5,7 @@ from captcha.fields import ReCaptchaField
 
 class CommentForm(forms.ModelForm):
     captcha = ReCaptchaField(label='Проверка, что вы настоящий человек',
-                             attrs={'theme': 'clean', }, required=True, )
+                             attrs={'theme': 'clean', 'callback': "enableBtn"}, required=True, )
 
     class Meta:
         model = Comment
