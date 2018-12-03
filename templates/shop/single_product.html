@@ -192,55 +192,6 @@
 
     <div class="container">
         <div class="padding-y-sm">
-            {% with comments.count as total_comments %}
-            <h3 class="d-inline-block">Отзывы ({{ total_comments }})</h3>
-            {% endwith %}
-            <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#exampleModalCenter">
-              Оставить отзыв
-            </button>
-
-            <!-- Modal -->
-            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-              <div class="modal-dialog modal-dialog" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalCenterTitle">Оставить отзыв</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                  <div class="modal-body">
-                    <form action="." method="post">
-                        {{ comment_form.as_p }}
-                        {% csrf_token %}
-                        <p><input type="submit" value="Оставить отзыв"></p>
-                    </form>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <hr>
-        </div>
-
-            <ul class="list-unstyled">
-              {% for comment in comments %}
-              <li class="media">
-                <img class="mr-3" src="https://via.placeholder.com/60x60" alt="Generic placeholder image">
-                <div class="media-body"><span class="float-right">{{ comment.created }}</span>
-                  <h5 class="mt-0 mb-1">от {{ comment.name }}</h5>
-                  <div>
-                      {{ comment.body|linebreaks }}
-                  </div>
-                </div>
-              </li>
-              {% empty %}
-                  <p>Отзывов пока нет. Станьте первым кто оставит отзыв.</p>
-              {% endfor %}
-              {% if new_comment %}
-                  <h3>Ваш комментарий был добавлен.</h3>
-              {% endif %}
-            </ul>
         <ul class="nav nav-tabs my-4" id="myTab" role="tablist">
           <li class="nav-item">
             <a class="nav-link active" id="rewiew-tab" data-toggle="tab" href="#rewiew" role="tab" aria-controls="rewiew" aria-selected="false">
@@ -273,18 +224,15 @@
                   {% empty %}
                       <p>Отзывов пока нет. Станьте первым кто оставит отзыв.</p>
                   {% endfor %}
-                  {% if new_comment %}
-                      <h3>Ваш комментарий был добавлен.</h3>
-                  {% endif %}
                 </ul>
               </div>
           </div>
           <div class="tab-pane fade" id="make_rewiew" role="tabpanel" aria-labelledby="make_rewiew-tab">
-              <form action="." method="post">
-                {{ comment_form.as_p }}
-                {% csrf_token %}
-                <p><input type="submit" class="btn btn-primary" value="Оставить отзыв"></p>
-            </form>
+                <form action="." method="post">
+                    {{ comment_form.as_p }}
+                    {% csrf_token %}
+                    <p><input type="submit" class="btn btn-primary" value="Оставить отзыв"></p>
+                </form>
           </div>
         </div>
     </div>

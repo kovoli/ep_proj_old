@@ -25,7 +25,7 @@ SECRET_KEY = '07x(^=*iq9w#740=7u^zl!ztj#6-tfb5=w)cmd+^0#7ek8s2@k'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'mptt',
     'ckeditor',
     'imagekit',
+    'captcha'
 ]
 
 MIDDLEWARE = [
@@ -145,3 +146,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 MEDIA_URL = '/media/'
 
 INTERNAL_IPS = ('127.0.0.1',)
+
+
+
+RECAPTCHA_PUBLIC_KEY = '6LeuXH4UAAAAAD6-GNH98rPyhJkMWu_1nX8TU93O'
+RECAPTCHA_PRIVATE_KEY = '6LeuXH4UAAAAAFzxW4nsWceGiD_hkG1Lso3llz11'
+NOCAPTCHA = True

@@ -1,6 +1,5 @@
-from django.shortcuts import render, get_object_or_404
-from django.utils import timezone
-from .models import Product, Category, Comment
+from django.shortcuts import render, get_object_or_404, redirect
+from .models import Product, Category
 from .forms import CommentForm
 
 
@@ -18,10 +17,12 @@ def product_detail(request, slug):
 
     if request.method == 'POST':
         comment_form = CommentForm(data=request.POST)
+        print(comment_form)
         if comment_form.is_valid():
             new_comment = comment_form.save(commit=False)
             new_comment.product = product
             new_comment.save()
+            return redirect('shop:product_detail', slug=product.slug)
 
     else:
         comment_form = CommentForm()
