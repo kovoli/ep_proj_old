@@ -14,6 +14,7 @@ class CommentAdmin(admin.ModelAdmin):
     list_display = ('name', 'email', 'product', 'created', 'active')
     list_filter = ('active', 'created')
     search_fields = ('name', 'email', 'body')
+    list_editable = ('active', )
 
 
 admin.site.register(Price)
