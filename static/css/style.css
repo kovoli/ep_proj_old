@@ -114,3 +114,14 @@ figure.figure-img.d-flex.mx-auto.align-items-center {
 .compare-pro-card {
     height: 40px!important;
 }
+span.positiv_icon {
+    float: left;
+    color: #fd0000;
+}
+span.negativ_icon {
+    float: left;
+    color: #007bff;
+}
+.positiv_div {
+    margin-left: 1.3rem;
+}

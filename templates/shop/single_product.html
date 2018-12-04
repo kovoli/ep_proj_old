@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
 <section class="section-content my-4">
@@ -35,7 +36,7 @@
                 <h3>Цены</h3>
             </div>
             <ul class="list-group list-group-flush">
-              {% for price_list in product.products.all %}
+              {% for price_list in product.prices.all %}
               <li class="list-group-item px-0">
                   <div class="container compare-price px-0">
                       <div class="row">
@@ -92,88 +93,21 @@
             <hr>
         </div>
         <div class="row">
+            {% for semilar_pro in semilar_products %}
             <div class="col-lg-2 col-md-4 mb-4">
-          <div class="card h-100">
-            <figure class="figure-img d-flex mx-auto align-items-center single-pro-card">
-            <a href="/deal/apple-iphone-6s-plus-32gb-grey_ozonru/"><img class="d-block img-fluid" src="https://via.placeholder.com/160x160" alt="Скидка на Apple iPhone 6s Plus 32GB, Grey"></a>
-            </figure>
-            <div class="card-body p-2">
-              <h4 class="card-title single-title text-center mb-0">
-                <a href="/deal/apple-iphone-6s-plus-32gb-grey_ozonru/">Apple iPhone 6s Plus 32GB, Grey</a>
-              </h4>
+              <div class="card h-100">
+                <figure class="figure-img d-flex mx-auto align-items-center single-pro-card">
+                <a href="{{ semilar_pro.get_absolute_url }}"><img class="d-block img-fluid" src="{{ semilar_pro.product_image_grid.url }}" alt="{{ semilar_pro.name }}"></a>
+                </figure>
+                <div class="card-body p-2">
+                  <h4 class="card-title single-title text-center mb-0">
+                    <a href="{{ semilar_pro.get_absolute_url }}">{{ semilar_pro.name }}</a>
+                  </h4>
+                </div>
+                <h6 class="price price-single p-2 mb-0 text-center">от {{ semilar_pro.min_price }} <i class="fa fa-ruble"></i></h6>
+              </div>
             </div>
-            <h6 class="price price-single p-2 mb-0 text-center">от 34989,60 <i class="fa fa-ruble"></i></h6>
-          </div>
-        </div>
-            <div class="col-lg-2 col-md-4 mb-4">
-          <div class="card h-100">
-            <figure class="figure-img d-flex mx-auto align-items-center single-pro-card">
-            <a href="/deal/apple-iphone-6s-plus-32gb-grey_ozonru/"><img class="d-block img-fluid shadow" src="https://via.placeholder.com/160x160" alt="Скидка на Apple iPhone 6s Plus 32GB, Grey"></a>
-            </figure>
-            <div class="card-body p-2">
-              <h4 class="card-title single-title text-center mb-0">
-                <a href="/deal/apple-iphone-6s-plus-32gb-grey_ozonru/">Apple iPhone 6s Plus 32GB, Grey</a>
-              </h4>
-
-            </div>
-            <h6 class="price price-single p-2 mb-0 text-center"> 34989,60 <i class="fa fa-ruble"></i></h6>
-          </div>
-        </div>
-            <div class="col-lg-2 col-md-4 mb-4">
-          <div class="card h-100">
-            <figure class="figure-img d-flex mx-auto align-items-center single-pro-card">
-            <a href="/deal/apple-iphone-6s-plus-32gb-grey_ozonru/"><img class="d-block img-fluid shadow" src="https://via.placeholder.com/160x160" alt="Скидка на Apple iPhone 6s Plus 32GB, Grey"></a>
-            </figure>
-            <div class="card-body p-2">
-              <h4 class="card-title single-title text-center mb-0">
-                <a href="/deal/apple-iphone-6s-plus-32gb-grey_ozonru/">Apple iPhone 6s Plus 32GB, Grey</a>
-              </h4>
-
-            </div>
-            <h6 class="price price-single p-2 mb-0 text-center"> 34989,60 <i class="fa fa-ruble"></i></h6>
-          </div>
-        </div>
-            <div class="col-lg-2 col-md-4 mb-4">
-          <div class="card h-100">
-            <figure class="figure-img d-flex mx-auto align-items-center single-pro-card">
-            <a href="/deal/apple-iphone-6s-plus-32gb-grey_ozonru/"><img class="d-block img-fluid shadow" src="https://via.placeholder.com/160x160" alt="Скидка на Apple iPhone 6s Plus 32GB, Grey"></a>
-            </figure>
-            <div class="card-body p-2">
-              <h4 class="card-title single-title text-center mb-0">
-                <a href="/deal/apple-iphone-6s-plus-32gb-grey_ozonru/">Apple iPhone 6s Plus 32GB, Grey</a>
-              </h4>
-
-            </div>
-            <h6 class="price price-single p-2 mb-0 text-center"> 34989,60 <i class="fa fa-ruble"></i></h6>
-          </div>
-        </div>
-            <div class="col-lg-2 col-md-4 mb-4">
-          <div class="card h-100">
-            <figure class="figure-img d-flex mx-auto align-items-center single-pro-card">
-            <a href="/deal/apple-iphone-6s-plus-32gb-grey_ozonru/"><img class="d-block img-fluid shadow" src="https://via.placeholder.com/160x160" alt="Скидка на Apple iPhone 6s Plus 32GB, Grey"></a>
-            </figure>
-            <div class="card-body p-2">
-              <h4 class="card-title single-title text-center mb-0">
-                <a href="/deal/apple-iphone-6s-plus-32gb-grey_ozonru/">Apple iPhone 6s Plus 32GB, Grey</a>
-              </h4>
-
-            </div>
-            <h6 class="price price-single p-2 mb-0 text-center"> 34989,60 <i class="fa fa-ruble"></i></h6>
-          </div>
-        </div>
-            <div class="col-lg-2 col-md-4 mb-4">
-          <div class="card h-100">
-            <figure class="figure-img d-flex mx-auto align-items-center single-pro-card">
-            <a href="/deal/apple-iphone-6s-plus-32gb-grey_ozonru/"><img class="d-block img-fluid shadow" src="https://via.placeholder.com/160x160" alt="Скидка на Apple iPhone 6s Plus 32GB, Grey"></a>
-            </figure>
-            <div class="card-body p-2">
-              <h4 class="card-title single-title text-center mb-0">
-                <a href="/deal/apple-iphone-6s-plus-32gb-grey_ozonru/">Apple iPhone 6s Plus 32GB, Grey</a>
-              </h4>
-            </div>
-            <h6 class="price price-single p-2 mb-0 text-center"> 34989,60 <i class="fa fa-ruble"></i></h6>
-          </div>
-        </div>
+            {% endfor %}
         </div>
     </div>
 
@@ -212,13 +146,30 @@
               <div>
                   <ul class="list-unstyled">
                   {% for comment in comments %}
-                  <li class="media">
-                    <img class="mr-3" src="https://via.placeholder.com/60x60" alt="Generic placeholder image">
+                  <li class="media py-2">
+                    <img class="mr-3" src="{% static 'images/icons/blue-talk-icon.png' %}" alt="Generic placeholder image">
                     <div class="media-body"><span class="float-right">{{ comment.created }}</span>
                       <h5 class="mt-0 mb-1">от {{ comment.name }}</h5>
                       <div>
                           {{ comment.body|linebreaks }}
+                          <span class="positiv_icon"><i class="fa fa-plus"></i></span>
+                          <div class="positiv_div">
+                            {% if not comment.positiv %}
+                              <p>---</p>
+                            {% else %}
+                                {{ comment.positiv|linebreaks }}
+                            {% endif %}
+                          </div>
+                          <span class="negativ_icon"><i class="fa fa-minus"></i></span>
+                          <div class="positiv_div">
+                            {% if not comment.negativ %}
+                                <p>---</p>
+                            {% else %}
+                                {{ comment.negativ|linebreaks }}
+                            {% endif %}
+                          </div>
                       </div>
+
                     </div>
                   </li>
                   {% empty %}
@@ -243,6 +194,5 @@
           </div>
         </div>
     </div>
-
 </section>
 {% endblock content %}

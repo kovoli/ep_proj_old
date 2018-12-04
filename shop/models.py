@@ -100,6 +100,10 @@ class Product(models.Model):
                                         options={'quality': 80},
                                         blank=True,
                                         max_length=250)
+    product_image_grid = ImageSpecField(source='product_image',
+                                        processors=[ResizeToFit(None, 160)],
+                                        format='JPEG',
+                                        options={'quality': 90})
     # related_models
     category = TreeForeignKey('Category', related_name='products', on_delete=models.CASCADE)
     vendor = models.ForeignKey('Vendor', related_name='vendors', on_delete=models.CASCADE, blank=True, null=True)
@@ -131,8 +135,8 @@ class Price(models.Model):
     url = models.URLField()
     sales_notes = models.CharField(max_length=255, blank=True, null=True)
     # relate_models
-    shop = models.ForeignKey(Shop, related_name='shop_prices', on_delete=models.CASCADE)
-    product = models.ForeignKey(Product, related_name='products', on_delete=models.CASCADE)
+    shop = models.ForeignKey(Shop, related_name='shops', on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, related_name='prices', on_delete=models.CASCADE)
 
     def __str__(self):
         return self.name

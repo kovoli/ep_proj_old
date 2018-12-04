@@ -16,7 +16,7 @@ class CommentForm(forms.ModelForm):
             'email': forms.EmailInput(attrs={'class': 'form-control',
                                              'placeholder': 'Введите ваш емайл'}),
             'body': forms.Textarea(attrs={'class': 'form-control ',
-                                          'rows': '5'}),
+                                          'rows': '4'}),
             'positiv': forms.Textarea(attrs={'class': 'form-control',
                                              'placeholder': 'Ваши позитивные впечатления',
                                              'rows': '3'}),
