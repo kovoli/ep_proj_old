@@ -15,7 +15,6 @@ def product_detail(request, slug):
     semilar_products = Product.objects.filter(category=product.category)\
         .exclude(id=product.id)\
         .annotate(min_price=Min('prices__price'))[:6]
-    print(semilar_products, )
     comments = product.comments.filter(active=True)
 
     new_comment = None
@@ -40,7 +39,12 @@ def product_detail(request, slug):
                                                         'semilar_products': semilar_products})
 
 
+def category_catalog(request, slug):
 
-def cat_list(request):
-    cat = Product.objects.filter(category__in=Category.objects.get(id=30).get_descendants())
+    category = get_object_or_404(Category, slug=slug)
+    #cat = Product.objects.filter(category__in=Category.objects.get(id=category.id).get_descendants())
+    cat = category.get_descendants().order_by('tree_id', 'id', 'name')
     print(cat)
+    print(cat)
+    return render(request, 'shop/category_catalog.html', {'category': category,
+                                                          'cat': cat})

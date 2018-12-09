@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load mptt_tags %}
+{% block content %}
+
+<!-- Section Start -->
+<div class="section">
+    <div class="container">
+
+        <div class="row my-3">
+            <div class="col-lg-12">
+                <div class="card w-100">
+                  <img class="card-img-top" src="..." alt="Card image cap">
+                  <div class="card-header text-center">
+                    <h3>{{ category.name }}</h3>
+                  </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            {% recursetree cat %}
+            <div class="col-lg-6">
+                <div class="card bg-light mb-3 h-100">
+                  <div class="card-header text-center">
+                      <h4>{{ node.name }}</h4>
+                  </div>
+                  <div class="card-body">
+                  <ul>
+                    {% for i in node.get_children %}
+                        <li>( {{ i.name }} )</li>
+                    {% endfor %}
+                  </ul>
+                  </div>
+                </div>
+            </div>
+            {% endrecursetree %}
+        </div>
+    </div>
+
+</div><!-- Section End -->
+
+
+{% endblock content %}

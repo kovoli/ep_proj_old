@@ -33,7 +33,7 @@ class Category(MPTTModel):
         return self.name
 
     class MPTTMeta:
-        order_insertion_by = ['name']
+        order_insertion_by = ['-name']
 
     class Meta:
         verbose_name = 'Категория'
