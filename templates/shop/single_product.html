@@ -1,197 +1,235 @@
 {% extends 'base.html' %}
-{% load static %}
 
 {% block content %}
-<section class="section-content my-4">
+<!-- Single Product Section Start -->
+<div class="product-section section mt-50 mb-40">
     <div class="container">
-    <nav aria-label="breadcrumb">
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="#">Главная</a></li>
-        {% for bc in breadcrumbs %}
-        <li class="breadcrumb-item active"><a href="#">{{ bc.name }}</a></li>
-        {% endfor %}
-      </ol>
-    </nav>
-        <article class="mb-5">
-        <div class="row">
-            <div class="col-lg-4 col-sm-12 d-flex mx-auto align-items-center justify-content-center">
+        <div class="breadcrumb mb-25">
+            <ul>
+                <li><a href="#">Главная</a></li>
+                {% for bc in breadcrumbs %}
+                    <li><a href="#">{{ bc.name }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div class="row mb-15">
+
+            <div class="col-lg-4 col-12">
+
+                <!-- Image -->
                 <figure class="figure-img ">
                     <img itemprop="image" class="d-block img-fluid" src="{{ product.product_image.url }}" alt="{{ product.name }}">
                 </figure>
-            </div>
-            <div class="col-lg-8 col-sm-12">
-                <h1 class="title mb-3">{{ product.name }}</h1>
 
-                <div class="mb-3">
+            </div>
+
+            <div class="col-lg-8 col-12">
+
+                <!-- Content -->
+                <div class="single-product-content">
+
+                    <!-- Category & Title -->
+                    <div class="head-content">
+                        <h1 class="title">{{ product.name }}</h1>
+                    </div>
+
+                    <div class="category-title">
+                        <p>Категория: <a href="#" class="cat">{{ product.category.name }}</a></p>
+                        <p>Бренд: <a href="#" class="cat">{{ product.vendor.name }}</a></p>
+                    </div>
 
                 </div>
 
-                <span class="product-list">Категория: <a href="#">{{ product.category.name }}</a></span><br>
-                <span class="product-list">Бренд: <a href="#">{{ product.vendor.name }}</a></span>
-                <hr>
             </div>
+
         </div>
-        <hr>
-            <div class="mt-4">
-                <h3>Цены</h3>
-            </div>
-            <ul class="list-group list-group-flush">
-              {% for price_list in product.prices.all %}
-              <li class="list-group-item px-0">
-                  <div class="container compare-price px-0">
-                      <div class="row">
-                          <div class="col-sm-12 col-lg-7">
-                              <figure class="figure-img d-flex mx-auto align-items-center compare-pro-card float-left pr-2 mb-0">
-                                <a href="{{ price_list.url }}"><img class="d-block img-fluid" src="{% if price_list.shop.image_store %}{{ price_list.shop.image_store.url }}{% endif %}" alt="{{ price_list.name }}"></a>
-                              </figure>
-                              <h6 class="title-compare mb-0">{{ price_list.name }}</h6>
-                              <span>в <a href="{{ price_list.url }}">{{ price_list.shop.name }}</a></span>
-                          </div>
-                          <div class="col-sm-6 col-lg-3">
-                              <div class="price-wrap float-right">
-                                {% if price_list.oldprice %}
-                                <span class="old-price">{{ price_list.oldprice }} <i class="fa fa-ruble"></i></span>
-                                {% endif %}
-                                <span class="price">{{ price_list.price }} <i class="fa fa-ruble"></i></span>
+
+        <div class="col-12 mb-20 px-0">
+            <div class="section-title-one" data-title="Цены"><h1>Цены</h1></div>
+        </div>
+        <!-- Price Comparison -->
+        <div class="row mb-25">
+            <ul class="list-group list-group-flush col-12 px-0">
+                {% for price_list in product.prices.all %}
+                  <li class="list-group-item px-0">
+                      <div class="container compare-price">
+                          <div class="row">
+                              <div class="col-sm-12 col-lg-7">
+                                  <figure class="figure-img d-flex mx-auto align-items-center compare-pro-card float-left pr-2 mb-0">
+                                    <a href="{{ price_list.url }}"><img class="d-block img-fluid" src="{% if price_list.shop.image_store %}{{ price_list.shop.image_store.url }}{% endif %}" alt="{{ price_list.name }}"></a>
+                                  </figure>
+                                  <h5 class="title-compare mb-0">{{ price_list.name }}</h5>
+                                  <span>в <a href="{{ price_list.url }}">{{ price_list.shop.name }}</a></span>
+                              </div>
+                              <div class="col-sm-6 col-lg-3">
+                                  <div class="price-wrap float-right py-2">
+                                      {% if price_list.oldprice %}
+                                      <span class="old-price">{{ price_list.oldprice }} <i class="fas fa-ruble-sign"></i></span>
+                                      {% endif %}
+                                      <span class="price">{{ price_list.price }} <i class="fas fa-ruble-sign"></i></span>
+                                  </div>
+                              </div>
+                              <div class="col-sm-6 col-lg-2">
+                                  <a href="{{ price_list.url }}" target="_blank" class="btn btn-yellow float-right w-100">Купить</a>
                               </div>
                           </div>
-                          <div class="col-sm-6 col-lg-2 ">
-                              <a href="{{ price_list.url }}" target="_blank"><button type="button" class="btn btn-primary float-right w-100">Купить</button></a>
-                          </div>
                       </div>
-                  </div>
-              </li>
-              {% endfor %}
-            </ul>
+                  </li>
+                {% endfor %}
+                </ul>
+        </div>
+        <!-- End Price Comparison -->
+        <!-- Description and Characteristics -->
+        <div class="row mb-25">
 
-            <ul class="nav nav-tabs my-4" id="myTab" role="tablist">
-              <li class="nav-item">
-                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="false">Описание</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Характеристики</a>
-              </li>
-            </ul>
-            <div class="tab-content" id="myTabContent">
+            <div class="col-lg-10 col-12 ml-auto mr-auto h-100">
 
-              <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                  <div>{{ product.description|safe|linebreaks }}</div>
-              </div>
-              <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut l
-              </div>
-              <div class="tab-pane fade" id="comments" role="tabpanel" aria-labelledby="comments-tab">
+                <ul class="single-product-tab-list nav">
+                    <li><a href="#product-specifications" class="active" data-toggle="tab">Характеристики</a></li>
+                    <li><a href="#product-description" data-toggle="tab" >Описание</a></li>
+                </ul>
 
-              </div>
+                <div class="single-product-tab-content tab-content">
+                    <div class="tab-pane fade show active" id="product-specifications">
+
+                        <div class="row">
+                            <div class="single-product-specification">
+                                {{ product.description|safe|linebreaks }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="product-description">
+                        <div class="single-product-description-content col-lg-12 col-12">
+                            {{ product.description|safe|linebreaks }}
+                        </div>
+                    </div>
+
+                </div>
+
             </div>
 
-        </article>
-    </div>
-    <div class="container">
-        <div class="padding-y-sm">
-            <h3>Похожие товары</h3>
-            <hr>
         </div>
-        <div class="row">
+
+        <!-- Related Products -->
+        <div class="col-12 mb-20 px-0">
+            <div class="section-title-one" data-title="Похожие товары"><h1>Похожие товары</h1></div>
+        </div>
+        <div class="row mb-20">
             {% for semilar_pro in semilar_products %}
             <div class="col-lg-2 col-md-4 mb-4">
-              <div class="card h-100">
+              <div class="card h-100 border-0">
                 <figure class="figure-img d-flex mx-auto align-items-center single-pro-card">
-                <a href="{{ semilar_pro.get_absolute_url }}"><img class="d-block img-fluid" src="{{ semilar_pro.product_image_grid.url }}" alt="{{ semilar_pro.name }}"></a>
+                <a href="{{ semilar_pro.get_absolute_url }}"><img class="d-block img-fluid" src="{% if semilar_pro.product_image %}{{ semilar_pro.product_image_grid.url }}{% endif %}" alt="{{ semilar_pro.name }}"></a>
                 </figure>
                 <div class="card-body p-2">
-                  <h4 class="card-title single-title text-center mb-0">
+                  <h5 class="card-title single-title text-center mb-0">
                     <a href="{{ semilar_pro.get_absolute_url }}">{{ semilar_pro.name }}</a>
-                  </h4>
+                  </h5>
                 </div>
-                <h6 class="price price-single p-2 mb-0 text-center">от {{ semilar_pro.min_price }} <i class="fa fa-ruble"></i></h6>
+                <h6 class="price price-single p-2 mb-0 text-center">от {{ semilar_pro.min_price }} <i class="fas fa-ruble-sign"></i></h6>
               </div>
             </div>
             {% endfor %}
         </div>
-    </div>
+        <!-- End Related Products -->
 
-    {% if product.video %}
-    <div class="container">
-        <div class="padding-y-sm">
-            <h3>Видео обзор</h3>
-            <hr>
-        </div>
-        <div class="embed-responsive embed-responsive-16by9">
-            <iframe class="embed-responsive-item" src="{{ product.video }}" allowfullscreen></iframe>
-        </div>
-    <hr>
-    </div>
-    {% endif %}
-    <div class="container">
-        <div class="padding-y-sm">
-        <ul class="nav nav-tabs my-4" id="myTab" role="tablist">
-          <li class="nav-item">
-            <a class="nav-link active" id="rewiew-tab" data-toggle="tab" href="#rewiew" role="tab" aria-controls="rewiew" aria-selected="false">
-                {% with comments.count as total_comments %}
-                    Отзывы ({{ total_comments }})
-                {% endwith %}
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" id="make_rewiew-tab" data-toggle="tab" href="#make_rewiew" role="tab" aria-controls="make_rewiew" aria-selected="false">
-                Оставить Отзыв
-            </a>
-          </li>
-        </ul>
-        <div class="tab-content" id="myTabContent">
 
-          <div class="tab-pane fade show active" id="rewiew" role="tabpanel" aria-labelledby="rewiew-tab">
-              <div>
-                  <ul class="list-unstyled">
-                  {% for comment in comments %}
-                  <li class="media py-2">
-                    <img class="mr-3" src="{% static 'images/icons/blue-talk-icon.png' %}" alt="Generic placeholder image">
-                    <div class="media-body"><span class="float-right">{{ comment.created }}</span>
-                      <h5 class="mt-0 mb-1">от {{ comment.name }}</h5>
-                      <div>
-                          {{ comment.body|linebreaks }}
-                          <span class="positiv_icon"><i class="fa fa-plus"></i></span>
-                          <div class="positiv_div">
-                            {% if not comment.positiv %}
-                              <p>---</p>
-                            {% else %}
-                                {{ comment.positiv|linebreaks }}
-                            {% endif %}
-                          </div>
-                          <span class="negativ_icon"><i class="fa fa-minus"></i></span>
-                          <div class="positiv_div">
-                            {% if not comment.negativ %}
-                                <p>---</p>
-                            {% else %}
-                                {{ comment.negativ|linebreaks }}
-                            {% endif %}
-                          </div>
-                      </div>
+        <!-- Video Rewiew -->
+        {% if product.video %}
+        <div class="col-12 mb-20 px-0">
+            <div class="section-title-one" data-title="Видео обзор"><h1>Видео обзор</h1></div>
+        </div>
+        <div class="row mb-20 pl-15 pr-15">
+            <div class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" src="{{ product.video }}" allowfullscreen=""></iframe>
+            </div>
+        </div>
+        {% endif %}
+        <!-- End Video Rewiew -->
+
+        <!-- Rewiews -->
+        <div class="row">
+
+            <div class="col-lg-10 col-12 ml-auto mr-auto">
+
+                <ul class="single-product-tab-list nav">
+                    <li><a href="#product-reviews" class="active" data-toggle="tab" >
+                    {% with comments.count as total_comments %}
+                        Отзывы ({{ total_comments }})
+                    {% endwith %}
+                    </a></li>
+                    <li><a href="#make_product-reviews" data-toggle="tab" >Оставить отзыв</a></li>
+                </ul>
+
+                <div class="single-product-tab-content tab-content">
+                    <div class="tab-pane fade show active" id="product-reviews">
+
+                        <div class="product-ratting-wrap">
+
+							<div class="rattings-wrapper">
+                                {% for comment in comments %}
+								<div class="sin-rattings">
+									<div class="ratting-author">
+										<h3>{{ comment.name }}</h3> {{ comment.created }}
+									</div>
+									<div>
+                                      {{ comment.body|linebreaks }}
+                                      <span class="positiv_icon"><i class="fa fa-plus"></i></span>
+                                      <div class="positiv_div">
+                                        {% if not comment.positiv %}
+                                          <p>---</p>
+                                        {% else %}
+                                            {{ comment.positiv|linebreaks }}
+                                        {% endif %}
+                                      </div>
+                                      <span class="negativ_icon"><i class="fa fa-minus"></i></span>
+                                      <div class="positiv_div">
+                                        {% if not comment.negativ %}
+                                            <p>---</p>
+                                        {% else %}
+                                            {{ comment.negativ|linebreaks }}
+                                        {% endif %}
+                                      </div>
+                                  </div>
+								</div>
+                                {% empty %}
+                                   <p>Отзывов пока нет. Станьте первым кто оставит отзыв.</p>
+                                {% endfor %}
+							</div>
+
+						</div>
 
                     </div>
-                  </li>
-                  {% empty %}
-                      <p>Отзывов пока нет. Станьте первым кто оставит отзыв.</p>
-                  {% endfor %}
-                </ul>
-              </div>
-          </div>
-          <div class="tab-pane fade" id="make_rewiew" role="tabpanel" aria-labelledby="make_rewiew-tab">
-                <form action="." method="post">
-                    {{ comment_form.as_p }}
-                    {% csrf_token %}
+                    <div class="tab-pane fade" id="make_product-reviews">
 
-                    <p><input type="submit" class="btn btn-primary" value="Оставить отзыв" id="button1"></p>
-                    <script>
-                        document.getElementById("button1").disabled = true;
-                        function enableBtn(){
-                            document.getElementById("button1").disabled = false;
-                            }
-                    </script>
-                </form>
-          </div>
+                        <div class="product-ratting-wrap">
+
+							<div class="ratting-form-wrapper fix">
+								<h3>Добавить отзыв</h3>
+								<form action="." method="post">
+                                    {{ comment_form.as_p }}
+                                    {% csrf_token %}
+                                    <button type="submit" class="btn btn-yellow" id="button1">Оставить отзыв</button>
+
+                                    <script>
+                                        document.getElementById("button1").disabled = true;
+                                        function enableBtn(){
+                                            document.getElementById("button1").disabled = false;
+                                            }
+                                    </script>
+                                </form>
+							</div>
+						</div>
+
+                    </div>
+                </div>
+
+            </div>
+
         </div>
+
     </div>
-</section>
+</div><!-- Single Product Section End -->
 {% endblock content %}
+
