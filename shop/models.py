@@ -27,7 +27,7 @@ class Category(MPTTModel):
         super(Category, self).save(*args, **kwargs)
 
     def get_absolute_url(self):
-        return reverse('shop:category', args=[self.slug])
+        return reverse('shop:category_catalog', args=[self.slug])
 
     def __str__(self):
         return self.name

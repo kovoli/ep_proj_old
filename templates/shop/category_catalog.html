@@ -19,23 +19,40 @@
 
 
         <div class="row">
+
             {% recursetree cat %}
-            <div class="col-lg-6">
-                <div class="card bg-light mb-3 h-100">
+            <div class="col-lg-4 col-sm-auto">
+                <div class="card bg-light mb-3">
+                  <img class="card-img-top" src="https://picsum.photos/348/348" alt="Card image cap">
                   <div class="card-header text-center">
-                      <h4>{{ node.name }}</h4>
+                      <h4><a href="{{ node.get_absolute_url }}">{{ node.name }}</a></h4>
                   </div>
                   <div class="card-body">
-                  <ul>
-                    {% for i in node.get_children %}
-                        <li>( {{ i.name }} )</li>
-                    {% endfor %}
-                  </ul>
+                    <div class="dropdown">
+                      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Dropdown button
+                      </button>
+                      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <ul>
+                            {% for i in node.get_children %}
+                                <li><a href="{{ i.get_absolute_url }}">{{ i.name }}</a></li>
+                            {% endfor %}
+                          </ul>
+                      </div>
+                    </div>
                   </div>
                 </div>
             </div>
             {% endrecursetree %}
-        </div>
+
+        {% comment %}
+        <ul>
+            {% for i in node.get_children|slice:":4" %}
+                <li><a href="{{ i.get_absolute_url }}">{{ i.name }}</a></li>
+            {% endfor %}
+          </ul>
+        {% endcomment %}
+
     </div>
 
 </div><!-- Section End -->
