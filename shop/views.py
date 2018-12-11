@@ -5,7 +5,7 @@ from django.db.models import Min
 
 
 def home_page(request):
-    return render(request, 'base.html')
+    return render(request, 'base.html',)
 
 
 def product_detail(request, slug):

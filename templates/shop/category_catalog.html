@@ -21,18 +21,21 @@
         <div class="row">
 
             {% recursetree cat %}
-            <div class="col-lg-4 col-sm-auto">
+            <div class="col-lg-3 col-sm-auto">
                 <div class="card bg-light mb-3">
-                  <img class="card-img-top" src="https://picsum.photos/348/348" alt="Card image cap">
+
                   <div class="card-header text-center">
-                      <h4><a href="{{ node.get_absolute_url }}">{{ node.name }}</a></h4>
+                      <h5><a href="{{ node.get_absolute_url }}">{{ node.name }}</a>
+
+                      </h5>
+
                   </div>
-                  <div class="card-body">
-                    <div class="dropdown">
-                      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Dropdown button
-                      </button>
-                      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <img class="card-img-top" src="https://picsum.photos/348/348" alt="Card image cap">
+                <div class="dropdown">
+                      <a class="btn btn-yellow dropdown w-100 border-0" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Подкатегории
+                      </a>
+                      <div class="dropdown-menu w-100 text-center" aria-labelledby="dropdownMenuButton">
                         <ul>
                             {% for i in node.get_children %}
                                 <li><a href="{{ i.get_absolute_url }}">{{ i.name }}</a></li>
@@ -40,7 +43,6 @@
                           </ul>
                       </div>
                     </div>
-                  </div>
                 </div>
             </div>
             {% endrecursetree %}
