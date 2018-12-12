@@ -8,11 +8,8 @@
 
         <div class="row my-3">
             <div class="col-lg-12">
-                <div class="card w-100">
-                  <img class="card-img-top" src="..." alt="Card image cap">
-                  <div class="card-header text-center">
-                    <h3>{{ category.name }}</h3>
-                  </div>
+                <div class="col-12 mb-20 px-0">
+                    <div class="section-title-one"><h1>{{ category.name }}</h1></div>
                 </div>
             </div>
         </div>
@@ -21,7 +18,7 @@
         <div class="row">
 
             {% recursetree cat %}
-            <div class="col-lg-3 col-sm-auto">
+            <div class="col-lg-4 col-sm-auto">
                 <div class="card bg-light mb-3">
 
                   <div class="card-header text-center">
@@ -31,18 +28,20 @@
 
                   </div>
                 <img class="card-img-top" src="https://picsum.photos/348/348" alt="Card image cap">
-                <div class="dropdown">
-                      <a class="btn btn-yellow dropdown w-100 border-0" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Подкатегории
-                      </a>
-                      <div class="dropdown-menu w-100 text-center" aria-labelledby="dropdownMenuButton">
-                        <ul>
-                            {% for i in node.get_children %}
-                                <li><a href="{{ i.get_absolute_url }}">{{ i.name }}</a></li>
-                            {% endfor %}
-                          </ul>
-                      </div>
-                    </div>
+                {% if not node.get_level == 2 %}
+                <div class="dropdown dropup">
+                  <a class="btn btn-yellow w-100 border-0 " id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Подкатегории
+                  </a>
+                  <div class="dropdown-menu w-100 text-center" aria-labelledby="dropdownMenuButton">
+                    <ul>
+                        {% for i in node.get_children %}
+                            <li><a href="{{ i.get_absolute_url }}">{{ i.name }}</a></li>
+                        {% endfor %}
+                      </ul>
+                  </div>
+                </div>
+                {% endif %}
                 </div>
             </div>
             {% endrecursetree %}
