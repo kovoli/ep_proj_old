@@ -6,9 +6,9 @@
     <div class="container">
         <div class="breadcrumb mb-25">
             <ul>
-                <li><a href="#">Главная</a></li>
+                <li><a href="{% url 'shop:home' %}">Главная</a></li>
                 {% for bc in breadcrumbs %}
-                    <li><a href="#">{{ bc.name }}</a></li>
+                    <li><a href="{{ bc.get_absolute_url }}">{{ bc.name }}</a></li>
                 {% endfor %}
             </ul>
         </div>
@@ -35,7 +35,7 @@
                     </div>
 
                     <div class="category-title">
-                        <p>Категория: <a href="#" class="cat">{{ product.category.name }}</a></p>
+                        <p>Категория: <a href="{{ product.category.get_absolute_url }}" class="cat">{{ product.category.name }}</a></p>
                         <p>Бренд: <a href="#" class="cat">{{ product.vendor.name }}</a></p>
                     </div>
 
@@ -119,7 +119,7 @@
             {% for semilar_pro in semilar_products %}
             <div class="col-lg-2 col-md-4 mb-4">
               <div class="card h-100 border-0">
-                <figure class="figure-img d-flex mx-auto align-items-center single-pro-card">
+                <figure class="figure-img d-flex mx-auto align-items-center single-pro-card single-image-sem">
                 <a href="{{ semilar_pro.get_absolute_url }}"><img class="d-block img-fluid" src="{% if semilar_pro.product_image %}{{ semilar_pro.product_image_grid.url }}{% endif %}" alt="{{ semilar_pro.name }}"></a>
                 </figure>
                 <div class="card-body p-2">

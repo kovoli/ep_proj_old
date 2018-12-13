@@ -104,6 +104,11 @@ class Product(models.Model):
                                         processors=[ResizeToFit(None, 160)],
                                         format='JPEG',
                                         options={'quality': 90})
+    product_image_category = ImageSpecField(source='product_image',
+                                            processors=[ResizeToFit(None, 255)],
+                                            format='JPEG',
+                                            options={'quality': 90})
+
     # related_models
     category = TreeForeignKey('Category', related_name='products', on_delete=models.CASCADE)
     vendor = models.ForeignKey('Vendor', related_name='vendors', on_delete=models.CASCADE, blank=True, null=True)

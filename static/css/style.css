@@ -13048,3 +13048,9 @@ span.negativ_icon {
 .positiv_div {
     margin-left: 1.3rem;
 }
+.image_category {
+  height: 255px;
+}
+.single-image-sem {
+    height: 160px;
+}

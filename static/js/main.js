@@ -98,7 +98,7 @@ $('.category-menu').on('click', 'li a, li a .menu-expand', function(e) {
 /*-- Sidebar Category --*/
 var categoryChildren = $('.sidebar-category li .children');
     
-    categoryChildren.slideUp();
+    categoryChildren.slideDown();
     categoryChildren.parents('li').addClass('has-children');
     
 $('.sidebar-category').on('click', 'li.has-children > a', function(e) {

@@ -40,12 +40,25 @@ def product_detail(request, slug):
 
 
 def category_catalog(request, slug):
-
     category = get_object_or_404(Category, slug=slug)
-    #cat = Product.objects.filter(category__in=Category.objects.get(id=category.id).get_descendants())
-    cat = category.get_descendants().order_by('tree_id', 'id', 'name')
+    # cat = Product.objects.filter(category__in=Category.objects.get(id=category.id).get_descendants())
 
-    print(cat)
-    print(cat)
-    return render(request, 'shop/category_catalog.html', {'category': category,
+    if category.get_level() <= 1:
+        print(category.get_level())
+        cat = category.get_descendants().order_by('tree_id', 'id', 'name')
+        print(cat)
+        return render(request, 'shop/category_catalog.html', {'category': category,
                                                           'cat': cat})
+    if category.get_level() >= 2:
+        products_list = Product.objects.filter(category__in=Category.objects.get(id=category.id)\
+                                               .get_descendants(include_self=True)) \
+                                               .annotate(min_price=Min('prices__price'))
+        category = get_object_or_404(Category, slug=slug)
+        cat = category.get_descendants(include_self=True).order_by('tree_id', 'id', 'name')
+
+        print(category.is_leaf_node())
+        print(category.get_family())
+        return render(request, 'shop/category_product_list.html', {'products_list': products_list,
+                                                                   'category': category,
+                                                                   'cat': cat})
+
