@@ -62,7 +62,7 @@
                                     <ul class="sub-menu">
                                         {% for i in menu %}
                                         {% if i.is_root_node %}
-                                        <li class="menu-item-has-children"><a href="{{ i.get_absolute_url }}">{{ i.name }}</a></li>
+                                        <li><a href="{{ i.get_absolute_url }}">{{ i.name }}</a></li>
                                         {% endif %}
                                         {% endfor %}
                                     </ul>

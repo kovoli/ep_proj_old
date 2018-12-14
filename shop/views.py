@@ -2,8 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect, HttpResponse
 from .models import Product, Category
 from .forms import CommentForm
 from django.db.models import Min
-
-
+from . import helpers
 
 def menu(request):
     categories_home = Category.objects.all()
@@ -60,9 +59,10 @@ def category_catalog(request, slug):
                                                               'menu': menu(request),
                                                               'breadcrumbs': breadcrumbs})
     if category.get_level() >= 2:
-        products_list = Product.objects.filter(category__in=Category.objects.get(id=category.id)\
+        list_pro = Product.objects.filter(category__in=Category.objects.get(id=category.id)\
                                                .get_descendants(include_self=True)) \
                                                .annotate(min_price=Min('prices__price'))
+        products_list = helpers.pg_records(request, list_pro, 2)
         category = get_object_or_404(Category, slug=slug)
         cat = category.get_descendants(include_self=True).order_by('tree_id', 'id', 'name')
 

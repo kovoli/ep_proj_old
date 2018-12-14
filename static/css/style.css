@@ -2414,27 +2414,26 @@ img.mfp-img {
       border-radius: 50px; }
       .pagination li a i {
         display: block;
-        line-height: 24px; }
+        line-height: 28px; }
     .pagination li.active a {
       border-color: #444444;
       color: #202020;
       font-weight: 700; }
     .pagination li:first-child {
-      margin-right: 20px; }
+      margin-right: 0px; }
       .pagination li:first-child a {
         color: #202020;
-        width: 50px; }
+          }
         .pagination li:first-child a i {
           float: left;
-          margin-right: 10px; }
+          margin-right: 0px; }
     .pagination li:last-child {
-      margin-left: 20px; }
+      margin-left: 0px; }
       .pagination li:last-child a {
-        width: 50px;
         color: #202020; }
         .pagination li:last-child a i {
           float: right;
-          margin-left: 10px; }
+          margin-left: 0px; }
 
 /*--
     - Page Banner Section
