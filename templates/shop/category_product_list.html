@@ -2,8 +2,17 @@
 {% load mptt_tags %}
 
 {% block content %}
-<div class="product-section section mt-90 mb-40">
+<div class="product-section section mt-20 mb-20">
     <div class="container">
+    <div class="breadcrumb mb-25">
+            <ul>
+                <li><a href="{% url 'shop:home' %}">Главная</a></li>
+                {% for bc in breadcrumbs %}
+                    <li><a href="{{ bc.get_absolute_url }}">{{ bc.name }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+
         <div class="row">
 
             <div class="col-xl-9 col-lg-8 col-12 order-lg-2 mb-50">

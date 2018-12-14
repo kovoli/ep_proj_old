@@ -1,11 +1,19 @@
-from django.shortcuts import render, get_object_or_404, redirect
+from django.shortcuts import render, get_object_or_404, redirect, HttpResponse
 from .models import Product, Category
 from .forms import CommentForm
 from django.db.models import Min
 
 
+
+def menu(request):
+    categories_home = Category.objects.all()
+    return categories_home
+
 def home_page(request):
-    return render(request, 'base.html',)
+
+    return render(request, 'base.html', {'menu': menu(request)})
+
+
 
 
 def product_detail(request, slug):
@@ -36,11 +44,13 @@ def product_detail(request, slug):
                                                         'comments': comments,
                                                         'new_comment': new_comment,
                                                         'comment_form': comment_form,
-                                                        'semilar_products': semilar_products})
+                                                        'semilar_products': semilar_products,
+                                                        'menu': menu(request)})
 
 
 def category_catalog(request, slug):
     category = get_object_or_404(Category, slug=slug)
+    breadcrumbs = Category.get_ancestors(category)
     # cat = Product.objects.filter(category__in=Category.objects.get(id=category.id).get_descendants())
 
     if category.get_level() <= 1:
@@ -48,7 +58,9 @@ def category_catalog(request, slug):
         cat = category.get_descendants().order_by('tree_id', 'id', 'name')
         print(cat)
         return render(request, 'shop/category_catalog.html', {'category': category,
-                                                          'cat': cat})
+                                                              'cat': cat,
+                                                              'menu': menu(request),
+                                                              })
     if category.get_level() >= 2:
         products_list = Product.objects.filter(category__in=Category.objects.get(id=category.id)\
                                                .get_descendants(include_self=True)) \
@@ -60,5 +72,7 @@ def category_catalog(request, slug):
         print(category.get_family())
         return render(request, 'shop/category_product_list.html', {'products_list': products_list,
                                                                    'category': category,
-                                                                   'cat': cat})
+                                                                   'cat': cat,
+                                                                   'menu': menu(request),
+                                                                   'breadcrumbs': breadcrumbs})
 
