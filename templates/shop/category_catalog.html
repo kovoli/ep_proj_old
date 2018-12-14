@@ -5,7 +5,7 @@
 <!-- Section Start -->
 <div class="section">
     <div class="container">
-    <div class="breadcrumb mb-25">
+    <div class="breadcrumb my-3">
             <ul>
                 <li><a href="{% url 'shop:home' %}">Главная</a></li>
                 {% for bc in breadcrumbs %}
@@ -28,8 +28,8 @@
             <div class="col-lg-3 col-sm-auto">
                 <div class="card bg-light mb-3">
 
-                  <div class="card-header text-center">
-                      <h5><a href="{{ node.get_absolute_url }}">{{ node.name }}</a>
+                  <div class="card-header text-center position-absolute w-100 border-0">
+                      <h5><a class="bold" href="{{ node.get_absolute_url }}">{{ node.name }}</a>
 
                       </h5>
 
