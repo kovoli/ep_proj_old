@@ -50,42 +50,25 @@
                 <div class="shop-product-wrap grid with-sidebar row">
                     {% for product in products_list %}
                     <div class="col-xl-4 col-md-6 col-12 pb-30 pt-10">
-
                         <!-- Product Start -->
                         <div class="ee-product">
                             <!-- Image -->
                             <div class="image d-flex mx-auto align-items-center justify-content-center">
-
-                                <a><img class="mx-auto d-block img-fluid" src="{% if product.product_image_category %}{{ product.product_image_category.url }}{% endif %}" alt="Product Image"></a>
-
+                                <a href="{{ product.get_absolute_url }}"><img class="p-2 mx-auto d-block img-fluid" src="{% if product.product_image_category %}{{ product.product_image_category.url }}{% endif %}" alt="Product Image"></a>
                             </div>
-                        {% comment %}
-                                <figure class="figure-img d-flex mx-auto align-items-center single-pro-card image_category">
-                                    <a href="{{ product.get_absolute_url }}"><img class="d-block img-fluid" src="{% if product.product_image_category %}{{ product.product_image_category.url }}{% endif %}" alt="{{ product.name }}"></a>
-                                </figure>
-                        {% endcomment %}
                             <!-- Content -->
                             <div class="content">
-
                                 <!-- Category & Title -->
                                 <div class="category-title">
-
                                     <a href="{{ product.category.get_absolute_url }}" class="cat">{{ product.category.name }}</a>
                                     <h5 class="title"><a href="{{ product.get_absolute_url }}">{{ product.name|truncatechars:65 }}</a></h5>
-
                                 </div>
-
                                 <!-- Price & Ratting -->
                                 <div class="price-ratting">
-
                                     <h5 class="price">от {{ product.min_price }} <i class="fas fa-ruble-sign"></i></h5>
-
                                 </div>
-
                             </div>
-
                         </div><!-- Product End -->
-
                     </div>
                     {% endfor %}
                 </div><!-- Shop Product Wrap End -->

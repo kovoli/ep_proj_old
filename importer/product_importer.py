@@ -8,9 +8,13 @@ import xml.etree.ElementTree as ET
 
 from shop.models import Product, Category
 
+# For images
 from django.core.files.base import ContentFile
 from io import BytesIO
 from urllib.request import urlopen
+
+import re
+
 
 tree = ET.parse('1133722.xml')
 root = tree.getroot()
@@ -27,23 +31,36 @@ categories = root.findall('.//category')
 
 cat_db = Category.objects.values('id', 'name')
 
-def find_cat_name_by_id_xml_vendor(id_cat):
-    id_cat_name = root.find(".//category[@id='{}']".format(id_cat))
-    return id_cat_name.text
-# Получаю насвание категории
+
+# Helper Functions
+def description_beautify(text):
+    regex = r"(?<!\w\.\w.)(?<![A-Z][a-z]\.)(?<=\.|\?|\:)\s"
+    subst = "</br>"
+    return re.sub(regex, subst, text, 0, re.MULTILINE)
+
+
+def parameter_beatify():  # TODO: Доделать функцию характеристики
+    pass
 
 
 def def_category(category_id):
-    for i in cat_db:
-        if i['name'] == category_id:
+    id_cat_name = root.find(".//category[@id='{}']".format(category_id))
+    print(id_cat_name.text)
+    id_cat_name = id_cat_name.text
+    for i in Category.objects.values('id', 'name'):
+        if i['name'] == id_cat_name:
             return i['id']
+
+
+
+
 
 print(len(root.find('.//offers')))
 
 for offer in root.findall('.//offer'):
     try:
         name = offer.find('name').text
-        description = offer.find('description').text
+        description = description_beautify(offer.find('description').text)
         param = offer.findall('param')
         characteristic = []
         for par in param:
@@ -51,10 +68,7 @@ for offer in root.findall('.//offer'):
         characteristic = ''.join(characteristic)
         barcode = offer.find('barcode').text
         vendorCode = offer.find('vendorCode').text
-
-        categoriya = offer.find('categoryId').text
-        cat2 = find_cat_name_by_id_xml_vendor(categoriya)
-        category_id = def_category(cat2)
+        category_id = def_category(offer.find('categoryId').text)
         vendor = offer.find('vendor').text
         original_picture = offer.find('picture').text
         input_file = BytesIO(urlopen(original_picture, ).read())

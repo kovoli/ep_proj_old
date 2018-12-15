@@ -105,7 +105,7 @@ class Product(models.Model):
                                         format='JPEG',
                                         options={'quality': 90})
     product_image_category = ImageSpecField(source='product_image',
-                                            processors=[ResizeToFit(None, 255)],
+                                            processors=[ResizeToFit(None, 239)],
                                             format='JPEG',
                                             options={'quality': 90})
 
