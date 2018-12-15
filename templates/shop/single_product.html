@@ -19,7 +19,7 @@
             <div class="col-lg-4 col-12">
 
                 <!-- Image -->
-                <figure class="figure-img ">
+                <figure class="figure-img d-flex mx-auto align-items-center justify-content-center">
                     <img itemprop="image" class="d-block img-fluid" src="{{ product.product_image.url }}" alt="{{ product.name }}">
                 </figure>
 
@@ -96,7 +96,7 @@
 
                         <div class="row">
                             <div class="single-product-specification">
-                                {{ product.description|safe|linebreaks }}
+                                {{ product.characteristic|safe }}
                             </div>
                         </div>
                     </div>

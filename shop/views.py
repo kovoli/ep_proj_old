@@ -62,7 +62,7 @@ def category_catalog(request, slug):
         list_pro = Product.objects.filter(category__in=Category.objects.get(id=category.id)\
                                                .get_descendants(include_self=True)) \
                                                .annotate(min_price=Min('prices__price'))
-        products_list = helpers.pg_records(request, list_pro, 2)
+        products_list = helpers.pg_records(request, list_pro, 12)
         category = get_object_or_404(Category, slug=slug)
         cat = category.get_descendants(include_self=True).order_by('tree_id', 'id', 'name')
 

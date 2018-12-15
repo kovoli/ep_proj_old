@@ -7109,7 +7109,8 @@ img.mfp-img {
       display: -ms-flexbox;
       display: flex;
       -ms-flex-wrap: wrap;
-      flex-wrap: wrap; }
+      flex-wrap: wrap;
+      height: 105px }
       .ee-product .content .category-title .cat {
         display: inline-block;
         line-height: 15px;
@@ -13047,8 +13048,11 @@ span.negativ_icon {
 .positiv_div {
     margin-left: 1.3rem;
 }
-.image_category {
-  height: 255px;
+.image.d-flex.mx-auto.align-items-center.justify-content-center {
+    height: 255px;
+}
+figure.figure-img.d-flex.mx-auto.align-items-center.justify-content-center {
+    height: 350px;
 }
 .single-image-sem {
     height: 160px;
