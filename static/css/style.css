@@ -13057,3 +13057,6 @@ figure.figure-img.d-flex.mx-auto.align-items-center.justify-content-center {
 .single-image-sem {
     height: 160px;
 }
+.pro_tabl td {
+    width: 50%;
+}

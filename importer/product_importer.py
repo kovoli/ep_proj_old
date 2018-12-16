@@ -21,13 +21,6 @@ root = tree.getroot()
 
 categories = root.findall('.//category')
 
-#for i in categories:
-    #print(i.attrib['id'])
-
-
-# По ID находит название категории
-#a = root.find(".//category[@id='1177087']")
-#print(a.text)
 
 cat_db = Category.objects.values('id', 'name')
 
@@ -39,33 +32,37 @@ def description_beautify(text):
     return re.sub(regex, subst, text, 0, re.MULTILINE)
 
 
-def parameter_beatify():  # TODO: Доделать функцию характеристики
-    pass
+def parameter_beatify(param):
+    charact = []
+    for par in param:
+        if 'unit' in par.attrib:
+            charact.append('<tr><td>' + par.attrib['name'] + ':' + '</td><td>' + par.text + ' ' + par.attrib['unit'] + '</td></tr>')
+        else:
+            charact.append('<tr><td>' + par.attrib['name'] + ':' + '</td><td>' + par.text + '</td></tr>')
+    return ''.join(charact)
 
 
 def def_category(category_id):
-    id_cat_name = root.find(".//category[@id='{}']".format(category_id))
+    id_cat_name = root.find(".//category[@id='{}']".format(category_id))  # Нахожу катеорию через id в загруженном xml
     print(id_cat_name.text)
     id_cat_name = id_cat_name.text
-    for i in Category.objects.values('id', 'name'):
+    for i in Category.objects.values('id', 'name'):  # Извлекаю из базы данных все категории и ищу соответствующую категорию
         if i['name'] == id_cat_name:
             return i['id']
 
-
+# TODO Зделать добавление и проверку Вендора
+# TODO Проверку на наличие поста
+# TODO Проверку на наличее содержания поля
 
 
 
 print(len(root.find('.//offers')))
 
-for offer in root.findall('.//offer'):
+for offer in root.findall('.//offer')[10:]:
     try:
         name = offer.find('name').text
         description = description_beautify(offer.find('description').text)
-        param = offer.findall('param')
-        characteristic = []
-        for par in param:
-            characteristic.append('<li>' + par.attrib['name'] + ': ' + par.text + '</li>')
-        characteristic = ''.join(characteristic)
+        characteristic = parameter_beatify(offer.findall('param'))
         barcode = offer.find('barcode').text
         vendorCode = offer.find('vendorCode').text
         category_id = def_category(offer.find('categoryId').text)
@@ -86,4 +83,3 @@ for offer in root.findall('.//offer'):
 
 
 print(cat_db)
-print(find_cat_name_by_id_xml_vendor('1181156'))
