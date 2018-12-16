@@ -25,6 +25,14 @@ categories = root.findall('.//category')
 cat_db = Category.objects.values('id', 'name')
 
 
+def check_field_not_none(field):
+    if field is not None:
+        return field
+    else:
+        return None
+
+
+
 # Helper Functions
 def description_beautify(text):
     regex = r"(?<!\w\.\w.)(?<![A-Z][a-z]\.)(?<=\.|\?|\:)\s"
@@ -44,42 +52,54 @@ def parameter_beatify(param):
 
 def def_category(category_id):
     id_cat_name = root.find(".//category[@id='{}']".format(category_id))  # Нахожу катеорию через id в загруженном xml
-    print(id_cat_name.text)
     id_cat_name = id_cat_name.text
     for i in Category.objects.values('id', 'name'):  # Извлекаю из базы данных все категории и ищу соответствующую категорию
         if i['name'] == id_cat_name:
             return i['id']
 
+def check_or_create_vendore():
+    pass
+
 # TODO Зделать добавление и проверку Вендора
 # TODO Проверку на наличие поста
-# TODO Проверку на наличее содержания поля
+# TODO Впараметрах бывают видеообзоры; при наличие добавить в поле video
 
 
 
-print(len(root.find('.//offers')))
-
-for offer in root.findall('.//offer')[10:]:
+print(len(root.find('offers')))
+succers_writes = 0
+errors = []
+for off in root.findall('.//offer'):
+    product_data = {'name': None, 'description': None,
+                    'param': None, 'vendorCode': None,
+                    'barcode': None, 'categoryId': None,
+                    }
     try:
-        name = offer.find('name').text
-        description = description_beautify(offer.find('description').text)
-        characteristic = parameter_beatify(offer.findall('param'))
-        barcode = offer.find('barcode').text
-        vendorCode = offer.find('vendorCode').text
-        category_id = def_category(offer.find('categoryId').text)
-        vendor = offer.find('vendor').text
-        original_picture = offer.find('picture').text
-        input_file = BytesIO(urlopen(original_picture, ).read())
+        for data in product_data.keys():
+            if off.find(data) is None:
+                continue
+            if data == 'description':
+                product_data[data] = description_beautify(off.find(data).text)
+            elif data == 'param':
+                product_data[data] = parameter_beatify(off.findall(data))
+            elif data == 'categoryId':
+                del product_data['categoryId']
+                product_data['category_id'] = def_category(off.find(data).text)
+            else:
+                product_data[data] = off.find(data).text
 
-        product = Product.objects.create(name=name, description=description, characteristic=characteristic,
-                                         barcode=barcode, vendorCode=vendorCode, category_id=category_id,
-                                         )
-        product.product_image.save(name + '.jpg', ContentFile(input_file.getvalue()), save=False)
+
+        #original_picture = check_field_not_none(off.find('picture').text)
+        #input_file = BytesIO(urlopen(original_picture, ).read())
+
+        product = Product.objects.create(**product_data)
+        #product.product_image.save(name + '.jpg', ContentFile(input_file.getvalue()), save=False)
         product.save()
         print('Succes')
+        succers_writes += 1
     except Exception as error:
+        errors.append(error)
         print(error)
 
-
-
-
-print(cat_db)
+print(succers_writes)
+print(errors)

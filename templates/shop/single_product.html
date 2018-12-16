@@ -20,7 +20,7 @@
 
                 <!-- Image -->
                 <figure class="figure-img d-flex mx-auto align-items-center justify-content-center">
-                    <img itemprop="image" class="d-block img-fluid" src="{{ product.product_image.url }}" alt="{{ product.name }}">
+                    <img itemprop="image" class="d-block img-fluid" src="{% if product.product_image %}{{ product.product_image.url }}{% endif %}" alt="{{ product.name }}">
                 </figure>
 
             </div>
@@ -98,7 +98,7 @@
                             <div class="table-responsive my-3 mx-4 ">
                                 <table class="table table-bordered table-sm table-hover pro_tabl mb-0">
                                     <tbody>
-                                        {{ product.characteristic|safe }}
+                                        {{ product.param|safe }}
                                     </tbody>
                                 </table>
                             </div>

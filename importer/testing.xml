@@ -1,0 +1,34 @@
+<offers>
+    <offer id="31357921" available="true" group_id="135177336">
+        <url>https://www.ozon.ru/context/detail/id/31357921/?utm_content=partner_xml</url>
+        <price>3969</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>1177066</categoryId>
+        <picture>https://mmedia.ozone.ru/multimedia/1011802824.jpg</picture>
+        <store>false</store>
+        <pickup>true</pickup>
+        <delivery>true</delivery>
+        <local_delivery_cost>0</local_delivery_cost>
+        <name>Element El'Kettle WF05MBM, Black электрический чайник</name>
+        <vendor>Element</vendor>
+        <vendorCode>WF05MBM</vendorCode>
+        <description>Особая отделка корпуса создает неповторимый характер данной модели. Другая сторона дизайна этого чайника – его функциональность. Фирменное покрытие CLEAN TOUCH защищает поверхность от следов и отпечатков пальцев. Кипячение сопровождается мягкой белой подсветкой. Бескомпромиссная надежность и долговечность обеспечивается прочным корпусом из нержавеющей стали и комплектующими от проверенных производителей.</description>
+        <sales_notes>Бесплатная доставка при заказе от 3500 рублей.</sales_notes>
+        <manufacturer_warranty>false</manufacturer_warranty>
+        <country_of_origin>США</country_of_origin>
+        <weight>1.820</weight>
+        <dimensions>19.000/19.000/28.000</dimensions>
+        <param name="Вес" unit="г">1820</param>
+        <param name="Ширина упаковки" unit="мм">190</param>
+        <param name="Высота упаковки" unit="мм">280</param>
+        <param name="Глубина упаковки" unit="мм">190</param>
+        <param name="Цвет">черный</param>
+        <param name="Тип">Электрический чайник</param>
+        <param name="Мощность" unit="Вт">2400</param>
+        <param name="Объем" unit="л">1.7</param>
+        <param name="Тип нагревательного элемента">Дисковый нагреватель</param>
+        <param name="Материал">Пластик,Стекло</param>
+        <param name="Особенности">Индикатор уровня воды,Подсветка емкости,Светоиндикатор работы</param>
+        <param name="Безопасность">Блокировка включения без воды,Автовыключение</param>
+      </offer>
+</offers>
