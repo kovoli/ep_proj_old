@@ -84,15 +84,20 @@
                     <h4 class="title">Категории</h4>
                     {% recursetree cat %}
                     <ul class="sidebar-category">
+                        {% if node.is_leaf_node %}
+                            <li class="active btn-yellow"><a href="{{ node.get_absolute_url }}">{{ node.name }}</a></li>
+                            {% for j in node.get_siblings %}
+                                <li><a href="{{ j.get_absolute_url }}" >{{ j.name }}</a></li>
+                            {% endfor %}
+                        {% else %}
                         <li class="has-children"><a href="#">{{ node.name }}</a>
-
                             <ul class="children">
                                 {% for i in node.get_children %}
                                     <li><a href="{{ i.get_absolute_url }}" >{{ i.name }}</a></li>
                                 {% endfor %}
                             </ul>
-
                         </li>
+                    {% endif %}
                     </ul>
                     {% endrecursetree %}
                 </div>
@@ -103,11 +108,7 @@
 
                     <ul class="sidebar-brand">
                         <li><a href="#">Apple</a></li>
-                        <li><a href="#">Sumsang</a></li>
-                        <li><a href="#">Phillips</a></li>
-                        <li><a href="#">Zeon</a></li>
-                        <li><a href="#">Panasonic</a></li>
-                        <li><a href="#">Uawei</a></li>
+
                     </ul>
 
                 </div>

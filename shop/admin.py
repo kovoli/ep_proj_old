@@ -5,8 +5,9 @@ from .models import Product, Category, Price, Shop, Vendor, Comment
 
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
-    list_display = ['name', 'category', 'vendor']
+    list_display = ['name', 'category', 'vendor',]
     readonly_fields = ['slug']
+    list_filter = ('category', )
 
 
 @admin.register(Comment)
@@ -29,6 +30,7 @@ class ProductAdmin(admin.ModelAdmin):
 class CategoryAdmin(MPTTModelAdmin):
     mptt_level_indent = 20
     readonly_fields = ('slug',)
+
 
 
 @admin.register(Vendor)
