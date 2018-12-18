@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect, HttpResponse
-from .models import Product, Category
+from .models import Product, Category, Vendor
 from .forms import CommentForm
 from django.db.models import Min
 from . import helpers
@@ -62,12 +62,16 @@ def category_catalog(request, slug):
         list_pro = Product.objects.filter(category__in=Category.objects.get(id=category.id)\
                                                .get_descendants(include_self=True)) \
                                                .annotate(min_price=Min('prices__price'))
+        vendors_ids = list_pro.values_list('vendor_id', flat=True).order_by().distinct()
+        vendors = Vendor.objects.filter(id__in=vendors_ids)
+        print(vendors)
         products_list = helpers.pg_records(request, list_pro, 12)
         category = get_object_or_404(Category, slug=slug)
         cat = category.get_descendants(include_self=True).order_by('tree_id', 'id', 'name')
 
         return render(request, 'shop/category_product_list.html', {'products_list': products_list,
                                                                    'category': category,
+                                                                   'vendors': vendors,
                                                                    'cat': cat,
                                                                    'menu': menu(request),
                                                                    'breadcrumbs': breadcrumbs})

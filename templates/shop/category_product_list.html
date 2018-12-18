@@ -107,7 +107,9 @@
                     <h4 class="title">Brand</h4>
 
                     <ul class="sidebar-brand">
-                        <li><a href="#">Apple</a></li>
+                        {% for vendor in vendors %}
+                            <li><a href="#">{{ vendor.name }}</a></li>
+                        {% endfor %}
 
                     </ul>
 
