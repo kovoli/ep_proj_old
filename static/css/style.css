@@ -2522,13 +2522,13 @@ img.mfp-img {
     padding: 0 8px;
     position: relative; }
     .breadcrumb ul li::before {
-      position: absolute;
-      right: -2px;
-      top: 50%;
-      content: '>';
-      width: 4px;
-      height: 1px;
-      background-color: #444444; }
+    position: absolute;
+    right: -5px;
+    content: ">";
+    height: 1px;
+    line-height: 17px;
+    /* background-color: #444444; */
+} }
     .breadcrumb ul li:last-child::before {
       display: none; }
     .breadcrumb ul li a {

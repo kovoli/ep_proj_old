@@ -6,7 +6,7 @@ django.setup()
 import xml.etree.ElementTree as ET
 
 
-from shop.models import Product, Category
+from shop.models import Product, Category, Vendor
 
 # For images
 from django.core.files.base import ContentFile
@@ -57,10 +57,19 @@ def def_category(category_id):
         if i['name'] == id_cat_name:
             return i['id']
 
-def check_or_create_vendore():
-    pass
+def vendor_get_or_create(vendor):
+    change_vendor_name = {'Bosch GmbH':  'Bosch'}
+    if vendor in change_vendor_name:
+        vendor = change_vendor_name[vendor]
+    elif vendor == None:
+        return None
+    try:
+        return Vendor.objects.get(name=vendor)
+    except Vendor.DoesNotExist:
+        obj = Vendor(name=vendor)
+        return obj.save()
 
-# TODO Зделать добавление и проверку Вендора
+# TODO Проверить работу с товароми без вендора добавление и проверку Вендора
 # TODO Проверку на наличие поста
 # TODO Впараметрах бывают видеообзоры; при наличие добавить в поле video
 
@@ -88,11 +97,13 @@ for off in root.findall('.//offer'):
             else:
                 product_data[data] = off.find(data).text
 
+        vendor = vendor_get_or_create(off.find('vendor').text)
 
         #original_picture = check_field_not_none(off.find('picture').text)
         #input_file = BytesIO(urlopen(original_picture, ).read())
 
         product = Product.objects.create(**product_data)
+        product.vendor = vendor
         #product.product_image.save(name + '.jpg', ContentFile(input_file.getvalue()), save=False)
         product.save()
         print('Succes')

@@ -65,7 +65,7 @@ def category_catalog(request, slug):
 
         vendors_ids = list_pro.values_list('vendor_id', flat=True).order_by().distinct()
         vendors = Vendor.objects.filter(id__in=vendors_ids)
-        print(vendors)
+        #print(vendors)
         products_list = helpers.pg_records(request, list_pro, 12)
         category = get_object_or_404(Category, slug=slug)
         cat = category.get_descendants(include_self=True).order_by('tree_id', 'id', 'name')
