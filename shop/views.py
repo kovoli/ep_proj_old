@@ -62,6 +62,7 @@ def category_catalog(request, slug):
         list_pro = Product.objects.filter(category__in=Category.objects.get(id=category.id)\
                                                .get_descendants(include_self=True)) \
                                                .annotate(min_price=Min('prices__price'))
+
         vendors_ids = list_pro.values_list('vendor_id', flat=True).order_by().distinct()
         vendors = Vendor.objects.filter(id__in=vendors_ids)
         print(vendors)

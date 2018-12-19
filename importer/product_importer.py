@@ -16,7 +16,7 @@ from urllib.request import urlopen
 import re
 
 
-tree = ET.parse('1133722.xml')
+tree = ET.parse('10500.xml')
 root = tree.getroot()
 
 categories = root.findall('.//category')
@@ -66,7 +66,7 @@ def check_or_create_vendore():
 
 
 
-print(len(root.find('offers')))
+#print(len(root.find('offers')))
 succers_writes = 0
 errors = []
 for off in root.findall('.//offer'):

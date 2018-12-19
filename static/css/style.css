@@ -2525,7 +2525,7 @@ img.mfp-img {
       position: absolute;
       right: -2px;
       top: 50%;
-      content: "";
+      content: '>';
       width: 4px;
       height: 1px;
       background-color: #444444; }
