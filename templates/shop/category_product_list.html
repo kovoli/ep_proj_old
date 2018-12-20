@@ -86,21 +86,20 @@
             </div>
 
             <div class="shop-sidebar-wrap col-xl-3 col-lg-4 col-12 order-lg-1 mb-15">
+                <!-- CATEGORIES -->
 
                 <div class="shop-sidebar mb-35">
-
                     <h4 class="title">Категории</h4>
                     {% recursetree cat %}
                     <ul class="sidebar-category">
-                        {% if node.is_leaf_node and node.get_level >= 3 %}
-                                <li class="active btn-yellow"><a href="{{ node.get_absolute_url }}">{{ node.name}}</a></li>
-                                {% for j in node.get_siblings %}
-                                    <li><a href="{{ j.get_absolute_url }}" >{{ j.name }}</a></li>
-                                {% endfor %}
+                        {% if node.is_leaf_node %}
+                            {% with request.resolver_match.url_name as url_name %}
+                            {% for j in last_node %}
+                                    <li class="{% if url_name == 'category_catalog' %}active btn-yellow{% endif %}"><a href="{{ j.get_absolute_url }}" >{{ j.name }}</a></li>
+                            {% endfor %}
+                            {% endwith %}
                             {% else %}
-
                                     <ul class="">
-
                                         {% for i in node.get_children %}
                                             <li><a href="{{ i.get_absolute_url }}" >{{ i.name }}</a></li>
                                         {% endfor %}
@@ -110,11 +109,14 @@
                     </ul>
                     {% endrecursetree %}
                 </div>
+                <!-- END CATEGORIES -->
 
+
+                <!-- Brands -->
                 {% if vendors.count >= 10 and vendors%}
                 <div class="shop-sidebar mb-35" >
 
-                    <h4 class="title" data-spy="scroll" data-target="#navbar-example">Brand</h4>
+                    <h4 class="title" data-spy="scroll" data-target="#navbar-example">Бренды</h4>
                     <input class="form-control" type="text" id="findbrand" onkeyup="myFunction()" placeholder="Поиск бренда" title="Type in a name">
                     <ul id="findbrandul" class="sidebar-brand position-relative"  id="navbar-example" style="height: 450px; overflow-y: scroll;">
                         {% for vendor in vendors %}
@@ -142,7 +144,7 @@
                 </script>
                 {% elif vendors %}
                 <div class="shop-sidebar mb-35" >
-                    <h4 class="title">Brand</h4>
+                    <h4 class="title">Бренды</h4>
 
                     <ul class="sidebar-brand">
                         {% for vendor in vendors %}
@@ -152,7 +154,7 @@
                     </ul>
                 </div>
                 {% endif %}
-
+                <!-- END BRANDS -->
 
                 <div class="shop-sidebar mb-35">
 
@@ -207,3 +209,11 @@
 </div>
 
 {% endblock content %}
+
+{% comment %}
+<li class="active btn-yellow"><a href="{{ node.get_absolute_url }}">{{ node.name}}</a></li>
+{% for j in node.get_siblings %}
+
+                                    <li><a href="{{ j.get_absolute_url }}" >{{ j.name }}</a></li>
+                                {% endfor %}
+{% endcomment %}

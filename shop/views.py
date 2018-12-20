@@ -69,11 +69,12 @@ def category_catalog(request, slug):
         products_list = helpers.pg_records(request, list_pro, 12)
         category = get_object_or_404(Category, slug=slug)
         cat = category.get_descendants(include_self=True).order_by('tree_id', 'id', 'name')
-
+        last_node = category.get_siblings(include_self=True)
         return render(request, 'shop/category_product_list.html', {'products_list': products_list,
                                                                    'category': category,
                                                                    'vendors': vendors,
                                                                    'cat': cat,
+                                                                   'last_node': last_node,
                                                                    'menu': menu(request),
                                                                    'breadcrumbs': breadcrumbs})
 
