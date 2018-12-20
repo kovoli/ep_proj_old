@@ -111,8 +111,37 @@
                     {% endrecursetree %}
                 </div>
 
-                <div class="shop-sidebar mb-35">
+                {% if vendors.count >= 10 and vendors%}
+                <div class="shop-sidebar mb-35" >
 
+                    <h4 class="title" data-spy="scroll" data-target="#navbar-example">Brand</h4>
+                    <input class="form-control" type="text" id="findbrand" onkeyup="myFunction()" placeholder="Поиск бренда" title="Type in a name">
+                    <ul id="findbrandul" class="sidebar-brand position-relative"  id="navbar-example" style="height: 450px; overflow-y: scroll;">
+                        {% for vendor in vendors %}
+                            <li><a href="#">{{ vendor.name }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <script>
+                function myFunction() {
+                    var input, filter, ul, li, a, i, txtValue;
+                    input = document.getElementById("findbrand");
+                    filter = input.value.toUpperCase();
+                    ul = document.getElementById("findbrandul");
+                    li = ul.getElementsByTagName("li");
+                    for (i = 0; i < li.length; i++) {
+                        a = li[i].getElementsByTagName("a")[0];
+                        txtValue = a.textContent || a.innerText;
+                        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                            li[i].style.display = "";
+                        } else {
+                            li[i].style.display = "none";
+                        }
+                    }
+                }
+                </script>
+                {% elif vendors %}
+                <div class="shop-sidebar mb-35" >
                     <h4 class="title">Brand</h4>
 
                     <ul class="sidebar-brand">
@@ -121,8 +150,9 @@
                         {% endfor %}
 
                     </ul>
-
                 </div>
+                {% endif %}
+
 
                 <div class="shop-sidebar mb-35">
 
@@ -177,8 +207,3 @@
 </div>
 
 {% endblock content %}
-{% comment %}
-
-
-
-{% endcomment %}
