@@ -45,7 +45,9 @@ INSTALLED_APPS = [
     'mptt',
     'ckeditor',
     'imagekit',
-    'captcha'
+    'captcha',
+    'django_filters',
+
 ]
 
 MIDDLEWARE = [

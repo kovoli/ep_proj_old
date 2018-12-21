@@ -1,8 +1,9 @@
 from django.shortcuts import render, get_object_or_404, redirect, HttpResponse
 from .models import Product, Category, Vendor
-from .forms import CommentForm
+from .forms import CommentForm, BrandForms
 from django.db.models import Min
 from . import helpers
+from .filters import BrandFilter
 
 def menu(request):
     categories_home = Category.objects.all()
@@ -46,7 +47,7 @@ def product_detail(request, slug):
                                                         'menu': menu(request)})
 
 
-def category_catalog(request, slug):
+def category_catalog(request, slug=None):
     category = get_object_or_404(Category, slug=slug)
     breadcrumbs = Category.get_ancestors(category, include_self=True)
     # cat = Product.objects.filter(category__in=Category.objects.get(id=category.id).get_descendants())
@@ -58,23 +59,47 @@ def category_catalog(request, slug):
                                                               'cat': cat,
                                                               'menu': menu(request),
                                                               'breadcrumbs': breadcrumbs})
+
+    filter_brand = BrandForms(request.GET)
     if category.get_level() >= 2:
         list_pro = Product.objects.filter(category__in=Category.objects.get(id=category.id)\
                                                .get_descendants(include_self=True)) \
                                                .annotate(min_price=Min('prices__price'))
 
+
         vendors_ids = list_pro.values_list('vendor_id', flat=True).order_by().distinct()
         vendors = Vendor.objects.filter(id__in=vendors_ids)
-        #print(vendors)
+        filter_brand.fields['brand'].queryset = Vendor.objects.filter(id__in=vendors_ids)
+
+        if filter_brand.is_valid():
+            if filter_brand.cleaned_data['brand']:
+                print(filter_brand.cleaned_data['brand'])
+                list_pro = Product.objects.filter(category__in=Category.objects.get(id=category.id)\
+                                                   .get_descendants(include_self=True)) \
+                                                   .annotate(min_price=Min('prices__price'))\
+                                                   .filter(vendor_id__in=filter_brand.cleaned_data['brand'])
+                print(list_pro)
+        print(filter_brand.data)
+        print(vendors)
         products_list = helpers.pg_records(request, list_pro, 12)
         category = get_object_or_404(Category, slug=slug)
         cat = category.get_descendants(include_self=True).order_by('tree_id', 'id', 'name')
         last_node = category.get_siblings(include_self=True)
+
+
+
+
+
+
+
         return render(request, 'shop/category_product_list.html', {'products_list': products_list,
                                                                    'category': category,
                                                                    'vendors': vendors,
                                                                    'cat': cat,
                                                                    'last_node': last_node,
                                                                    'menu': menu(request),
-                                                                   'breadcrumbs': breadcrumbs})
+                                                                   'breadcrumbs': breadcrumbs,
+                                                                   'filter_brand': filter_brand,
+                                                                   })
+
 

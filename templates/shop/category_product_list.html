@@ -93,9 +93,9 @@
                     {% recursetree cat %}
                     <ul class="sidebar-category">
                         {% if node.is_leaf_node %}
-                            {% with request.resolver_match.url_name as url_name %}
+                            {% with request.get_full_path as url_name %}
                             {% for j in last_node %}
-                                    <li class="{% if url_name == 'category_catalog' %}active btn-yellow{% endif %}"><a href="{{ j.get_absolute_url }}" >{{ j.name }}</a></li>
+                                    <li class="{% if url_name == '/catalog/'|add:j.slug|add:'/' %}active btn-yellow{% endif %}"><a href="{{ j.get_absolute_url }}" >{{ j.name }}</a></li>
                             {% endfor %}
                             {% endwith %}
                             {% else %}
@@ -110,8 +110,17 @@
                     {% endrecursetree %}
                 </div>
                 <!-- END CATEGORIES -->
-
-
+            <div class="shop-sidebar mb-35" >
+                <h4 class="title" data-spy="scroll" data-target="#navbar-example">Бренды</h4>
+                <form action="." method="get">
+                <ul id="findbrandul" class="sidebar-brand position-relative"  id="navbar-example" style="height: 450px; overflow-y: scroll;">
+                    {% for value in filter_brand %}
+                        <li>{{ value }}</li>
+                    {% endfor %}
+                    <button type="submit" class="button">Add</button>
+                </ul>
+                </form>
+            </div>
                 <!-- Brands -->
                 {% if vendors.count >= 10 and vendors%}
                 <div class="shop-sidebar mb-35" >

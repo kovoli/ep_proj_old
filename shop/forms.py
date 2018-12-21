@@ -1,6 +1,7 @@
 from .models import Comment
 from django import forms
 from captcha.fields import ReCaptchaField
+from .models import Vendor
 
 
 class CommentForm(forms.ModelForm):
@@ -30,3 +31,8 @@ class CommentForm(forms.ModelForm):
             'positiv': 'Достоинства',
             'negativ': 'Недостатки',
         }
+
+
+class BrandForms(forms.Form):
+    brand = forms.ModelMultipleChoiceField(queryset=Vendor.objects.none(), widget=forms.CheckboxSelectMultiple)
+
