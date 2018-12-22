@@ -34,5 +34,6 @@ class CommentForm(forms.ModelForm):
 
 
 class BrandForms(forms.Form):
-    brand = forms.ModelMultipleChoiceField(queryset=Vendor.objects.none(), widget=forms.CheckboxSelectMultiple)
+    brand = forms.ModelMultipleChoiceField(queryset=Vendor.objects.none(), widget=forms.CheckboxSelectMultiple())
+
 

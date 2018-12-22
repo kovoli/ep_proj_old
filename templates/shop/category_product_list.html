@@ -110,30 +110,25 @@
                     {% endrecursetree %}
                 </div>
                 <!-- END CATEGORIES -->
+            {% if vendors.count >= 10 and vendors%}
             <div class="shop-sidebar mb-35" >
                 <h4 class="title" data-spy="scroll" data-target="#navbar-example">Бренды</h4>
                 <form action="." method="get">
-                <ul id="findbrandul" class="sidebar-brand position-relative"  id="navbar-example" style="height: 450px; overflow-y: scroll;">
+                    <div class="input-group">
+                      <input id="findbrand" type="text" onkeyup="myFunction()" class="form-control" placeholder="Поиск бренда" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                      <div class="input-group-append">
+                        <button class="px-3" type="submit"><i class="fas fa-search"></i></button>
+                      </div>
+                    </div>
+                    <ul id="findbrandul" class="sidebar-brand position-relative"  id="navbar-example" style="height: 450px; overflow-y: scroll;">
                     {% for value in filter_brand %}
-                        <li>{{ value }}</li>
+                        <li><a>{{ value }}</a></li>
                     {% endfor %}
-                    <button type="submit" class="button">Add</button>
+
                 </ul>
                 </form>
             </div>
-                <!-- Brands -->
-                {% if vendors.count >= 10 and vendors%}
-                <div class="shop-sidebar mb-35" >
-
-                    <h4 class="title" data-spy="scroll" data-target="#navbar-example">Бренды</h4>
-                    <input class="form-control" type="text" id="findbrand" onkeyup="myFunction()" placeholder="Поиск бренда" title="Type in a name">
-                    <ul id="findbrandul" class="sidebar-brand position-relative"  id="navbar-example" style="height: 450px; overflow-y: scroll;">
-                        {% for vendor in vendors %}
-                            <li><a href="#">{{ vendor.name }}</a></li>
-                        {% endfor %}
-                    </ul>
-                </div>
-                <script>
+             <script>
                 function myFunction() {
                     var input, filter, ul, li, a, i, txtValue;
                     input = document.getElementById("findbrand");
@@ -150,19 +145,26 @@
                         }
                     }
                 }
-                </script>
-                {% elif vendors %}
-                <div class="shop-sidebar mb-35" >
-                    <h4 class="title">Бренды</h4>
+            </script>
+            {% elif vendors %}
+            <div class="shop-sidebar mb-35" >
+                <h4 class="title" data-spy="scroll" data-target="#navbar-example">Бренды</h4>
+                <form action="." method="get">
+                    <ul id="findbrandul" class="sidebar-brand position-relative"  id="navbar-example">
+                    {% for value in filter_brand %}
+                        <li>
+                            <a>{{ value }}</a>
+                            <button class="px-3 float-right" type="submit"><i class="fas fa-search"></i></button>
+                        </li>
+                    {% endfor %}
 
-                    <ul class="sidebar-brand">
-                        {% for vendor in vendors %}
-                            <li><a href="#">{{ vendor.name }}</a></li>
-                        {% endfor %}
+                </ul>
 
-                    </ul>
-                </div>
-                {% endif %}
+                </form>
+            </div>
+            {% endif %}
+                <!-- Brands -->
+
                 <!-- END BRANDS -->
 
                 <div class="shop-sidebar mb-35">

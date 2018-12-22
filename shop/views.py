@@ -70,18 +70,22 @@ def category_catalog(request, slug=None):
         vendors_ids = list_pro.values_list('vendor_id', flat=True).order_by().distinct()
         vendors = Vendor.objects.filter(id__in=vendors_ids)
         filter_brand.fields['brand'].queryset = Vendor.objects.filter(id__in=vendors_ids)
-
+        print(filter_brand)
+        products_list = helpers.pg_records(request, list_pro, 12)
         if filter_brand.is_valid():
             if filter_brand.cleaned_data['brand']:
                 print(filter_brand.cleaned_data['brand'])
+
                 list_pro = Product.objects.filter(category__in=Category.objects.get(id=category.id)\
                                                    .get_descendants(include_self=True)) \
                                                    .annotate(min_price=Min('prices__price'))\
-                                                   .filter(vendor_id__in=filter_brand.cleaned_data['brand'])
-                print(list_pro)
-        print(filter_brand.data)
-        print(vendors)
-        products_list = helpers.pg_records(request, list_pro, 12)
+                                                   .filter(vendor__in=filter_brand.cleaned_data['brand'])
+                products_list = helpers.pg_records(request, list_pro, 12)
+                print('request', filter_brand.cleaned_data['brand'])
+
+
+
+
         category = get_object_or_404(Category, slug=slug)
         cat = category.get_descendants(include_self=True).order_by('tree_id', 'id', 'name')
         last_node = category.get_siblings(include_self=True)
