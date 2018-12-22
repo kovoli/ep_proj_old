@@ -9066,21 +9066,22 @@ img.mfp-img {
 
 /*-- Sidebar Brand --*/
 .sidebar-brand li {
-  padding: 6px 25px;
+  padding: 6px 10px;
   border-bottom: 1px solid #dddddd; }
   .sidebar-brand li:last-child {
     border-bottom: 0px; }
-  .sidebar-brand li a {
+  .sidebar-brand li label{
     font-size: 14px;
     color: #444444;
     text-transform: uppercase;
     line-height: 30px;
-    position: relative; }
-    .sidebar-brand li a:hover {
+    position: relative;
+    margin-bottom: 0}
+    .sidebar-brand li :hover {
       color: #202020; }
-      .sidebar-brand li a:hover::before {
+      .sidebar-brand li :hover::before {
         color: #202020; }
-    .sidebar-brand li a::before {
+    .sidebar-brand li::before {
       position: absolute;
       left: 0;
       top: 0;

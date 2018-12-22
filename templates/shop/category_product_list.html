@@ -110,62 +110,54 @@
                     {% endrecursetree %}
                 </div>
                 <!-- END CATEGORIES -->
-            {% if vendors.count >= 10 and vendors%}
-            <div class="shop-sidebar mb-35" >
-                <h4 class="title" data-spy="scroll" data-target="#navbar-example">Бренды</h4>
-                <form action="." method="get">
-                    <div class="input-group">
-                      <input id="findbrand" type="text" onkeyup="myFunction()" class="form-control" placeholder="Поиск бренда" aria-label="Recipient's username" aria-describedby="basic-addon2">
-                      <div class="input-group-append">
-                        <button class="px-3" type="submit"><i class="fas fa-search"></i></button>
-                      </div>
-                    </div>
-                    <ul id="findbrandul" class="sidebar-brand position-relative"  id="navbar-example" style="height: 450px; overflow-y: scroll;">
-                    {% for value in filter_brand %}
-                        <li><a>{{ value }}</a></li>
-                    {% endfor %}
 
-                </ul>
-                </form>
-            </div>
-             <script>
-                function myFunction() {
-                    var input, filter, ul, li, a, i, txtValue;
-                    input = document.getElementById("findbrand");
-                    filter = input.value.toUpperCase();
-                    ul = document.getElementById("findbrandul");
-                    li = ul.getElementsByTagName("li");
-                    for (i = 0; i < li.length; i++) {
-                        a = li[i].getElementsByTagName("a")[0];
-                        txtValue = a.textContent || a.innerText;
-                        if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                            li[i].style.display = "";
-                        } else {
-                            li[i].style.display = "none";
-                        }
-                    }
-                }
-            </script>
-            {% elif vendors %}
-            <div class="shop-sidebar mb-35" >
-                <h4 class="title" data-spy="scroll" data-target="#navbar-example">Бренды</h4>
-                <form action="." method="get">
-                    <ul id="findbrandul" class="sidebar-brand position-relative"  id="navbar-example">
-                    {% for value in filter_brand %}
-                        <li>
-                            <a>{{ value }}</a>
-                            <button class="px-3 float-right" type="submit"><i class="fas fa-search"></i></button>
-                        </li>
-                    {% endfor %}
 
-                </ul>
 
-                </form>
-            </div>
-            {% endif %}
+
+
                 <!-- Brands -->
 
                 <!-- END BRANDS -->
+{% if vendors.count >= 10 and vendors%}
+<div class="shop-sidebar mb-35">
+    <h4 class="title" data-spy="scroll" data-target="#brand_list">Бренды</h4>
+    <div class="input-group">
+      <input id="brand_list" type="text" onkeyup="myFunction()" class="form-control" placeholder="Поиск бренда" aria-label="Recipient's username" aria-describedby="basic-addon2">
+      <div class="input-group-append">
+        <button class="px-3" type="submit"><i class="fas fa-search"></i></button>
+      </div>
+    </div>
+    <ul class="sidebar-brand position-relative"  id="brand_liste" style="height: 450px; overflow-y: scroll;">
+    <form method="get">
+     {% for field in filter_brand %}
+         {{ field }}
+    {% endfor %}
+    <button type="submit">sdfgsdf</button>
+    </form>
+</div>
+<script>
+    function myFunction() {
+        var input, filter, ul, li, a, i, txtValue;
+        input = document.getElementById("brand_list");
+        filter = input.value.toUpperCase();
+        ul = document.getElementById("brand_liste");
+        li = ul.getElementsByTagName("label");
+        for (i = 0; i < li.length; i++) {
+            a = li[i].getElementsByTagName("label")[0];
+            txtValue = a.innerText || a.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                li[i].style.display = "";
+            } else {
+                li[i].style.display = "none";
+            }
+        }
+    }
+</script>
+{% elif vendors %}
+
+{% endif %}
+
+
 
                 <div class="shop-sidebar mb-35">
 

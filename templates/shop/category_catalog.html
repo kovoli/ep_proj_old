@@ -38,10 +38,10 @@
 
                   <div class="card-header text-center position-absolute w-100 border-0">
                       <a  href="{{ node.get_absolute_url }}">
-                      <h5 class="bold">{{ node.name }}
-
+                      <h5 class="bold">
+                            {{ node.name }}
                       </h5>
-
+                      </a>
                   </div>
                 <img class="card-img-top" src="https://picsum.photos/348/348" alt="Card image cap"></a>
                 {% if not node.get_level == 2 %}
@@ -73,6 +73,5 @@
     </div>
 
 </div><!-- Section End -->
-
 
 {% endblock content %}
