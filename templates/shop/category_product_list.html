@@ -123,7 +123,7 @@
                               </div>
                         </div>
                         <ul class="sidebar-brand position-relative"  id="brand_liste" style="height: 450px; overflow-y: scroll;">
-                             {{ filter_brand.brand }}
+                             {{ filter_brand }}
                         </ul>
                         </form>
                 </div>
@@ -134,7 +134,7 @@
                         <div class="input-group">
                           <input id="brand_list_input" type="text"  class="form-control" placeholder="Поиск бренда" aria-label="Recipient's username" aria-describedby="basic-addon2">
                               <div class="input-group-append">
-                                <button class="px-3" type="submit"><i class="fas fa-search"></i></button>
+                                <button class="px-3" type="submit" onclick="$('form');"><i class="fas fa-search"></i></button>
                               </div>
                         </div>
                         <ul class="sidebar-brand position-relative"  id="brand_liste">
@@ -150,10 +150,11 @@
                 <div class="shop-sidebar mb-35">
 
                     <h4 class="title">Price</h4>
-                    <form method="get" >
-                        {{ filter_price }}
-
-                        <button type="submit">Поиск</button>
+                    <form id="price" method="get" action=".">
+                        <span style="display: none">{{ filter_brand.brand}}</span>
+                        {{ filter_brand.min_price }}
+                        {{ filter_brand.max_price }}
+                        <button type="submit" onclick="$('form');">Поиск</button>
                     </form>
                     <div class="sidebar-price">
 

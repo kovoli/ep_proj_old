@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect, HttpResponse
 from .models import Product, Category, Vendor
-from .forms import CommentForm, BrandForms, PriceForm
+from .forms import CommentForm, BrandForms
 from django.db.models import Min
 from . import helpers
 from .filters import BrandFilter
@@ -61,7 +61,6 @@ def category_catalog(request, slug=None):
                                                               'breadcrumbs': breadcrumbs})
 
     filter_brand = BrandForms(request.GET)
-    filter_price = PriceForm(request.GET)
     if category.get_level() >= 2:
         list_pro = Product.objects.filter(category__in=Category.objects.get(id=category.id)\
                                                .get_descendants(include_self=True)) \
@@ -73,6 +72,8 @@ def category_catalog(request, slug=None):
         filter_brand.fields['brand'].queryset = Vendor.objects.filter(id__in=vendors_ids)
 
         products_list = helpers.pg_records(request, list_pro, 12)
+
+
         if filter_brand.is_valid():
             if filter_brand.cleaned_data['brand']:
                 print(filter_brand.cleaned_data['brand'])
@@ -82,10 +83,10 @@ def category_catalog(request, slug=None):
                                                    .annotate(min_price=Min('prices__price'))\
                                                    .filter(vendor__in=filter_brand.cleaned_data['brand'])
                 products_list = helpers.pg_records(request, list_pro, 12)
-            if filter_price.is_valid():
-                if filter_price.cleaned_data['min_price']:
-                    list_pro = list_pro.filter(prices__price__gte=filter_price.cleaned_data['min_price'])
-                    products_list = helpers.pg_records(request, list_pro, 12)
+        if filter_brand.is_valid():
+            if filter_brand.cleaned_data['min_price']:
+                list_pro = list_pro.filter(prices__price__gte=filter_brand.cleaned_data['min_price'])
+                products_list = helpers.pg_records(request, list_pro, 12)
 
 
 
@@ -108,7 +109,7 @@ def category_catalog(request, slug=None):
                                                                    'menu': menu(request),
                                                                    'breadcrumbs': breadcrumbs,
                                                                    'filter_brand': filter_brand,
-                                                                   'filter_price': filter_price,
+
                                                                    })
 
 
