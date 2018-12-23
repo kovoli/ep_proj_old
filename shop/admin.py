@@ -8,6 +8,7 @@ class ProductAdmin(admin.ModelAdmin):
     list_display = ['name', 'category', 'vendor',]
     readonly_fields = ['slug']
     list_filter = ('category', )
+    search_fields = ['name']
 
 
 @admin.register(Comment)
@@ -37,3 +38,4 @@ class CategoryAdmin(MPTTModelAdmin):
 class VendorAdmin(admin.ModelAdmin):
     list_display = ['name']
     readonly_fields = ['slug']
+    search_fields = ['name']

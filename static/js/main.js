@@ -665,4 +665,16 @@ $('#account-image-upload').on('change', function () {
 });
     
     
-})(jQuery);	
+})(jQuery);
+
+/*-----
+	Filterable List
+--------------------------------*/
+$(document).ready(function(){
+  $("#brand_list_input").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#brand_liste li").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
