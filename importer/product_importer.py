@@ -6,7 +6,7 @@ django.setup()
 import xml.etree.ElementTree as ET
 
 
-from shop.models import Product, Category, Vendor
+from shop.models import Product, Category, Vendor, Price
 
 # For images
 from django.core.files.base import ContentFile
@@ -69,16 +69,28 @@ def vendor_get_or_create(vendor):
         obj = Vendor(name=vendor.lower())
         return obj.save()
 
-# TODO Проверить работу с товароми без вендора добавление и проверку Вендора
+
+def add_price_to_product(off, product):
+    offer_price_data = {'price': 0, 'oldprice': None, 'name': None, 'url': None, 'sales_notes': None,
+                        'shop_id': 1, 'product_id': product.id}
+    for data in offer_price_data.keys():
+        print(off.find(data))
+        if off.find(data) is None:
+            continue
+        else:
+            offer_price_data[data] = off.find(data).text
+
+    return Price.objects.create(**offer_price_data)
 # TODO Проверку на наличие поста
 # TODO Впараметрах бывают видеообзоры; при наличие добавить в поле video
 
 
 
-#print(len(root.find('offers')))
+print(len(root.findall('offers')))
 succers_writes = 0
 errors = []
 for off in root.findall('.//offer'):
+
     product_data = {'name': None, 'description': None,
                     'param': None, 'vendorCode': None,
                     'barcode': None, 'categoryId': None,
@@ -104,6 +116,7 @@ for off in root.findall('.//offer'):
 
         product = Product.objects.create(**product_data)
         product.vendor = vendor
+        add_price_to_product(off, product)
         #product.product_image.save(name + '.jpg', ContentFile(input_file.getvalue()), save=False)
         product.save()
         print('Succes')

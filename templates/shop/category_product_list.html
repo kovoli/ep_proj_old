@@ -115,7 +115,7 @@
                 {% if vendors.count >= 10 and vendors%}
                 <div class="shop-sidebar mb-35">
                     <h4 class="title" data-spy="scroll" data-target="#brand_liste">Бренды</h4>
-                        <form method="get">
+                        <form id="form1" action="." method="get">
                         <div class="input-group">
                           <input id="brand_list_input" type="text"  class="form-control" placeholder="Поиск бренда" aria-label="Recipient's username" aria-describedby="basic-addon2">
                               <div class="input-group-append">
@@ -123,15 +123,14 @@
                               </div>
                         </div>
                         <ul class="sidebar-brand position-relative"  id="brand_liste" style="height: 450px; overflow-y: scroll;">
-                             {% for field in filter_brand %}
-                                 {{ field }}
-                             {% endfor %}
+                             {{ filter_brand.brand }}
+                        </ul>
                         </form>
                 </div>
                 {% elif vendors %}
                 <div class="shop-sidebar mb-35">
                     <h4 class="title" data-spy="scroll" data-target="#brand_liste">Бренды</h4>
-                        <form method="get">
+                        <form id="1" action="." method="get">
                         <div class="input-group">
                           <input id="brand_list_input" type="text"  class="form-control" placeholder="Поиск бренда" aria-label="Recipient's username" aria-describedby="basic-addon2">
                               <div class="input-group-append">
@@ -139,9 +138,8 @@
                               </div>
                         </div>
                         <ul class="sidebar-brand position-relative"  id="brand_liste">
-                             {% for field in filter_brand %}
-                                 {{ field }}
-                             {% endfor %}
+                            {{ filter_brand.brand }}
+                        </ul>
                         </form>
                 </div>
 
@@ -152,10 +150,13 @@
                 <div class="shop-sidebar mb-35">
 
                     <h4 class="title">Price</h4>
+                    <form method="get" >
+                        {{ filter_price }}
 
+                        <button type="submit">Поиск</button>
+                    </form>
                     <div class="sidebar-price">
-                        <div id="price-range" class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all"><div class="ui-slider-range ui-widget-header ui-corner-all" style="left: 1.25%; width: 76.55%;"></div><span class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0" style="left: 1.25%;"></span><span class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0" style="left: 77.8%;"></span></div>
-                        <input type="text" id="price-amount" readonly="">
+
                     </div>
 
                 </div>

@@ -61,15 +61,6 @@
                 </div>
             </div>
             {% endrecursetree %}
-
-        {% comment %}
-        <ul>
-            {% for i in node.get_children|slice:":4" %}
-                <li><a href="{{ i.get_absolute_url }}">{{ i.name }}</a></li>
-            {% endfor %}
-          </ul>
-        {% endcomment %}
-
     </div>
 
 </div><!-- Section End -->

@@ -37,3 +37,7 @@ class BrandForms(forms.Form):
     brand = forms.ModelMultipleChoiceField(queryset=Vendor.objects.none(), widget=forms.CheckboxSelectMultiple())
 
 
+class PriceForm(forms.Form):
+    min_price = forms.IntegerField(label='от', required=False)
+    max_price = forms.IntegerField(label='до', required=False)
+
