@@ -63,7 +63,7 @@
                         <div class="ee-product">
                             <!-- Image -->
                             <div class="image d-flex mx-auto align-items-center justify-content-center">
-                                <a href="{{ product.get_absolute_url }}"><img class="p-2 mx-auto d-block img-fluid" src="{% if product.product_image_category %}{{ product.product_image_category.url }}{% endif %}" alt="Product Image"></a>
+                                <a href="{{ product.get_absolute_url }}"><img class="p-2 mx-auto d-block img-fluid" src="{% if product.product_image_category %}{{ product.product_image_category.url }}{% endif %}" alt="{{ product.name }}"></a>
                             </div>
                             <!-- Content -->
                             <div class="content">
@@ -93,7 +93,7 @@
                     {% recursetree cat %}
                     <ul class="sidebar-category">
                         {% if node.is_leaf_node %}
-                            {% with request.get_full_path as url_name %}
+                            {% with request.path as url_name %}
                             {% for j in last_node %}
                                     <li class="{% if url_name == '/catalog/'|add:j.slug|add:'/' %}active btn-yellow{% endif %}"><a href="{{ j.get_absolute_url }}" >{{ j.name }}</a></li>
                             {% endfor %}
