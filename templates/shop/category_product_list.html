@@ -112,90 +112,52 @@
                 <!-- END CATEGORIES -->
 
                 <!-- Brands -->
+                <form action="." method="get">
                 {% if vendors.count >= 10 and vendors%}
-                <div class="shop-sidebar mb-35">
-                    <h4 class="title" data-spy="scroll" data-target="#brand_liste">Бренды</h4>
-                        <form id="form1" action="." method="get">
-                        <div class="input-group">
-                          <input id="brand_list_input" type="text"  class="form-control" placeholder="Поиск бренда" aria-label="Recipient's username" aria-describedby="basic-addon2">
-                              <div class="input-group-append">
-                                <button class="px-3" type="submit"><i class="fas fa-search"></i></button>
-                              </div>
-                        </div>
-                        <ul class="sidebar-brand position-relative"  id="brand_liste" style="height: 450px; overflow-y: scroll;">
-                             {{ filter_brand }}
-                        </ul>
-                        </form>
-                </div>
+                    <div class="shop-sidebar mb-35">
+                        <h4 class="title" data-spy="scroll" data-target="#brand_liste">Бренды</h4>
+                            <div class="input-group">
+                              <input id="brand_list_input" type="text"  class="form-control" placeholder="Поиск бренда" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                  <div class="input-group-append">
+                                    <button class="px-3 btn-yellow" type="submit"><i class="fas fa-search"></i></button>
+                                  </div>
+                            </div>
+                            <ul class="sidebar-brand position-relative"  id="brand_liste" style="height: 450px; overflow-y: scroll;">
+                                 {{ filter_brand.brand }}
+                            </ul>
+                    </div>
                 {% elif vendors %}
-                <div class="shop-sidebar mb-35">
-                    <h4 class="title" data-spy="scroll" data-target="#brand_liste">Бренды</h4>
-                        <form id="1" action="." method="get">
-                        <div class="input-group">
-                          <input id="brand_list_input" type="text"  class="form-control" placeholder="Поиск бренда" aria-label="Recipient's username" aria-describedby="basic-addon2">
-                              <div class="input-group-append">
-                                <button class="px-3" type="submit" onclick="$('form');"><i class="fas fa-search"></i></button>
-                              </div>
-                        </div>
-                        <ul class="sidebar-brand position-relative"  id="brand_liste">
-                            {{ filter_brand.brand }}
-                        </ul>
-                        </form>
-                </div>
-
+                    <div class="shop-sidebar mb-35">
+                        <h4 class="title" data-spy="scroll" data-target="#brand_liste">Бренды</h4>
+                            <div class="input-group">
+                              <input id="brand_list_input" type="text"  class="form-control" placeholder="Поиск бренда" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                  <div class="input-group-append">
+                                    <button class="px-3 btn-yellow" type="submit" onclick="$('form');"><i class="fas fa-search"></i></button>
+                                  </div>
+                            </div>
+                            <ul class="sidebar-brand position-relative"  id="brand_liste">
+                                {{ filter_brand.brand }}
+                            </ul>
+                    </div>
                 {% endif %}
+
+                    <div class="shop-sidebar mb-35">
+                        <h4 class="title">Цена</h4>
+                        <div class="sidebar-price">
+                            <div class="form-row align-items-center">
+                                <div class="col">
+                                  {{ filter_brand.min_price }}
+                                </div>
+                                <div class="col">
+                                  {{ filter_brand.max_price }}
+                                </div>
+                                  <button type="submit" class="btn btn-yellow w-100 mx-1" onclick="$('form');"><i class="fas fa-search"></i></button>
+                              </div>
+                         </div>
+                    </div>
+                </form>
                 <!-- END BRANDS -->
 
-
-                <div class="shop-sidebar mb-35">
-
-                    <h4 class="title">Price</h4>
-                    <form id="price" method="get" action=".">
-                        <span style="display: none">{{ filter_brand.brand}}</span>
-                        {{ filter_brand.min_price }}
-                        {{ filter_brand.max_price }}
-                        <button type="submit" onclick="$('form');">Поиск</button>
-                    </form>
-                    <div class="sidebar-price">
-
-                    </div>
-
-                </div>
-
-                <div class="shop-sidebar mb-35">
-
-                    <div class="banner"><a href="#"><img src="assets/images/banner/banner-41.jpg" alt="Banner"></a></div>
-
-                </div>
-
-                <div class="shop-sidebar mb-35">
-
-                    <h4 class="title">Color</h4>
-
-                    <ul class="sidebar-brand">
-                        <li><a href="#">White</a></li>
-                        <li><a href="#">Black</a></li>
-                        <li><a href="#">Cosmic Black</a></li>
-                        <li><a href="#">Rose Gold</a></li>
-                        <li><a href="#">Spacegrey</a></li>
-                    </ul>
-
-                </div>
-
-                <div class="shop-sidebar mb-35">
-
-                    <h4 class="title">Tags</h4>
-
-                    <div class="sidebar-tags">
-                        <a href="#">smartphone</a>
-                        <a href="#">Iron</a>
-                        <a href="#">Trimer</a>
-                        <a href="#">Smart Watch</a>
-                        <a href="#">Play Station</a>
-                        <a href="#">Oven</a>
-                    </div>
-
-                </div>
 
             </div>
 
@@ -204,11 +166,3 @@
 </div>
 
 {% endblock content %}
-
-{% comment %}
-<li class="active btn-yellow"><a href="{{ node.get_absolute_url }}">{{ node.name}}</a></li>
-{% for j in node.get_siblings %}
-
-                                    <li><a href="{{ j.get_absolute_url }}" >{{ j.name }}</a></li>
-                                {% endfor %}
-{% endcomment %}

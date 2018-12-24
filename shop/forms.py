@@ -35,9 +35,9 @@ class CommentForm(forms.ModelForm):
 
 class BrandForms(forms.Form):
     brand = forms.ModelMultipleChoiceField(queryset=Vendor.objects.none(), widget=forms.CheckboxSelectMultiple(), required=False)
-    min_price = forms.IntegerField(label='от', required=False)
-    max_price = forms.IntegerField(label='до', required=False)
-
-
-
-
+    min_price = forms.IntegerField(label='от', required=False, widget=forms.TextInput(attrs={
+        'type': "text", 'class': "form-control mb-2", "placeholder": "от:"
+    }))
+    max_price = forms.IntegerField(label='до', required=False, widget=forms.TextInput(attrs={
+        'type': "text", 'class': "form-control mb-2", "placeholder": "до:"
+    }))

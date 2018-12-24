@@ -61,32 +61,41 @@ def category_catalog(request, slug=None):
                                                               'breadcrumbs': breadcrumbs})
 
     filter_brand = BrandForms(request.GET)
+    print(BrandForms(request.GET))
     if category.get_level() >= 2:
         list_pro = Product.objects.filter(category__in=Category.objects.get(id=category.id)\
                                                .get_descendants(include_self=True)) \
-                                               .annotate(min_price=Min('prices__price'))
+                                               .annotate(min_price=Min('prices__price')).order_by('prices__price')
 
 
         vendors_ids = list_pro.values_list('vendor_id', flat=True).order_by().distinct()
         vendors = Vendor.objects.filter(id__in=vendors_ids)
         filter_brand.fields['brand'].queryset = Vendor.objects.filter(id__in=vendors_ids)
 
-        products_list = helpers.pg_records(request, list_pro, 12)
+        products_list = helpers.pg_records(request, list_pro, 15)
 
 
         if filter_brand.is_valid():
             if filter_brand.cleaned_data['brand']:
-                print(filter_brand.cleaned_data['brand'])
+                print('filter brand')
 
                 list_pro = Product.objects.filter(category__in=Category.objects.get(id=category.id)\
                                                    .get_descendants(include_self=True)) \
                                                    .annotate(min_price=Min('prices__price'))\
-                                                   .filter(vendor__in=filter_brand.cleaned_data['brand'])
-                products_list = helpers.pg_records(request, list_pro, 12)
+                                                   .filter(vendor__in=filter_brand.cleaned_data['brand']).order_by('prices__price')
+                products_list = helpers.pg_records(request, list_pro, 100)
+
         if filter_brand.is_valid():
             if filter_brand.cleaned_data['min_price']:
-                list_pro = list_pro.filter(prices__price__gte=filter_brand.cleaned_data['min_price'])
-                products_list = helpers.pg_records(request, list_pro, 12)
+                print('filter min_price')
+                list_pro = list_pro.filter(prices__price__gte=filter_brand.cleaned_data['min_price']).order_by('prices__price')
+                products_list = helpers.pg_records(request, list_pro, 100)
+        if filter_brand.is_valid():
+            if filter_brand.cleaned_data['max_price']:
+                print('filter max_price')
+                list_pro = list_pro.filter(prices__price__lte=filter_brand.cleaned_data['max_price']).order_by('prices__price')
+                products_list = helpers.pg_records(request, list_pro, 100)
+
 
 
 
