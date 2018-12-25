@@ -122,7 +122,10 @@ def search_products(request):
     if 'q' in request.GET:
         q = request.GET['q']
         products_list = watson.filter(Product, q).annotate(min_price=Min('prices__price'))
-
-        return render(request, 'shop/search_products.html', {'products_list': products_list, 'q': q,
+    """if 'asd' in request.GET:
+        asd = request.GET
+        print(type(asd['asd']))
+        products_list = Product.objects.filter(vendor__name=asd['asd'])"""
+    return render(request, 'shop/search_products.html', {'products_list': products_list, 'q': q,
                                                              'menu': menu(request)})
 

@@ -1,6 +1,10 @@
 {% extends 'base.html' %}
 {% load mptt_tags %}
 
+{% block title %}
+    Сравнение цен на {{ category.name }} - www.pricerace.ru
+{% endblock title %}
+
 {% block content %}
 <div class="product-section section mt-20 mb-20">
     <div class="container">
@@ -26,7 +30,7 @@
 
             <div class="col-xl-9 col-lg-8 col-12 order-lg-2 mb-50">
 
-                <div class="row mb-50">
+                <div class="row mb-20">
                     <div class="col">
 
                         <!-- Shop Top Bar Start -->
@@ -47,7 +51,7 @@
 
                             <!-- Product Pages -->
                             <div class="product-pages">
-                                <h4>{{ category.name }}</h4>
+                                <h4>{{ category.name }} {{ products_list.count }}</h4>
                             </div>
 
                         </div><!-- Shop Top Bar End -->
