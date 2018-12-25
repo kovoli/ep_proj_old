@@ -4,6 +4,7 @@ from .forms import CommentForm, BrandForms
 from django.db.models import Min
 from . import helpers
 from watson import search as watson
+from django.db.models import F
 
 
 def menu(request):
@@ -19,6 +20,9 @@ def home_page(request):
 def product_detail(request, slug):
     product = get_object_or_404(Product, slug=slug)
     breadcrumbs = Category.get_ancestors(product.category)
+    product.views = F('views') + 1
+    product.save()
+    product.refresh_from_db(fields=['views'])
     # Filter by Category > Exclude current Product > get the min price pro Product
     semilar_products = Product.objects.filter(category=product.category)\
                                       .exclude(id=product.id)\
@@ -118,8 +122,7 @@ def search_products(request):
     if 'q' in request.GET:
         q = request.GET['q']
         products_list = watson.filter(Product, q).annotate(min_price=Min('prices__price'))
-        for cat in products_list:
-            print(cat.category)
 
-        return render(request, 'shop/search_products.html', {'products_list': products_list, 'q': q})
+        return render(request, 'shop/search_products.html', {'products_list': products_list, 'q': q,
+                                                             'menu': menu(request)})
 

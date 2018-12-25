@@ -6,9 +6,6 @@
         <div class="row">
             <div class="col-12">
             <h2 class="my-4">совпадений - "{{ products_list.count }}" по запросу - "{{ q }}"</h2>
-            {% for i in products_list %}
-                {{ i.category.get_absolute_url }} -
-            {% endfor %}
                 <!-- Shop Product Wrap Start -->
                 <div class="shop-product-wrap grid row">
                     {% for product in products_list %}
