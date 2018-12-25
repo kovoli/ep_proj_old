@@ -5,7 +5,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-            <h2 class="my-4">"{{ products_list.count }}" совпадений по запросу - "{{ q }}"</h2>
+            <h2 class="my-4">совпадений - "{{ products_list.count }}" по запросу - "{{ q }}"</h2>
             {% for i in products_list %}
                 {{ i.category.get_absolute_url }} -
             {% endfor %}
@@ -32,6 +32,8 @@
                             </div>
                         </div><!-- Product End -->
                     </div>
+                    {% empty %}
+                        <p>К сожалению ничего не найденно. Попробуйте перефразировать ваш поиск</p>
                     {% endfor %}
                 </div><!-- Shop Product Wrap End -->
             </div>

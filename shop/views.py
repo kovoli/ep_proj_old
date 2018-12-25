@@ -64,6 +64,11 @@ def category_catalog(request, slug=None):
     filter_brand = BrandForms(request.GET)
     # -------- Если категория равно уровню два и больше выводяться товары
     if category.get_level() >= 2:
+        print(dict(request.GET))
+        if 'a' in request.GET.keys():
+            print('Yes')
+        else:
+            print('No')
         list_pro = Product.objects.filter(category__in=Category.objects.get(id=category.id)\
                                                .get_descendants(include_self=True)) \
                                                .annotate(min_price=Min('prices__price')).order_by('prices__price')
