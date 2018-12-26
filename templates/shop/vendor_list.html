@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<div class="product-section section mt-20 mb-20">
+    <div class="container">
+        <div class="row">
+            {% for vendor in all_vendors %}
+            <div class="col-lg-2">
+                <div class="card h-100">
+                  <img class="card-img-top" src="" alt="Card image cap">
+
+                      <div class="card-body">
+                        <h5 class="card-title">{{ vendor.name|upper }}</h5>
+                      </div>
+
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

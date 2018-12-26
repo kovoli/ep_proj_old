@@ -129,3 +129,9 @@ def search_products(request):
     return render(request, 'shop/search_products.html', {'products_list': products_list, 'q': q,
                                                              'menu': menu(request)})
 
+# ------------------- VENDOR VIEWS ------------------
+
+def vendor_list(request):
+    all_vendors = Vendor.objects.all()
+
+    return render(request, 'shop/vendor_list.html', {'all_vendors': all_vendors})

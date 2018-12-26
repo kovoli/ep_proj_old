@@ -5,14 +5,22 @@
 <!-- Single Product Section Start -->
 <div class="product-section section mt-50 mb-40">
     <div class="container">
-        <div class="breadcrumb mb-25">
-            <ul>
-                <li><a href="{% url 'shop:home' %}">Главная</a></li>
-                {% for bc in breadcrumbs %}
-                    <li><a href="{{ bc.get_absolute_url }}">{{ bc.name }}</a></li>
-                {% endfor %}
-            </ul>
-        </div>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item px-1"><a href="{% url 'shop:home' %}">Главная</a></li>
+        {% for bc in breadcrumbs %}
+            <li class="breadcrumb-item dropdown"><a  href="{{ bc.get_absolute_url }}">{{ bc.name }}</a>
+                  <a class=" dropdown-toggle mx-1" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  </a>
+                  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
+                    {% for bc_siblings in bc.get_siblings %}
+                        <a class="dropdown-item" href="{{ bc_siblings.get_absolute_url }}">{{ bc_siblings.name }}</a>
+                    {% endfor %}
+                  </div>
+            </li>
+        {% endfor %}
+      </ol>
+    </nav>
 
         <div class="row mb-15">
 
