@@ -38,15 +38,9 @@
 
                             <!-- Product Short -->
                             <div class="product-short">
-                                <p>Short by</p>
-                                <select name="sortby" class="nice-select" style="display: none;">
-                                    <option value="trending">Trending items</option>
-                                    <option value="sales">Best sellers</option>
-                                    <option value="rating">Best rated</option>
-                                    <option value="date">Newest items</option>
-                                    <option value="price-asc">Price: low to high</option>
-                                    <option value="price-desc">Price: high to low</option>
-                                </select><div class="nice-select" tabindex="0"><span class="current">Trending items</span><ul class="list"><li data-value="trending" class="option selected">Trending items</li><li data-value="sales" class="option">Best sellers</li><li data-value="rating" class="option">Best rated</li><li data-value="date" class="option">Newest items</li><li data-value="price-asc" class="option">Price: low to high</li><li data-value="price-desc" class="option">Price: high to low</li></ul></div>
+                                <form method="get" id="ordering">
+                                {{ filter_brand.ordering }}
+
                             </div>
 
                             <!-- Product Pages -->
@@ -155,7 +149,7 @@
                                 <div class="col">
                                   {{ filter_brand.max_price }}
                                 </div>
-                                  <button type="submit" class="btn btn-yellow w-100 mx-1" onclick="$('form');"><i class="fas fa-search"></i></button>
+                                  <button type="submit" class="btn btn-yellow w-100 mx-1" onclick="$('forma');"><i class="fas fa-search"></i></button>
                               </div>
                          </div>
                     </div>

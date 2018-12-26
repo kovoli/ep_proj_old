@@ -6,14 +6,12 @@
     <div class="container">
         <div class="row">
             {% for vendor in all_vendors %}
-            <div class="col-lg-2">
+            <div class="col-lg-2 col-md-4 col-sm-auto mb-4 mb-20">
                 <div class="card h-100">
-                  <img class="card-img-top" src="" alt="Card image cap">
-
-                      <div class="card-body">
-                        <h5 class="card-title">{{ vendor.name|upper }}</h5>
-                      </div>
-
+                  <img class="card-img-top" src="https://picsum.photos/158/158" alt="Card image cap">
+                  <div class="card-body text-center">
+                        <h5 class="card-title  ">{{ vendor.name|upper }}</h5>
+                  </div>
                 </div>
             </div>
             {% endfor %}

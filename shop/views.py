@@ -75,7 +75,7 @@ def category_catalog(request, slug=None):
             print('No')
         list_pro = Product.objects.filter(category__in=Category.objects.get(id=category.id)\
                                                .get_descendants(include_self=True)) \
-                                               .annotate(min_price=Min('prices__price')).order_by('prices__price')
+                                               .annotate(min_price=Min('prices__price')).order_by('views')
         vendors_ids = list_pro.values_list('vendor_id', flat=True).order_by().distinct()
         vendors = Vendor.objects.filter(id__in=vendors_ids)
         filter_brand.fields['brand'].queryset = Vendor.objects.filter(id__in=vendors_ids)
@@ -88,19 +88,17 @@ def category_catalog(request, slug=None):
                 list_pro = Product.objects.filter(category__in=Category.objects.get(id=category.id)\
                                                    .get_descendants(include_self=True)) \
                                                    .annotate(min_price=Min('prices__price'))\
-                                                   .filter(vendor__in=filter_brand.cleaned_data['brand']).order_by('prices__price')
+                                                   .filter(vendor__in=filter_brand.cleaned_data['brand']).order_by('views')
                 products_list = helpers.pg_records(request, list_pro, 100)
         # ------- Цена от и больше
-        if filter_brand.is_valid():
             if filter_brand.cleaned_data['min_price']:
                 print('filter min_price')
-                list_pro = list_pro.filter(prices__price__gte=filter_brand.cleaned_data['min_price']).order_by('prices__price')
+                list_pro = list_pro.filter(prices__price__gte=filter_brand.cleaned_data['min_price']).order_by('views')
                 products_list = helpers.pg_records(request, list_pro, 100)
         # ------- Цена до и меньше
-        if filter_brand.is_valid():
             if filter_brand.cleaned_data['max_price']:
                 print('filter max_price')
-                list_pro = list_pro.filter(prices__price__lte=filter_brand.cleaned_data['max_price']).order_by('prices__price')
+                list_pro = list_pro.filter(prices__price__lte=filter_brand.cleaned_data['max_price']).order_by('views')
                 products_list = helpers.pg_records(request, list_pro, 100)
 
         category = get_object_or_404(Category, slug=slug)
@@ -134,4 +132,5 @@ def search_products(request):
 def vendor_list(request):
     all_vendors = Vendor.objects.all()
 
-    return render(request, 'shop/vendor_list.html', {'all_vendors': all_vendors})
+    return render(request, 'shop/vendor_list.html', {'all_vendors': all_vendors,
+                                                     'menu': menu(request),})

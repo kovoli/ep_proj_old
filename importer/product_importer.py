@@ -58,7 +58,7 @@ def def_category(category_id):
             return i['id']
 
 def vendor_get_or_create(vendor):
-    change_vendor_name = {'Bosch GmbH': 'Bosch'}
+    change_vendor_name = {'Bosch GmbH': 'Bosch', 'Bosch GmbH,Bosch': 'Bosch'}
     if vendor in change_vendor_name:
         vendor = change_vendor_name[vendor]
     elif vendor == None:

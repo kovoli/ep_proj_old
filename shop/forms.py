@@ -41,3 +41,8 @@ class BrandForms(forms.Form):
     max_price = forms.IntegerField(label='до', required=False, widget=forms.TextInput(attrs={
         'type': "text", 'class': "form-control mb-2", "placeholder": "до:"
     }))
+    ordering = forms.ChoiceField(label="сортировка", required=False, choices=[
+        ["trending", "по популярности"],
+        ["price", "дешевые сверху"],
+        ["-price", "дорогие сверху"]
+    ], widget=forms.Select(attrs={'class': 'nice-select', 'onchange':"document.getElementById('ordering').submit()"}))
