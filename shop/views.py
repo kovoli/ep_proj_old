@@ -132,5 +132,8 @@ def search_products(request):
 def vendor_list(request):
     all_vendors = Vendor.objects.all()
 
+    english_alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+
     return render(request, 'shop/vendor_list.html', {'all_vendors': all_vendors,
+                                                     'english_alphabet': english_alphabet,
                                                      'menu': menu(request),})
