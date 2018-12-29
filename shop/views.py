@@ -100,6 +100,12 @@ def category_catalog(request, slug=None):
                 print('filter max_price')
                 list_pro = list_pro.filter(prices__price__lte=filter_brand.cleaned_data['max_price']).order_by('views')
                 products_list = helpers.pg_records(request, list_pro, 100)
+        # -------
+            if filter_brand.cleaned_data['ordering']:
+                print('order')
+                list_pro = list_pro.order_by(filter_brand.cleaned_data['ordering'])
+                products_list = helpers.pg_records(request, list_pro, 100)
+
 
         category = get_object_or_404(Category, slug=slug)
         cat = category.get_descendants(include_self=True).order_by('tree_id', 'id', 'name')
@@ -120,20 +126,13 @@ def search_products(request):
     if 'q' in request.GET:
         q = request.GET['q']
         products_list = watson.filter(Product, q).annotate(min_price=Min('prices__price'))
-    """if 'asd' in request.GET:
-        asd = request.GET
-        print(type(asd['asd']))
-        products_list = Product.objects.filter(vendor__name=asd['asd'])"""
-    return render(request, 'shop/search_products.html', {'products_list': products_list, 'q': q,
-                                                             'menu': menu(request)})
+    return render(request, 'shop/search_products.html', {'products_list': products_list,
+                                                         'q': q,
+                                                         'menu': menu(request)})
+
 
 # ------------------- VENDOR VIEWS ------------------
-
 def vendor_list(request):
     all_vendors = Vendor.objects.all()
-
-    english_alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
-
-    return render(request, 'shop/vendor_list.html', {'all_vendors': all_vendors,
-                                                     'english_alphabet': english_alphabet,
-                                                     'menu': menu(request),})
+    return render(request, 'vendors/vendor_list.html', {'all_vendors': all_vendors,
+                                                        'menu': menu(request)})

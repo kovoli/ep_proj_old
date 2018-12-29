@@ -5,10 +5,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-            <h2 class="my-4">совпадений - "{{ products_list.count }}" по запросу - "{{ q }}"</h2>
-            <form method="get">
-                <input name="asd" type="text"><input type="submit">
-            </form>
+            <h2 class="my-4">"{{ products_list.count }}" совпадений по запросу - "{{ q }}"</h2>
                 <!-- Shop Product Wrap Start -->
                 <div class="shop-product-wrap grid row">
                     {% for product in products_list %}

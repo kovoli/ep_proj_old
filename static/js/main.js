@@ -678,3 +678,14 @@ $(document).ready(function(){
     });
   });
 });
+/*-----
+	Filterable Brands
+--------------------------------*/
+$(document).ready(function(){
+  $("#brand_list_input_main").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#brand div").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});

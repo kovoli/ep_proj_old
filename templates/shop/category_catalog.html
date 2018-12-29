@@ -1,6 +1,13 @@
 {% extends 'base.html' %}
 {% load mptt_tags %}
 
+{% block title %}
+    Сравнение цен на {{ category.name }} - www.pricerace.ru
+{% endblock title %}
+
+{% block description %}Это брендовая страница{% endblock description %}
+
+
 {% block content %}
 <!-- Section Start -->
 <div class="section mt-20 mb-20">
