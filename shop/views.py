@@ -86,9 +86,9 @@ def category_catalog(request, slug=None):
             if filter_brand.cleaned_data['brand']:
                 print('filter brand')
                 list_pro = Product.objects.filter(category__in=Category.objects.get(id=category.id)\
-                                                   .get_descendants(include_self=True)) \
-                                                   .annotate(min_price=Min('prices__price'))\
-                                                   .filter(vendor__in=filter_brand.cleaned_data['brand']).order_by('views')
+                                                                       .get_descendants(include_self=True))\
+                                                                       .annotate(min_price=Min('prices__price'))\
+                                                                       .filter(vendor__in=filter_brand.cleaned_data['brand']).order_by('views')
                 products_list = helpers.pg_records(request, list_pro, 100)
         # ------- Цена от и больше
             if filter_brand.cleaned_data['min_price']:
@@ -105,7 +105,6 @@ def category_catalog(request, slug=None):
                 print('order')
                 list_pro = list_pro.order_by(filter_brand.cleaned_data['ordering'])
                 products_list = helpers.pg_records(request, list_pro, 100)
-
 
         category = get_object_or_404(Category, slug=slug)
         cat = category.get_descendants(include_self=True).order_by('tree_id', 'id', 'name')
@@ -126,8 +125,8 @@ def search_products(request):
     if 'q' in request.GET:
         q = request.GET['q']
         products_list = watson.filter(Product, q).annotate(min_price=Min('prices__price'))
-    return render(request, 'shop/search_products.html', {'products_list': products_list,
-                                                         'q': q,
+    return render(request, 'shop/search_products.html', {'q': q,
+                                                         'products_list': products_list,
                                                          'menu': menu(request)})
 
 
@@ -136,3 +135,12 @@ def vendor_list(request):
     all_vendors = Vendor.objects.all()
     return render(request, 'vendors/vendor_list.html', {'all_vendors': all_vendors,
                                                         'menu': menu(request)})
+
+
+def vendor_product_list(request, slug):
+    vendor = get_object_or_404(Vendor, slug=slug)
+    list_pro = Product.objects.filter(vendor=vendor)
+
+    return render(request, 'vendors/vendor_product_list.html', {'vendor': vendor,
+                                                                'menu': menu(request),
+                                                                'list_pro': list_pro})

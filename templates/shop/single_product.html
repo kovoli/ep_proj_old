@@ -45,7 +45,7 @@
 
                     <div class="category-title">
                         <p>Категория: <a href="{{ product.category.get_absolute_url }}" class="cat">{{ product.category.name }}</a></p>
-                        <p>Бренд: <a href="#" class="cat">{{ product.vendor.name }}</a></p>
+                        <p>Бренд: <a href="{{ product.vendor.get_absolute_url }}" class="cat">{{ product.vendor.name }}</a></p>
                     </div>
 
                 </div>
@@ -124,6 +124,7 @@
 
         </div>
 
+        {% if semilar_products %}
         <!-- Related Products -->
         <div class="col-12 mb-20 px-0">
             <div class="section-title-one" data-title="Похожие товары"><h1>Похожие товары</h1></div>
@@ -146,7 +147,7 @@
             {% endfor %}
         </div>
         <!-- End Related Products -->
-
+        {% endif %}
 
         <!-- Video Rewiew -->
         {% if product.video %}

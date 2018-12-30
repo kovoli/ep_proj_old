@@ -61,6 +61,7 @@ class Shop(models.Model):
 class Vendor(models.Model):
     name = models.CharField(max_length=100)
     slug = models.SlugField(max_length=100, unique=True)
+    description = RichTextField(blank=True)
     image_vendor = ProcessedImageField(upload_to='vendor_image/',
                                        blank=True,
                                        processors=[ResizeToFit(200, 200)],
