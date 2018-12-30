@@ -70,19 +70,21 @@
                 <div class="shop-sidebar mb-35">
                     <h4 class="title">Категории</h4>
 
-                   {% recursetree categories %}
+{% recursetree categories %}
                    <ul class="sidebar-category">
-                   {{ node.name }}
-                        <li><a href="#"></a>
-
+                        {% if node.get_level == 2 %}
+                        <li><a href="#">{{ node.name }}</a>
+                        {% else %}
+                            {% if not node.is_leaf_node %}
                             <ul class="children">
-                                <li><a href="#"></a></li>
-
+                                <li>{{ children }}</li>
                             </ul>
-
+                            {% endif %}
+                        {% endif %}
                         </li>
+
                     </ul>
-                    {% endrecursetree %}
+{% endrecursetree %}
 
                 </div>
                 <!-- END CATEGORIES -->
