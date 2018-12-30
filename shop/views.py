@@ -140,7 +140,10 @@ def vendor_list(request):
 def vendor_product_list(request, slug):
     vendor = get_object_or_404(Vendor, slug=slug)
     list_pro = Product.objects.filter(vendor=vendor)
-
+    categories_id_list = list_pro.values_list('category_id', flat=True)
+    categories = Category.objects.filter(id__in=categories_id_list)
+    print(categories.get_family())
     return render(request, 'vendors/vendor_product_list.html', {'vendor': vendor,
                                                                 'menu': menu(request),
+                                                                'categories':categories,
                                                                 'list_pro': list_pro})
