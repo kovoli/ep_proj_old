@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% load static %}
 
 {% block content %}
 <!-- Single Product Section Start -->
@@ -28,7 +28,11 @@
 
                 <!-- Image -->
                 <figure class="figure-img d-flex mx-auto align-items-center justify-content-center">
-                    <img itemprop="image" class="d-block img-fluid" src="{% if product.product_image %}{{ product.product_image.url }}{% endif %}" alt="{{ product.name }}">
+                    <img itemprop="image" class="d-block img-fluid" src="{% if product.product_image %}
+                                                                         {{ product.product_image.url }}
+                                                                         {% else %}
+                                                                         {% static 'images/zaglushka_big.png' %}
+                                                                         {% endif %}" alt="{{ product.name }}">
                 </figure>
 
             </div>
@@ -45,7 +49,7 @@
 
                     <div class="category-title">
                         <p>Категория: <a href="{{ product.category.get_absolute_url }}" class="cat">{{ product.category.name }}</a></p>
-                        <p>Бренд: <a href="{{ product.vendor.get_absolute_url }}" class="cat">{{ product.vendor.name }}</a></p>
+                        <p>Бренд: <a href="{{ product.vendor.get_absolute_url }}" class="cat">{{ product.vendor.name|upper }}</a></p>
                     </div>
 
                 </div>

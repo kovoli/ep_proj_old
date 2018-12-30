@@ -19,7 +19,7 @@
             <div  class="col-lg-2 col-md-4 col-sm-auto mb-4 mb-20">
                 <div class="card h-100 ">
                   <div class="image d-flex mx-auto align-items-center justify-content-center">
-                     <a href="{{ vendor.get_absolute_url }}"><img class="p-2 mx-auto d-block img-fluid" src="{% if vendor.image_vendor %}{{ vendor.image_vendor.url }}{% endif %}" alt="{{ vendor.name }}"></a>
+                     <a href="{% url 'shop:vendor' vendor.slug %}"><img class="p-2 mx-auto d-block img-fluid" src="{% if vendor.image_vendor %}{{ vendor.image_vendor.url }}{% endif %}" alt="{{ vendor.name }}"></a>
                   </div>
                   <h5 class="card-title text-center p-0 my-auto">{{ vendor.name|upper }}</h5>
                 </div>

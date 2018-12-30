@@ -1,11 +1,12 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
 <div class="product-section section mt-20 mb-20">
     <div class="container">
         <div class="row">
             <div class="col-12">
-            <h2 class="my-4">"{{ products_list.count }}" совпадений по запросу - "{{ q }}"</h2>
+            <h2 class="my-4 text-center">"{{ products_list.count }}" совпадений по запросу - "{{ q|upper }}"</h2>
                 <!-- Shop Product Wrap Start -->
                 <div class="shop-product-wrap grid row">
                     {% for product in products_list %}
@@ -14,7 +15,12 @@
                         <div class="ee-product">
                             <!-- Image -->
                             <div class="image d-flex mx-auto align-items-center justify-content-center">
-                                <a href="{{ product.get_absolute_url }}"><img class="p-2 mx-auto d-block img-fluid" src="{% if product.product_image_category %}{{ product.product_image_category.url }}{% endif %}" alt="{{ product.name }}"></a>
+                                <a href="{{ product.get_absolute_url }}">
+                                    <img class="p-2 mx-auto d-block img-fluid" src="{% if product.product_image_category %}
+                                                                                    {{ product.product_image_category.url }}
+                                                                                    {% else %}
+                                                                                    {% static 'images/zagluschka.png' %}
+                                                                                    {% endif %}" alt=""></a>
                             </div>
                             <!-- Content -->
                             <div class="content">

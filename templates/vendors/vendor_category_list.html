@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load mptt_tags %}
+
+{% block title %}
+    Сравнение цен на {{ category.name }} - www.pricerace.ru
+{% endblock title %}
+
+{% block description %}Это брендовая страница{% endblock description %}
+
+
+{% block content %}
+<div class="product-section section mt-20 mb-20">
+    <div class="container">
+    <h2 class="text-center my-3">Все категории бренда {{ vendor.name|upper }}</h2>
+    <div class="row justify-content-center">
+
+    {% for cat in categories %}
+    <div class="col-lg-3 col-md-6 col-sm-auto">
+        <div class="card bg-light mb-3">
+
+          <div class="card-header text-center position-absolute w-100 border-0">
+              <a  href="{% url 'shop:vendor_product_list' vendor.slug cat.slug %}">
+              <h5 class="bold">
+                    {{ cat.name }}
+              </h5>
+              </a>
+          </div>
+        <img class="card-img-top" src="https://picsum.photos/348/348" alt="Card image cap"></a>
+
+        </div>
+    </div>
+    {% endfor %}
+    </div>
+    </div>
+</div>
+{% endblock content %}

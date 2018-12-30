@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 {% load mptt_tags %}
 
 {% block title %}
@@ -63,7 +64,12 @@
                         <div class="ee-product">
                             <!-- Image -->
                             <div class="image d-flex mx-auto align-items-center justify-content-center">
-                                <a href="{{ product.get_absolute_url }}"><img class="p-2 mx-auto d-block img-fluid" src="{% if product.product_image_category %}{{ product.product_image_category.url }}{% endif %}" alt="{{ product.name }}"></a>
+                                <a href="{{ product.get_absolute_url }}">
+                                    <img class="p-2 mx-auto d-block img-fluid" src="{% if product.product_image_category %}
+                                                                                    {{ product.product_image_category.url }}
+                                                                                    {% else %}
+                                                                                    {% static 'images/zagluschka.png' %}
+                                                                                    {% endif %}" alt=""></a>
                             </div>
                             <!-- Content -->
                             <div class="content">
@@ -118,9 +124,6 @@
                         <h4 class="title" data-spy="scroll" data-target="#brand_liste">Бренды</h4>
                             <div class="input-group">
                               <input id="brand_list_input" type="text"  class="form-control" placeholder="Поиск бренда" aria-label="Recipient's username" aria-describedby="basic-addon2">
-                                  <div class="input-group-append">
-                                    <button class="px-3 btn-yellow" type="submit"><i class="fas fa-search"></i></button>
-                                  </div>
                             </div>
                             <ul class="sidebar-brand position-relative"  id="brand_liste" style="height: 450px; overflow-y: scroll;">
                                  {{ filter_brand.brand }}
@@ -131,9 +134,6 @@
                         <h4 class="title" data-spy="scroll" data-target="#brand_liste">Бренды</h4>
                             <div class="input-group">
                               <input id="brand_list_input" type="text"  class="form-control" placeholder="Поиск бренда" aria-label="Recipient's username" aria-describedby="basic-addon2">
-                                  <div class="input-group-append">
-                                    <button class="px-3 btn-yellow" type="submit" onclick="$('form');"><i class="fas fa-search"></i></button>
-                                  </div>
                             </div>
                             <ul class="sidebar-brand position-relative"  id="brand_liste">
                                 {{ filter_brand.brand }}

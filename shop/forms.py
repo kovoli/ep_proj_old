@@ -34,7 +34,7 @@ class CommentForm(forms.ModelForm):
 
 
 class BrandForms(forms.Form):
-    brand = forms.ModelMultipleChoiceField(queryset=Vendor.objects.none(), widget=forms.CheckboxSelectMultiple(), required=False)
+    brand = forms.ModelMultipleChoiceField(queryset=Vendor.objects.none(), widget=forms.CheckboxSelectMultiple(attrs={'onchange': "document.getElementById('ordering').submit()"}), required=False)
     min_price = forms.IntegerField(label='от', required=False, widget=forms.TextInput(attrs={
         'type': "text", 'class': "form-control mb-2", "placeholder": "от:"
     }))
@@ -45,4 +45,4 @@ class BrandForms(forms.Form):
         ["views", "по популярности"],
         ["prices__price", "дешевые сверху"],
         ["-prices__price", "дорогие сверху"]
-    ], widget=forms.Select(attrs={'class': 'nice-select', 'onchange':"document.getElementById('ordering').submit()"}))
+    ], widget=forms.Select(attrs={'class': 'nice-select', 'onchange': "document.getElementById('ordering').submit()"}))

@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load mptt_tags %}
+{% load static %}
 
 {% block title %} Название бренда {% endblock title %}
 {% block description %} Это брендовая страница {% endblock description %}
@@ -9,13 +10,14 @@
     <div class="container">
         <div class="row">
 
-            <div class="col-xl-9 col-lg-8 col-12 order-lg-2 mb-50">
+            <div class="col-xl-12 col-lg-8 col-12 order-lg-2 mb-50">
 
                 <div class="row mb-20">
-                    <div class="col">
 
+                    <div class="col">
+                        <h2>{{ category.name }} от бренда {{ vendor.name|upper }}</h2>
                         <!-- Shop Top Bar Start -->
-                        <div class="shop-top-bar with-sidebar">
+                        <div class="shop-top-bar ">
 
                             <!-- Product Short -->
                             <div class="product-short">
@@ -35,14 +37,19 @@
                 </div>
 
                 <!-- Shop Product Wrap Start -->
-                <div class="shop-product-wrap grid with-sidebar row">
+                <div class="shop-product-wrap grid row">
                 {% for product in list_pro %}
-                    <div class="col-xl-4 col-md-6 col-12 pb-30 pt-10">
+                    <div class="col-xl-3 col-md-6 col-12 pb-30 pt-10">
                         <!-- Product Start -->
                         <div class="ee-product">
                             <!-- Image -->
                             <div class="image d-flex mx-auto align-items-center justify-content-center">
-                                <a href=""><img class="p-2 mx-auto d-block img-fluid" src="" alt=""></a>
+                                <a href="{{ product.get_absolute_url }}">
+                                    <img class="p-2 mx-auto d-block img-fluid" src="{% if product.product_image_category %}
+                                                                                    {{ product.product_image_category.url }}
+                                                                                    {% else %}
+                                                                                    {% static 'images/zagluschka.png' %}
+                                                                                    {% endif %}" alt=""></a>
                             </div>
                             <!-- Content -->
                             <div class="content">
@@ -52,7 +59,7 @@
                                 </div>
                                 <!-- Price & Ratting -->
                                 <div class="price-ratting">
-                                    <h5 class="price">от  <i class="fas fa-ruble-sign"></i></h5>
+                                    <h5 class="price">от {{ product.min_price }} <i class="fas fa-ruble-sign"></i></h5>
                                 </div>
                             </div>
                         </div><!-- Product End -->
@@ -61,54 +68,6 @@
                 </div><!-- Shop Product Wrap End -->
 
                 {% include 'includes/pagination.html' %}
-
-            </div>
-
-            <div class="shop-sidebar-wrap col-xl-3 col-lg-4 col-12 order-lg-1 mb-15">
-                <!-- CATEGORIES -->
-
-                <div class="shop-sidebar mb-35">
-                    <h4 class="title">Категории</h4>
-
-{% recursetree categories %}
-                   <ul class="sidebar-category">
-                        {% if node.get_level == 2 %}
-                        <li><a href="#">{{ node.name }}</a>
-                        {% else %}
-                            {% if not node.is_leaf_node %}
-                            <ul class="children">
-                                <li>{{ children }}</li>
-                            </ul>
-                            {% endif %}
-                        {% endif %}
-                        </li>
-
-                    </ul>
-{% endrecursetree %}
-
-                </div>
-                <!-- END CATEGORIES -->
-
-                <!-- Brands -->
-                <form action="." method="get">
-
-                    <div class="shop-sidebar mb-35">
-                        <h4 class="title">Цена</h4>
-                        <div class="sidebar-price">
-                            <div class="form-row align-items-center">
-                                <div class="col">
-
-                                </div>
-                                <div class="col">
-
-                                </div>
-                                  <button type="submit" class="btn btn-yellow w-100 mx-1" onclick="$('forma');"><i class="fas fa-search"></i></button>
-                              </div>
-                         </div>
-                    </div>
-                </form>
-                <!-- END BRANDS -->
-
 
             </div>
 
