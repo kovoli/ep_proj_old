@@ -6,17 +6,19 @@ from . import helpers
 from watson import search as watson
 from django.db.models import F
 
-
+# ---------- HELPER FUNCTIONS -----------------------
 def menu(request):
     categories_home = Category.objects.all()
     return categories_home
 
 
+# ---------- MAIN PAGE ------------------------------
 def home_page(request):
 
     return render(request, 'base.html', {'menu': menu(request)})
 
 
+# ---------- CATEGORY AND PRODUCT VIEWS -------------
 def product_detail(request, slug):
     product = get_object_or_404(Product, slug=slug)
     breadcrumbs = Category.get_ancestors(product.category)
@@ -26,7 +28,7 @@ def product_detail(request, slug):
     # Filter by Category > Exclude current Product > get the min price pro Product
     semilar_products = Product.objects.filter(category=product.category)\
                                       .exclude(id=product.id)\
-                                      .annotate(min_price=Min('prices__price'))[:6]
+                                      .annotate(min_price=Min('prices__price')).order_by('views')[:6]
     comments = product.comments.filter(active=True)
 
     new_comment = None
@@ -53,6 +55,107 @@ def product_detail(request, slug):
 
 
 def category_catalog(request, slug=None):
+    # -------- Получаю категорию
+    category = get_object_or_404(Category, slug=slug)
+    # -------- Крошки и их потомки
+    breadcrumbs = Category.get_ancestors(category, include_self=True)
+    # -------- Если уровень категории ниже первой выводятся только категории без товаров
+    if category.get_level() <= 1:
+        cat = category.get_descendants().order_by('tree_id', 'id', 'name')
+        return render(request, 'shop/category_catalog.html', {'category': category,
+                                                              'cat': cat,
+                                                              'menu': menu(request),
+                                                              'breadcrumbs': breadcrumbs})
+    # -------- Форма для фильтрации
+    filter_brand = BrandForms(request.GET)
+    # -------- Если категория равно уровню два и больше выводяться товары
+    if category.get_level() >= 2:
+        list_pro = Product.objects.filter(category__in=Category.objects.get(id=category.id)\
+                                               .get_descendants(include_self=True)) \
+                                               .annotate(min_price=Min('prices__price')).order_by('views')
+        vendors_ids = list_pro.values_list('vendor_id', flat=True).order_by().distinct()
+        vendors = Vendor.objects.filter(id__in=vendors_ids)
+        filter_brand.fields['brand'].queryset = Vendor.objects.filter(id__in=vendors_ids)
+
+        products_list = helpers.pg_records(request, list_pro, 15)
+        # ------- Фильтрация по брендам
+        if filter_brand.is_valid():
+            if filter_brand.cleaned_data['brand']:
+                list_pro = Product.objects.filter(category__in=Category.objects.get(id=category.id)\
+                                                                       .get_descendants(include_self=True))\
+                                                                       .annotate(min_price=Min('prices__price'))\
+                                                                       .filter(vendor__in=filter_brand.cleaned_data['brand']).order_by('views')
+                products_list = helpers.pg_records(request, list_pro, 100)
+        # ------- Цена от и больше
+            if filter_brand.cleaned_data['min_price']:
+                list_pro = list_pro.filter(prices__price__gte=filter_brand.cleaned_data['min_price']).order_by('views')
+                products_list = helpers.pg_records(request, list_pro, 100)
+        # ------- Цена до и меньше
+            if filter_brand.cleaned_data['max_price']:
+                list_pro = list_pro.filter(prices__price__lte=filter_brand.cleaned_data['max_price']).order_by('views')
+                products_list = helpers.pg_records(request, list_pro, 100)
+        # ------- Фильтр по цене вверх и вниз и популярность
+            if filter_brand.cleaned_data['ordering']:
+                list_pro = list_pro.order_by(filter_brand.cleaned_data['ordering'])
+                products_list = helpers.pg_records(request, list_pro, 100)
+
+        category = get_object_or_404(Category, slug=slug)
+        cat = category.get_descendants(include_self=True).order_by('tree_id', 'id', 'name')
+        last_node = category.get_siblings(include_self=True)
+
+        return render(request, 'shop/category_product_list.html', {'products_list': products_list,
+                                                                   'category': category,
+                                                                   'vendors': vendors,
+                                                                   'cat': cat,
+                                                                   'last_node': last_node,
+                                                                   'menu': menu(request),
+                                                                   'breadcrumbs': breadcrumbs,
+                                                                   'filter_brand': filter_brand,
+                                                                   })
+
+
+def search_products(request):
+    if 'q' in request.GET:
+        q = request.GET['q']
+        products_list = watson.filter(Product, q).annotate(min_price=Min('prices__price'))
+    return render(request, 'shop/search_products.html', {'q': q,
+                                                         'products_list': products_list,
+                                                         'menu': menu(request)})
+
+
+# ------------------- VENDOR VIEWS ------------------
+def vendor_list(request):
+    all_vendors = Vendor.objects.all()
+    return render(request, 'vendors/vendor_list.html', {'all_vendors': all_vendors,
+                                                        'menu': menu(request)})
+
+
+def vendor_category_list(request, slug_vendor):
+    vendor = get_object_or_404(Vendor, slug=slug_vendor)
+    list_pro = Product.objects.filter(vendor=vendor)
+    categories_id_list = list_pro.values_list('category_id', flat=True).order_by().distinct()
+    categories = Category.objects.filter(id__in=categories_id_list)
+
+    return render(request, 'vendors/vendor_category_list.html', {'categories': categories,
+                                                                 'vendor': vendor,
+                                                                 'menu': menu(request)})
+
+
+def vendor_product_list(request, slug_vendore, slug_category):
+    vendor = get_object_or_404(Vendor, slug=slug_vendore)
+    list_pro = Product.objects.filter(category__slug=slug_category)\
+                              .filter(vendor=vendor)\
+                              .annotate(min_price=Min('prices__price'))
+    category = Category.objects.get(slug=slug_category)
+
+    return render(request, 'vendors/vendor_product_list.html', {'vendor': vendor,
+                                                                'menu': menu(request),
+                                                                'category': category,
+                                                                'list_pro': list_pro})
+
+
+# ------------------- DISCOUNTS VIEWS ------------------
+def discount_category_catalog(request, slug=None):
     # -------- Получаю категорию
     category = get_object_or_404(Category, slug=slug)
     # -------- Крошки и их потомки
@@ -119,41 +222,3 @@ def category_catalog(request, slug=None):
                                                                    'breadcrumbs': breadcrumbs,
                                                                    'filter_brand': filter_brand,
                                                                    })
-
-
-def search_products(request):
-    if 'q' in request.GET:
-        q = request.GET['q']
-        products_list = watson.filter(Product, q).annotate(min_price=Min('prices__price'))
-    return render(request, 'shop/search_products.html', {'q': q,
-                                                         'products_list': products_list,
-                                                         'menu': menu(request)})
-
-
-# ------------------- VENDOR VIEWS ------------------
-def vendor_list(request):
-    all_vendors = Vendor.objects.all()
-    return render(request, 'vendors/vendor_list.html', {'all_vendors': all_vendors,
-                                                        'menu': menu(request)})
-
-
-def vendor_category_list(request, slug_vendor):
-    vendor = get_object_or_404(Vendor, slug=slug_vendor)
-    list_pro = Product.objects.filter(vendor=vendor)
-    categories_id_list = list_pro.values_list('category_id', flat=True).order_by().distinct()
-    categories = Category.objects.filter(id__in=categories_id_list)
-
-    return render(request, 'vendors/vendor_category_list.html', {'categories': categories,
-                                                                 'vendor': vendor,
-                                                                 'menu': menu(request)})
-
-
-def vendor_product_list(request, slug_vendore, slug_category):
-    vendor = get_object_or_404(Vendor, slug=slug_vendore)
-    list_pro = Product.objects.filter(category__slug=slug_category).filter(vendor=vendor).annotate(min_price=Min('prices__price'))
-    category = Category.objects.get(slug=slug_category)
-
-    return render(request, 'vendors/vendor_product_list.html', {'vendor': vendor,
-                                                                'menu': menu(request),
-                                                                'category': category,
-                                                                'list_pro': list_pro})
