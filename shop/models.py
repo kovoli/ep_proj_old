@@ -38,6 +38,7 @@ class Category(MPTTModel):
     class Meta:
         verbose_name = 'Категория'
         verbose_name_plural = 'Категории'
+        indexes = [models.Index(fields=['slug'])]
 
 
 # -------------- SHOP ---------------
@@ -83,6 +84,7 @@ class Vendor(models.Model):
         ordering = ['name']
         verbose_name = 'Бренд'
         verbose_name_plural = 'Бренды'
+        indexes = [models.Index(fields=['slug'])]
 
 
 # ------------ PRODUCT -------------

@@ -86,7 +86,7 @@ def add_price_to_product(off, product):
 
 
 
-print(len(root.findall('offers')))
+
 succers_writes = 0
 errors = []
 for off in root.findall('.//offer'):
@@ -126,4 +126,5 @@ for off in root.findall('.//offer'):
         print(error)
 
 print(succers_writes)
+print(len(root.findall('.//offer')))
 print(errors)
