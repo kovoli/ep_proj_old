@@ -158,7 +158,7 @@ def vendor_product_list(request, slug_vendore, slug_category):
 def discount_category_catalog(request, category_slug=None):
         category = None
         categories = Category.objects.all()
-        product_list = Product.objects.all()
+        product_list = Product.objects.filter(prices__discount=True).annotate()
         if category_slug:
             category = get_object_or_404(Category, slug=category_slug)
             product_list = product_list.filter(category=category)
@@ -166,4 +166,5 @@ def discount_category_catalog(request, category_slug=None):
         return render(request, 'discounts/discount_category_catalog.html', {'product_list': product_list,
                                                                    'category': category,
                                                                    'categories': categories,
+                                                                   'menu': menu(request)
                                                                    })

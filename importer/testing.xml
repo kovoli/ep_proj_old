@@ -1,15 +1,19 @@
+<yml_catalog date="2019-01-01 20:01">
+<categories>
+    <category id="10530" parentId="10523">Кофеварки и кофемашины</category>
+</categories>
 <offers>
     <offer id="31357921" available="true" group_id="135177336">
         <url>https://www.ozon.ru/context/detail/id/31357921/?utm_content=partner_xml</url>
-        <price>3969</price>
+        <price>39694</price>
         <currencyId>RUR</currencyId>
-        <categoryId>1177066</categoryId>
+        <categoryId>10530</categoryId>
         <picture>https://mmedia.ozone.ru/multimedia/1011802824.jpg</picture>
         <store>false</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
         <local_delivery_cost>0</local_delivery_cost>
-        <name>Element El'Kettle WF05MBM, Black электрический чайник</name>
+        <name>Element El'Kettle WF05MBM, Black электрический чайникdfgfgsdfgsdfgdfvjgk gjkfhkkf</name>
         <vendor>Element</vendor>
         <vendorCode>WF05MBM</vendorCode>
         <description>Особая отделка корпуса создает неповторимый характер данной модели. Другая сторона дизайна этого чайника – его функциональность. Фирменное покрытие CLEAN TOUCH защищает поверхность от следов и отпечатков пальцев. Кипячение сопровождается мягкой белой подсветкой. Бескомпромиссная надежность и долговечность обеспечивается прочным корпусом из нержавеющей стали и комплектующими от проверенных производителей.</description>
@@ -32,3 +36,4 @@
         <param name="Безопасность">Блокировка включения без воды,Автовыключение</param>
       </offer>
 </offers>
+</yml_catalog>

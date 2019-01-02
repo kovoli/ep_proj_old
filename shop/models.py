@@ -147,6 +147,7 @@ class Price(models.Model):
     # relate_models
     shop = models.ForeignKey(Shop, related_name='shops', on_delete=models.CASCADE)
     product = models.ForeignKey(Product, related_name='prices', on_delete=models.CASCADE)
+    discount = models.BooleanField(default=False)
 
     def __str__(self):
         return self.name
