@@ -13,7 +13,4 @@ urlpatterns = [
     path('vendors/', views.vendor_list, name='vendore_list'),
     path('vendor_categories/<slug:slug_vendor>/', views.vendor_category_list, name='vendor'),
     path('vendor/<slug:slug_vendore>/<slug:slug_category>/', views.vendor_product_list, name='vendor_product_list'),
-    # ------ DISCOUNTS URLS --
-    path('discount_catalog/', views.discount_category_catalog, name='discount_product_list'),
-    path('discount_catalog/<slug:category_slug>/', views.discount_category_catalog, name='category_catalog_discount'),
 ]

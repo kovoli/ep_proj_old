@@ -16,7 +16,7 @@ from urllib.request import urlopen
 import re
 
 
-tree = ET.parse('testing.xml')
+tree = ET.parse('10500.xml')
 root = tree.getroot()
 
 categories = root.findall('.//category')
@@ -72,15 +72,11 @@ def vendor_get_or_create(vendor):
 
 def add_price_to_product(off, product):
     offer_price_data = {'price': 0, 'oldprice': None, 'name': None, 'url': None, 'sales_notes': None,
-                        'shop_id': 1, 'product_id': product.id, 'discount': False}
+                        'shop_id': 1, 'product_id': product.id}
     for data in offer_price_data.keys():
         print(off.find(data))
         if off.find(data) is None:
             continue
-        if data == 'oldprice':
-            if off.find(data) is not None:
-                offer_price_data['discount'] = True
-                offer_price_data[data] = off.find(data).text
         else:
             offer_price_data[data] = off.find(data).text
 
