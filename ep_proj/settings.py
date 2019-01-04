@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'debug_toolbar',
     'shop.apps.ShopConfig',
+    'discounts.apps.DiscountsConfig',
     # -- extensions --
     'mptt',
     'ckeditor',
