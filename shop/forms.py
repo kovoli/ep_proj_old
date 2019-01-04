@@ -42,7 +42,7 @@ class BrandForms(forms.Form):
         'type': "text", 'class': "form-control mb-2", "placeholder": "до:"
     }))
     ordering = forms.ChoiceField(label="сортировка", required=False, choices=[
-        ["views", "по популярности"],
+        ["-views", "по популярности"],
         ["prices__price", "дешевые сверху"],
         ["-prices__price", "дорогие сверху"]
     ], widget=forms.Select(attrs={'class': 'nice-select', 'onchange': "document.getElementById('ordering').submit()"}))

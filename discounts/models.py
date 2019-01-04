@@ -26,16 +26,3 @@ class DiscountProduct(models.Model):
     def __str__(self):
         return self.name
 
-
-# Удаляет фотографию после удаления статьи
-def delete_file(path):
-    # Deletes file from filesystem.
-    if os.path.isfile(path):
-        os.remove(path)
-
-
-@receiver(pre_delete, sender=DiscountProduct)
-def delete_img_pre_delete_post(sender, instance, *args, **kwargs):
-    if instance.deals_image:
-        delete_file(instance.deals_image.path)
-

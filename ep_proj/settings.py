@@ -48,7 +48,7 @@ INSTALLED_APPS = [
     'imagekit',
     'captcha',
     'watson',
-
+    'django_cleanup.apps.CleanupConfig',
 ]
 
 MIDDLEWARE = [

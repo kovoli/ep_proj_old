@@ -72,7 +72,7 @@ def category_catalog(request, slug=None):
     if category.get_level() >= 2:
         list_pro = Product.objects.filter(category__in=Category.objects.get(id=category.id)\
                                                .get_descendants(include_self=True)) \
-                                               .annotate(min_price=Min('prices__price')).order_by('views')
+                                               .annotate(min_price=Min('prices__price')).order_by('-views')
         vendors_ids = list_pro.values_list('vendor_id', flat=True).order_by().distinct()
         vendors = Vendor.objects.filter(id__in=vendors_ids)
         filter_brand.fields['brand'].queryset = Vendor.objects.filter(id__in=vendors_ids)
@@ -84,15 +84,15 @@ def category_catalog(request, slug=None):
                 list_pro = Product.objects.filter(category__in=Category.objects.get(id=category.id)\
                                                                        .get_descendants(include_self=True))\
                                                                        .annotate(min_price=Min('prices__price'))\
-                                                                       .filter(vendor__in=filter_brand.cleaned_data['brand']).order_by('views')
+                                                                       .filter(vendor__in=filter_brand.cleaned_data['brand']).order_by('-views')
                 products_list = helpers.pg_records(request, list_pro, 100)
         # ------- Цена от и больше
             if filter_brand.cleaned_data['min_price']:
-                list_pro = list_pro.filter(prices__price__gte=filter_brand.cleaned_data['min_price']).order_by('views')
+                list_pro = list_pro.filter(prices__price__gte=filter_brand.cleaned_data['min_price']).order_by('-views')
                 products_list = helpers.pg_records(request, list_pro, 100)
         # ------- Цена до и меньше
             if filter_brand.cleaned_data['max_price']:
-                list_pro = list_pro.filter(prices__price__lte=filter_brand.cleaned_data['max_price']).order_by('views')
+                list_pro = list_pro.filter(prices__price__lte=filter_brand.cleaned_data['max_price']).order_by('-views')
                 products_list = helpers.pg_records(request, list_pro, 100)
         # ------- Фильтр по цене вверх и вниз и популярность
             if filter_brand.cleaned_data['ordering']:
