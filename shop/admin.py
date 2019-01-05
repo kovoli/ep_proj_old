@@ -18,14 +18,10 @@ class CommentAdmin(admin.ModelAdmin):
     search_fields = ('name', 'email', 'body')
     list_editable = ('active', )
 
-
-admin.site.register(Price)
-
-
-@admin.register(Shop)
-class ProductAdmin(admin.ModelAdmin):
-    list_display = ['name', ]
-
+@admin.register(Price)
+class CommentAdmin(admin.ModelAdmin):
+    list_display = ['shop', 'name']
+    readonly_fields = ['product']
 
 @admin.register(Category)
 class CategoryAdmin(MPTTModelAdmin):

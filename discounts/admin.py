@@ -1,3 +1,10 @@
 from django.contrib import admin
+from .models import Category, DiscountProduct, Vendor
 
-# Register your models here.
+
+@admin.register(DiscountProduct)
+class ProductAdmin(admin.ModelAdmin):
+    list_display = ['name']
+    #readonly_fields = ['slug']
+    #list_filter = ('category', )
+    search_fields = ['name']
