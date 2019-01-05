@@ -1,0 +1,288 @@
+  <categories>
+   <category id="10500">Бытовая техника</category>
+   <category id="10501" parentId="10500">Крупная бытовая техника</category>
+   <category id="10502" parentId="10501">Холодильники</category>
+   <category id="10503" parentId="10501">Холодильные витрины</category>
+   <category id="10504" parentId="10501">Морозильные камеры</category>
+   <category id="10506" parentId="10501">Винные шкафы</category>
+   <category id="10507" parentId="10501">Стиральные машины</category>
+   <category id="10508" parentId="10501">Сушильные машины</category>
+   <category id="10509" parentId="10501">Плиты</category>
+   <category id="10510" parentId="10501">Духовые шкафы</category>
+   <category id="10511" parentId="10501">Варочные панели</category>
+   <category id="10512" parentId="10501">Кухонные вытяжки</category>
+   <category id="10513" parentId="10512">Вытяжки</category>
+   <category id="10514" parentId="10512">Фильтры для вытяжки</category>
+   <category id="10515" parentId="10501">Посудомоечные машины</category>
+   <category id="10516" parentId="10501">Кулеры для воды и аксессуары</category>
+   <category id="10517" parentId="10516">Кулеры для воды</category>
+   <category id="10518" parentId="10516">Помпы для воды</category>
+   <category id="10519" parentId="10516">Диспенсеры для воды</category>
+   <category id="10520" parentId="10516">Стаканодержатели</category>
+   <category id="10794" parentId="10501">Аксессуары для крупной бытовой техники</category>
+   <category id="10796" parentId="10794">Чехлы для крупной бытовой техники</category>
+   <category id="10797" parentId="10794">Подставки для стиральных машин</category>
+   <category id="10523" parentId="10500">Техника для кухни</category>
+   <category id="10530" parentId="10523">Кофеварки и кофемашины</category>
+   <category id="10532" parentId="10530">Кофемашины</category>
+   <category id="10531" parentId="10530">Кофеварки электрические</category>
+   <category id="10533" parentId="10530">Кофемолки электрические</category>
+   <category id="10534" parentId="10530">Вспениватели молока</category>
+   <category id="10535" parentId="10530">Аксессуары для кофемашин и кофеварок</category>
+   <category id="10536" parentId="10535">Фильтры для заваривания кофе</category>
+   <category id="10537" parentId="10535">Фильтры для воды</category>
+   <category id="10538" parentId="10535">Средства для чистки кофемашин</category>
+   <category id="10539" parentId="10535">Держатели для капсул</category>
+   <category id="10540" parentId="10535">Контейнеры для молока для кофемашин</category>
+   <category id="10542" parentId="10535">Сервисные диски для чистки кофемашины</category>
+   <category id="10543" parentId="10535">Корпуса для кофемашин</category>
+   <category id="10544" parentId="10535">Другие аксессуары для кофемашин и кофеварок</category>
+   <category id="10524" parentId="10523">Электрические чайники и термопоты</category>
+   <category id="10525" parentId="10524">Электрические чайники</category>
+   <category id="10526" parentId="10524">Термопоты</category>
+   <category id="10527" parentId="10524">Кипятильники</category>
+   <category id="10528" parentId="10524">Электрические самовары</category>
+   <category id="30764" parentId="10524">Пивоварни</category>
+   <category id="1610" parentId="10523">Настольные плиты</category>
+   <category id="10545" parentId="10523">Печи и грили</category>
+   <category id="10546" parentId="10545">Микроволновые печи</category>
+   <category id="10547" parentId="10545">Мини-печи</category>
+   <category id="10548" parentId="10545">Хлебопечки</category>
+   <category id="10549" parentId="10545">Электрогрили</category>
+   <category id="10550" parentId="10545">Аэрогрили</category>
+   <category id="10551" parentId="10545">Электрошашлычницы</category>
+   <category id="10552" parentId="10545">Электросковородки</category>
+   <category id="10553" parentId="10545">Электрокоптильни</category>
+   <category id="10801" parentId="10545">Мультипекари</category>
+   <category id="10554" parentId="10545">Аксессуары для микроволновых печей и грилей</category>
+   <category id="10555" parentId="10554">Тарелки для для микроволновых печей</category>
+   <category id="10556" parentId="10554">Тестомешалки для хлебопечек</category>
+   <category id="10557" parentId="10554">Чаши для хлебопечек</category>
+   <category id="10558" parentId="10554">Крепления для микроволновых печей</category>
+   <category id="10561" parentId="10554">Кольца уплотнительные для аэрогрилей</category>
+   <category id="10562" parentId="10523">Мультиварки и техника для варки</category>
+   <category id="10563" parentId="10562">Мультиварки</category>
+   <category id="10565" parentId="10562">Мультиварки-скороварки</category>
+   <category id="30742" parentId="10562">Скороварки электрические</category>
+   <category id="10566" parentId="10562">Пароварки электрические</category>
+   <category id="10568" parentId="10562">Рисоварки</category>
+   <category id="10569" parentId="10562">Су-вид</category>
+   <category id="10570" parentId="10562">Аксессуары для мультиварок и су-вид</category>
+   <category id="10571" parentId="10570">Ветчинницы</category>
+   <category id="10572" parentId="10570">Чаши для мультиварок</category>
+   <category id="10573" parentId="10570">Крышки для чаш мультиварок</category>
+   <category id="10574" parentId="10570">Кольца уплотнительные для мультиварок</category>
+   <category id="10575" parentId="10570">Контейнеры для мультиварок</category>
+   <category id="10577" parentId="10570">Щипцы для мультиварок</category>
+   <category id="10578" parentId="10570">Съемные ручки для чаш</category>
+   <category id="10579" parentId="10570">Шарики для су вид</category>
+   <category id="10580" parentId="10523">Миксеры, блендеры и измельчители</category>
+   <category id="10581" parentId="10580">Блендеры</category>
+   <category id="10798" parentId="10580">Блендеры-пароварки</category>
+   <category id="10799" parentId="10580">Блендеры-суповарки</category>
+   <category id="10582" parentId="10580">Миксеры</category>
+   <category id="10583" parentId="10580">Измельчители</category>
+   <category id="10585" parentId="10580">Электромельнички</category>
+   <category id="10586" parentId="10580">Овощерезки электрические</category>
+   <category id="10587" parentId="10580">Аксессуары для блендеров и миксеров</category>
+   <category id="10588" parentId="10587">Насадки для блендеров/миксеров</category>
+   <category id="10589" parentId="10587">Емкости для блендеров/миксеров</category>
+   <category id="10590" parentId="10587">Пневмокнопки для измельчителей</category>
+   <category id="10591" parentId="10587">Аксессуары для блендеров-пароварок</category>
+   <category id="10592" parentId="10523">Соковыжималки</category>
+   <category id="10593" parentId="10523">Мясорубки и кухонные комбайны</category>
+   <category id="10594" parentId="10593">Мясорубки</category>
+   <category id="10595" parentId="10593">Кухонные комбайны</category>
+   <category id="10584" parentId="10593">Паста-машины</category>
+   <category id="10596" parentId="10593">Аксессуары для мясорубок и комбайнов</category>
+   <category id="10597" parentId="10596">Насадки для комбайнов/мясорубок</category>
+   <category id="10598" parentId="10596">Ножи для мясорубок</category>
+   <category id="10599" parentId="10596">Решетки для мясорубок</category>
+   <category id="10600" parentId="10523">Техника для приготовления десертов</category>
+   <category id="10601" parentId="10600">Вафельницы</category>
+   <category id="10602" parentId="10600">Йогуртницы</category>
+   <category id="10603" parentId="10600">Блинницы</category>
+   <category id="10604" parentId="10600">Мороженицы</category>
+   <category id="10605" parentId="10600">Орешницы</category>
+   <category id="10606" parentId="10600">Шоколадные фонтаны</category>
+   <category id="10607" parentId="10600">Аппарат для сахарной ваты</category>
+   <category id="10608" parentId="10600">Кексницы</category>
+   <category id="10609" parentId="10600">Попкорн-мейкеры</category>
+   <category id="10610" parentId="10600">Тарталетницы</category>
+   <category id="10611" parentId="10600">Карамелизаторы</category>
+   <category id="10612" parentId="10523">Техника для приготовления блюд</category>
+   <category id="10613" parentId="10612">Тостеры</category>
+   <category id="10614" parentId="10612">Фритюрницы</category>
+   <category id="10615" parentId="10612">Бутербродницы</category>
+   <category id="30598" parentId="10612">Омлетницы</category>
+   <category id="10617" parentId="10612">Пицца-мейкеры</category>
+   <category id="10618" parentId="10612">Электрофондю</category>
+   <category id="10619" parentId="10612">Хотдог-мейкеры</category>
+   <category id="10620" parentId="10523">Прочая кухонная техника</category>
+   <category id="10621" parentId="10620">Кухонные весы</category>
+   <category id="10622" parentId="10620">Вакуумные упаковщики</category>
+   <category id="10623" parentId="10620">Стерилизаторы</category>
+   <category id="10624" parentId="10620">Дистилляторы</category>
+   <category id="10625" parentId="10620">Сушилки для овощей и фруктов</category>
+   <category id="10626" parentId="10620">Картофелечистки</category>
+   <category id="10804" parentId="10620">Ланчбоксы с подогревом</category>
+   <category id="10627" parentId="10620">Маринаторы</category>
+   <category id="10628" parentId="10620">Ножеточки</category>
+   <category id="10629" parentId="10620">Рыбочистки</category>
+   <category id="10630" parentId="10620">Кулинарные термометры</category>
+   <category id="10631" parentId="10620">Охладители бутылок</category>
+   <category id="10632" parentId="10620">Ледогенератор</category>
+   <category id="10633" parentId="10620">Экотестеры и дозиметры</category>
+   <category id="10634" parentId="10620">Маслобойки</category>
+   <category id="10635" parentId="10620">Электрооткрывалки и штопоры</category>
+   <category id="10636" parentId="10620">Электроножи</category>
+   <category id="10637" parentId="10620">Проращиватели семян</category>
+   <category id="10638" parentId="10620">Сепараторы молока</category>
+   <category id="10795" parentId="10620">Яйцеварки</category>
+   <category id="10639" parentId="10620">Измельчители бытовых отходов</category>
+   <category id="30895" parentId="10620">Коптильные пистолеты</category>
+   <category id="10640" parentId="10523">Аксессуары для кухонной техники</category>
+   <category id="10641" parentId="10640">Пленки для вакуумных упаковщиков</category>
+   <category id="10643" parentId="10640">Крышки для вакуумирования</category>
+   <category id="10644" parentId="10640">Панели для мультипекаря</category>
+   <category id="10645" parentId="10640">Посуда для приготовления йогуртов</category>
+   <category id="10646" parentId="10640">Поддоны для дегидраторов</category>
+   <category id="30801" parentId="10640">Насадки для кухонной техники</category>
+   <category id="10647" parentId="10500">Техника для дома</category>
+   <category id="10648" parentId="10647">Пылесосы и аксессуары</category>
+   <category id="10649" parentId="10648">Бытовые пылесосы</category>
+   <category id="10651" parentId="10648">Вертикальные пылесосы</category>
+   <category id="10657" parentId="10648">Беспроводные пылесосы</category>
+   <category id="10653" parentId="10648">Моющие пылесосы</category>
+   <category id="10652" parentId="10648">Автомобильные пылесосы</category>
+   <category id="10654" parentId="10648">Ручные пылесосы</category>
+   <category id="10650" parentId="10648">Роботы-пылесосы</category>
+   <category id="10655" parentId="10648">Электровеники</category>
+   <category id="10658" parentId="10648">Цокольные пылесосы</category>
+   <category id="10656" parentId="10648">Промышленные и строительные пылесосы</category>
+   <category id="10659" parentId="10648">Аксессуары для пылесосов</category>
+   <category id="10660" parentId="10659">Фильтры для пылесосов</category>
+   <category id="10661" parentId="10659">Насадки для пылесосов</category>
+   <category id="10662" parentId="10659">Пылесборники</category>
+   <category id="10663" parentId="10659">Щетки для пылесосов</category>
+   <category id="10664" parentId="10659">Шланги для пылесосов</category>
+   <category id="10665" parentId="10659">Турбощетки</category>
+   <category id="10666" parentId="10659">Аккумуляторы для пылесосов</category>
+   <category id="10667" parentId="10659">Трубки для пылесосов</category>
+   <category id="10670" parentId="10659">Комплекты пылесборников и фильтров</category>
+   <category id="10671" parentId="10659">Зарядные базы для пылесосов</category>
+   <category id="10672" parentId="10659">Ограничители движения</category>
+   <category id="10673" parentId="10659">Чистящие модули для пылесосов</category>
+   <category id="10674" parentId="10659">Дозаторы для пылесосов</category>
+   <category id="10675" parentId="10659">Колесики для пылесосов</category>
+   <category id="10677" parentId="10659">Чистящие салфетки для пылесосов</category>
+   <category id="10679" parentId="10647">Утюги и отпариватели</category>
+   <category id="10680" parentId="10679">Утюги</category>
+   <category id="10683" parentId="10679">Гладильные системы и прессы</category>
+   <category id="10684" parentId="10679">Отпариватели</category>
+   <category id="1753" parentId="10679">Парогенераторы</category>
+   <category id="10800" parentId="10679">Насадки и накладки для утюгов</category>
+   <category id="10681" parentId="10679">Фильтры для утюгов</category>
+   <category id="10682" parentId="10679">Картриджи фильтров для утюгов</category>
+   <category id="30630" parentId="10679">Держатели и подставки для утюгов</category>
+   <category id="10685" parentId="10647">Пароочистители</category>
+   <category id="10686" parentId="10647">Паровые швабры</category>
+   <category id="10678" parentId="10647">Стеклоочистители</category>
+   <category id="10710" parentId="10647">Сушилки для рук</category>
+   <category id="10687" parentId="10647">Швейные машины и аксессуары</category>
+   <category id="10688" parentId="10687">Швейные машины</category>
+   <category id="10690" parentId="10687">Оверлоки</category>
+   <category id="10691" parentId="10687">Распошивальные машины</category>
+   <category id="10692" parentId="10687">Вышивальные машины</category>
+   <category id="10693" parentId="10687">Аксессуары для швейных машин</category>
+   <category id="10694" parentId="10693">Иглы для швейных машин</category>
+   <category id="10695" parentId="10693">Лапки для швейных машин</category>
+   <category id="10696" parentId="10693">Шпульки</category>
+   <category id="10697" parentId="10693">Нитевдеватели для швейных машин</category>
+   <category id="10698" parentId="10693">Лампочки для швейных машин</category>
+   <category id="10699" parentId="10693">Масла для швейных машин</category>
+   <category id="10700" parentId="10693">Ремни для швейных машин</category>
+   <category id="10701" parentId="10693">Сумки для швейных машин</category>
+   <category id="10702" parentId="10693">Коврики для швейных машин</category>
+   <category id="10703" parentId="10693">Наборы для швейных машин</category>
+   <category id="10704" parentId="10693">Адаптеры для лапок</category>
+   <category id="10711" parentId="10500">Климатическая техника</category>
+   <category id="10712" parentId="10711">Обогреватели и тепловентиляторы</category>
+   <category id="10713" parentId="10712">Обогреватели</category>
+   <category id="10714" parentId="10712">Тепловентиляторы</category>
+   <category id="10715" parentId="10712">Электрокамины</category>
+   <category id="10716" parentId="10712">Тепловые пушки</category>
+   <category id="10717" parentId="10712">Осушители воздуха</category>
+   <category id="10718" parentId="10712">Воздушные завесы</category>
+   <category id="30658" parentId="10712">Ножки для обогревателей</category>
+   <category id="10719" parentId="10711">Водонагреватели</category>
+   <category id="10720" parentId="10719">Накопительные водонагреватели</category>
+   <category id="10721" parentId="10719">Проточные водонагреватели</category>
+   <category id="10726" parentId="10711">Кондиционеры и сплит-системы</category>
+   <category id="10727" parentId="10726">Кондиционеры</category>
+   <category id="10728" parentId="10726">Сплит-системы</category>
+   <category id="10729" parentId="10726">Мобильные кондиционеры</category>
+   <category id="1756" parentId="10726">Пульты для кондиционеров</category>
+   <category id="10723" parentId="10711">Увлажнители воздуха и аромадиффузоры</category>
+   <category id="10725" parentId="10711">Очистители воздуха</category>
+   <category id="30793" parentId="10711">Мойки воздуха</category>
+   <category id="1648" parentId="10711">Охладители воздуха</category>
+   <category id="10724" parentId="10711">Вентиляторы</category>
+   <category id="10730" parentId="10711">Погодные станции</category>
+   <category id="10731" parentId="10730">Погодная станция</category>
+   <category id="10732" parentId="10730">Датчики погодной станции</category>
+   <category id="10733" parentId="10730">Датчики микроклимата</category>
+   <category id="10734" parentId="10711">Расходные материалы для климатической техники</category>
+   <category id="10793" parentId="10734">Фильтры для увлажнителей</category>
+   <category id="1744" parentId="10734">Фильтры для воздухоочистителей</category>
+   <category id="10735" parentId="10734">Сменные фильтры, масла и чистящие средства</category>
+   <category id="30651" parentId="10734">Дезинфицирующие стержни</category>
+   <category id="10737" parentId="10500">Техника для красоты и здоровья</category>
+   <category id="10738" parentId="10737">Фены, термощетки</category>
+   <category id="10739" parentId="10738">Фены</category>
+   <category id="10740" parentId="10738">Фены-щетки</category>
+   <category id="10741" parentId="10738">Термощетки</category>
+   <category id="10742" parentId="10738">Насадки для фенов</category>
+   <category id="10743" parentId="10737">Выпрямители</category>
+   <category id="10744" parentId="10737">Щипцы для завивки и аксессуары</category>
+   <category id="10745" parentId="10744">Щипцы для завивки</category>
+   <category id="10746" parentId="10744">Приборы для автоматической завивки</category>
+   <category id="10747" parentId="10744">Насадки для щипцов</category>
+   <category id="10748" parentId="10737">Электробигуди</category>
+   <category id="10749" parentId="10737">Эпиляторы и аксессуары</category>
+   <category id="10750" parentId="10749">Эпиляторы</category>
+   <category id="10751" parentId="10749">Фотоэпиляторы</category>
+   <category id="10752" parentId="10749">Лазерные эпиляторы</category>
+   <category id="10753" parentId="10749">Насадки для эпиляторов</category>
+   <category id="10755" parentId="10737">Машинки для стрижки волос и аксессуары</category>
+   <category id="10756" parentId="10755">Машинки для стрижки</category>
+   <category id="10757" parentId="10755">Насадки для машинки</category>
+   <category id="10758" parentId="10755">Масла для ухода за машинкой</category>
+   <category id="10759" parentId="10737">Электробритвы и аксессуары</category>
+   <category id="10760" parentId="10759">Электробритвы</category>
+   <category id="10761" parentId="10759">Бритвенные головки и сетки</category>
+   <category id="10762" parentId="10759">Чехлы для электробритв</category>
+   <category id="10763" parentId="10759">Сменные картриджи для очистки</category>
+   <category id="10764" parentId="10759">Средства для системы очистки</category>
+   <category id="10765" parentId="10737">Триммеры для волос</category>
+   <category id="10766" parentId="10765">Триммеры</category>
+   <category id="10767" parentId="10765">Триммеры для бороды и усов</category>
+   <category id="10768" parentId="10765">Триммеры для носа и ушей</category>
+   <category id="10770" parentId="10765">Женские триммеры</category>
+   <category id="30626" parentId="10765">Сменные лезвия для триммеров</category>
+   <category id="10771" parentId="10737">Электрические зубные щетки и аксессуары</category>
+   <category id="10772" parentId="10771">Электрические зубные щетки</category>
+   <category id="10773" parentId="10771">Ирригаторы</category>
+   <category id="10774" parentId="10771">Насадки для электрических зубных щеток и ирригаторов</category>
+   <category id="10776" parentId="10771">Стерилизаторы зубных щеток</category>
+   <category id="10777" parentId="10737">Массажное оборудование и аксессуары</category>
+   <category id="10784" parentId="10777">Массажеры</category>
+   <category id="10778" parentId="10777">Массажные накидки</category>
+   <category id="10780" parentId="10777">Массажные подушки</category>
+   <category id="10779" parentId="10777">Массажные столы</category>
+   <category id="30406" parentId="10777">Массажные подушки для авто</category>
+   <category id="10782" parentId="10777">Массажные матрасы</category>
+   <category id="10785" parentId="10777">Массажеры для лица</category>
+   <category id="10786" parentId="10777">Гидромассажные ванны</category>
+   <category id="10792" parentId="10737">Напольные весы</category>
+  </categories>
