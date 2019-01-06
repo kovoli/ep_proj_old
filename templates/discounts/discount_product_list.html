@@ -11,6 +11,24 @@
 {% block content %}
 <div class="product-section section mt-20 mb-20">
     <div class="container">
+    {% if breadcrumbs %}
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item px-1"><a href="{% url 'discounts:discount_list' %}">Скидки</a></li>
+        {% for bc in breadcrumbs %}
+            <li class="breadcrumb-item dropdown"><a  href="{{ bc.get_absolute_url }}">{{ bc.name }}</a>
+                  <a class=" dropdown-toggle mx-1" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  </a>
+                  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
+                    {% for bc_siblings in bc.get_siblings %}
+                        <a class="dropdown-item" href="{{ bc_siblings.get_absolute_url }}">{{ bc_siblings.name }}</a>
+                    {% endfor %}
+                  </div>
+            </li>
+        {% endfor %}
+      </ol>
+    </nav>
+    {% endif %}
         <div class="row">
             <div class="col-xl-9 col-lg-8 col-12 order-lg-2 mb-50">
 
@@ -97,7 +115,7 @@
 
             </div>
 
-            <div class="shop-sidebar-wrap col-xl-3 col-lg-4 col-12 order-lg-1 mb-15">
+            <form class="shop-sidebar-wrap col-xl-3 col-lg-4 col-12 order-lg-1 mb-15">
 
                 <div class="shop-sidebar mb-35">
 
@@ -119,113 +137,47 @@
                     {% endrecursetree %}
                 </div>
 
-
-                <div class="shop-sidebar mb-35">
-
-                    <h4 class="title">CATEGORIES</h4>
-
-                    <ul class="sidebar-category">
-                        <li><a href="#">Tv & Audio System</a></li>
-                        <li><a href="#">Computer & Laptop</a>
-                            <ul class="children">
-                                <li><a href="#">Smartphone</a></li>
-                                <li><a href="#">headphone</a></li>
-                                <li><a href="#">accessories</a></li>
+                <!-- Brands -->
+                <form action="." method="get">
+                {% if vendors.count >= 10 and vendors%}
+                    <div class="shop-sidebar mb-35">
+                        <h4 class="title" data-spy="scroll" data-target="#brand_liste">Бренды</h4>
+                            <div class="input-group">
+                              <input id="brand_list_input" type="text"  class="form-control" placeholder="Поиск бренда" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                            </div>
+                            <ul class="sidebar-brand position-relative"  id="brand_liste" style="height: 450px; overflow-y: scroll;">
+                                 {{ filter_discount.brand }}
                             </ul>
-                        </li>
-                        <li><a href="#">Phones & Tablets</a>
-                            <ul class="children">
-                                <li><a href="#">Samsome</a></li>
-                                <li><a href="#">GL Stylus</a></li>
-                                <li><a href="#">Uawei</a></li>
-                                <li><a href="#">Cherry Berry</a></li>
+                    </div>
+                {% elif vendors %}
+                    <div class="shop-sidebar mb-35">
+                        <h4 class="title" data-spy="scroll" data-target="#brand_liste">Бренды</h4>
+                            <div class="input-group">
+                              <input id="brand_list_input" type="text"  class="form-control" placeholder="Поиск бренда" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                            </div>
+                            <ul class="sidebar-brand position-relative"  id="brand_liste">
+                                {{ filter_discount.brand }}
                             </ul>
-                        </li>
-                        <li><a href="#">Home Appliances</a></li>
-                        <li><a href="#">Kitchen appliances</a>
-                            <ul class="children">
-                                <li><a href="#">Power Bank</a></li>
-                                <li><a href="#">Data Cable</a></li>
-                                <li><a href="#">Power Cable</a></li>
-                                <li><a href="#">Battery</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#">Printer & Scanner</a>
-                            <ul class="children">
-                                <li><a href="#">Desktop Headphone</a></li>
-                                <li><a href="#">Mobile Headphone</a></li>
-                                <li><a href="#">Wireless Headphone</a></li>
-                                <li><a href="#">LED Headphone</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#">Camera & CC Camera</a></li>
-                        <li><a href="#">Smart Watch</a></li>
-                        <li><a href="#">Accessories</a></li>
-                    </ul>
-
-                </div>
-
-                <div class="shop-sidebar mb-35">
-
-                    <h4 class="title">Brand</h4>
-
-                    <ul class="sidebar-brand">
-                        <li><a href="#">Apple</a></li>
-                        <li><a href="#">Sumsang</a></li>
-                        <li><a href="#">Phillips</a></li>
-                        <li><a href="#">Zeon</a></li>
-                        <li><a href="#">Panasonic</a></li>
-                        <li><a href="#">Uawei</a></li>
-                    </ul>
-
-                </div>
-
-                <div class="shop-sidebar mb-35">
-
-                    <h4 class="title">Price</h4>
-
-                    <div class="sidebar-price">
-                        <div id="price-range"></div>
-                        <input type="text" id="price-amount" readonly>
                     </div>
 
-                </div>
 
-                <div class="shop-sidebar mb-35">
-
-                    <div class="banner"><a href="#"><img src="assets/images/banner/banner-41.jpg" alt="Banner"></a></div>
-
-                </div>
-
-                <div class="shop-sidebar mb-35">
-
-                    <h4 class="title">Color</h4>
-
-                    <ul class="sidebar-brand">
-                        <li><a href="#">White</a></li>
-                        <li><a href="#">Black</a></li>
-                        <li><a href="#">Cosmic Black</a></li>
-                        <li><a href="#">Rose Gold</a></li>
-                        <li><a href="#">Spacegrey</a></li>
-                    </ul>
-
-                </div>
-
-                <div class="shop-sidebar mb-35">
-
-                    <h4 class="title">Tags</h4>
-
-                    <div class="sidebar-tags">
-                        <a href="#">smartphone</a>
-                        <a href="#">Iron</a>
-                        <a href="#">Trimer</a>
-                        <a href="#">Smart Watch</a>
-                        <a href="#">Play Station</a>
-                        <a href="#">Oven</a>
+                    <div class="shop-sidebar mb-35">
+                        <h4 class="title">Цена</h4>
+                        <div class="sidebar-price">
+                            <div class="form-row align-items-center">
+                                <div class="col">
+                                  {{ filter_discount.min_price }}
+                                </div>
+                                <div class="col">
+                                  {{ filter_discount.max_price }}
+                                </div>
+                                  <button type="submit" class="btn btn-yellow w-100 mx-1" onclick="$('forma');"><i class="fas fa-search"></i></button>
+                              </div>
+                         </div>
                     </div>
-
-                </div>
-
+                {% endif %}
+                </form>
+                <!-- END BRANDS -->
             </div>
 
         </div>
