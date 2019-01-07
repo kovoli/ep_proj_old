@@ -3,7 +3,7 @@ from .models import Vendor
 
 
 class BrandForms(forms.Form):
-    brand = forms.ModelMultipleChoiceField(queryset=Vendor.objects.none(), widget=forms.CheckboxSelectMultiple(attrs={'onchange': "document.getElementById('ordering').submit()"}), required=False)
+    brand = forms.ModelMultipleChoiceField(queryset=Vendor.objects.none(), widget=forms.CheckboxSelectMultiple(attrs={'onchange': "document.getElementById('branding').submit()"}), required=False)
     min_price = forms.IntegerField(label='от', required=False, widget=forms.TextInput(attrs={
         'type': "text", 'class': "form-control mb-2", "placeholder": "от:"
     }))

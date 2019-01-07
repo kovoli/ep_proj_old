@@ -30,31 +30,13 @@
     </nav>
     {% endif %}
         <div class="row">
-            <div class="col-xl-9 col-lg-8 col-12 order-lg-2 mb-50">
+            <div class="col-xl-9 col-lg-8 col-12 order-lg-2 mb-20">
 
-                <div class="row mb-50">
+                <div class="row mb-20">
                     <div class="col">
 
                         <!-- Shop Top Bar Start -->
                         <div class="shop-top-bar with-sidebar">
-
-                            <!-- Product View Mode -->
-                            <div class="product-view-mode">
-                                <a class="active" href="#" data-target="grid"><i class="fa fa-th"></i></a>
-                                <a href="#" data-target="list"><i class="fa fa-list"></i></a>
-                            </div>
-
-                            <!-- Product Showing -->
-                            <div class="product-showing">
-                                <p>Showing</p>
-                                <select name="showing" class="nice-select">
-                                    <option value="1">8</option>
-                                    <option value="2">12</option>
-                                    <option value="3">16</option>
-                                    <option value="4">20</option>
-                                    <option value="5">24</option>
-                                </select>
-                            </div>
 
                             <!-- Product Short -->
                             <div class="product-short">
@@ -87,7 +69,7 @@
                         <div class="ee-product">
                             <!-- Image -->
                             <div class="image d-flex mx-auto align-items-center justify-content-center">
-                                <a href="{{ product.url }}">
+                                <a href="{{ product.url }}" target="_blank">
                                     <img class="p-2 mx-auto d-block img-fluid" src="{% if product.discount_image %}
                                                                                     {{ product.discount_image.url }}
                                                                                     {% else %}
@@ -98,7 +80,7 @@
                             <div class="content">
                                 <!-- Category & Title -->
                                 <div class="category-title">
-                                    <h5 class="title"><a href="{{ product.url }}">{{ product.name }}</a></h5>
+                                    <h5 class="title"><a href="{{ product.url }}" target="_blank">{{ product.name }}</a></h5>
                                 </div>
                                 <!-- Price & Ratting -->
                                 <div class="price-ratting">
@@ -138,7 +120,7 @@
                 </div>
 
                 <!-- Brands -->
-                <form action="." method="get">
+                <form action="." method="get" id="branding">
                 {% if vendors.count >= 10 and vendors%}
                     <div class="shop-sidebar mb-35">
                         <h4 class="title" data-spy="scroll" data-target="#brand_liste">Бренды</h4>
@@ -160,21 +142,6 @@
                             </ul>
                     </div>
 
-
-                    <div class="shop-sidebar mb-35">
-                        <h4 class="title">Цена</h4>
-                        <div class="sidebar-price">
-                            <div class="form-row align-items-center">
-                                <div class="col">
-                                  {{ filter_discount.min_price }}
-                                </div>
-                                <div class="col">
-                                  {{ filter_discount.max_price }}
-                                </div>
-                                  <button type="submit" class="btn btn-yellow w-100 mx-1" onclick="$('forma');"><i class="fas fa-search"></i></button>
-                              </div>
-                         </div>
-                    </div>
                 {% endif %}
                 </form>
                 <!-- END BRANDS -->

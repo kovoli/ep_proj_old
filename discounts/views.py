@@ -1,6 +1,8 @@
 from django.shortcuts import render, get_object_or_404
 from .models import DiscountProduct, Category, Vendor
 from .forms import BrandForms
+from shop import helpers
+from django.db.models import Min
 from shop.views import menu
 
 
@@ -15,16 +17,26 @@ def discount_product_list(request, category_slug=None):
         category = get_object_or_404(Category, slug=category_slug)
         categories = category.get_descendants(include_self=True)
         breadcrumbs = Category.get_ancestors(category, include_self=True)
-        product_list = product_list.filter(category=category)
+
+        product_list = product_list.filter(category__in=Category.objects.get(id=category.id)\
+                                                                .get_descendants(include_self=True))
 
         vendors_ids = product_list.values_list('vendor_id', flat=True).order_by().distinct()
         vendors = Vendor.objects.filter(id__in=vendors_ids)
-        print(vendors)
         filter_discount.fields['brand'].queryset = Vendor.objects.filter(id__in=vendors_ids)
-        print(filter_discount['brand'])
         context = {'category': category, 'categories': categories,
                    'product_list': product_list, 'breadcrumbs': breadcrumbs,
                    'vendors': vendors, 'filter_discount': filter_discount}
+        if filter_discount.is_valid():
+            if filter_discount.cleaned_data['brand']:
+                print(filter_discount.cleaned_data['brand'])
+                list_pro = DiscountProduct.objects.filter(category__in=Category.objects.get(id=category.id)\
+                                                                       .get_descendants(include_self=True))\
+                                                                       .filter(vendor__in=filter_discount.cleaned_data['brand']).order_by('-views')
+                product_list = helpers.pg_records(request, list_pro, 100)
+                context = {'category': category, 'categories': categories,
+                           'product_list': product_list, 'breadcrumbs': breadcrumbs,
+                           'vendors': vendors, 'filter_discount': filter_discount}
 
 
     return render(request, 'discounts/discount_product_list.html', context)
