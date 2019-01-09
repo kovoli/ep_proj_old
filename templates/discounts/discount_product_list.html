@@ -31,40 +31,10 @@
     {% endif %}
         <div class="row">
             <div class="col-xl-9 col-lg-8 col-12 order-lg-2 mb-20">
-
-                <div class="row mb-20">
-                    <div class="col">
-
-                        <!-- Shop Top Bar Start -->
-                        <div class="shop-top-bar with-sidebar">
-
-                            <!-- Product Short -->
-                            <div class="product-short">
-                                <p>Short by</p>
-                                <select name="sortby" class="nice-select">
-                                    <option value="trending">Trending items</option>
-                                    <option value="sales">Best sellers</option>
-                                    <option value="rating">Best rated</option>
-                                    <option value="date">Newest items</option>
-                                    <option value="price-asc">Price: low to high</option>
-                                    <option value="price-desc">Price: high to low</option>
-                                </select>
-                            </div>
-
-                            <!-- Product Pages -->
-                            <div class="product-pages">
-                                <p>Pages 1 of 25</p>
-                            </div>
-
-                        </div><!-- Shop Top Bar End -->
-
-                    </div>
-                </div>
-
                 <!-- Shop Product Wrap Start -->
                 <div class="shop-product-wrap grid with-sidebar row">
                     {% for product in product_list %}
-                    <div class="col-xl-4 col-md-6 col-12 pb-30 pt-10">
+                    <div class="col-xl-4 col-md-6 col-12 pb-30">
                         <!-- Product Start -->
                         <div class="ee-product">
                             <!-- Image -->
@@ -97,7 +67,7 @@
 
             </div>
 
-            <form class="shop-sidebar-wrap col-xl-3 col-lg-4 col-12 order-lg-1 mb-15">
+            <div class="shop-sidebar-wrap col-xl-3 col-lg-4 col-12 order-lg-1 mb-15">
 
                 <div class="shop-sidebar mb-35">
 

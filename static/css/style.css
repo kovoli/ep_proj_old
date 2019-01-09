@@ -9026,7 +9026,7 @@ img.mfp-img {
 
 /*-- Sidebar Category --*/
 .sidebar-category li {
-  padding: 10px 25px;
+  padding: 10px 10px;
   border-bottom: 1px solid #dddddd; }
   .sidebar-category li:last-child {
     border-bottom: 0px; }
@@ -9051,18 +9051,13 @@ img.mfp-img {
       -o-transition: all 0.3s ease 0s;
       transition: all 0.3s ease 0s; }
   .sidebar-category li.has-children > a {
-    padding-left: 15px; }
-    .sidebar-category li.has-children > a::before {
-      content: "\f105"; }
+    padding-left: 10px; }
   .sidebar-category li ul li {
     border: none;
-    padding: 5px 25px; }
+    padding: 5px 10px; }
     .sidebar-category li ul li a {
-      text-transform: capitalize;
-      padding-left: 20px; }
-      .sidebar-category li ul li a::before {
-        content: "\f178";
-        color: #606060; }
+      padding-left: 10px; }
+
 
 /*-- Sidebar Brand --*/
 .sidebar-brand li {

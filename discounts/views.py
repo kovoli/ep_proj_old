@@ -10,7 +10,7 @@ def discount_product_list(request, category_slug=None):
     category = None
     categories = Category.objects.all()
     product_list = DiscountProduct.objects.all()
-    context = {'category': category, 'categories': categories, 'product_list': product_list}
+    context = {'category': category, 'categories': categories, 'product_list': product_list, 'menu': menu(request)}
 
     if category_slug:
         filter_discount = BrandForms(request.GET)
@@ -26,17 +26,19 @@ def discount_product_list(request, category_slug=None):
         filter_discount.fields['brand'].queryset = Vendor.objects.filter(id__in=vendors_ids)
         context = {'category': category, 'categories': categories,
                    'product_list': product_list, 'breadcrumbs': breadcrumbs,
-                   'vendors': vendors, 'filter_discount': filter_discount}
+                   'vendors': vendors, 'filter_discount': filter_discount,
+                   'menu': menu(request)}
         if filter_discount.is_valid():
             if filter_discount.cleaned_data['brand']:
                 print(filter_discount.cleaned_data['brand'])
                 list_pro = DiscountProduct.objects.filter(category__in=Category.objects.get(id=category.id)\
                                                                        .get_descendants(include_self=True))\
-                                                                       .filter(vendor__in=filter_discount.cleaned_data['brand']).order_by('-views')
+                                                                       .filter(vendor__in=filter_discount.cleaned_data['brand'])
                 product_list = helpers.pg_records(request, list_pro, 100)
                 context = {'category': category, 'categories': categories,
                            'product_list': product_list, 'breadcrumbs': breadcrumbs,
-                           'vendors': vendors, 'filter_discount': filter_discount}
+                           'vendors': vendors, 'filter_discount': filter_discount,
+                           'menu': menu(request)}
 
 
     return render(request, 'discounts/discount_product_list.html', context)
