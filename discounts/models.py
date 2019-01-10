@@ -43,6 +43,11 @@ class Vendor(models.Model):
     def __str__(self):
         return self.name
 
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(unidecode(self.name))
+        super(Vendor, self).save(*args, **kwargs)
+
     class Meta:
         ordering = ['name']
         verbose_name = 'Бренд'
