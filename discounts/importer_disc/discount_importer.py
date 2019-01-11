@@ -100,8 +100,6 @@ def vendor_get_or_create(vendor):
         return obj.save()
 
 
-
-
 succers_writes = 0
 errors = []
 
@@ -112,13 +110,15 @@ for off in root.findall('.//offer'):
     product_data = {'name': None, 'description': None,
                     'param': None, 'categoryId': None,
                     'price': None, 'oldprice': None,
-                    # TODO Добавить ссылку на сайт продавца
+                    'url': None
                     }
     try:
         for data in product_data.keys():
             if off.find(data) is None:
                 continue
-            if data == 'description':
+            if data == 'url':
+                product_data[data] = 'https://f.gdeslon.ru/cf/0c7e8158ad?mid=12027&goto=' + off.find(data).text[:off.find(data).text.index('?')]
+            elif data == 'description':
                 product_data[data] = description_beautify(off.find(data).text)
             elif data == 'param':
                 product_data[data] = parameter_beatify(off.findall(data))
