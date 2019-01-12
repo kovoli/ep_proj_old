@@ -2,7 +2,6 @@ from django.shortcuts import render, get_object_or_404
 from .models import DiscountProduct, Category, Vendor
 from .forms import BrandForms
 from shop import helpers
-from django.db.models import Min
 from shop.views import menu
 
 
@@ -26,7 +25,7 @@ def discount_product_list(request, category_slug=None):
         vendors = Vendor.objects.filter(id__in=vendors_ids)
         filter_discount.fields['brand'].queryset = Vendor.objects.filter(id__in=vendors_ids)
 
-        product_list = helpers.pg_records(request, list_pro, 12)
+        product_list = helpers.pg_records(request, list_pro, 6)
         context = {'category': category, 'categories': categories,
                    'product_list': product_list, 'breadcrumbs': breadcrumbs,
                    'vendors': vendors, 'filter_discount': filter_discount,
