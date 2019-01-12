@@ -99,7 +99,9 @@
             <div class="col-lg-10 col-12 ml-auto mr-auto h-100">
 
                 <ul class="single-product-tab-list nav">
-                    <li><a href="#product-specifications" class="active" data-toggle="tab">Характеристики</a></li>
+                    {% if product.param %}
+                        <li><a href="#product-specifications" class="active" data-toggle="tab">Характеристики</a></li>
+                    {% endif %}
                     <li><a href="#product-description" data-toggle="tab" >Описание</a></li>
                 </ul>
 
@@ -110,13 +112,15 @@
                             <div class="table-responsive my-3 mx-4 ">
                                 <table class="table table-bordered table-sm table-hover pro_tabl mb-0">
                                     <tbody>
+
                                         {{ product.param|safe }}
+
                                     </tbody>
                                 </table>
                             </div>
                         </div>
                     </div>
-                    <div class="tab-pane fade" id="product-description">
+                    <div class="tab-pane fade {% if not product.param %} show active {% endif %}" id="product-description">
                         <div class="single-product-description-content col-lg-12 col-12">
                             {{ product.description|safe }}
                         </div>

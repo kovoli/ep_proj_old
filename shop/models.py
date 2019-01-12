@@ -93,7 +93,7 @@ class Product(models.Model):
     slug = models.SlugField(max_length=255, unique=True)
     create = models.DateTimeField(auto_now=True)
     description = RichTextField(blank=True, null=True)
-    param = models.TextField(blank=True, null=True, )
+    param = JSONField(blank=True, null=True)
     video = models.URLField(blank=True, null=True)
     barcode = models.CharField(max_length=30, blank=True, null=True)
     vendorCode = models.CharField(max_length=150, blank=True, null=True)
