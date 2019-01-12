@@ -3,10 +3,10 @@
 {% load mptt_tags %}
 
 {% block title %}
-    Сравнение цен на  - www.pricerace.ru
+    Скидки рунета на {{ category.name }} - www.pricerace.ru
 {% endblock title %}
 
-{% block description %}Это брендовая страница{% endblock description %}
+{% block description %}Купить товары {{ category.name }} со скидкой{% endblock description %}
 
 {% block content %}
 <div class="product-section section mt-20 mb-20">
@@ -63,7 +63,7 @@
                     {% endfor %}
                 </div><!-- Shop Product Wrap End -->
 
-                {% include 'includes/pagination.html' %}
+                {% include 'discounts/pagination.html' %}
 
             </div>
 
