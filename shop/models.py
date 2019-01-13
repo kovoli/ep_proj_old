@@ -91,7 +91,8 @@ class Vendor(models.Model):
 class Product(models.Model):
     name = models.CharField(max_length=255)
     slug = models.SlugField(max_length=255, unique=True)
-    create = models.DateTimeField(auto_now=True)
+    create = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
     description = RichTextField(blank=True, null=True)
     param = JSONField(blank=True, null=True)
     video = models.URLField(blank=True, null=True)
@@ -164,7 +165,6 @@ class Comment(models.Model):
                                 on_delete=models.CASCADE,
                                 related_name='comments')
     name = models.CharField(max_length=80)
-    email = models.EmailField()
     body = models.TextField()
     positiv = models.TextField(blank=True)
     negativ = models.TextField(blank=True)

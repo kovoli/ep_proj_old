@@ -13,9 +13,9 @@ class ProductAdmin(admin.ModelAdmin):
 
 @admin.register(Comment)
 class CommentAdmin(admin.ModelAdmin):
-    list_display = ('name', 'email', 'product', 'created', 'active')
+    list_display = ('name', 'product', 'created', 'active')
     list_filter = ('active', 'created')
-    search_fields = ('name', 'email', 'body')
+    search_fields = ('name', 'body')
     list_editable = ('active', )
 
 @admin.register(Price)

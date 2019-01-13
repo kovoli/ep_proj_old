@@ -17,6 +17,14 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from django.views.generic import TemplateView
+from django.contrib.sitemaps import views
+from shop.sitemaps import ProductSitemap
+
+sitemaps = {
+    'products': ProductSitemap,
+}
+
 
 urlpatterns = [
     # Shop_app urls include
@@ -25,6 +33,14 @@ urlpatterns = [
     path('discounts/', include('discounts.urls', namespace='discounts')),
     # ---------------------------
     path('admin/', admin.site.urls),
+    # ------ Sitemap -----
+    path('sitemap.xml', views.index, {'sitemaps': sitemaps}),
+    path('sitemap-<section>.xml', views.sitemap, {'sitemaps': sitemaps},
+         name='django.contrib.sitemaps.views.sitemap'),
+]
+
+urlpatterns += [
+    path('robots.txt', TemplateView.as_view(template_name="robots.txt", content_type='text/plain')),
 ]
 
 

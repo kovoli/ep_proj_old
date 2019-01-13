@@ -49,6 +49,9 @@ INSTALLED_APPS = [
     'captcha',
     'watson',
     'django_cleanup.apps.CleanupConfig',
+    # -- Sitemap --
+    'django.contrib.sites',
+    'django.contrib.sitemaps',
 ]
 
 MIDDLEWARE = [

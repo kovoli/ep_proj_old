@@ -10,12 +10,10 @@ class CommentForm(forms.ModelForm):
 
     class Meta:
         model = Comment
-        fields = ('name', 'email', 'body', 'positiv', 'negativ')
+        fields = ('name', 'body', 'positiv', 'negativ')
         widgets = {
             'name': forms.TextInput(attrs={'class': 'form-control',
                                     'placeholder': 'Введите ваше имя'}),
-            'email': forms.EmailInput(attrs={'class': 'form-control',
-                                             'placeholder': 'Введите ваш емайл'}),
             'body': forms.Textarea(attrs={'class': 'form-control ',
                                           'rows': '4'}),
             'positiv': forms.Textarea(attrs={'class': 'form-control',
