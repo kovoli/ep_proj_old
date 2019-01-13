@@ -1,6 +1,12 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block title %}
+    Купить {{ product.name }}, сравнить цену - www.pricerace.ru
+{% endblock title %}
+
+{% block description %}{{ product.description|truncatechars:355|striptags }}{% endblock description %}
+
 {% block content %}
 <!-- Single Product Section Start -->
 <div class="product-section section mt-50 mb-40">
@@ -113,8 +119,16 @@
                                 <table class="table table-bordered table-sm table-hover pro_tabl mb-0">
                                     <tbody>
 
-                                        {{ product.param|safe }}
-
+                                        {% for i, j in product.param.items %}
+                                            <tr>
+                                                <td>{{ i }}:</td>
+                                                <td>
+                                                {{ j.0 }}
+                                                {% if j.1 %}
+                                                    {{ j.1 }}
+                                                {% endif %}
+                                                </td>
+                                        {% endfor %}
                                     </tbody>
                                 </table>
                             </div>

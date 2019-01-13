@@ -23,6 +23,10 @@ class CommentAdmin(admin.ModelAdmin):
     list_display = ['shop', 'name']
     readonly_fields = ['product']
 
+@admin.register(Shop)
+class CommentAdmin(admin.ModelAdmin):
+    list_display = ['name']
+
 @admin.register(Category)
 class CategoryAdmin(MPTTModelAdmin):
     mptt_level_indent = 20

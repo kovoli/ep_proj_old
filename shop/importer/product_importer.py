@@ -39,15 +39,14 @@ def description_beautify(text):
     subst = "</br>"
     return re.sub(regex, subst, text, 0, re.MULTILINE)
 
-
-def parameter_beatify(param):
-    charact = []
+def param_dict(param):
+    param_dict = {}
     for par in param:
         if 'unit' in par.attrib:
-            charact.append('<tr><td>' + par.attrib['name'] + ':' + '</td><td>' + par.text + ' ' + par.attrib['unit'] + '</td></tr>')
+            param_dict[par.attrib['name']] = [par.text, par.attrib['unit']]
         else:
-            charact.append('<tr><td>' + par.attrib['name'] + ':' + '</td><td>' + par.text + '</td></tr>')
-    return ''.join(charact)
+            param_dict[par.attrib['name']] = [par.text]
+    return param_dict
 
 
 def def_category(category_id):
@@ -81,6 +80,14 @@ def add_price_to_product(off, product):
             offer_price_data[data] = off.find(data).text
 
     return Price.objects.create(**offer_price_data)
+
+def video_rewiew_param(param):
+    youtube_url = 'https://www.youtube.com/embed/'
+    for par in param:
+        if par.attrib['name'] == 'Видеообзор':
+            a = par.text
+            return youtube_url + a[a.index('=') + 1:]
+    return None
 # TODO Проверку на наличие поста
 # TODO Впараметрах бывают видеообзоры; при наличие добавить в поле video
 
@@ -102,7 +109,7 @@ for off in root.findall('.//offer'):
             if data == 'description':
                 product_data[data] = description_beautify(off.find(data).text)
             elif data == 'param':
-                product_data[data] = parameter_beatify(off.findall(data))
+                product_data[data] = param_dict(off.findall(data))
             elif data == 'categoryId':
                 del product_data['categoryId']
                 product_data['category_id'] = def_category(off.find(data).text)
@@ -110,12 +117,13 @@ for off in root.findall('.//offer'):
                 product_data[data] = off.find(data).text
 
         vendor = vendor_get_or_create(off.find('vendor').text)
-
+        video = video_rewiew_param(off.findall('param'))
         #original_picture = check_field_not_none(off.find('picture').text)
         #input_file = BytesIO(urlopen(original_picture, ).read())
 
         product = Product.objects.create(**product_data)
         product.vendor = vendor
+        product.video = video
         add_price_to_product(off, product)
 
         #product.product_image.save(name + '.jpg', ContentFile(input_file.getvalue()), save=False)
@@ -129,3 +137,14 @@ for off in root.findall('.//offer'):
 print(succers_writes)
 print(len(root.findall('.//offer')))
 print(errors)
+
+"""
+def parameter_beatify(param):
+    charact = []
+    for par in param:
+        if 'unit' in par.attrib:
+            charact.append('<tr><td>' + par.attrib['name'] + ':' + '</td><td>' + par.text + ' ' + par.attrib['unit'] + '</td></tr>')
+        else:
+            charact.append('<tr><td>' + par.attrib['name'] + ':' + '</td><td>' + par.text + '</td></tr>')
+    return ''.join(charact)
+"""
