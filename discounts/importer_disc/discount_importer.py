@@ -20,7 +20,8 @@ import re
 """
 def download_all_category_files():
     filename_list = []
-    # 1. Бытовая техника, 2. Дом и сад
+    # 1. Бытовая техника
+    # 2. Дом и сад
     categories_list = ['https://api.ozon.ru/PartnerTools/XmlFeed/11023170689840',
                        'https://api.ozon.ru/PartnerTools/XmlFeed/11023172890760']
 
