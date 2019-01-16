@@ -20,6 +20,12 @@ class Category(MPTTModel):
     slug = models.SlugField(max_length=100, unique=True)
     parent = TreeForeignKey('self', on_delete=models.CASCADE, null=True, blank=True, related_name='children')
     description = RichTextField(blank=True, null=True)
+    category_image = ProcessedImageField(upload_to='category_images/%Y/%m',
+                                        processors=[ResizeToFit(None, 250)],
+                                        format='JPEG',
+                                        options={'quality': 80},
+                                        blank=True,
+                                        max_length=250)
 
     def save(self, *args, **kwargs):
         if not self.slug:

@@ -76,6 +76,8 @@ def add_price_to_product(off, product):
         print(off.find(data))
         if off.find(data) is None:
             continue
+        if data == 'url':
+            offer_price_data[data] = 'https://f.gdeslon.ru/cf/0c7e8158ad?mid=12027&goto=' + off.find(data).text[:off.find(data).text.index('?')]
         else:
             offer_price_data[data] = off.find(data).text
 
