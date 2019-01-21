@@ -14,8 +14,13 @@ def menu(request):
 
 # ---------- MAIN PAGE ------------------------------
 def home_page(request):
-
-    return render(request, 'base.html', {'menu': menu(request)})
+    category_main_page_list = [24, 244, 155, 2]
+    categories = Category.objects.filter(id__in=[588, 579, 566, 555])
+    list_pro = Product.objects.all().annotate(min_price=Min('prices__price')).order_by('views')[:12]
+    print(categories)
+    return render(request, 'index.html', {'categories': categories,
+                                          'list_pro': list_pro,
+                                          'menu': menu(request)})
 
 
 # ---------- CATEGORY AND PRODUCT VIEWS -------------
@@ -152,4 +157,7 @@ def vendor_product_list(request, slug_vendore, slug_category):
                                                                 'menu': menu(request),
                                                                 'category': category,
                                                                 'list_pro': list_pro})
+
+
+
 

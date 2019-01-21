@@ -3,10 +3,10 @@
 {% load mptt_tags %}
 
 {% block title %}
-    Сравнение цен на {{ category.name }} - www.pricerace.ru
+    Выбрать, сранить цену, купить {{ category.name }} - www.pricerace.ru
 {% endblock title %}
 
-{% block description %}Это брендовая страница{% endblock description %}
+{% block description %}{{ category.description|safe|truncatechars:150|striptags }}{% endblock description %}
 
 {% block content %}
 <div class="product-section section mt-20 mb-20">
@@ -69,7 +69,7 @@
                                                                                     {{ product.product_image_category.url }}
                                                                                     {% else %}
                                                                                     {% static 'images/zagluschka.png' %}
-                                                                                    {% endif %}" alt=""></a>
+                                                                                    {% endif %}" alt="{{ product.name }}"></a>
                             </div>
                             <!-- Content -->
                             <div class="content">
@@ -162,6 +162,11 @@
             </div>
 
         </div>
+        {% if not request.GET %}
+        <div>
+            {{ category.description|safe}}
+        </div>
+        {% endif %}
     </div>
 </div>
 

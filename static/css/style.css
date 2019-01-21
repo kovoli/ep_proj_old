@@ -3220,7 +3220,7 @@ img.mfp-img {
     @media only screen and (max-width: 479px) {
       .section-title-one::after {
         display: none; } }
-  .section-title-one h1 {
+  .section-title-one h2 {
     font-size: 24px;
     font-weight: 700;
     line-height: 30px;
@@ -3232,18 +3232,18 @@ img.mfp-img {
     position: relative;
     z-index: 3; }
     @media only screen and (min-width: 768px) and (max-width: 991px) {
-      .section-title-one h1 {
+      .section-title-one h2 {
         font-size: 20px;
         margin-left: 20px;
         padding: 4px 20px; } }
     @media only screen and (max-width: 767px) {
-      .section-title-one h1 {
+      .section-title-one h2 {
         font-size: 18px;
         margin-left: 10px;
         padding: 0 15px;
         line-height: 1; } }
     @media only screen and (max-width: 479px) {
-      .section-title-one h1 {
+      .section-title-one h2 {
         font-size: 18px;
         margin-left: 0;
         padding: 0;
@@ -13020,7 +13020,7 @@ ul.link-widget li {
   background-color: #f5d72f;
 }
 .price-wrap {
-    font-size: 1.7rem;
+    font-size: 1.5rem;
     font-weight: bolder;
     color: #000000;
 }

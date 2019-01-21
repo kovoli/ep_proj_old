@@ -1,4 +1,4 @@
-{% load static %}
+{% load staticfiles %}
 {% load mptt_tags %}
 <!doctype html>
 <html class="no-js" lang="ru">
@@ -29,7 +29,7 @@
                     <!-- Logo Start -->
                     <div class="header-logo">
                         <a href="{% url 'shop:home' %}">
-                            <img src="{% static 'images/logo.png' %}" alt="E&E - Electronics eCommerce Bootstrap4 HTML Template">
+                            <img src="{% static 'images/logo.png' %}" alt="Pricerace.ru - Каталог товаров, сравнение цен, выгодная покупка, скидки ">
                         </a>
                     </div><!-- Logo End -->
                 </div>
@@ -65,7 +65,6 @@
         </div>
     </div>
     <!-- Header Top End -->
-
     <!-- Header Search Start -->
     <div class="header-top header-top-one header-top-border pt-10 pb-10">
         <div class="container">
@@ -85,36 +84,28 @@
         </div>
     </div>
     <!-- Header Search End -->
-
 </div>
 <!-- Header Section End -->
-
 {% block content %}
 {% endblock content %}
-
 <!-- Footer Section Start -->
 <div class="footer-section section bg-ivory">
-
     <!-- Footer Bottom Section Start -->
     <div class="footer-bottom-section section">
         <div class="container">
             <div class="row">
                 <!-- Footer Copyright -->
                 <div class="col-12">
-                    <div class="footer-copyright text-center"><p>&copy; Все права защищены. Pricera.ru </p></div>
+                    <div class="footer-copyright text-center"><p>&copy; Все права защищены. www.pricerace.ru </p></div>
                 </div>
-
 
             </div>
         </div>
     </div><!-- Footer Bottom Section Start -->
-
 </div>
 <!-- Footer Section End -->
-
 <!-- JS
 ============================================ -->
-
 <!-- jQuery JS -->
 <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
 <!-- Popper JS -->
@@ -126,7 +117,5 @@
 <!-- Ajax Mail -->
 <!-- Main JS -->
 <script src="{% static 'js/main.js' %}"></script>
-
 </body>
-
 </html>

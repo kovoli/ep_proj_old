@@ -5,7 +5,7 @@
     Купить {{ product.name }}, сравнить цену - www.pricerace.ru
 {% endblock title %}
 
-{% block description %}{{ product.description|truncatechars:355|striptags }}{% endblock description %}
+{% block description %}{{ product.description|truncatechars:150|striptags }}{% endblock description %}
 
 {% block content %}
 <!-- Single Product Section Start -->
@@ -65,7 +65,7 @@
         </div>
 
         <div class="col-12 mb-20 px-0">
-            <div class="section-title-one" data-title="Цены"><h1>Цены</h1></div>
+            <div class="section-title-one" data-title="Цены"><h2>Цены</h2></div>
         </div>
         <!-- Price Comparison -->
         <div class="row mb-25">
@@ -76,10 +76,10 @@
                           <div class="row">
                               <div class="col-sm-12 col-lg-7">
                                   <figure class="figure-img d-flex mx-auto align-items-center compare-pro-card float-left pr-2 mb-0">
-                                    <a href="{{ price_list.url }}"><img class="d-block img-fluid" src="{% if price_list.shop.image_store %}{{ price_list.shop.image_store.url }}{% endif %}" alt="{{ price_list.name }}"></a>
+                                    <a href="{{ price_list.url }}" target="_blank"><img class="d-block img-fluid" src="{% if price_list.shop.image_store %}{{ price_list.shop.image_store.url }}{% endif %}" alt="{{ price_list.name }}"></a>
                                   </figure>
                                   <h5 class="title-compare mb-0">{{ price_list.name }}</h5>
-                                  <span>в <a href="{{ price_list.url }}">{{ price_list.shop.name }}</a></span>
+                                  <span>в <a href="{{ price_list.url }}" target="_blank">{{ price_list.shop.name }}</a></span>
                               </div>
                               <div class="col-sm-6 col-lg-3">
                                   <div class="price-wrap float-right py-2">
@@ -149,7 +149,7 @@
         {% if semilar_products %}
         <!-- Related Products -->
         <div class="col-12 mb-20 px-0">
-            <div class="section-title-one" data-title="Похожие товары"><h1>Похожие товары</h1></div>
+            <div class="section-title-one" data-title="Похожие товары"><h2>Похожие товары</h2></div>
         </div>
         <div class="row mb-20">
             {% for semilar_pro in semilar_products %}
@@ -174,7 +174,7 @@
         <!-- Video Rewiew -->
         {% if product.video %}
         <div class="col-12 mb-20 px-0">
-            <div class="section-title-one" data-title="Видео обзор"><h1>Видео обзор</h1></div>
+            <div class="section-title-one" data-title="Видео обзор"><h2>Видео обзор</h2></div>
         </div>
         <div class="row mb-20 pl-15 pr-15">
             <div class="embed-responsive embed-responsive-16by9">

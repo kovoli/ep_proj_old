@@ -1,11 +1,11 @@
 {% extends 'base.html' %}
 {% load mptt_tags %}
-
+{% load static %}
 {% block title %}
     Сравнение цен на {{ category.name }} - www.pricerace.ru
 {% endblock title %}
 
-{% block description %}Это брендовая страница{% endblock description %}
+{% block description %}{{ category.description|safe|truncatechars:150|striptags }}{% endblock description %}
 
 
 {% block content %}
@@ -40,17 +40,20 @@
         <div class="row justify-content-center">
 
             {% recursetree cat %}
-            <div class="col-lg-3 col-md-6 col-sm-auto">
-                <div class="card bg-light mb-3">
+            <div class="col-lg-3 col-md-6 col-sm-auto mb-3">
+                <div class="card h-100">
 
-                  <div class="card-header text-center position-absolute w-100 border-0">
+                  <div class="card-header text-center w-100 border-0 p-2">
                       <a  href="{{ node.get_absolute_url }}">
                       <h5 class="bold">
                             {{ node.name }}
                       </h5>
                       </a>
                   </div>
-                <img class="card-img-top" src="https://picsum.photos/348/348" alt="Card image cap"></a>
+                <div class="image d-flex mx-auto align-items-center justify-content-center">
+                                <a href="{{ node.get_absolute_url }}">
+                                    <img class="mx-auto d-block img-fluid" src="{% if node.category_image %}{{ node.category_image.url }}{% else %}{% static 'images/zaglushka_cat.png' %}{% endif %}" alt="Сравнение цен на {{ node.name }}"></a>
+                            </div>
                 {% if not node.get_level == 2 %}
                 <div class="dropdown dropup">
                   <a class="btn btn-yellow w-100 border-0 " id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

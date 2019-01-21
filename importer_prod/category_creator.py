@@ -1,15 +1,16 @@
-import os
+import os, sys
 import django
+sys.path.append('..')
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'ep_proj.settings')
 django.setup()
 import random
 
-from discounts.models import Category
+from shop.models import Category
 
 import xmltodict
 import json
 
-with open('./cat_bit_tehnika.xml') as fd:
+with open('xml_imports/cat_bit_tehnika.xml') as fd:
     categories = xmltodict.parse(fd.read())
 
 categories_list = categories['categories']['category']

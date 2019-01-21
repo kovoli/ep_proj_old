@@ -1,11 +1,11 @@
-import os
+import os, sys
 import django
-
+sys.path.append('..')
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'ep_proj.settings')
 django.setup()
 import random
 
-from shop.models import Category
+from discounts.models import Category
 
 import xmltodict
 import json
