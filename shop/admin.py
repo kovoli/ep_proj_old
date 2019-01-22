@@ -13,10 +13,11 @@ class ProductAdmin(admin.ModelAdmin):
 
 @admin.register(Comment)
 class CommentAdmin(admin.ModelAdmin):
-    list_display = ('name', 'product', 'created', 'active')
+    list_display = ('name', 'created', 'active')
     list_filter = ('active', 'created')
     search_fields = ('name', 'body')
     list_editable = ('active', )
+    readonly_fields = ['product']
 
 @admin.register(Price)
 class CommentAdmin(admin.ModelAdmin):

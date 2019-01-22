@@ -2,8 +2,12 @@
 {% load mptt_tags %}
 {% load static %}
 
-{% block title %} Название бренда {% endblock title %}
-{% block description %} Это брендовая страница {% endblock description %}
+{% block title %}
+    Сравнить цену и купить {{ category.name }} бренда {{ vendor.name|upper }}
+{% endblock title %}
+{% block description %}
+    Вы ищите {{ category.name }} от компании {{ vendor.name|upper }} и желате купить товар по самой низкой цене. В этом разделе все товары, актуальные цены, отзывы и видео обзоры.
+{% endblock description %}
 
 {% block content %}
 <div class="product-section section mt-20 mb-20">

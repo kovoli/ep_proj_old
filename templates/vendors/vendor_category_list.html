@@ -2,10 +2,12 @@
 {% load mptt_tags %}
 {% load static %}
 {% block title %}
-    Сравнение цен на {{ category.name }} - www.pricerace.ru
+    Все категории бренда {{ vendor.name|upper }}, сравнивайте цены, читайте отзывы - www.pricerace.ru
 {% endblock title %}
 
-{% block description %}Это брендовая страница{% endblock description %}
+{% block description %}
+    В этом разделе отсортированны категории товаров марки {{ vendor.name|upper }}
+{% endblock description %}
 
 
 {% block content %}
@@ -25,7 +27,7 @@
               </h5>
               </a>
           </div>
-        <a href="{{ cat.get_absolute_url }}">
+        <a href="{% url 'shop:vendor_product_list' vendor.slug cat.slug %}">
             <img class="mx-auto d-block img-fluid" src="{% if cat.category_image %}{{ cat.category_image.url }}{% else %}{% static 'images/zaglushka_cat.png' %}{% endif %}" alt="Сравнение цен на {{ cat.name }} от {{ vendor.name }}">
         </a>
 

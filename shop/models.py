@@ -154,6 +154,7 @@ class Price(models.Model):
     shop = models.ForeignKey(Shop, related_name='shops', on_delete=models.CASCADE)
     product = models.ForeignKey(Product, related_name='prices', on_delete=models.CASCADE)
 
+
     def __str__(self):
         return self.name
 

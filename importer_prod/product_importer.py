@@ -136,6 +136,7 @@ for off in root.findall('.//offer'):
         product.save()
         print('Succes')
         succers_writes += 1
+        off.clear()
     except Exception as error:
         errors.append(error)
         print(error)
