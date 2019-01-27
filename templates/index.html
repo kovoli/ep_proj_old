@@ -17,7 +17,7 @@
                   </div>
                 <div class="image d-flex mx-auto align-items-center justify-content-center">
                                 <a href="{{ cat.get_absolute_url }}">
-                                    <img class="mx-auto d-block img-fluid" src="{% if cat.category_image %}{{ cat.category_image.url }}{% else %}{% static 'images/zaglushka_cat.png' %}{% endif %}" alt="Сравнение цен на {{ cat.name }}"></a>
+                                    <img class="mx-auto d-block img-fluid" src="{% if cat.category_image %}{{ cat.category_image.url }}{% else %}{% static 'images/zaglushka_cat.png' %}{% endif %}" alt="Сравнение цен на {{ cat.name }}" title="{{ cat.name }}"></a>
                             </div>
 
                 </div>
@@ -43,7 +43,7 @@
                                                                                         {{ product.product_image_category.url }}
                                                                                     {% else %}
                                                                                         {% static 'images/zagluschka.png' %}
-                                                                                    {% endif %}" alt=""></a>
+                                                                                    {% endif %}" alt="{{ product.name }}" title="{{ product.name }}"></a>
                             </div>
                             <!-- Content -->
                             <div class="content">
@@ -60,8 +60,28 @@
                     </div>
                 {% endfor %}
                 </div><!-- Shop Product Wrap End -->
-                {% include 'includes/pagination.html' %}
+
             </div>
+
+        </div>
+    <div>
+            <h1>Сравнение цен на товары для любых ситуаций </h1>
+            <p>
+                Мы убеждены в этом и предлагаем вам сервис для любых обстоятельств с нашим каталогом сравнение цен. Ищете ли вы новый смартфон, энергосберегающую стиральную машину или коляску.
+            </p>
+            <p>
+               В нашем обширном ассортименте вы найдете товары, которые подходят вам и в то же время  имеют хорошее соотношение цены и качества.
+            </p>
+            <h2>Ищите товары или просто просматривайте предложения</h2>
+            <p>
+                Ищите свой любимый товар в нашем каталоге или просматривайте наши категории и вдохновляйтесь выбором.
+            </p>
+            <p>
+                Вы хотите обставить свою квартиру или привести свой сад в порядок? Осмотритесь в нашей категории дом и сад. Там вы найдете широкий ассортимент мебели, декораций или садовой мебели.
+            </p>
+            <p>
+                Ищете новые наушники или LED-телевизор? Тогда вам в категорию электроники. Как профессионал или любитель спорта вы можете найти много товаров в категории спорт и отдых и соответствующие аксессуары от теннисной ракетки до коврика для йоги.
+            </p>
         </div>
     </div>
 </div>

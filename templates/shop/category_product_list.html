@@ -2,11 +2,9 @@
 {% load static %}
 {% load mptt_tags %}
 
-{% block title %}
-    Выбрать, сранить цену, купить {{ category.name }} - www.pricerace.ru
-{% endblock title %}
+{% block title %}Выбрать, сравнить цену, купить {{ category.name }} - www.pricerace.ru{% endblock title %}
 
-{% block description %}{{ category.description|safe|truncatechars:150|striptags }}{% endblock description %}
+{% block description %}{% if category.description %}{{ category.description|safe|truncatechars:150|striptags }}{% else %}В Категории {{ category.name }} вы найдёте большое каличество товаров, сравнивайте цену, читайте отзывы смотрите видео обзор и экономьте при покупке{% endif %}{% endblock description %}
 
 {% block content %}
 <div class="product-section section mt-20 mb-20">
@@ -140,7 +138,6 @@
                             </ul>
                     </div>
                 {% endif %}
-
                     <div class="shop-sidebar mb-35">
                         <h4 class="title">Цена</h4>
                         <div class="sidebar-price">
@@ -157,10 +154,7 @@
                     </div>
                 </form>
                 <!-- END BRANDS -->
-
-
             </div>
-
         </div>
         {% if not request.GET %}
         <div>

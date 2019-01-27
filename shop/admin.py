@@ -23,6 +23,7 @@ class CommentAdmin(admin.ModelAdmin):
 class CommentAdmin(admin.ModelAdmin):
     list_display = ['shop', 'name']
     readonly_fields = ['product']
+    search_fields = ['name']
 
 @admin.register(Shop)
 class CommentAdmin(admin.ModelAdmin):
