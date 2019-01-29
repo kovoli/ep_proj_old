@@ -124,15 +124,15 @@ for off in root.findall('.//offer'):
 
         vendor = vendor_get_or_create(off.find('vendor').text)
         video = video_rewiew_param(off.findall('param'))
-        original_picture = check_field_not_none(off.find('picture').text)
-        input_file = BytesIO(urlopen(original_picture, ).read())
+        #original_picture = check_field_not_none(off.find('picture').text)
+        #input_file = BytesIO(urlopen(original_picture, ).read())
 
         product = Product.objects.create(**product_data)
         product.vendor = vendor
         product.video = video
         add_price_to_product(off, product)
 
-        product.product_image.save(product_data['name'] + '.jpg', ContentFile(input_file.getvalue()), save=False)
+        #product.product_image.save(product_data['name'] + '.jpg', ContentFile(input_file.getvalue()), save=False)
         product.save()
         print('Succes')
         succers_writes += 1
