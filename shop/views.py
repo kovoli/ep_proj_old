@@ -33,7 +33,7 @@ def product_detail(request, slug):
     # Filter by Category > Exclude current Product > get the min price pro Product
     semilar_products = Product.objects.filter(category=product.category)\
                                       .exclude(id=product.id)\
-                                      .annotate(min_price=Min('prices__price')).order_by('views')[:6]
+                                      .annotate(min_price=Min('prices__price')).order_by('-views')[:6]
     comments = product.comments.filter(active=True)
 
     new_comment = None

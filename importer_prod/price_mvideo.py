@@ -48,8 +48,11 @@ for prod in root.findall('.//offer'):
         if get_product != None:
             product_data['shop_id'] = 2
             try:
-                get_product.prices.get(shop_id=2).delete()
-                get_price_shop = get_product.prices.create(**product_data)
+                price_curent = get_product.prices.get(shop_id=2)
+                price_curent.price = product_data['price']
+                price_curent.name = product_data['name']
+                price_curent.url = product_data['url']
+                price_curent.save()
                 get_product.save()
                 print('Succes')
                 succers_writes += 1

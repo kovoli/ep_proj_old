@@ -33,7 +33,6 @@ def discount_product_list(request, category_slug=None):
 
         if filter_discount.is_valid():
             if filter_discount.cleaned_data['brand']:
-                print(filter_discount.cleaned_data['brand'])
                 list_pro = DiscountProduct.objects.filter(category__in=Category.objects.get(id=category.id)\
                                                                                        .get_descendants(include_self=True))\
                                                                                        .filter(vendor__in=filter_discount.cleaned_data['brand'])

@@ -3,10 +3,24 @@
 {% load mptt_tags %}
 
 {% block title %}
-    Скидки рунета {{ category.name }} - www.pricerace.ru
+    {% with request.resolver_match.url_name as url_name %}
+    {% if url_name == 'discount_list' %}
+    Скидки рунета, на товары действует сниженная цена - www.pricerace.ru
+    {% elif url_name == 'discount_category_catalog' %}
+    {{ category.name }} со скидкой можно купить пока действует акция - www.pricerace.ru
+    {% endif %}
+    {% endwith %}
 {% endblock title %}
 
-{% block description %}Купить товары {{ category.name }} со скидкой{% endblock description %}
+{% block description %}
+    {% with request.resolver_match.url_name as url_name %}
+    {% if url_name == 'discount_list' %}
+    Мы собираем самые актуальные скидки и акции из интернет-магазинов на самые разные товарные категории. Выберите нужную категорию и экономьте при покупке.
+    {% elif url_name == 'discount_category_catalog' %}
+Воспользуйтесь скидкой на {{ category.name }} самых лучших и разных брендов. Акции быстро проходят не теряйте времени. Выберите понравившиеся товар и купите    {% endif %}
+    {% endwith %}
+    Купить товары {{ category.name }} со скидкой
+{% endblock description %}
 
 {% block content %}
 <div class="product-section section mt-20 mb-20">

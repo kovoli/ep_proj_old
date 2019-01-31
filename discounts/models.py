@@ -57,6 +57,7 @@ class Vendor(models.Model):
 
 class DiscountProduct(models.Model):
     name = models.CharField(max_length=255)
+    prod_id = models.CharField(max_length=100, null=True, unique=True)
     description = RichTextField(null=True, blank=True)
     param = RichTextField(null=True, blank=True)
     price = models.DecimalField(max_digits=10, decimal_places=2)

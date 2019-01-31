@@ -102,24 +102,20 @@ def vendor_get_or_create(vendor):
         return obj.save()
 
 
-succers_writes = 0
-errors = []
-
-for off in root.findall('.//offer'):
-    if off.find('oldprice') == None:
-        continue
-
-    product_data = {'name': None, 'description': None,
+def create_discount_prod():
+    product_data = {'name': None, 'prod_id': off.attrib['id'], 'description': None,
                     'param': None, 'categoryId': None,
                     'price': None, 'oldprice': None,
-                    'url': None
+                    'url': None,
                     }
     try:
         for data in product_data.keys():
             if off.find(data) is None:
                 continue
             if data == 'url':
-                product_data[data] = 'https://f.gdeslon.ru/cf/0c7e8158ad?mid=12027&goto=' + off.find(data).text[:off.find(data).text.index('?')]
+                product_data[data] = 'https://f.gdeslon.ru/cf/0c7e8158ad?mid=12027&goto=' + off.find(data).text[
+                                                                                            :off.find(data).text.index(
+                                                                                                '?')]
             elif data == 'description':
                 product_data[data] = description_beautify(off.find(data).text)
             elif data == 'param':
@@ -131,19 +127,65 @@ for off in root.findall('.//offer'):
                 product_data[data] = off.find(data).text
 
         vendor = vendor_get_or_create(off.find('vendor').text)
-
-        original_picture = check_field_not_none(off.find('picture').text)
-        input_file = BytesIO(urlopen(original_picture, ).read())
-
         product = DiscountProduct.objects.create(**product_data)
         product.vendor = vendor
-
+        # Image
         original_picture = check_field_not_none(off.find('picture').text)
         input_file = BytesIO(urlopen(original_picture, ).read())
         product.discount_image.save(product_data['name'] + '.jpg', ContentFile(input_file.getvalue()), save=False)
+        # Save Image
         product.save()
-        print('Succes')
-        succers_writes += 1
-    except Exception as error:
-        errors.append(error)
-        print(error)
+    except Exception as error_create:
+        print(error_create)
+
+def update_discount_data(get_discount):
+    product_data = {'price': None, 'oldprice': None,}
+    try:
+        for data in product_data.keys():
+            if off.find(data) is None:
+                continue
+            else:
+                product_data[data] = off.find(data).text
+        get_discount.price = product_data['price']
+        get_discount.price = product_data['oldprice']
+        get_discount.save()
+    except Exception as error_update:
+        print(error_update)
+
+
+list_of_discounts = DiscountProduct.objects.all().values_list('prod_id', flat=True)
+
+del_discount = 0
+create_discount = 0
+update_discount = 0
+for off in root.findall('.//offer'):
+
+    # Скидки НЕТ
+    if off.find('oldprice') == None:
+        # Товар удаляется из DB
+        if off.attrib['id'] in list_of_discounts:
+            del_discount += 1
+            try:
+                DiscountProduct.objects.get(prod_id=off.attrib['id']).delete()
+            except Exception as error:
+                print(error)
+        else:
+            continue
+    # Скидка ЕСТЬ
+    elif off.find('oldprice') != None:
+        # Скидки нет в DB
+        if off.attrib['id'] not in list_of_discounts:
+            create_discount += 1
+            # Создаётся скидка
+            create_discount_prod()
+        # Скидка есть в DB
+        elif off.attrib['id'] in list_of_discounts:
+            update_discount += 1
+            get_discount = DiscountProduct.objects.get(prod_id=off.attrib['id'])
+            update_discount_data(get_discount)
+
+
+print(len(root.findall('.//offer')))
+print('Скидок удалилось :', del_discount)
+print('Скидок создалось :', create_discount)
+print('Скидка обновилась:', update_discount)

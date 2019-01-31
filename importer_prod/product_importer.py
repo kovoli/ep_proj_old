@@ -77,7 +77,6 @@ def add_price_to_product(off, product):
     offer_price_data = {'price': 0, 'oldprice': None, 'name': None, 'url': None, 'sales_notes': None,
                         'shop_id': 1, 'product_id': product.id}
     for data in offer_price_data.keys():
-        print(off.find(data))
         if off.find(data) is None:
             continue
         if data == 'url':
@@ -94,14 +93,14 @@ def video_rewiew_param(param):
             a = par.text
             return youtube_url + a[a.index('=') + 1:]
     return None
-# TODO Проверку на наличие поста
-# TODO Впараметрах бывают видеообзоры; при наличие добавить в поле video
+
 
 
 
 print(len(root.findall('.//offer')))
 succers_writes = 0
 errors = []
+error_count = 0
 for off in root.findall('.//offer'):
 
     product_data = {'name': None, 'description': None,
@@ -124,25 +123,26 @@ for off in root.findall('.//offer'):
 
         vendor = vendor_get_or_create(off.find('vendor').text)
         video = video_rewiew_param(off.findall('param'))
-        #original_picture = check_field_not_none(off.find('picture').text)
-        #input_file = BytesIO(urlopen(original_picture, ).read())
+        original_picture = check_field_not_none(off.find('picture').text)
+        input_file = BytesIO(urlopen(original_picture, ).read())
 
         product = Product.objects.create(**product_data)
         product.vendor = vendor
         product.video = video
         add_price_to_product(off, product)
 
-        #product.product_image.save(product_data['name'] + '.jpg', ContentFile(input_file.getvalue()), save=False)
+        product.product_image.save(product_data['name'] + '.jpg', ContentFile(input_file.getvalue()), save=False)
         product.save()
-        print('Succes')
         succers_writes += 1
         off.clear()
     except Exception as error:
+        error_count += 1
         errors.append(error)
         print(error)
 
 print(succers_writes)
 print(len(root.findall('.//offer')))
+print(error_count)
 print(errors)
 
 """
