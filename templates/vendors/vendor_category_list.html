@@ -17,8 +17,8 @@
     <div class="row justify-content-center">
 
     {% for cat in categories %}
-    <div class="col-lg-3 col-md-6 col-sm-auto">
-        <div class="card bg-light mb-3">
+    <div class="col-lg-3 col-md-6 col-sm-auto mb-3">
+        <div class="card bg-white mb-3 h-100">
 
           <div class="card-header text-center w-100 border-0">
               <a  href="{% url 'shop:vendor_product_list' vendor.slug cat.slug %}">
@@ -27,10 +27,13 @@
               </h5>
               </a>
           </div>
+        {% for cat_prod in cat.products.all|slice:":1" %}
+        <div class="image d-flex mx-auto align-items-center justify-content-center">
         <a href="{% url 'shop:vendor_product_list' vendor.slug cat.slug %}">
-            <img class="mx-auto d-block img-fluid" src="{% if cat.category_image %}{{ cat.category_image.url }}{% else %}{% static 'images/zaglushka_cat.png' %}{% endif %}" alt="Сравнение цен на {{ cat.name }} от {{ vendor.name }}">
+            <img class="mx-auto d-block img-fluid" src="{% if cat.category_image %}{{ cat.category_image.url }}{% elif cat_prod.product_image_category %}{{ cat_prod.product_image_category.url }}{% else %}{% static 'images/zaglushka_cat.png' %}{% endif %}" alt="Сравнение цен на {{ cat.name }} от {{ vendor.name }}">
         </a>
-
+        {% endfor %}
+        </div>
         </div>
     </div>
     {% endfor %}
