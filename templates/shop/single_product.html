@@ -78,8 +78,8 @@
                                   <figure class="figure-img d-flex mx-auto align-items-center compare-pro-card float-left pr-2 mb-0">
                                     <a href="{{ price_list.url }}" target="_blank"><img class="d-block img-fluid" src="{% if price_list.shop.image_store %}{{ price_list.shop.image_store.url }}{% endif %}" alt="{{ price_list.name }}"></a>
                                   </figure>
-                                  <h5 class="title-compare mb-0">{{ price_list.name }}</h5>
-                                  <span>в <a href="{{ price_list.url }}" target="_blank">{{ price_list.shop.name }}</a></span>
+                                  <h5 class="title-compare mb-0">{{ price_list.name|truncatechars:60 }}</h5>
+                                  <span>в <a href="{{ price_list.url }}" rel="nofollow" target="_blank">{{ price_list.shop.name }}</a></span>
                               </div>
                               <div class="col-sm-6 col-lg-3">
                                   <div class="price-wrap float-right py-2">
@@ -90,7 +90,7 @@
                                   </div>
                               </div>
                               <div class="col-sm-6 col-lg-2">
-                                  <a href="{{ price_list.url }}" target="_blank" class="btn btn-yellow float-right w-100">Купить</a>
+                                  <a href="{{ price_list.url }}" rel="nofollow" target="_blank" class="btn btn-yellow float-right w-100">Купить</a>
                               </div>
                           </div>
                       </div>
@@ -160,10 +160,10 @@
                 </figure>
                 <div class="card-body p-2">
                   <h5 class="card-title single-title text-center mb-0">
-                    <a href="{{ semilar_pro.get_absolute_url }}">{{ semilar_pro.name }}</a>
+                    <a href="{{ semilar_pro.get_absolute_url }}">{{ semilar_pro.name|truncatechars:60 }}</a>
                   </h5>
                 </div>
-                <h6 class="price price-single p-2 mb-0 text-center">от {{ semilar_pro.min_price }} <i class="fas fa-ruble-sign"></i></h6>
+                <h6 class="price price-single p-2 mb-0 text-center bold">от {{ semilar_pro.min_price }} <i class="fas fa-ruble-sign"></i></h6>
               </div>
             </div>
             {% endfor %}

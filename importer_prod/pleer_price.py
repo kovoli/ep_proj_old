@@ -57,12 +57,10 @@ for prod in root.findall('.//offer'):
                 price_curent.url = product_data['url']
                 price_curent.save()
                 get_product.save()
-                print('Succes')
                 succers_writes += 1
             except Price.DoesNotExist:
                 get_price_shop = get_product.prices.create(**product_data)
                 get_product.save()
-                print('Succes')
                 succers_writes += 1
     except Exception as error:
         print(error)
