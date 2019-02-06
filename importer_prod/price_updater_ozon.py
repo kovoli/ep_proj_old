@@ -14,9 +14,9 @@ tree = ET.parse('xml_imports/10500.xml')
 root = tree.getroot()
 
 
-
+succes_update = 0
 succers_writes = 0
-asc = 0
+
 for prod in root.findall('.//offer'):
     product_data = {'name': None,
                     'vendorCode': 'null',
@@ -63,18 +63,15 @@ for prod in root.findall('.//offer'):
                 price_curent.url = product_data['url']
                 price_curent.save()
                 get_product.save()
-                print('Succes')
-                succers_writes += 1
+                succes_update += 1
             except Price.DoesNotExist:
-                asc += 1
-                print(asc)
                 get_price_shop = get_product.prices.create(**product_data)
                 get_product.save()
-                print('Succes')
                 succers_writes += 1
     except Exception as error:
         print(error)
 
-print(succers_writes)
-print(asc)
-print(len(root.findall('.//offer')))
+print('Всего товаров', len(root.findall('.//offer')))
+print('Цен созданно', succers_writes)
+print('Цен обновленно', succes_update)
+

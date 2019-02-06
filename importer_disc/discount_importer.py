@@ -27,7 +27,7 @@ def download_all_category_files():
                        'https://api.ozon.ru/PartnerTools/XmlFeed/11023172890760']
 
     url = 'https://api.ozon.ru/AuthServer/Token'
-    data = {'grant_type': 'password', 'username': 'kovoli1985@gmail.com', 'password': 'Blagodat1985!'}
+    data = {'grant_type': 'password', 'username': 'kovoli1985@gmail.com', 'password': 'Mafusal1985!'}
     headers = {'Content-Type': 'application/x-www-form-urlencoded'}
     r = requests.post(url=url, data=data, headers=headers)  # Делаю запрос
     convert_tocken = r.json()  # Получаю json c токеном

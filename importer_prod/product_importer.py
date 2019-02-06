@@ -4,7 +4,7 @@ sys.path.append('..')
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'ep_proj.settings')
 django.setup()
 
-import xml.etree.ElementTree as ET
+import xml.etree.cElementTree as ET
 
 
 from shop.models import Product, Category, Vendor, Price
@@ -16,8 +16,9 @@ from urllib.request import urlopen
 
 import re
 
-
-tree = ET.parse('xml_imports/10500.xml')
+# Бытовая техника
+#tree = ET.parse('xml_imports/10500.xml')
+tree = ET.parse('xml_imports/15500.xml')
 root = tree.getroot()
 
 categories = root.findall('.//category')
@@ -134,7 +135,7 @@ for off in root.findall('.//offer'):
         product.product_image.save(product_data['name'] + '.jpg', ContentFile(input_file.getvalue()), save=False)
         product.save()
         succers_writes += 1
-        off.clear()
+
     except Exception as error:
         error_count += 1
         errors.append(error)
