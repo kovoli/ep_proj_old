@@ -25,11 +25,13 @@ class CommentAdmin(admin.ModelAdmin):
     list_display = ['shop', 'name']
     readonly_fields = ['product']
     search_fields = ['name']
+    list_filter = ('shop', )
 
 
 @admin.register(Shop)
 class CommentAdmin(admin.ModelAdmin):
     list_display = ['name']
+
 
 
 @admin.register(Category)

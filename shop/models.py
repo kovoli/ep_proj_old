@@ -54,7 +54,7 @@ class Shop(models.Model):
                                       blank=True,
                                       processors=[ResizeToFit(80, None)],
                                       format='JPEG',
-                                      options={'quality': 80})
+                                      options={'quality': 100})
 
     def __str__(self):
         return self.name

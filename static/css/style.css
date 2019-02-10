@@ -4096,8 +4096,7 @@ img.mfp-img {
       padding: 6px 20px;
       display: block;
       font-weight: 400;
-      color: #444444;
-      text-transform: capitalize; }
+      color: #444444; }
     .sub-menu li.menu-item-has-children > a::after {
       font-family: Fontawesome;
       content: "\f105";

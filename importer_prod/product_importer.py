@@ -1,4 +1,4 @@
-import os, sys
+import os, sys, unidecode
 import django
 sys.path.append('..')
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'ep_proj.settings')
@@ -18,7 +18,7 @@ import re
 
 # Бытовая техника
 #tree = ET.parse('xml_imports/10500.xml')
-tree = ET.parse('xml_imports/15500.xml')
+tree = ET.parse('imports/10500.xml')
 root = tree.getroot()
 
 categories = root.findall('.//category')
@@ -124,15 +124,15 @@ for off in root.findall('.//offer'):
 
         vendor = vendor_get_or_create(off.find('vendor').text)
         video = video_rewiew_param(off.findall('param'))
-        original_picture = check_field_not_none(off.find('picture').text)
-        input_file = BytesIO(urlopen(original_picture, ).read())
+        #original_picture = check_field_not_none(off.find('picture').text)
+        #input_file = BytesIO(urlopen(original_picture, ).read())
 
         product = Product.objects.create(**product_data)
         product.vendor = vendor
         product.video = video
         add_price_to_product(off, product)
 
-        product.product_image.save(product_data['name'] + '.jpg', ContentFile(input_file.getvalue()), save=False)
+        #product.product_image.save(product_data['name'] + '.jpg', ContentFile(input_file.getvalue()), save=False)
         product.save()
         succers_writes += 1
 
@@ -145,14 +145,3 @@ print(succers_writes)
 print(len(root.findall('.//offer')))
 print(error_count)
 print(errors)
-
-"""
-def parameter_beatify(param):
-    charact = []
-    for par in param:
-        if 'unit' in par.attrib:
-            charact.append('<tr><td>' + par.attrib['name'] + ':' + '</td><td>' + par.text + ' ' + par.attrib['unit'] + '</td></tr>')
-        else:
-            charact.append('<tr><td>' + par.attrib['name'] + ':' + '</td><td>' + par.text + '</td></tr>')
-    return ''.join(charact)
-"""

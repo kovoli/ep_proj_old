@@ -82,6 +82,8 @@
                             </div>
                         </div><!-- Product End -->
                     </div>
+                    {% empty %}
+                        <div>В данный момент товаров в категории {{ category.name }} нет. </div>
                     {% endfor %}
                 </div><!-- Shop Product Wrap End -->
 

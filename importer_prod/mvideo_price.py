@@ -1,4 +1,9 @@
-import os, sys
+"""
+1. Создать магазин в Базе данных
+2. Поменять адресс xml файла
+3. Поменять ID магазина в строке "51" и "53"
+"""
+import os, sys, requests
 import django
 sys.path.append('..')
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'ep_proj.settings')
@@ -9,6 +14,12 @@ import xml.etree.ElementTree as ET
 
 from shop.models import Product, Price
 
+url = 'http://export.admitad.com/ru/webmaster/websites/334513/products/export_adv_products/?feed_id=987&code=8daef5a69b&user=kovoli&template=40375'
+
+r = requests.get(url)
+
+with open('imports/mvideo_price.xml', 'wb') as xml_file:
+    xml_file.write(r.content)
 
 tree = ET.parse('xml_imports/mvideo_products.xml')
 root = tree.getroot()
@@ -38,11 +49,7 @@ for prod in root.findall('.//offer'):
         if prod.find('barcode').text != None:
             get_product = Product.objects.get(barcode=prod.find('barcode').text)
     except:
-        try:
-            if prod.find('model').text != None:
-                get_product = Product.objects.get(vendorCode=prod.find('model').text)
-        except:
-            continue
+        continue
 
     try:
         if get_product != None:

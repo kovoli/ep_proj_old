@@ -44,7 +44,7 @@ succers_writes = 0
 for file in download_all_category_files():
     tree = ET.parse('imports/' + file)
     root = tree.getroot()
-    print(file)
+    print('Всего товаров', len(root.findall('.//offer')))
     for prod in root.findall('.//offer'):
         product_data = {'name': None,
                         'vendorCode': 'null',
@@ -99,7 +99,6 @@ for file in download_all_category_files():
         except Exception as error:
             print(error)
 
-print('Всего товаров', len(root.findall('.//offer')))
 print('Цен созданно', succers_writes)
 print('Цен обновленно', succes_update)
 

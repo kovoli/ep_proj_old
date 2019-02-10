@@ -10,7 +10,7 @@ from shop.models import Category
 import xmltodict
 import json
 
-with open('xml_imports/cat_electronica.xml') as fd:
+with open('xml_imports/cat_dom_i_sad.xml') as fd:
     categories = xmltodict.parse(fd.read())
 
 categories_list = categories['categories']['category']
