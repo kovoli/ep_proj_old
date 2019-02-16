@@ -5,7 +5,7 @@
 {% block title %}
     {% with request.resolver_match.url_name as url_name %}
     {% if url_name == 'discount_list' %}
-    Скидки рунета, на товары действует сниженная цена - www.pricerace.ru
+    Скидки рунета, на все товары действует сниженная цена - www.pricerace.ru
     {% elif url_name == 'discount_category_catalog' %}
     {{ category.name }} со скидкой можно купить пока действует акция - www.pricerace.ru
     {% endif %}
@@ -15,7 +15,7 @@
 {% block description %}
     {% with request.resolver_match.url_name as url_name %}
     {% if url_name == 'discount_list' %}
-    Мы собираем самые актуальные скидки и акции из интернет-магазинов на самые разные товарные категории. Выберите нужную категорию и экономьте при покупке.
+    Мы собираем самые актуальные скидки и акции рунета из интернет-магазинов на самые разные товарные категории. Выберите нужную категорию и экономьте при покупке.
     {% elif url_name == 'discount_category_catalog' %}
 Воспользуйтесь скидкой на {{ category.name }} самых лучших и разных брендов. Акции быстро проходят не теряйте времени. Выберите понравившиеся товар и купите    {% endif %}
     {% endwith %}
@@ -64,7 +64,7 @@
                             <div class="content">
                                 <!-- Category & Title -->
                                 <div class="category-title">
-                                    <h5 class="title"><a href="{{ product.url }}" target="_blank">{{ product.name }}</a></h5>
+                                    <h5 class="title"><a href="{{ product.url }}" target="_blank" rel="nofollow">{{ product.name|truncatechars:70 }}</a></h5>
                                 </div>
                                 <!-- Price & Ratting -->
                                 <div class="price-ratting">

@@ -26,7 +26,7 @@
                             <div class="content">
                                 <!-- Category & Title -->
                                 <div class="category-title">
-                                    <h5 class="title"><a href="{{ product.get_absolute_url }}">{{ product.name }}</a></h5>
+                                    <h5 class="title"><a href="{{ product.get_absolute_url }}">{{ product.name|truncatechars:70 }}</a></h5>
                                 </div>
                                 <!-- Price & Ratting -->
                                 <div class="price-ratting">

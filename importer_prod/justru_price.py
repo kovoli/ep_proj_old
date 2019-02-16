@@ -4,7 +4,7 @@
 3. Поменять ID магазина в строке "51" и "53"
 """
 
-import os, sys, requests
+import os, sys, requests, time
 import django
 sys.path.append('..')
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'ep_proj.settings')
@@ -12,7 +12,7 @@ django.setup()
 import xml.etree.ElementTree as ET
 from shop.models import Product, Price
 from fuzzywuzzy import fuzz
-
+start = time.time()
 #url = 'http://export.admitad.com/ru/webmaster/websites/1009966/products/export_adv_products/?feed_id=13395&code=8daef5a69b&user=kovoli&template=40384'
 
 #r = requests.get(url)
@@ -66,15 +66,16 @@ for prod in root.findall('.//offer'):
                     price_curent.save()
                     get_product.save()
                     update_product += 1
-                    print('Update')
+                    #print('Update')
             except Price.DoesNotExist:
                 get_price_shop = get_product.prices.create(**product_data)
                 get_product.save()
                 create_product += 1
-                print('Create')
+                #print('Create')
     except Exception as error:
         print(error)
-
+end = time.time()
+print(end - start)
 print('Цен созданно', create_product)
 print('Цен обновленно', update_product)
 print(len(root.findall('.//offer')))

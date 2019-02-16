@@ -13,12 +13,12 @@ import xml.etree.ElementTree as ET
 from shop.models import Product, Price
 from fuzzywuzzy import fuzz
 
-#url = 'http://export.admitad.com/ru/webmaster/websites/1009966/products/export_adv_products/?currency=&code=8daef5a69b&user=kovoli&format=xml&feed_id=2478&last_import='
+url = 'http://export.admitad.com/ru/webmaster/websites/1009966/products/export_adv_products/?feed_id=5454&code=8daef5a69b&user=kovoli&template=40378'
 
-#r = requests.get(url)
+r = requests.get(url)
 
-#with open('imports/pleer_price.xml', 'wb') as xml_file:
-    #xml_file.write(r.content)
+with open('imports/pleer_price.xml', 'wb') as xml_file:
+    xml_file.write(r.content)
 
 tree = ET.parse('imports/123ru.xml')
 root = tree.getroot()
@@ -54,11 +54,11 @@ for prod in root.findall('.//offer'):
     result_contain = fuzz.partial_ratio(prod_category, cat_xml)
     try:
         if get_product != None:
-            product_data['shop_id'] = 4
+            product_data['shop_id'] = 5
             del product_data['categoryId']
             try:
                 if result_contain > 50:
-                    price_curent = get_product.prices.get(shop_id=4)
+                    price_curent = get_product.prices.get(shop_id=5)
                     price_curent.price = product_data['price']
                     price_curent.name = product_data['name']
                     price_curent.url = product_data['url']
@@ -67,10 +67,11 @@ for prod in root.findall('.//offer'):
                     update_product += 1
                     print('Update')
             except Price.DoesNotExist:
-                get_price_shop = get_product.prices.create(**product_data)
-                get_product.save()
-                create_product += 1
-                print('Create')
+                if result_contain > 50:
+                    get_price_shop = get_product.prices.create(**product_data)
+                    get_product.save()
+                    create_product += 1
+                    print('Create')
     except Exception as error:
         print(error)
 

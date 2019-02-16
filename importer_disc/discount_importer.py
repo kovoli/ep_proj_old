@@ -18,13 +18,13 @@ import requests, io, os
 
 import re
 
-"""
+
 def download_all_category_files():
     filename_list = []
     # 1. Бытовая техника
-    # 2. Дом и сад
+    # 2. Электроника
     categories_list = ['https://api.ozon.ru/PartnerTools/XmlFeed/11023170689840',
-                       'https://api.ozon.ru/PartnerTools/XmlFeed/11023172890760']
+                       'https://api.ozon.ru/PartnerTools/XmlFeed/11023171038040']
 
     url = 'https://api.ozon.ru/AuthServer/Token'
     data = {'grant_type': 'password', 'username': 'kovoli1985@gmail.com', 'password': 'Mafusal1985!'}
@@ -46,16 +46,6 @@ def download_all_category_files():
         filename_list.append(filename)
 
     return filename_list
-
-print(download_all_category_files())"""
-
-tree = ET.parse('imports/10500.xml')
-root = tree.getroot()
-
-categories = root.findall('.//category')
-posts = root.findall('.//offer')
-print(len(posts))
-cat_db = Category.objects.values('id', 'name')
 
 
 def check_field_not_none(field):
@@ -130,9 +120,9 @@ def create_discount_prod():
         product = DiscountProduct.objects.create(**product_data)
         product.vendor = vendor
         # Image
-        original_picture = check_field_not_none(off.find('picture').text)
-        input_file = BytesIO(urlopen(original_picture, ).read())
-        product.discount_image.save(product_data['name'] + '.jpg', ContentFile(input_file.getvalue()), save=False)
+        #original_picture = check_field_not_none(off.find('picture').text)
+        #input_file = BytesIO(urlopen(original_picture, ).read())
+        #product.discount_image.save(product_data['name'] + '.jpg', ContentFile(input_file.getvalue()), save=False)
         # Save Image
         product.save()
     except Exception as error_create:
@@ -152,37 +142,43 @@ def update_discount_data(get_discount):
     except Exception as error_update:
         print(error_update)
 
+cat_db = Category.objects.values('id', 'name')
 
 list_of_discounts = DiscountProduct.objects.all().values_list('prod_id', flat=True)
 
 del_discount = 0
 create_discount = 0
 update_discount = 0
-for off in root.findall('.//offer'):
+for file in download_all_category_files():
+    tree = ET.parse('imports/' + file)
+    root = tree.getroot()
+    categories = root.findall('.//category')
 
-    # Скидки НЕТ
-    if off.find('oldprice') == None:
-        # Товар удаляется из DB
-        if off.attrib['id'] in list_of_discounts:
-            del_discount += 1
-            try:
-                DiscountProduct.objects.get(prod_id=off.attrib['id']).delete()
-            except Exception as error:
-                print(error)
-        else:
-            continue
-    # Скидка ЕСТЬ
-    elif off.find('oldprice') != None:
-        # Скидки нет в DB
-        if off.attrib['id'] not in list_of_discounts:
-            create_discount += 1
-            # Создаётся скидка
-            create_discount_prod()
-        # Скидка есть в DB
-        elif off.attrib['id'] in list_of_discounts:
-            update_discount += 1
-            get_discount = DiscountProduct.objects.get(prod_id=off.attrib['id'])
-            update_discount_data(get_discount)
+    for off in root.findall('.//offer'):
+
+        # Скидки НЕТ
+        if off.find('oldprice') == None:
+            # Товар удаляется из DB
+            if off.attrib['id'] in list_of_discounts:
+                del_discount += 1
+                try:
+                    DiscountProduct.objects.get(prod_id=off.attrib['id']).delete()
+                except Exception as error:
+                    print(error)
+            else:
+                continue
+        # Скидка ЕСТЬ
+        elif off.find('oldprice') != None:
+            # Скидки нет в DB
+            if off.attrib['id'] not in list_of_discounts:
+                create_discount += 1
+                # Создаётся скидка
+                create_discount_prod()
+            # Скидка есть в DB
+            elif off.attrib['id'] in list_of_discounts:
+                update_discount += 1
+                get_discount = DiscountProduct.objects.get(prod_id=off.attrib['id'])
+                update_discount_data(get_discount)
 
 
 print(len(root.findall('.//offer')))

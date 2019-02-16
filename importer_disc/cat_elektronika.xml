@@ -1,0 +1,511 @@
+<categories>
+   <category id="15500">Электроника</category>
+   <category id="15501" parentId="15500">Телефоны и аксессуары</category>
+   <category id="15502" parentId="15501">Смартфоны</category>
+   <category id="15503" parentId="15501">Мобильные телефоны</category>
+   <category id="1761" parentId="15501">Умные часы и фитнес-браслеты</category>
+   <category id="15516" parentId="1761">Умные часы</category>
+   <category id="15519" parentId="1761">Фитнес-браслеты</category>
+   <category id="15504" parentId="15501">DECT-телефоны</category>
+   <category id="15505" parentId="15504">Радиотелефоны</category>
+   <category id="15506" parentId="15504">SIP телефоны</category>
+   <category id="15509" parentId="15504">Дополнительные трубки для радиотелефонов</category>
+   <category id="30729" parentId="15501">Проводные телефоны</category>
+   <category id="15511" parentId="15501">Аксессуары для телефонов</category>
+   <category id="15892" parentId="15511">Чехлы</category>
+   <category id="15887" parentId="15511">Чехлы-аккумуляторы</category>
+   <category id="15884" parentId="15511">Аккумуляторы</category>
+   <category id="30214" parentId="15511">Сетевые зарядные устройства</category>
+   <category id="30215" parentId="15511">Беспроводные зарядные устройства</category>
+   <category id="30216" parentId="15511">Док-станции</category>
+   <category id="15912" parentId="15511">Защитные пленки</category>
+   <category id="15911" parentId="15511">Защитные стекла</category>
+   <category id="15977" parentId="15511">Подставки и держатели</category>
+   <category id="30382" parentId="15511">Велосипедные крепления для телефонов</category>
+   <category id="15512" parentId="15511">Автомобильные держатели</category>
+   <category id="15520" parentId="15511">Перчатки для сенсорных экранов</category>
+   <category id="15930" parentId="15511">Стилусы для телефонов</category>
+   <category id="15521" parentId="15511">Очки виртуальной реальноcти</category>
+   <category id="15522" parentId="15511">Модули для смартфонов</category>
+   <category id="30344" parentId="15511">Стабилизаторы</category>
+   <category id="15523" parentId="15511">Объективы для смартфонов</category>
+   <category id="30930" parentId="15511">Осветители и вспышки</category>
+   <category id="30365" parentId="15511">Bluetooth-брелоки</category>
+   <category id="30878" parentId="15511">Шнурки</category>
+   <category id="15981" parentId="15511">Наклейки для телефонов</category>
+   <category id="30739" parentId="15501">Аксессуары для умных часов и фитнес-браслетов</category>
+   <category id="15517" parentId="30739">Ремешки для смарт-часов</category>
+   <category id="15899" parentId="30739">Чехлы</category>
+   <category id="15518" parentId="30739">Украшения</category>
+   <category id="11731" parentId="30739">Ремешки для фитнес-браслетов</category>
+   <category id="1749" parentId="15500">Планшеты и аксессуары</category>
+   <category id="15525" parentId="1749">Планшеты</category>
+   <category id="15932" parentId="1749">Стилусы</category>
+   <category id="15893" parentId="1749">Чехлы для планшетов</category>
+   <category id="30770" parentId="1749">Чехлы для стилусов</category>
+   <category id="1748" parentId="1749">Подставки</category>
+   <category id="30213" parentId="1749">Защитные пленки</category>
+   <category id="30217" parentId="1749">Сетевые зарядные устройства</category>
+   <category id="15889" parentId="1749">Аккумуляторы</category>
+   <category id="1750" parentId="15500">Электронные книги и аксессуары</category>
+   <category id="15526" parentId="1750">Электронные книги</category>
+   <category id="15895" parentId="1750">Чехлы</category>
+   <category id="15527" parentId="15500">Телевизоры и видеотехника</category>
+   <category id="15528" parentId="15527">Телевизоры</category>
+   <category id="15529" parentId="15527">Кронштейны</category>
+   <category id="15622" parentId="15527">Медиаплееры</category>
+   <category id="15620" parentId="15527">DVD плееры</category>
+   <category id="15621" parentId="15527">Blu-ray плееры</category>
+   <category id="15615" parentId="15527">Проекторы</category>
+   <category id="15616" parentId="15527">Аксессуары для проекторов</category>
+   <category id="15617" parentId="15616">Проекционные экраны</category>
+   <category id="15618" parentId="15616">Крепления</category>
+   <category id="15619" parentId="15616">Пульты для презентаций</category>
+   <category id="15530" parentId="15527">Антенны и аксессуары</category>
+   <category id="15531" parentId="15530">Антенны</category>
+   <category id="15532" parentId="15530">Антенные усилители</category>
+   <category id="15533" parentId="15530">Крепления</category>
+   <category id="30791" parentId="15530">Инжекторы питания</category>
+   <category id="15534" parentId="15527">Цифровое и спутниковое ТВ</category>
+   <category id="15535" parentId="15534">Антенны для цифрового ТВ</category>
+   <category id="15536" parentId="15534">ТВ-тюнеры и ресиверы</category>
+   <category id="15537" parentId="15534">ИК-приемники</category>
+   <category id="15538" parentId="15534">CAM модули</category>
+   <category id="15539" parentId="15534">Спутниковые конвертеры</category>
+   <category id="15540" parentId="15534">Измерители уровня сигнала</category>
+   <category id="15541" parentId="15534">Карты и модули доступа</category>
+   <category id="30855" parentId="15527">Аксессуары для телевизоров</category>
+   <category id="15542" parentId="30855">Пульты ДУ</category>
+   <category id="30517" parentId="30855">Чехлы для пультов ДУ</category>
+   <category id="30856" parentId="30855">Ремни для телевизоров</category>
+   <category id="15543" parentId="15500">Аудиотехника</category>
+   <category id="15544" parentId="15543">MP3-плееры</category>
+   <category id="15545" parentId="15543">Hi-Res плееры</category>
+   <category id="15546" parentId="15543">Наушники и гарнитуры</category>
+   <category id="15547" parentId="15546">Наушники</category>
+   <category id="15548" parentId="15546">Bluetooth-гарнитуры</category>
+   <category id="30886" parentId="15546">Bluetooth-адаптеры</category>
+   <category id="15898" parentId="15546">Чехлы</category>
+   <category id="1740" parentId="15546">Подставки</category>
+   <category id="30847" parentId="15546">Наматыватели кабелей</category>
+   <category id="30892" parentId="15546">Щетки для наушников</category>
+   <category id="30852" parentId="15546">Амбушюры и насадки</category>
+   <category id="15549" parentId="15543">Микрофоны и аксессуары</category>
+   <category id="15556" parentId="15549">Микрофоны</category>
+   <category id="15560" parentId="15549">Аксессуары для микрофонов</category>
+   <category id="15561" parentId="15543">Диктофоны</category>
+   <category id="15562" parentId="15543">Громкоговорители</category>
+   <category id="15563" parentId="15543">Радиоприемники</category>
+   <category id="15564" parentId="15543">Магнитолы</category>
+   <category id="15565" parentId="15543">Музыкальные центры</category>
+   <category id="15566" parentId="15543">CD проигрыватели и плееры</category>
+   <category id="15568" parentId="15566">CD-проигрыватели</category>
+   <category id="15571" parentId="15543">Виниловые проигрыватели и аксессуары</category>
+   <category id="15572" parentId="15571">Виниловые проигрыватели</category>
+   <category id="15573" parentId="15571">Антистатические маты</category>
+   <category id="15574" parentId="15571">Головки звукоснимателей</category>
+   <category id="15575" parentId="15571">Держатели картриджей</category>
+   <category id="15576" parentId="15571">Жидкости антистатические</category>
+   <category id="15577" parentId="15571">Иглы для головок звукоснимателей</category>
+   <category id="15578" parentId="15571">Крышки для проигрывателей</category>
+   <category id="15579" parentId="15571">Пассики</category>
+   <category id="15580" parentId="15571">Прижимы для пластинок</category>
+   <category id="15581" parentId="15571">Стробоскопические диски</category>
+   <category id="15582" parentId="15571">Тонармы</category>
+   <category id="15583" parentId="15571">Шаблоны для настройки</category>
+   <category id="30560" parentId="15571">Конверты для виниловых пластинок</category>
+   <category id="30559" parentId="15571">Щетки для чистки виниловых пластинок</category>
+   <category id="15584" parentId="15543">Акустика и колонки</category>
+   <category id="15585" parentId="15584">Акустические системы</category>
+   <category id="15586" parentId="15584">Сабвуферы</category>
+   <category id="15587" parentId="15584">Компьютерная акустика</category>
+   <category id="15588" parentId="15584">Портативная акустика</category>
+   <category id="15589" parentId="15584">Беспроводная акустика</category>
+   <category id="15590" parentId="15584">Комплекты акустики</category>
+   <category id="15591" parentId="15584">Саундбары</category>
+   <category id="15592" parentId="15584">Домашние кинотеатры</category>
+   <category id="15593" parentId="15543">Усилители, ресиверы и ЦАПы</category>
+   <category id="15594" parentId="15593">Ресиверы</category>
+   <category id="15595" parentId="15593">Усилители для наушников</category>
+   <category id="15596" parentId="15593">Цифро-аналоговые преобразователи</category>
+   <category id="15598" parentId="15593">AV-ресиверы</category>
+   <category id="15600" parentId="15593">Интегральные усилители</category>
+   <category id="15601" parentId="15593">Усилители мощности</category>
+   <category id="15603" parentId="15593">Усилители для сабвуфера</category>
+   <category id="15604" parentId="15593">Процессоры эффектов</category>
+   <category id="15607" parentId="15543">Аксессуары для аудиотехники</category>
+   <category id="15902" parentId="15607">Чехлы для плееров</category>
+   <category id="15897" parentId="15607">Чехлы для портативных акустических систем</category>
+   <category id="15608" parentId="15607">Стойки и крепления для HiFi</category>
+   <category id="15609" parentId="15607">Антивибрационные подставки</category>
+   <category id="15610" parentId="15607">Грили акустические</category>
+   <category id="15611" parentId="15607">Коробы для акустики</category>
+   <category id="15612" parentId="15607">Панели для акустики</category>
+   <category id="15613" parentId="15607">Антенны для музыкальных центров</category>
+   <category id="15623" parentId="15500">Фото- и видеокамеры</category>
+   <category id="15624" parentId="15623">Фотокамеры</category>
+   <category id="15625" parentId="15624">Зеркальные фотокамеры</category>
+   <category id="15626" parentId="15624">Компактные фотокамеры</category>
+   <category id="15627" parentId="15624">Фотоаппараты мгновенной печати</category>
+   <category id="15628" parentId="15624">Беззеркальные фотокамеры</category>
+   <category id="15629" parentId="15623">Видеокамеры</category>
+   <category id="15630" parentId="15623">Экшн-камеры</category>
+   <category id="30184" parentId="15623">Камеры для микроскопов</category>
+   <category id="15632" parentId="15623">Объективы</category>
+   <category id="15644" parentId="15623">Аксессуары для фото- и видеокамер</category>
+   <category id="15888" parentId="15644">Аккумуляторы</category>
+   <category id="15927" parentId="15644">Зарядные устройства</category>
+   <category id="15648" parentId="15644">Штативы и головки</category>
+   <category id="15649" parentId="15644">Моноподы для селфи</category>
+   <category id="15661" parentId="15644">Чехлы и кейсы</category>
+   <category id="15662" parentId="15644">Сумки и рюкзаки</category>
+   <category id="15650" parentId="15644">Отражатели и рефлекторы</category>
+   <category id="15651" parentId="15644">Фотофоны</category>
+   <category id="15652" parentId="15644">Светофильтры</category>
+   <category id="15653" parentId="15644">Вспышки и рассеиватели</category>
+   <category id="15654" parentId="15644">Бленды для объектива</category>
+   <category id="15655" parentId="15644">Фотобоксы</category>
+   <category id="15656" parentId="15644">Софтбоксы</category>
+   <category id="15657" parentId="15644">Аквабоксы</category>
+   <category id="15658" parentId="15644">Рекордеры</category>
+   <category id="15659" parentId="15644">Свет для фотостудии</category>
+   <category id="15660" parentId="15644">Пульты дистанционного управления</category>
+   <category id="15663" parentId="15644">Переходные кольца/адаптеры для объективов</category>
+   <category id="15664" parentId="15644">Наглазники</category>
+   <category id="15665" parentId="15644">Крепления</category>
+   <category id="15666" parentId="15644">Крышки для объектива</category>
+   <category id="15667" parentId="15644">Стабилизаторы</category>
+   <category id="15668" parentId="15644">Защитные панели для ЖК-дисплеев</category>
+   <category id="15669" parentId="15644">Ремни для фотокамер</category>
+   <category id="15670" parentId="15644">Держатели для фотооборудования</category>
+   <category id="15671" parentId="15644">Фотозонты</category>
+   <category id="15672" parentId="15644">Фотостолы</category>
+   <category id="15673" parentId="15644">Серые карты</category>
+   <category id="15674" parentId="15644">Портретные тарелки</category>
+   <category id="15675" parentId="15644">Площадки для крепления</category>
+   <category id="15676" parentId="15644">Студийное оборудование</category>
+   <category id="1766" parentId="15644">Комплекты аксессуаров для фотостудии</category>
+   <category id="15677" parentId="15644">Рукоятки для фотокамер</category>
+   <category id="15678" parentId="15644">Аксессуары для экшн камер</category>
+   <category id="15679" parentId="15644">Поплавки для экшн камер</category>
+   <category id="15680" parentId="15644">Вентиляторы для фотостудии</category>
+   <category id="15681" parentId="15644">Уровни для фотокамер</category>
+   <category id="15682" parentId="15644">Цифровые видеокассеты</category>
+   <category id="15683" parentId="15644">Адсорбирующие пластины</category>
+   <category id="30484" parentId="15644">Картриджи для фото</category>
+   <category id="15684" parentId="15623">Цифровые фоторамки</category>
+   <category id="15690" parentId="15500">Компьютеры и комплектующие</category>
+   <category id="15691" parentId="15690">Ноутбуки и аксессуары</category>
+   <category id="15692" parentId="15691">Ноутбуки</category>
+   <category id="30601" parentId="15691">Игровые ноутбуки</category>
+   <category id="15693" parentId="15691">Аксессуары для ноутбуков</category>
+   <category id="15696" parentId="15693">Рюкзаки</category>
+   <category id="15894" parentId="15693">Чехлы</category>
+   <category id="15885" parentId="15693">Аккумуляторы</category>
+   <category id="15924" parentId="15693">Зарядные устройства</category>
+   <category id="15697" parentId="15693">Сумки</category>
+   <category id="15699" parentId="15693">Замки Кенсингтона</category>
+   <category id="30270" parentId="15693">Подставки</category>
+   <category id="15702" parentId="15693">Охлаждающие подставки</category>
+   <category id="15700" parentId="15693">Наклейки</category>
+   <category id="15701" parentId="15693">Приватные пленки</category>
+   <category id="30641" parentId="15693">Шторки для веб-камер</category>
+   <category id="15703" parentId="15690">Моноблоки</category>
+   <category id="15704" parentId="15690">Системные блоки</category>
+   <category id="15705" parentId="15690">Мини ПК</category>
+   <category id="15707" parentId="15690">Микрокомпьютеры</category>
+   <category id="15737" parentId="15690">Мониторы и аксессуары</category>
+   <category id="15738" parentId="15737">Мониторы</category>
+   <category id="15739" parentId="15737">Крепления</category>
+   <category id="1741" parentId="15737">Подставки</category>
+   <category id="15740" parentId="15737">Калибраторы</category>
+   <category id="15709" parentId="15690">Компьютерные комплектующие</category>
+   <category id="15710" parentId="15709">Жесткие диски, SSD и сетевые накопители</category>
+   <category id="15711" parentId="15710">Внешние жесткие диски</category>
+   <category id="15712" parentId="15710">SSD накопители</category>
+   <category id="15713" parentId="15710">Внутренние жесткие диски</category>
+   <category id="15714" parentId="15710">Сетевые хранилища</category>
+   <category id="15716" parentId="15710">Корпуса для HDD</category>
+   <category id="15717" parentId="15710">Док-станции для HDD</category>
+   <category id="15718" parentId="15710">Адаптеры для SSD и HDD</category>
+   <category id="15719" parentId="15710">Контроллеры дисков</category>
+   <category id="15900" parentId="15710">Чехлы</category>
+   <category id="15720" parentId="15709">Видеокарты и карты видеозахвата</category>
+   <category id="15721" parentId="15720">Видеокарты</category>
+   <category id="15722" parentId="15720">Карты видеозахвата</category>
+   <category id="30326" parentId="15720">Платы и устройства видеомонтажа</category>
+   <category id="15724" parentId="15709">Оперативная память</category>
+   <category id="15725" parentId="15709">Материнские платы</category>
+   <category id="15726" parentId="15709">Процессоры</category>
+   <category id="15727" parentId="15709">Блоки питания</category>
+   <category id="15728" parentId="15709">Звуковые карты</category>
+   <category id="15729" parentId="15709">Системы охлаждения для компьютеров</category>
+   <category id="15730" parentId="15729">Кулеры</category>
+   <category id="15731" parentId="15729">Вентиляторы</category>
+   <category id="15732" parentId="15729">Системы охлаждения для игровых ПК</category>
+   <category id="30799" parentId="15729">Термопаста</category>
+   <category id="15734" parentId="15709">Корпуса</category>
+   <category id="15736" parentId="15690">Периферия для компьютеров</category>
+   <category id="15741" parentId="15736">Клавиатуры</category>
+   <category id="15742" parentId="15736">Мыши</category>
+   <category id="15743" parentId="15736">Комплекты клавиатур и мышей</category>
+   <category id="30831" parentId="15736">Трекболы</category>
+   <category id="15744" parentId="15736">Коврики для мыши</category>
+   <category id="15929" parentId="15736">Графические планшеты и аксессуары</category>
+   <category id="15745" parentId="15929">Графические планшеты</category>
+   <category id="15931" parentId="15929">Стилусы</category>
+   <category id="15933" parentId="15929">Наконечники для стилусов</category>
+   <category id="15934" parentId="15929">Насадки для стилусов</category>
+   <category id="15746" parentId="15736">Электронные флипчарты</category>
+   <category id="15747" parentId="15736">Веб-камеры</category>
+   <category id="15748" parentId="15736">ИБП и аксессуары</category>
+   <category id="15749" parentId="15748">ИБП</category>
+   <category id="15750" parentId="15748">Батареи</category>
+   <category id="30679" parentId="15748">Вентиляторы</category>
+   <category id="15751" parentId="15748">Датчики для ИБП</category>
+   <category id="15752" parentId="15748">Лабораторные автотрансформаторы</category>
+   <category id="15753" parentId="15748">Адаптеры</category>
+   <category id="15754" parentId="15736">Карты памяти и флешки</category>
+   <category id="15755" parentId="15754">USB Флешки</category>
+   <category id="15756" parentId="15754">Карты памяти</category>
+   <category id="15757" parentId="15754">Картридеры</category>
+   <category id="30832" parentId="15754">USB-приемники</category>
+   <category id="30705" parentId="15754">Чехлы для карт памяти</category>
+   <category id="15758" parentId="15736">Внешние оптические приводы</category>
+   <category id="15759" parentId="15736">Оптические носители и аксессуары</category>
+   <category id="15760" parentId="15759">Диски BD-R</category>
+   <category id="15763" parentId="15759">Диски CD-R</category>
+   <category id="15764" parentId="15759">Диски CD-RW</category>
+   <category id="15765" parentId="15759">Диски DVD+R</category>
+   <category id="15767" parentId="15759">Диски DVD-R</category>
+   <category id="15768" parentId="15759">Диски DVD-RW</category>
+   <category id="15769" parentId="15759">Сумки</category>
+   <category id="15976" parentId="15759">Конверты и контейнеры</category>
+   <category id="15735" parentId="15736">Подставки для компьютеров</category>
+   <category id="30491" parentId="15736">Подставки под ноги</category>
+   <category id="15854" parentId="15690">Сетевое оборудование</category>
+   <category id="15855" parentId="15854">Маршрутизаторы</category>
+   <category id="15856" parentId="15854">Коммутаторы</category>
+   <category id="15857" parentId="15854">Powerline</category>
+   <category id="15858" parentId="15854">Сплиттеры</category>
+   <category id="15859" parentId="15854">Точки доступа</category>
+   <category id="15860" parentId="15854">Усилители беспроводного сигнала</category>
+   <category id="15861" parentId="15854">DSL модемы и трансиверы</category>
+   <category id="15862" parentId="15854">3G/4G маршрутизаторы</category>
+   <category id="15863" parentId="15854">Беспроводные модемы</category>
+   <category id="15864" parentId="15854">Беспроводные мосты</category>
+   <category id="30762" parentId="15854">KVM-переключатели и кабели</category>
+   <category id="15865" parentId="15854">Принт-серверы</category>
+   <category id="15866" parentId="15854">Сетевые адаптеры и PoE-инжекторы</category>
+   <category id="15867" parentId="15866">Bluetooth адаптеры</category>
+   <category id="15868" parentId="15866">Ethernet адаптеры и медиаконвертеры</category>
+   <category id="15869" parentId="15866">PoE-инжекторы</category>
+   <category id="15870" parentId="15866">Wi-Fi адаптеры</category>
+   <category id="15871" parentId="15866">IP-удлинители</category>
+   <category id="15872" parentId="15854">Сетевые экраны и шлюзы</category>
+   <category id="15873" parentId="15854">Антенны для сетевого оборудования</category>
+   <category id="15708" parentId="15690">Майнеры и кошельки для криптовалют</category>
+   <category id="15800" parentId="15500">Игровые приставки и компьютеры</category>
+   <category id="15801" parentId="15800">Игровые приставки</category>
+   <category id="15810" parentId="15800">Аксессуары для игровых приставок</category>
+   <category id="15905" parentId="15810">Чехлы для игровых приставок</category>
+   <category id="15904" parentId="15810">Чехлы для игровых контроллеров</category>
+   <category id="15813" parentId="15810">Крепления</category>
+   <category id="15811" parentId="15810">Беспроводные адаптеры</category>
+   <category id="15812" parentId="15810">Накладки для стиков/кнопок</category>
+   <category id="15814" parentId="15810">Игровые картриджи</category>
+   <category id="15815" parentId="15810">Наборы аксессуаров</category>
+   <category id="15816" parentId="15810">Подставки</category>
+   <category id="15817" parentId="15810">Жесткие диски</category>
+   <category id="15818" parentId="15810">Аккумуляторы и зарядки</category>
+   <category id="15935" parentId="15810">Стилусы для игр</category>
+   <category id="15819" parentId="15810">Запчасти</category>
+   <category id="15820" parentId="15810">Панели</category>
+   <category id="15980" parentId="15810">Карты оплаты</category>
+   <category id="30197" parentId="15800">Игры для приставок</category>
+   <category id="15821" parentId="15800">Игровые ноутбуки</category>
+   <category id="30198" parentId="30197">PlayStation 4</category>
+   <category id="30199" parentId="30197">Xbox One</category>
+   <category id="15822" parentId="15800">Игровая периферия</category>
+   <category id="15823" parentId="15822">Геймпады</category>
+   <category id="30200" parentId="30197">Nintendo Switch</category>
+   <category id="30201" parentId="30197">Xbox 360</category>
+   <category id="15824" parentId="15822">Игровые мыши</category>
+   <category id="30203" parentId="30197">PlayStation Vita</category>
+   <category id="15825" parentId="15822">Очки виртуальной реальности</category>
+   <category id="30204" parentId="30197">PlayStation Portable</category>
+   <category id="30205" parentId="30197">PlayStation 2</category>
+   <category id="30786" parentId="15822">Контроллеры для очков виртуальной реальности</category>
+   <category id="15826" parentId="15822">Игровые клавиатуры</category>
+   <category id="30206" parentId="30197">Nintendo Wii</category>
+   <category id="15827" parentId="15822">Игровые наушники</category>
+   <category id="30207" parentId="30197">Nintendo Wii U</category>
+   <category id="30208" parentId="30197">Nintendo 3DS</category>
+   <category id="15982" parentId="15822">Комплекты игровых аксессуаров</category>
+   <category id="15828" parentId="15822">Джойстики</category>
+   <category id="15829" parentId="15822">Игровые рули и педали</category>
+   <category id="30142" parentId="15822">Игровые вибронакидки</category>
+   <category id="15831" parentId="15822">Игровые коврики для мыши</category>
+   <category id="15832" parentId="15822">Игровые контроллеры</category>
+   <category id="15833" parentId="15822">Комплекты игровых клавиатур и мышей</category>
+   <category id="15979" parentId="15822">Аксессуары для игровых контроллеров</category>
+   <category id="15770" parentId="15500">Офисная техника</category>
+   <category id="15771" parentId="15770">Принтеры</category>
+   <category id="15772" parentId="15770">МФУ</category>
+   <category id="15773" parentId="15770">Сканеры</category>
+   <category id="30738" parentId="15770">3D-печать</category>
+   <category id="15774" parentId="30738">3D принтеры</category>
+   <category id="15775" parentId="30738">3D ручки</category>
+   <category id="15776" parentId="30738">3D сканеры</category>
+   <category id="15777" parentId="15770">Ламинаторы и брошюровщики</category>
+   <category id="15781" parentId="15770">Плоттеры</category>
+   <category id="30193" parentId="15800">Игры для PC</category>
+   <category id="15782" parentId="15770">Шредеры</category>
+   <category id="15875" parentId="15770">Кассовое оборудование</category>
+   <category id="15876" parentId="15875">Пинпады</category>
+   <category id="30664" parentId="15875">Онлайн кассы</category>
+   <category id="15877" parentId="15875">Смарт-терминалы</category>
+   <category id="15878" parentId="15875">Кассовые ленты</category>
+   <category id="30328" parentId="15875">Фискальные регистраторы</category>
+   <category id="30854" parentId="15875">Фискальные накопители</category>
+   <category id="30329" parentId="15875">Скретч-карты для подключения кассы</category>
+   <category id="15783" parentId="15770">Расходные материалы</category>
+   <category id="15784" parentId="15783">Картриджи</category>
+   <category id="15785" parentId="15783">Чернила</category>
+   <category id="15786" parentId="15783">Тонеры</category>
+   <category id="15788" parentId="15783">Фотобарабаны</category>
+   <category id="15794" parentId="15783">Пластик для 3D принтера</category>
+   <category id="1598" parentId="15783">Картриджи для 3D ручек</category>
+   <category id="30833" parentId="15783">Запчасти</category>
+   <category id="15797" parentId="15783">Девелоперы</category>
+   <category id="15798" parentId="15783">Ленты печатающие</category>
+   <category id="15685" parentId="15500">Навигаторы</category>
+   <category id="15686" parentId="15685">Туристические навигаторы</category>
+   <category id="15687" parentId="15685">Автомобильные навигаторы</category>
+   <category id="15688" parentId="15685">Мотонавигаторы</category>
+   <category id="30784" parentId="15685">GPS-трекеры</category>
+   <category id="15689" parentId="15685">Электронные компасы</category>
+   <category id="15903" parentId="15685">Чехлы</category>
+   <category id="15984" parentId="15500">Оптические приборы</category>
+   <category id="15985" parentId="15984">Телескопы</category>
+   <category id="15986" parentId="15984">Микроскопы</category>
+   <category id="15990" parentId="15984">Монтировки</category>
+   <category id="15991" parentId="15984">Штативы</category>
+   <category id="15988" parentId="15984">Окуляры</category>
+   <category id="15987" parentId="15984">Аксессуары для телескопов</category>
+   <category id="15989" parentId="15987">Солнечные фильтры</category>
+   <category id="15992" parentId="15987">Адаптеры для монтировок</category>
+   <category id="15993" parentId="15987">Диагональные зеркала</category>
+   <category id="15994" parentId="15987">Кейсы для монтировок</category>
+   <category id="15995" parentId="15987">Колонны для монтировок</category>
+   <category id="15996" parentId="15987">Комплекты для модернизации монтировок</category>
+   <category id="15997" parentId="15987">Корректоры комы</category>
+   <category id="15998" parentId="15987">Крепежные базы</category>
+   <category id="15999" parentId="15987">Крепежные кольца</category>
+   <category id="16000" parentId="15987">Крепежные пластины</category>
+   <category id="16001" parentId="15987">Моторы фокусировки</category>
+   <category id="16002" parentId="15987">Оптические искатели</category>
+   <category id="16003" parentId="15987">Призмы для телескопов</category>
+   <category id="16004" parentId="15987">Противовесы для монтировок</category>
+   <category id="16005" parentId="15987">Пульты для монтировок</category>
+   <category id="16006" parentId="15987">Ручки регулировки для монтировок</category>
+   <category id="16007" parentId="15987">Фотоадаптеры</category>
+   <category id="16008" parentId="15987">Экваториальные клины</category>
+   <category id="16009" parentId="15987">Электроприводы для монтировок</category>
+   <category id="16010" parentId="15984">Аксессуары для микроскопов</category>
+   <category id="16011" parentId="16010">Фотоадаптеры</category>
+   <category id="16012" parentId="16010">Стекла</category>
+   <category id="10706" parentId="15500">Часы и электронные будильники</category>
+   <category id="10708" parentId="10706">Электронные будильники</category>
+   <category id="10709" parentId="10706">Радио-будильники</category>
+   <category id="10802" parentId="10706">Проекционные часы</category>
+   <category id="15835" parentId="15500">Умный дом и безопасность</category>
+   <category id="15836" parentId="15835">Охранные системы</category>
+   <category id="15837" parentId="15836">Домофоны</category>
+   <category id="15838" parentId="15836">Датчики для охранных систем</category>
+   <category id="15839" parentId="15836">Звонки для дома и дачи</category>
+   <category id="15840" parentId="15836">Охранное оборудование для дома и дачи</category>
+   <category id="15841" parentId="15836">Электронные замки</category>
+   <category id="30573" parentId="15836">Электронные ключи</category>
+   <category id="30572" parentId="15836">Ответные части</category>
+   <category id="30686" parentId="15836">СКУД</category>
+   <category id="15842" parentId="15836">Биометрические терминалы и замки</category>
+   <category id="15843" parentId="15836">Оповещатели</category>
+   <category id="30687" parentId="15836">Считыватели</category>
+   <category id="30704" parentId="15836">Модули для охранных систем</category>
+   <category id="15845" parentId="15835">Видеонаблюдение</category>
+   <category id="15846" parentId="15845">Камеры видеонаблюдения</category>
+   <category id="15847" parentId="15845">Регистраторы</category>
+   <category id="15848" parentId="15845">Системы видеонаблюдения</category>
+   <category id="15983" parentId="15845">Муляжи камер видеонаблюдения</category>
+   <category id="30680" parentId="15845">Кронштейны</category>
+   <category id="30681" parentId="15845">Монтажные коробки</category>
+   <category id="30684" parentId="15845">Дождевые козырьки</category>
+   <category id="30682" parentId="15845">Установочные площадки</category>
+   <category id="30683" parentId="15845">Кожухи для камер видеонаблюдения</category>
+   <category id="15849" parentId="15835">Умный дом</category>
+   <category id="15850" parentId="15849">Умные розетки</category>
+   <category id="15851" parentId="15849">Комплекты умного дома</category>
+   <category id="15852" parentId="15849">Управление для умного дома</category>
+   <category id="15853" parentId="15849">Аксессуары для умного дома</category>
+   <category id="15879" parentId="15500">Аксессуары для электроники</category>
+   <category id="15880" parentId="15879">Батарейки и аккумуляторы</category>
+   <category id="15881" parentId="15880">Внешние аккумуляторы</category>
+   <category id="15882" parentId="15880">Батарейки</category>
+   <category id="15883" parentId="15880">Аккумуляторные батарейки</category>
+   <category id="15886" parentId="15880">Зарядные устройства для аккумуляторов</category>
+   <category id="15901" parentId="15879">Универсальные чехлы</category>
+   <category id="15906" parentId="15879">Сетевые фильтры, разветвители и удлинители</category>
+   <category id="15907" parentId="15906">Сетевые фильтры</category>
+   <category id="15908" parentId="15906">Удлинители</category>
+   <category id="15909" parentId="15906">Разветвители электрические</category>
+   <category id="15910" parentId="15906">Переходники</category>
+   <category id="15913" parentId="15879">Кабели и переходники</category>
+   <category id="15914" parentId="15913">Кабели</category>
+   <category id="15915" parentId="15913">Разветвители</category>
+   <category id="15916" parentId="15913">USB хабы</category>
+   <category id="15917" parentId="15913">Коннекторы</category>
+   <category id="15918" parentId="15913">Адаптеры и переходники</category>
+   <category id="15919" parentId="15913">Держатели для кабелей</category>
+   <category id="15891" parentId="15913">Органайзеры для кабелей</category>
+   <category id="30967" parentId="15913">Боксы для проводов</category>
+   <category id="15920" parentId="15879">Зарядные устройства и док-станции</category>
+   <category id="15921" parentId="15920">Автомобильные зарядные устройства</category>
+   <category id="15922" parentId="15920">Сетевые зарядные устройства</category>
+   <category id="15923" parentId="15920">Беспроводные зарядные устройства</category>
+   <category id="15926" parentId="15920">Док-станции</category>
+   <category id="15936" parentId="15879">Чистящие средства и салфетки</category>
+   <category id="15937" parentId="15500">Студийное и сценическое оборудование</category>
+   <category id="15938" parentId="15937">Студийное оборудование</category>
+   <category id="15939" parentId="15938">Микшерные пульты</category>
+   <category id="15940" parentId="15938">Аудиоинтерфейсы</category>
+   <category id="15941" parentId="15938">Аналоговые драм-машины</category>
+   <category id="15942" parentId="15938">Мониторная акустика</category>
+   <category id="15943" parentId="15937">DJ-оборудование</category>
+   <category id="15944" parentId="15943">DJ пульты</category>
+   <category id="15945" parentId="15943">Стойки для DJ оборудования</category>
+   <category id="15946" parentId="15937">Сценическое оборудование и свет</category>
+   <category id="15950" parentId="15946">Многолучевые световые приборы</category>
+   <category id="15978" parentId="15946">Микрофонные стойки</category>
+   <category id="15957" parentId="15500">Электронные сигареты</category>
+   <category id="15958" parentId="15957">Испарители</category>
+   <category id="15970" parentId="15957">Системы нагревания</category>
+   <category id="15959" parentId="15957">Аксессуары для электронных сигарет</category>
+   <category id="15928" parentId="15959">Зарядные устройства</category>
+   <category id="15960" parentId="15959">Жидкости для электронных сигарет</category>
+   <category id="15961" parentId="15959">Дрипки (RDA)</category>
+   <category id="15962" parentId="15959">Механические моды (мехмод)</category>
+   <category id="15963" parentId="15959">Нихромовые проволоки</category>
+   <category id="15964" parentId="15959">Батарейные моды (боксмоды)</category>
+   <category id="15965" parentId="15959">Титановые проволоки</category>
+   <category id="15966" parentId="15959">Стичницы</category>
+   <category id="15967" parentId="15959">Баки (RTA)</category>
+   <category id="15968" parentId="15959">Дрипка-баки (RDTA)</category>
+   <category id="30744" parentId="15959">Картриджи</category>
+   <category id="15969" parentId="15959">Колпачки</category>
+   <category id="15971" parentId="15959">Никелевые проволоки</category>
+   <category id="15973" parentId="15959">Табачные стики</category>
+   <category id="15972" parentId="15959">Палочки для чистки</category>
+   <category id="15974" parentId="15959">Устройства для чистки</category>
+   <category id="15975" parentId="15959">Чехлы</category>
+  </categories>

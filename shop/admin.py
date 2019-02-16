@@ -5,10 +5,9 @@ from .models import Product, Category, Price, Shop, Vendor, Comment
 
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
-    list_display = ['name', 'category', 'vendor',]
+    list_display = ['name', 'category', 'vendor']
     readonly_fields = ['slug']
-    list_filter = ('category', )
-    search_fields = ['name']
+    search_fields = ['name', 'barcode', 'vendorCode']
 
 
 @admin.register(Comment)

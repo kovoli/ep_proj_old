@@ -135,7 +135,7 @@ class Product(models.Model):
         ordering = ('name',)
         verbose_name = 'Товар'
         verbose_name_plural = 'Товары'
-        indexes = [models.Index(fields=['name', 'slug'])]
+        indexes = [models.Index(fields=['name', 'slug', 'barcode', 'vendorCode'])]
 
     def save(self, *args, **kwargs):
         if not self.slug:
