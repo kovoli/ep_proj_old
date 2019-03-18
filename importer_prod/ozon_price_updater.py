@@ -13,20 +13,21 @@ def download_all_category_files():
     filename_list = []
     # 1. Бытовая техника
     # 2. Электроника
-    categories_list = ['https://api.ozon.ru/PartnerTools/XmlFeed/11023170689840',
-                       'https://api.ozon.ru/PartnerTools/XmlFeed/11023171038040']
+    categories_list = ['https://api.ozon.ru/partner-tools.affiliates/XmlFeed/10500',
+                       'https://api.ozon.ru/partner-tools.affiliates/XmlFeed/15500']
 
-    url = 'https://api.ozon.ru/AuthServer/Token'
-    data = {'grant_type': 'password', 'username': 'kovoli1985@gmail.com', 'password': 'Mafusal1985!'}
+    url = 'https://api.ozon.ru/affiliates/partner-api/account/token'
+    data = {'grant_type': 'password', 'email': 'kovoli1985@gmail.com', 'password': 'Mafusal1985!'}
     headers = {'Content-Type': 'application/x-www-form-urlencoded'}
     r = requests.post(url=url, data=data, headers=headers)  # Делаю запрос
     convert_tocken = r.json()  # Получаю json c токеном
     # получаю токен
     tokken = {'token': convert_tocken["access_token"]}
+    print(tokken)
 
     for cat_url in categories_list:
         # Запрос категории с токеном
-        request_cat_catalog = requests.get(cat_url, params=tokken)
+        request_cat_catalog = requests.get(cat_url + '?token=' + tokken['token'])
         # Распаковка токена
         import zipfile
         zipfile = zipfile.ZipFile(io.BytesIO(request_cat_catalog.content))
@@ -41,6 +42,9 @@ def download_all_category_files():
 
 succes_update = 0
 succers_writes = 0
+errors = 0
+not_found_barcode = 0
+not_found_name = 0
 for file in download_all_category_files():
     tree = ET.parse('imports/' + file)
     root = tree.getroot()
@@ -66,17 +70,13 @@ for file in download_all_category_files():
             try:
                 get_product = Product.objects.get(name=product_data['name'])
             except:
-                succers_writes
-            try:
-                if product_data['vendorCode'] != None:
-                    get_product = Product.objects.get(vendorCode=product_data['vendorCode'])
-            except:
-                succers_writes
+                not_found_barcode += 1
             try:
                 if product_data['barcode'] != None:
                     get_product = Product.objects.get(barcode=product_data['barcode'])
             except:
-                succers_writes
+                not_found_name += 1
+                continue
 
             if get_product != None:
                 del product_data['vendorCode']
@@ -97,8 +97,11 @@ for file in download_all_category_files():
                     get_product.save()
                     succers_writes += 1
         except Exception as error:
-            print(error)
+            errors += 1
 
 print('Цен созданно', succers_writes)
 print('Цен обновленно', succes_update)
+print('Ошибок', errors)
+print('Не найденно barcode', not_found_barcode)
+print('Не найденно название', not_found_name)
 

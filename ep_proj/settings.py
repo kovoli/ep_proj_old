@@ -162,3 +162,8 @@ RECAPTCHA_PRIVATE_KEY = '6LeuXH4UAAAAAFzxW4nsWceGiD_hkG1Lso3llz11'
 NOCAPTCHA = True
 #CAPTCHA_AJAX = True
 
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'full',
+    },
+}

@@ -137,7 +137,7 @@ def update_discount_data(get_discount):
             else:
                 product_data[data] = off.find(data).text
         get_discount.price = product_data['price']
-        get_discount.price = product_data['oldprice']
+        get_discount.oldprice = product_data['oldprice']
         get_discount.save()
     except Exception as error_update:
         print(error_update)
@@ -176,10 +176,19 @@ for file in download_all_category_files():
                 create_discount_prod()
             # Скидка есть в DB
             elif off.attrib['id'] in list_of_discounts:
-                update_discount += 1
-                get_discount = DiscountProduct.objects.get(prod_id=off.attrib['id'])
-                update_discount_data(get_discount)
+                try:
+                    update_discount += 1
+                    get_discount = DiscountProduct.objects.get(prod_id=off.attrib['id'])
+                    update_discount_data(get_discount)
+                except Exception as error:
+                    print(error)
+                try:
+                    list_of_discounts = list(list_of_discounts)
+                    list_of_discounts.remove(off.attrib['id'])
+                except Exception as error:
+                    print(error)
 
+    DiscountProduct.objects.filter(prod_id__in=list_of_discounts).delete()
 
 print(len(root.findall('.//offer')))
 print('Скидок удалилось :', del_discount)

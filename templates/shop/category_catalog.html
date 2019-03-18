@@ -2,7 +2,7 @@
 {% load mptt_tags %}
 {% load static %}
 {% block title %}
-    Сравнение цен на {{ category.name }} - www.pricerace.ru
+    Сравнение цен и покупка товаров [{{ category.name }}] - www.pricerace.ru
 {% endblock title %}
 
 {% block description %}{{ category.description|safe|truncatechars:150|striptags }}{% endblock description %}
@@ -73,7 +73,9 @@
             {% endrecursetree %}
             {% if not request.GET %}
             <div class="m-3">
-                {{ category.description|safe}}
+                {% if category.description %}
+                    {{ category.description|safe}}
+                {% endif %}
             </div>
             {% endif %}
     </div>

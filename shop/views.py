@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Product, Category, Vendor
 from .forms import CommentForm, BrandForms
-from django.db.models import Min
+from django.db.models import Min, Max
 from . import helpers
 from watson import search as watson
 from django.db.models import F
@@ -17,7 +17,7 @@ def home_page(request):
     category_main_page_list = [24, 244, 155, 2]
     categories = Category.objects.filter(id__in=[588, 579, 566, 555])
     list_pro = Product.objects.all().annotate(min_price=Min('prices__price')).order_by('views')[:12]
-    print(categories)
+
     return render(request, 'index.html', {'categories': categories,
                                           'list_pro': list_pro,
                                           'menu': menu(request)})
@@ -35,12 +35,12 @@ def product_detail(request, slug):
                                       .exclude(id=product.id)\
                                       .annotate(min_price=Min('prices__price')).order_by('-views')[:6]
     comments = product.comments.filter(active=True)
-
+    min_max_price = product.prices.aggregate(min=Min('price'), max=Max('price'))
+    print(min_max_price)
     new_comment = None
 
     if request.method == 'POST':
         comment_form = CommentForm(data=request.POST)
-        print(comment_form)
         if comment_form.is_valid():
             new_comment = comment_form.save(commit=False)
             new_comment.product = product
@@ -56,7 +56,8 @@ def product_detail(request, slug):
                                                         'new_comment': new_comment,
                                                         'comment_form': comment_form,
                                                         'semilar_products': semilar_products,
-                                                        'menu': menu(request)})
+                                                        'menu': menu(request),
+                                                        'min_max_price': min_max_price})
 
 
 def category_catalog(request, slug=None):
@@ -122,10 +123,12 @@ def category_catalog(request, slug=None):
 def search_products(request):
     if 'q' in request.GET:
         q = request.GET['q']
-        products_list = watson.filter(Product, q).annotate(min_price=Min('prices__price'))
+        search_list = watson.filter(Product, q).annotate(min_price=Min('prices__price'))
+        products_list = helpers.pg_records(request, search_list, 20)
     return render(request, 'shop/search_products.html', {'q': q,
                                                          'products_list': products_list,
-                                                         'menu': menu(request)})
+                                                         'menu': menu(request),
+                                                         'search_list': search_list})
 
 
 # ------------------- VENDOR VIEWS ------------------

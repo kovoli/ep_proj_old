@@ -6,7 +6,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-            <h2 class="my-4 text-center">"{{ products_list.count }}" совпадений по запросу - "{{ q|upper }}"</h2>
+            <h2 class="my-4 text-center">"{{ search_list.count }}" совпадений по запросу - "{{ q|upper }}"</h2>
                 <!-- Shop Product Wrap Start -->
                 <div class="shop-product-wrap grid row">
                     {% for product in products_list %}
@@ -39,6 +39,34 @@
                         <p>К сожалению ничего не найденно. Попробуйте перефразировать ваш поиск</p>
                     {% endfor %}
                 </div><!-- Shop Product Wrap End -->
+            {% if products_list.has_other_pages %}
+                <div class="row mt-30">
+                    <div class="col">
+                        <ul class="pagination">
+                            {% if products_list.has_previous %}
+                                <li><a href="?page=1{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}"><i class="fas fa-angle-double-left"></i></a></li>
+                                <li><a href="?page={{ products_list.previous_page_number }}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}"><i class="fas fa-angle-left"></i></a></li>
+                            {% endif %}
+                            {% for i in products_list.paginator.page_range %}
+
+                                {% if products_list.number == i %}
+                                    <li class="active">
+                                        <a>{{ i }}</a>
+                                    </li>
+                                {% elif i|add:"-5" <= products_list.number and products_list.number <= i|add:"2" %}
+                                    <li><a href="?page={{ i }}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}">{{ i }}</a></li>
+                                {% endif %}
+                            {% endfor %}
+
+                            {% if products_list.has_next %}
+                                <li><a href="?page={{ products_list.next_page_number }}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}"><i class="fas fa-angle-right"></i></a></li>
+                                <li><a href="?page={{ products_list.paginator.num_pages }}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}"><i class="fas fa-angle-double-right"></i></a></li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                </div>
+            {% endif %}
+
             </div>
         </div>
     </div>

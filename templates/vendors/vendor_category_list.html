@@ -2,18 +2,18 @@
 {% load mptt_tags %}
 {% load static %}
 {% block title %}
-    Все категории товаров бренда {{ vendor.name|upper }}, сравнивайте цены, читайте отзывы - www.pricerace.ru
+    Купить товары [{{ vendor.name|upper }}] - сравнивайте цены, читайте отзывы
 {% endblock title %}
 
 {% block description %}
-    Все товарные категории бренда {{ vendor.name|upper }}, выбирайте категорию, сравнивайте цены, читайте отзывы и смотрите видеообзоры.
+    Интересуют товары компании {{ vendor.name|upper }}? В вашем распоряжение все категории где можно сравнить цены, читать отзывы и смотреть видеообзоры.
 {% endblock description %}
 
 
 {% block content %}
 <div class="product-section section mt-20 mb-20">
     <div class="container">
-    <h2 class="text-center my-3">Все категории товаров бренда "{{ vendor.name|upper }}"</h2>
+    <h2 class="text-center my-3">Все категории товаров бренда [{{ vendor.name|upper }}]</h2>
     <div class="row justify-content-center">
 
     {% for cat in categories %}

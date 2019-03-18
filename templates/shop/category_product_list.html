@@ -2,7 +2,7 @@
 {% load static %}
 {% load mptt_tags %}
 
-{% block title %}Выбрать, сравнить цену, купить {{ category.name }} - www.pricerace.ru{% endblock title %}
+{% block title %}Выбрать, сравнить цену, купить [{{ category.name }}] - www.pricerace.ru{% endblock title %}
 
 {% block description %}{% if category.description %}{{ category.description|safe|truncatechars:150|striptags }}{% else %}В Категории {{ category.name }} вы найдёте большое каличество товаров, сравнивайте цену, читайте отзывы смотрите видео обзор и экономьте при покупке{% endif %}{% endblock description %}
 
@@ -160,7 +160,9 @@
         </div>
         {% if not request.GET %}
         <div>
-            {{ category.description|safe}}
+            {% if category.description %}
+                {{ category.description|safe}}
+            {% endif %}
         </div>
         {% endif %}
     </div>

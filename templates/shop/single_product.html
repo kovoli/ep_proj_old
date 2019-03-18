@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block title %}
-    Купить {{ product.name }}, сравнить цену - www.pricerace.ru
+    Купить [{{ product.name }}], сравнить цену - www.pricerace.ru
 {% endblock title %}
 
 {% block description %}{{ product.description|truncatechars:150|striptags }}{% endblock description %}
@@ -51,11 +51,17 @@
                     <!-- Category & Title -->
                     <div class="head-content">
                         <h1 class="title">{{ product.name }}</h1>
+                        {% if min_max_price.max != min_max_price.min %}
+                        <p>от <span class="price_min_max">{{ min_max_price.min }}</span> до <span class="price_min_max">{{ min_max_price.max }} </span><i class="fas fa-ruble-sign"></i></p>
+                        {% endif %}
                     </div>
 
                     <div class="category-title">
+
                         <p>Категория: <a href="{{ product.category.get_absolute_url }}" class="cat">{{ product.category.name }}</a></p>
+                        {% if product.vendor %}
                         <p>Бренд: <a href="{{ product.vendor.get_absolute_url }}" class="cat">{{ product.vendor.name|upper }}</a></p>
+                        {% endif %}
                     </div>
 
                 </div>
@@ -97,6 +103,7 @@
                   </li>
                 {% endfor %}
                 </ul>
+                <div class="float-lg-right">Мы регулярно обновляем информацию, но за достоверность цены, наличие и доставке товара отвечает интернет-магазин!</div>
         </div>
         <!-- End Price Comparison -->
         <!-- Description and Characteristics -->

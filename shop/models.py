@@ -135,7 +135,10 @@ class Product(models.Model):
         ordering = ('name',)
         verbose_name = 'Товар'
         verbose_name_plural = 'Товары'
-        indexes = [models.Index(fields=['name', 'slug', 'barcode', 'vendorCode'])]
+        indexes = [models.Index(fields=['name', 'slug']),
+                   models.Index(fields=['barcode']),
+                   models.Index(fields=['vendorCode'])]
+
 
     def save(self, *args, **kwargs):
         if not self.slug:
@@ -148,7 +151,7 @@ class Price(models.Model):
     price = models.DecimalField(decimal_places=2, max_digits=10)
     oldprice = models.DecimalField(decimal_places=2, max_digits=10, blank=True, null=True)
     name = models.CharField(max_length=255)
-    url = models.URLField(max_length=255)
+    url = models.TextField(max_length=300)
     sales_notes = models.CharField(max_length=255, blank=True, null=True)
     # relate_models
     shop = models.ForeignKey(Shop, related_name='shops', on_delete=models.CASCADE)
