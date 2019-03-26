@@ -23,7 +23,6 @@ def download_all_category_files():
     convert_tocken = r.json()  # Получаю json c токеном
     # получаю токен
     tokken = {'token': convert_tocken["access_token"]}
-    print(tokken)
 
     for cat_url in categories_list:
         # Запрос категории с токеном
@@ -51,7 +50,6 @@ for file in download_all_category_files():
     print('Всего товаров', len(root.findall('.//offer')))
     for prod in root.findall('.//offer'):
         product_data = {'name': None,
-                        'vendorCode': 'null',
                         'barcode': None,
                         'price': None,
                         'oldprice': None,
@@ -68,18 +66,17 @@ for file in download_all_category_files():
                     product_data[data] = prod.find(data).text
             get_product = None
             try:
-                get_product = Product.objects.get(name=product_data['name'])
-            except:
-                not_found_barcode += 1
-            try:
                 if product_data['barcode'] != None:
                     get_product = Product.objects.get(barcode=product_data['barcode'])
             except:
-                not_found_name += 1
-                continue
+                not_found_barcode += 1
+                try:
+                    get_product = Product.objects.get(name=product_data['name'])
+                except:
+                    not_found_name += 1
+                    continue
 
             if get_product != None:
-                del product_data['vendorCode']
                 del product_data['barcode']
                 product_data['shop_id'] = 1
                 try:

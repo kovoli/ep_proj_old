@@ -1,0 +1,673 @@
+<categories>
+   <category id="9700">Строительство и ремонт</category>
+   <category id="9856" parentId="9700">Инструменты</category>
+   <category id="9857" parentId="9856">Электроинструменты</category>
+   <category id="9860" parentId="9857">Электродрели</category>
+   <category id="9858" parentId="9857">Шуруповерты</category>
+   <category id="9859" parentId="9857">Перфораторы</category>
+   <category id="9861" parentId="9857">Электролобзики</category>
+   <category id="9862" parentId="9857">Электрорубанки</category>
+   <category id="9863" parentId="9857">Электрофуганки</category>
+   <category id="9864" parentId="9857">Калевочные станки</category>
+   <category id="9865" parentId="9857">Рейсмусно-фуговальные станки</category>
+   <category id="9866" parentId="9857">Рейсмусные станки</category>
+   <category id="9867" parentId="9857">Гайковерты и заклепочники</category>
+   <category id="9868" parentId="9857">Клеевые пистолеты</category>
+   <category id="9869" parentId="9857">Электрические краскопульты</category>
+   <category id="9870" parentId="9857">Строительные фены</category>
+   <category id="9871" parentId="9857">Строительные миксеры и венчики</category>
+   <category id="9872" parentId="9857">Шлифовальные машины</category>
+   <category id="9873" parentId="9872">Граверы</category>
+   <category id="9875" parentId="9872">Ленточные шлифмашины</category>
+   <category id="9876" parentId="9872">Вибрационные шлифмашины</category>
+   <category id="9878" parentId="9872">Полировальные машины</category>
+   <category id="9879" parentId="9872">Угловые шлифмашины (болгарки)</category>
+   <category id="9880" parentId="9872">Щеточные шлифмашины</category>
+   <category id="9881" parentId="9872">Эксцентриковые шлифмашины</category>
+   <category id="9882" parentId="9872">Электроточила</category>
+   <category id="10375" parentId="9872">Прочие шлифмашины</category>
+   <category id="9883" parentId="9857">Малая строительная техника</category>
+   <category id="10411" parentId="9883">Бетоносмесители</category>
+   <category id="30553" parentId="9883">Установки алмазного бурения</category>
+   <category id="9885" parentId="9883">Виброплиты</category>
+   <category id="9884" parentId="9883">Виброкатки</category>
+   <category id="9886" parentId="9883">Виброрейки</category>
+   <category id="9887" parentId="9883">Вибротрамбовки</category>
+   <category id="9888" parentId="9883">Глубинные вибраторы</category>
+   <category id="9889" parentId="9883">Затирочные машины</category>
+   <category id="9890" parentId="9883">Транспортеры гусеничные</category>
+   <category id="10406" parentId="9883">Подметальные машины</category>
+   <category id="30918" parentId="9883">Автоподъемники</category>
+   <category id="9891" parentId="9857">Штроборезы</category>
+   <category id="9892" parentId="9857">Бороздоделы</category>
+   <category id="9893" parentId="9857">Заточные станки</category>
+   <category id="9894" parentId="9857">Сверлильные станки</category>
+   <category id="9895" parentId="9857">Камнерезные станки</category>
+   <category id="9896" parentId="9857">Фрезерные машины</category>
+   <category id="9898" parentId="9857">Фрезерные станки</category>
+   <category id="9897" parentId="9857">Токарные станки</category>
+   <category id="9899" parentId="9857">Шлифовальные станки</category>
+   <category id="9900" parentId="9857">Универсальные станки</category>
+   <category id="9901" parentId="9857">Отбойные молотки</category>
+   <category id="9902" parentId="9857">Аккумуляторные отвертки</category>
+   <category id="9903" parentId="9857">Электроножницы по металлу</category>
+   <category id="10408" parentId="9857">Тельферы</category>
+   <category id="9904" parentId="9857">Наборы электроинструментов</category>
+   <category id="10388" parentId="9857">Зарядные устройства</category>
+   <category id="9905" parentId="9856">Ручной инструмент</category>
+   <category id="9906" parentId="9905">Столярные инструменты</category>
+   <category id="9907" parentId="9906">Топоры</category>
+   <category id="9908" parentId="9906">Рубанки</category>
+   <category id="9909" parentId="9906">Верстаки</category>
+   <category id="9910" parentId="9906">Стусла</category>
+   <category id="9911" parentId="9906">Стамески</category>
+   <category id="9912" parentId="9906">Киянки</category>
+   <category id="9913" parentId="9906">Резцы</category>
+   <category id="9914" parentId="9906">Ручные дрели</category>
+   <category id="9915" parentId="9906">Долото</category>
+   <category id="9916" parentId="9906">Струги</category>
+   <category id="10409" parentId="9906">Лобзики</category>
+   <category id="9917" parentId="9905">Слесарные инструменты</category>
+   <category id="9918" parentId="9917">Кусачки</category>
+   <category id="9919" parentId="9917">Плоскогубцы</category>
+   <category id="9920" parentId="9917">Пассатижи</category>
+   <category id="9921" parentId="9917">Кувалды</category>
+   <category id="9923" parentId="9917">Тонкогубцы и круглогубцы</category>
+   <category id="9924" parentId="9917">Зубила и керны</category>
+   <category id="9925" parentId="9917">Кабелерезы</category>
+   <category id="9926" parentId="9917">Рашпили</category>
+   <category id="9928" parentId="9917">Добойники</category>
+   <category id="9929" parentId="9917">Клуппы трубные</category>
+   <category id="9930" parentId="9917">Развальцовщики труб</category>
+   <category id="9931" parentId="9917">Строительные ножницы</category>
+   <category id="9932" parentId="9917">Резьбонарезные инструменты</category>
+   <category id="30665" parentId="9917">Фаскосниматели</category>
+   <category id="31107" parentId="9905">Наборы инструментов</category>
+   <category id="9933" parentId="9905">Отвертки</category>
+   <category id="9922" parentId="9905">Напильники и надфили</category>
+   <category id="9934" parentId="9905">Струбцины</category>
+   <category id="9935" parentId="9905">Молотки</category>
+   <category id="9936" parentId="9905">Тиски</category>
+   <category id="9937" parentId="9905">Точилки</category>
+   <category id="9938" parentId="9905">Гаечные ключи</category>
+   <category id="31245" parentId="9905">Переходники для ключей</category>
+   <category id="9972" parentId="9905">Гайколомы</category>
+   <category id="9939" parentId="9905">Трещотки</category>
+   <category id="9940" parentId="9905">Магнитные держатели</category>
+   <category id="9941" parentId="9905">Заклепочники</category>
+   <category id="9943" parentId="9905">Пилы и ножовки</category>
+   <category id="9945" parentId="9905">Клещи и бокорезы</category>
+   <category id="9946" parentId="9905">Стеклорезы</category>
+   <category id="9947" parentId="9905">Труборезы</category>
+   <category id="9948" parentId="9905">Болторезы</category>
+   <category id="9949" parentId="9905">Ножи строительно-ремонтные</category>
+   <category id="9950" parentId="9905">Ручные плиткорезы</category>
+   <category id="9951" parentId="9905">Гвоздодеры</category>
+   <category id="9952" parentId="9905">Пресс-клещи</category>
+   <category id="9953" parentId="9905">Трубогибы</category>
+   <category id="9954" parentId="9905">Кельмы</category>
+   <category id="9955" parentId="9905">Крюки для вязки арматуры</category>
+   <category id="9956" parentId="9905">Плашки для нарезания резьбы</category>
+   <category id="9957" parentId="9905">Ломы</category>
+   <category id="9958" parentId="9905">Просекатели</category>
+   <category id="9960" parentId="9905">Станки для дрелей</category>
+   <category id="9961" parentId="9905">Мастерки</category>
+   <category id="9962" parentId="9905">Монтировки</category>
+   <category id="9964" parentId="9905">Правила для отделочных работ</category>
+   <category id="9965" parentId="9905">Гладилки</category>
+   <category id="9966" parentId="9905">Стеклодомкраты</category>
+   <category id="9967" parentId="9905">Рейсмус-резаки</category>
+   <category id="9968" parentId="9905">Торцевые головки</category>
+   <category id="9970" parentId="9905">Терки строительные</category>
+   <category id="9977" parentId="9905">Гратосниматели</category>
+   <category id="9973" parentId="9905">Ручные прессы</category>
+   <category id="9975" parentId="9905">Технические пинцеты</category>
+   <category id="9976" parentId="9905">Скребки строительные</category>
+   <category id="9971" parentId="9905">Строительные маркеры</category>
+   <category id="9979" parentId="9905">Лебедки, тали и тросы</category>
+   <category id="9980" parentId="9905">Ковши строительные</category>
+   <category id="9984" parentId="9905">Горелки строительные</category>
+   <category id="9986" parentId="9905">Триммеры для обработки ламината</category>
+   <category id="1735" parentId="9905">Приспособления для сгиба прутков</category>
+   <category id="10401" parentId="9905">Кольца фиксирующие</category>
+   <category id="31200" parentId="9905">Мультипликаторы</category>
+   <category id="30944" parentId="9905">Инструменты для гипсокартона</category>
+   <category id="9969" parentId="9905">Утконосы</category>
+   <category id="9978" parentId="9905">Фланцевые ключи</category>
+   <category id="9983" parentId="9905">Формы для бетона</category>
+   <category id="9987" parentId="9905">Цепные захваты</category>
+   <category id="9982" parentId="9905">Чаши для гипса</category>
+   <category id="9974" parentId="9905">Чертилки</category>
+   <category id="9942" parentId="9905">Шила и буравчики</category>
+   <category id="9981" parentId="9905">Щетки строительные</category>
+   <category id="9989" parentId="9856">Пневмоинструменты</category>
+   <category id="9990" parentId="9989">Пневмогайковерты</category>
+   <category id="9991" parentId="9989">Пневмодомкрат</category>
+   <category id="9992" parentId="9989">Пневмодрели</category>
+   <category id="9993" parentId="9989">Пневмозаклепочники</category>
+   <category id="9994" parentId="9989">Пневмолобзики</category>
+   <category id="9995" parentId="9989">Пневмозубила</category>
+   <category id="9997" parentId="9989">Пневмопистолеты</category>
+   <category id="9998" parentId="9989">Пневмостеплеры</category>
+   <category id="9999" parentId="9989">Пневмотрещотки</category>
+   <category id="10000" parentId="9989">Пневмошлифмашины и шуруповерты</category>
+   <category id="10002" parentId="9989">Пневматические бормашины</category>
+   <category id="10003" parentId="9989">Пневматические УШМ</category>
+   <category id="10004" parentId="9989">Пневматические болгарки</category>
+   <category id="10005" parentId="9989">Пневматические отрезные машины</category>
+   <category id="10006" parentId="9989">Пневматические гвоздезабивные пистолеты</category>
+   <category id="10007" parentId="9989">Пневмоножовки</category>
+   <category id="10008" parentId="9989">Пневмомолотки</category>
+   <category id="10010" parentId="9989">Пневматические краскопульты</category>
+   <category id="10011" parentId="9989">Пневматические аэрографы</category>
+   <category id="10012" parentId="9989">Аксессуары и оснастка для пневмоинструментов</category>
+   <category id="10013" parentId="10012">Адаптеры и переходники для пневмоинструментов</category>
+   <category id="10014" parentId="10012">Бачки для пневмоинструментов</category>
+   <category id="10015" parentId="10012">Воздушные фильтры для краскопультов</category>
+   <category id="10390" parentId="10012">Принадлежности для краскопультов</category>
+   <category id="10016" parentId="10012">Воздушные фильтры для пневмоинструментов</category>
+   <category id="10017" parentId="10012">Зубила для пневмомолотков</category>
+   <category id="10018" parentId="10012">Катушки с шлангом высокого давления</category>
+   <category id="10019" parentId="10012">Краны для пневмоинструментов</category>
+   <category id="10020" parentId="10012">Лубрикаторы для пневмоинструментов</category>
+   <category id="10021" parentId="10012">Муфты для пневноинструментов</category>
+   <category id="10022" parentId="10012">Пистолеты для защитных составов</category>
+   <category id="10024" parentId="10012">Пистолеты обдувочные</category>
+   <category id="10025" parentId="10012">Пистолеты пескоструйные</category>
+   <category id="10026" parentId="10012">Соединители для шлангов</category>
+   <category id="10027" parentId="10012">Соединители для шлангов пневмоинструментов</category>
+   <category id="10028" parentId="10012">Тройники</category>
+   <category id="10029" parentId="10012">Фильтры влагоотделители</category>
+   <category id="10030" parentId="10012">Фитинги</category>
+   <category id="10031" parentId="10012">Шланги высокого давления</category>
+   <category id="10032" parentId="10012">Шприцы солидолонагнетательные</category>
+   <category id="10033" parentId="10012">Штуцеры для пневмоинструментов</category>
+   <category id="30334" parentId="10012">Щетки для мойки</category>
+   <category id="30335" parentId="10012">Копья для мойки</category>
+   <category id="10009" parentId="9989">Аэрографы, краскопульты</category>
+   <category id="10034" parentId="9856">Инструменты для строительства и отделки</category>
+   <category id="10035" parentId="10034">Шпатели</category>
+   <category id="10036" parentId="10034">Степлеры строительные</category>
+   <category id="10037" parentId="10034">Пистолеты для пены</category>
+   <category id="10039" parentId="10034">Малярные кисти</category>
+   <category id="10040" parentId="10034">Пистолеты для герметиков</category>
+   <category id="10041" parentId="10034">Валики и малярные ванночки</category>
+   <category id="10042" parentId="10034">Лестницы и стремянки</category>
+   <category id="10046" parentId="9856">Сварочное оборудование</category>
+   <category id="10047" parentId="10046">Сварочные аппараты</category>
+   <category id="10048" parentId="10046">Аппараты для сварки труб</category>
+   <category id="10049" parentId="10046">Плазменные резаки</category>
+   <category id="10050" parentId="10046">Маски для сварки</category>
+   <category id="10396" parentId="10046">Краги сварщика</category>
+   <category id="10051" parentId="10046">Электроды и проволоки</category>
+   <category id="30609" parentId="10046">Сменные нагреватели</category>
+   <category id="10052" parentId="10046">Аксессуары и комплектующие для сварки</category>
+   <category id="10053" parentId="9856">Паяльное оборудование</category>
+   <category id="10054" parentId="10053">Электрические паяльники</category>
+   <category id="10055" parentId="10053">Импульсные паяльники</category>
+   <category id="10056" parentId="10053">Газовые паяльники</category>
+   <category id="10057" parentId="10053">Бутановые паяльники</category>
+   <category id="10058" parentId="10053">Паяльные ванны</category>
+   <category id="10059" parentId="10053">Паяльные лампы</category>
+   <category id="10060" parentId="10053">Паяльные станции</category>
+   <category id="10061" parentId="10053">Паяльные фены</category>
+   <category id="10062" parentId="10053">Ультразвуковые ванны</category>
+   <category id="10181" parentId="10053">Флюсы для пайки</category>
+   <category id="10063" parentId="10053">Наборы для пайки</category>
+   <category id="10169" parentId="10053">Припои</category>
+   <category id="30478" parentId="10053">Ленты для удаления припоя</category>
+   <category id="1760" parentId="10053">Лабораторные блоки питания</category>
+   <category id="10064" parentId="9856">Электро- и бензопилы</category>
+   <category id="10065" parentId="10064">Электро- и бензопилы цепные</category>
+   <category id="10066" parentId="10064">Дисковые пилы</category>
+   <category id="10067" parentId="10064">Ленточные пилы</category>
+   <category id="10068" parentId="10064">Пилы сабельные</category>
+   <category id="10069" parentId="10064">Плиткорезы и камнерезы</category>
+   <category id="10070" parentId="10064">Строительные пилы</category>
+   <category id="10071" parentId="10064">Торцовочные пилы</category>
+   <category id="1754" parentId="10064">Отрезные машины</category>
+   <category id="10072" parentId="9856">Мотобуры и оснастка</category>
+   <category id="10073" parentId="10072">Мотобуры</category>
+   <category id="10074" parentId="10072">Шнеки для мотобуров</category>
+   <category id="10075" parentId="9856">Измерительные инструменты</category>
+   <category id="10076" parentId="10075">Детекторы</category>
+   <category id="10077" parentId="10076">Детекторы металла</category>
+   <category id="10078" parentId="10076">Сигнализаторы и детекторы газа</category>
+   <category id="10079" parentId="10075">Измерение параметров электрического тока</category>
+   <category id="10080" parentId="10079">Мультиметры и тестеры</category>
+   <category id="10081" parentId="10079">Счетчики электроэнергии</category>
+   <category id="10082" parentId="10079">Токовые клещи</category>
+   <category id="10083" parentId="10079">Щупы измерительные</category>
+   <category id="31074" parentId="10079">Ваттметр</category>
+   <category id="10084" parentId="10075">Измерение длин и углов наклона</category>
+   <category id="10086" parentId="10084">Дальномеры</category>
+   <category id="10087" parentId="10084">Штангенциркули</category>
+   <category id="10088" parentId="10084">Толщиномеры</category>
+   <category id="10090" parentId="10084">Строительные уровни, нивелиры и отвесы</category>
+   <category id="10089" parentId="10084">Линейки и угольники</category>
+   <category id="10091" parentId="10084">Угломеры</category>
+   <category id="10092" parentId="10084">Микрометры</category>
+   <category id="10093" parentId="10084">Рулетки и мерные ленты</category>
+   <category id="10094" parentId="10084">Разметочные шнуры</category>
+   <category id="10095" parentId="10084">Малки</category>
+   <category id="10096" parentId="10084">Теодолиты</category>
+   <category id="10098" parentId="10084">Рейки нивелирные</category>
+   <category id="10099" parentId="10084">Измерительные колеса</category>
+   <category id="10100" parentId="10084">Штативы для приборов</category>
+   <category id="10101" parentId="10084">Призменные отражатели</category>
+   <category id="10102" parentId="10075">Гигрометры</category>
+   <category id="10104" parentId="10075">Пирометры</category>
+   <category id="30558" parentId="10075">Тепловизоры</category>
+   <category id="31076" parentId="10075">Тахометры</category>
+   <category id="30887" parentId="10075">Бороскопы</category>
+   <category id="31252" parentId="10075">Видеоэндоскопы</category>
+   <category id="10107" parentId="10075">Люксметры</category>
+   <category id="31075" parentId="10075">Влагомеры</category>
+   <category id="31077" parentId="10075">Динамометры</category>
+   <category id="31201" parentId="10075">Измерительные головки</category>
+   <category id="10110" parentId="9856">Расходные материалы и оснастка</category>
+   <category id="10111" parentId="10110">Адаптеры для инструментов</category>
+   <category id="10112" parentId="10110">Аккумуляторы для инструментов</category>
+   <category id="10113" parentId="10110">Насадки для перфораторов</category>
+   <category id="10115" parentId="10110">Губки для инструментов</category>
+   <category id="10116" parentId="10110">Диски отрезные</category>
+   <category id="10129" parentId="10110">Клеевые стержни</category>
+   <category id="10117" parentId="10110">Для дрелей и шуруповертов</category>
+   <category id="10118" parentId="10117">Балеринки</category>
+   <category id="10119" parentId="10117">Биты и вставки</category>
+   <category id="10120" parentId="10117">Гибкие валы</category>
+   <category id="10121" parentId="10117">Коронки</category>
+   <category id="10122" parentId="10117">Корщетки</category>
+   <category id="10123" parentId="10117">Метчики в дрель</category>
+   <category id="10124" parentId="10117">Полировальные насадки</category>
+   <category id="10125" parentId="10117">Патроны и переходники</category>
+   <category id="10126" parentId="10117">Сверла</category>
+   <category id="10127" parentId="10117">Шарошки</category>
+   <category id="10128" parentId="10117">Шлифнасадки</category>
+   <category id="31166" parentId="10117">Насадки на гайковерт</category>
+   <category id="10130" parentId="10110">Для краскопультов и аэрографов</category>
+   <category id="10131" parentId="10110">Для плиткорезов</category>
+   <category id="10132" parentId="10110">Компрессоры и оснастка для пневмоинструмента</category>
+   <category id="10133" parentId="10132">Воздушные компрессоры</category>
+   <category id="10135" parentId="10132">Переключатели потоков</category>
+   <category id="10136" parentId="10132">Пневмофитинги</category>
+   <category id="10137" parentId="10132">Ремонтные комплекты для помпы</category>
+   <category id="10138" parentId="10132">Фильтры, влагоотделители и лубрикаторы</category>
+   <category id="10139" parentId="10132">Шланги высокого давления</category>
+   <category id="31167" parentId="10132">Соединители</category>
+   <category id="10140" parentId="10110">Для угловой шлифмашины (болгарки)</category>
+   <category id="10141" parentId="10140">Кожухи</category>
+   <category id="10142" parentId="10140">Круги</category>
+   <category id="10143" parentId="10140">Корщетки</category>
+   <category id="10146" parentId="10110">Для шлифовальных машин</category>
+   <category id="10147" parentId="10146">Диски и чашки</category>
+   <category id="10148" parentId="10146">Шлифовальные круги</category>
+   <category id="10149" parentId="10146">Шлифовальные ленты</category>
+   <category id="10150" parentId="10146">Шлифовальные листы</category>
+   <category id="10144" parentId="10110">Оснастка для фрезеров</category>
+   <category id="10145" parentId="10110">Оснастка для цепных пил</category>
+   <category id="10151" parentId="10110">Кольца для молотков</category>
+   <category id="10152" parentId="10110">Лезвия для инструментов</category>
+   <category id="10153" parentId="10110">Ложковые насадки для усадки</category>
+   <category id="10154" parentId="10110">Масла и смазки</category>
+   <category id="10155" parentId="10110">Меловые порошки</category>
+   <category id="10156" parentId="10110">Монтажная пружина</category>
+   <category id="10159" parentId="10110">Направляющие и упоры</category>
+   <category id="30552" parentId="10110">Франкфурты</category>
+   <category id="10160" parentId="10110">Насадки</category>
+   <category id="10161" parentId="10110">Скобы для строительных степлеров</category>
+   <category id="10162" parentId="10110">Ножи для рубанков</category>
+   <category id="10163" parentId="10110">Оснастка для дисковых пил</category>
+   <category id="10165" parentId="10110">Пленки для строительства и ремонта</category>
+   <category id="10166" parentId="10110">Подвесы и балансиры для инструмента</category>
+   <category id="10167" parentId="10110">Полировальные пасты</category>
+   <category id="10168" parentId="10110">Полотна и пильные ленты</category>
+   <category id="10170" parentId="10110">Приставки для инструментов</category>
+   <category id="10171" parentId="10110">Принадлежности для инструментов</category>
+   <category id="10172" parentId="10110">Противоскользящие ленты</category>
+   <category id="10173" parentId="10110">Ремкомплекты</category>
+   <category id="9985" parentId="10110">Ручки для инструментов</category>
+   <category id="10176" parentId="10110">Сетки абразивные</category>
+   <category id="10177" parentId="10110">Станки для заточки</category>
+   <category id="10178" parentId="10110">Стойки, тиски и зеркала</category>
+   <category id="10179" parentId="10110">Теплопроводные пасты</category>
+   <category id="10180" parentId="10110">Удлинители инструментов</category>
+   <category id="10182" parentId="10110">Холодные сварки</category>
+   <category id="10183" parentId="10110">Цанги</category>
+   <category id="10184" parentId="10110">Шлифовальные шкурки и блоки</category>
+   <category id="10157" parentId="10110">Наборы оснастки</category>
+   <category id="10158" parentId="10110">Наборы расходников</category>
+   <category id="30506" parentId="10110">Прочие расходники</category>
+   <category id="10185" parentId="9856">Хранение инструментов</category>
+   <category id="10186" parentId="10185">Ящики и органайзеры</category>
+   <category id="10188" parentId="10185">Сумки и пояса</category>
+   <category id="10187" parentId="10185">Подвесы и этажерки</category>
+   <category id="30557" parentId="10185">Чаши магнитные</category>
+   <category id="9701" parentId="9700">Строительные и отделочные материалы</category>
+   <category id="9702" parentId="9701">Строительные смеси</category>
+   <category id="9703" parentId="9702">Шпатлевки</category>
+   <category id="9704" parentId="9702">Затирки</category>
+   <category id="9705" parentId="9702">Штукатурки</category>
+   <category id="9823" parentId="9702">Клеи для плитки и камня</category>
+   <category id="9706" parentId="9702">Стяжки и наливные полы</category>
+   <category id="10387" parentId="9702">Гидроизоляция</category>
+   <category id="9707" parentId="9701">Строительные материалы из камня</category>
+   <category id="9708" parentId="9707">Брусчатка</category>
+   <category id="9709" parentId="9707">Каменная плитка</category>
+   <category id="9710" parentId="9707">Ступени из камня</category>
+   <category id="9711" parentId="9707">Порталы для камина</category>
+   <category id="9712" parentId="9707">Подоконники из камня</category>
+   <category id="9713" parentId="9707">Столешницы из камня</category>
+   <category id="9714" parentId="9707">Мозаики из камня</category>
+   <category id="9715" parentId="9707">Слэбы</category>
+   <category id="9716" parentId="9707">Бордюры</category>
+   <category id="9717" parentId="9707">Архитектурные формы</category>
+   <category id="9718" parentId="9707">Колонны</category>
+   <category id="9719" parentId="9707">Панно из камня</category>
+   <category id="9720" parentId="9707">Мебель из камня</category>
+   <category id="9721" parentId="9701">Отделочные материалы</category>
+   <category id="9722" parentId="9721">Плитка и керамогранит</category>
+   <category id="9723" parentId="9721">Бордюры для плитки</category>
+   <category id="9724" parentId="9721">Вставки для плитки</category>
+   <category id="9725" parentId="9721">Плинтусы</category>
+   <category id="9726" parentId="9721">Кирпичи для облицовки и отделки</category>
+   <category id="9727" parentId="9721">Ступени и подступенки</category>
+   <category id="9728" parentId="9721">Уголки керамические</category>
+   <category id="9729" parentId="9721">Холсты и стеклохолсты</category>
+   <category id="30540" parentId="9721">Стеклотекстолит</category>
+   <category id="31078" parentId="9721">Сайдинг</category>
+   <category id="30342" parentId="9701">Кровля</category>
+   <category id="9730" parentId="9701">Обои и покрытия</category>
+   <category id="9731" parentId="9730">Обои</category>
+   <category id="15166" parentId="9730">Фотообои</category>
+   <category id="9732" parentId="9730">Подложки под обои</category>
+   <category id="9733" parentId="9730">Покрытия для обоев</category>
+   <category id="9734" parentId="9730">Клеи для обоев</category>
+   <category id="9735" parentId="9730">Изоляционные покрытия и материалы</category>
+   <category id="9736" parentId="9730">Утеплители</category>
+   <category id="30583" parentId="9730">Флизелиновые холсты</category>
+   <category id="31073" parentId="9730">Листы полипропилена</category>
+   <category id="9737" parentId="9701">Напольные покрытия</category>
+   <category id="9738" parentId="9737">Ламинат</category>
+   <category id="9739" parentId="9737">Ковролин</category>
+   <category id="9740" parentId="9737">Линолеум</category>
+   <category id="9741" parentId="9737">Паркетные доски</category>
+   <category id="9742" parentId="9737">Пробковые полы</category>
+   <category id="9743" parentId="9737">Виниловые доски</category>
+   <category id="9744" parentId="9737">Массивные доски</category>
+   <category id="10395" parentId="9737">Композитные доски</category>
+   <category id="9745" parentId="9737">Прочие покрытия</category>
+   <category id="30338" parentId="9737">Теплоизоляционные маты и плиты</category>
+   <category id="30339" parentId="9737">Теплоизоляция для теплого пола</category>
+   <category id="9804" parentId="9700">Краски, лаки и растворители</category>
+   <category id="9805" parentId="9804">Краски</category>
+   <category id="9806" parentId="9804">Эмали</category>
+   <category id="9807" parentId="9804">Лаки для строительства и ремонта</category>
+   <category id="9808" parentId="9804">Грунтовки</category>
+   <category id="9809" parentId="9804">Монтажные пены</category>
+   <category id="9810" parentId="9804">Морилки</category>
+   <category id="9811" parentId="9804">Пропитки</category>
+   <category id="9812" parentId="9804">Затирки</category>
+   <category id="9813" parentId="9804">Колеры</category>
+   <category id="9814" parentId="9804">Аэрозольные краски</category>
+   <category id="9815" parentId="9804">Растворители и очистители</category>
+   <category id="9816" parentId="9804">Антисептики</category>
+   <category id="9817" parentId="9804">Декоративные лазури</category>
+   <category id="9818" parentId="9804">Добавки в раствор</category>
+   <category id="9819" parentId="9804">Заполнители для дерева</category>
+   <category id="8808" parentId="9804">Антиобледенители</category>
+   <category id="9820" parentId="9804">Защитные лазури</category>
+   <category id="10038" parentId="9804">Малярные ленты</category>
+   <category id="9821" parentId="9700">Клеи и герметики</category>
+   <category id="9822" parentId="9821">Клеи для пластмассы и стекла</category>
+   <category id="9824" parentId="9821">Монтажные клеи</category>
+   <category id="9825" parentId="9821">Герметики</category>
+   <category id="30911" parentId="9821">Клеи универсальные</category>
+   <category id="8532" parentId="9821">Клейкие ленты</category>
+   <category id="9746" parentId="9700">Двери, окна, элементы домов</category>
+   <category id="9747" parentId="9746">Входные двери</category>
+   <category id="9748" parentId="9746">Межкомнатные двери</category>
+   <category id="9749" parentId="9746">Технические двери</category>
+   <category id="9750" parentId="9746">Дверные полотна</category>
+   <category id="9751" parentId="9746">Дверные коробки</category>
+   <category id="9752" parentId="9746">Звонки</category>
+   <category id="1726" parentId="9746">Чердачные лестницы</category>
+   <category id="9753" parentId="9746">Напольные и потолочные люки</category>
+   <category id="9754" parentId="9746">Почтовые ящики</category>
+   <category id="9755" parentId="9746">Ручки, замки и фурнитура</category>
+   <category id="9756" parentId="9755">Замки для дверей</category>
+   <category id="9757" parentId="9755">Дверные ручки</category>
+   <category id="9758" parentId="9755">Оконные ручки</category>
+   <category id="9759" parentId="9755">Уплотнители для окон</category>
+   <category id="9760" parentId="9755">Шпингалеты</category>
+   <category id="9761" parentId="9755">Наличники и доборы</category>
+   <category id="9762" parentId="9755">Дверные петли</category>
+   <category id="9763" parentId="9755">Дверные доводчики</category>
+   <category id="9764" parentId="9755">Дверные накладки</category>
+   <category id="10381" parentId="9755">Крючки мебельные</category>
+   <category id="9765" parentId="9755">Цилиндры для замков</category>
+   <category id="30842" parentId="9755">Цифры для дверей</category>
+   <category id="9767" parentId="9700">Крепеж и фурнитура</category>
+   <category id="9768" parentId="9767">Анкерные болты</category>
+   <category id="9769" parentId="9767">Армирующие ленты</category>
+   <category id="9770" parentId="9767">Винты и болты</category>
+   <category id="9771" parentId="9767">Гвозди</category>
+   <category id="9772" parentId="9767">Держатели для полок</category>
+   <category id="30337" parentId="9767">Демпферные ленты</category>
+   <category id="9773" parentId="9767">Дюбели</category>
+   <category id="9774" parentId="9767">Заклепки</category>
+   <category id="10398" parentId="9767">Карабины и коуши</category>
+   <category id="10400" parentId="9767">Клипсы для крепления труб</category>
+   <category id="10384" parentId="9767">Кляймеры</category>
+   <category id="10385" parentId="9767">Крепления для зеркал</category>
+   <category id="30450" parentId="9767">Заглушки</category>
+   <category id="10376" parentId="9767">Крепежные консоли</category>
+   <category id="9776" parentId="9767">Металлорукава</category>
+   <category id="30336" parentId="9767">Монтажные ленты</category>
+   <category id="10382" parentId="9767">Наборы крепежа</category>
+   <category id="9777" parentId="9767">Перфорированный крепеж</category>
+   <category id="10405" parentId="9767">Петли</category>
+   <category id="9781" parentId="9767">Пункты для мебели</category>
+   <category id="10394" parentId="9767">Шканты мебельные</category>
+   <category id="10383" parentId="9767">Протекторы для мебели</category>
+   <category id="30614" parentId="9767">Ножки мебельные</category>
+   <category id="9783" parentId="9767">Ролики для мебели</category>
+   <category id="9784" parentId="9767">Ручки для мебели</category>
+   <category id="9778" parentId="9767">Подпятники</category>
+   <category id="9779" parentId="9767">Присоски крепежные</category>
+   <category id="10402" parentId="9767">Крюк крепежный</category>
+   <category id="30850" parentId="9767">Крепеж для вагонки</category>
+   <category id="10404" parentId="9767">Пластины крепежные</category>
+   <category id="10403" parentId="9767">Заклепки крепежные</category>
+   <category id="9780" parentId="9767">Проволоки</category>
+   <category id="30778" parentId="9767">Пломбы</category>
+   <category id="30849" parentId="9767">Крестики для плитки</category>
+   <category id="9782" parentId="9767">Рейлинговые ручки</category>
+   <category id="9785" parentId="9767">Сигнальные ленты</category>
+   <category id="9786" parentId="9767">Скобы</category>
+   <category id="9787" parentId="9767">Соединители труб</category>
+   <category id="9788" parentId="9767">Соединители цепей</category>
+   <category id="9789" parentId="9767">Спецкрепежи</category>
+   <category id="10407" parentId="9767">Стеклодержатели</category>
+   <category id="9790" parentId="9767">Стяжки</category>
+   <category id="9791" parentId="9767">Такелаж</category>
+   <category id="30542" parentId="9767">Рым-болты</category>
+   <category id="30648" parentId="9767">Рым-гайки</category>
+   <category id="30480" parentId="9767">Зажимы для тросов</category>
+   <category id="9792" parentId="9767">Талрепы</category>
+   <category id="9793" parentId="9767">Термоусадочные трубки</category>
+   <category id="9794" parentId="9767">Трубы крепежные</category>
+   <category id="9795" parentId="9767">Уголки и держатели</category>
+   <category id="1758" parentId="9767">Хомуты</category>
+   <category id="10386" parentId="9767">Цепи для крепежа</category>
+   <category id="9796" parentId="9767">Шайбы и гайки</category>
+   <category id="9797" parentId="9767">Шнуры хозяйственные</category>
+   <category id="9798" parentId="9767">Шпагаты крепежные</category>
+   <category id="9799" parentId="9767">Шпильки</category>
+   <category id="9800" parentId="9767">Штанги крепежные</category>
+   <category id="9802" parentId="9767">Шурупы и саморезы</category>
+   <category id="9826" parentId="9700">Электрика</category>
+   <category id="9827" parentId="9826">Розетки и выключатели</category>
+   <category id="9828" parentId="9827">Электророзетки</category>
+   <category id="9829" parentId="9827">Выключатели и диммеры</category>
+   <category id="9830" parentId="9827">Рамки электроустановочные</category>
+   <category id="9831" parentId="9826">Штепсельные гнезда</category>
+   <category id="9832" parentId="9826">Стабилизаторы напряжения</category>
+   <category id="9833" parentId="9826">Трансформаторы и реле</category>
+   <category id="9834" parentId="9826">Электрогенераторы</category>
+   <category id="9836" parentId="9826">Термостаты и терморегуляторы</category>
+   <category id="9837" parentId="9826">Клеммы</category>
+   <category id="9838" parentId="9826">Вилки и колодки</category>
+   <category id="10392" parentId="9826">Дин-рейки</category>
+   <category id="10393" parentId="9826">Нулевые шины</category>
+   <category id="9839" parentId="9826">Автоматические выключатели, УЗО, дифавтоматы</category>
+   <category id="9840" parentId="9839">Автоматические выключатели</category>
+   <category id="9841" parentId="9839">Устройства защитного отключения (УЗО)</category>
+   <category id="9842" parentId="9839">Дифференциальные автоматы</category>
+   <category id="9844" parentId="9826">Электромонтажные работы</category>
+   <category id="9845" parentId="9844">Кабели и провода электроможнтажные</category>
+   <category id="9846" parentId="9844">Распределительные коробки</category>
+   <category id="10412" parentId="9844">Коробы установочные</category>
+   <category id="9847" parentId="9844">Распределительные щиты</category>
+   <category id="10389" parentId="9844">Коробки наружного монтажа</category>
+   <category id="9848" parentId="9844">Крепления для электрокабелей</category>
+   <category id="9849" parentId="9844">Кабель-каналы</category>
+   <category id="9850" parentId="9844">Соединительные изолирующие зажимы</category>
+   <category id="9851" parentId="9844">Изоленты</category>
+   <category id="9852" parentId="9844">Контакторы</category>
+   <category id="9853" parentId="9844">Гофрированные трубы</category>
+   <category id="9855" parentId="9844">Фонари для строительных работ</category>
+   <category id="10198" parentId="9700">Отопление</category>
+   <category id="10199" parentId="10198">Конвекторы</category>
+   <category id="10200" parentId="10198">Радиаторы</category>
+   <category id="10201" parentId="10198">Аксессуары</category>
+   <category id="10202" parentId="10201">Вентили для радиаторов</category>
+   <category id="30595" parentId="10201">Краны Маевского</category>
+   <category id="10203" parentId="10201">Декоративные решетки для внутрипольных конвекторов</category>
+   <category id="10204" parentId="10201">Монтажные комплекты</category>
+   <category id="10205" parentId="10201">Кронштейны для радиаторов и конвекторов</category>
+   <category id="10206" parentId="10201">Чехлы для уличных обогревателей</category>
+   <category id="10207" parentId="10198">Камины и порталы</category>
+   <category id="10208" parentId="10207">Камины</category>
+   <category id="10209" parentId="10207">Каминные порталы</category>
+   <category id="10210" parentId="10207">Каминные топки</category>
+   <category id="30947" parentId="10207">Столики для каминов</category>
+   <category id="10211" parentId="10198">Отопительные котлы</category>
+   <category id="10212" parentId="10198">Запчасти для котлов</category>
+   <category id="10213" parentId="10198">Газовые обогреватели</category>
+   <category id="10215" parentId="10198">Шланги для газовых приборов</category>
+   <category id="10216" parentId="10198">Полотенцесушители</category>
+   <category id="10217" parentId="10198">Электрические теплые полы</category>
+   <category id="30796" parentId="10198">Греющиеся кабели</category>
+   <category id="10218" parentId="9700">Вентиляция</category>
+   <category id="10221" parentId="10218">Вентиляторы, дефлекторы и решетки</category>
+   <category id="10222" parentId="10218">Воздуховоды</category>
+   <category id="10223" parentId="10218">Вентиляционное оборудование</category>
+   <category id="10231" parentId="10218">Комплектующие и запчасти для вентиляции</category>
+   <category id="10233" parentId="10231">Вентиляционные диффузоры</category>
+   <category id="10234" parentId="10231">Вентиляционные колпаки</category>
+   <category id="10235" parentId="10231">Вентиляционные фланцы</category>
+   <category id="10236" parentId="10231">Вентиляционные хомуты</category>
+   <category id="10237" parentId="10231">Крестовины для вентканала</category>
+   <category id="10238" parentId="10231">Настенные пластины</category>
+   <category id="10239" parentId="10231">Ревизионная дверца</category>
+   <category id="10240" parentId="10231">Регуляторы скорости</category>
+   <category id="10241" parentId="10231">Редукторы для вентканала</category>
+   <category id="10242" parentId="10231">Соединительно-монтажные элементы</category>
+   <category id="10243" parentId="10231">Тройники для вентканала</category>
+   <category id="10255" parentId="9700">Сантехника и водоснабжение</category>
+   <category id="10256" parentId="10255">Смесители</category>
+   <category id="10257" parentId="10255">Раковины, умывальники и пьедесталы</category>
+   <category id="10258" parentId="10257">Раковины</category>
+   <category id="10259" parentId="10257">Мебельные раковины</category>
+   <category id="10260" parentId="10257">Умывальники</category>
+   <category id="10261" parentId="10257">Пьедесталы для раковин</category>
+   <category id="10262" parentId="10257">Полупьедесталы для раковин</category>
+   <category id="10263" parentId="10257">Столешницы для раковин</category>
+   <category id="10264" parentId="10255">Кухонные мойки</category>
+   <category id="10266" parentId="10255">Души и душевые кабины</category>
+   <category id="10267" parentId="10266">Душевые кабины</category>
+   <category id="10268" parentId="10266">Душевые поддоны</category>
+   <category id="10269" parentId="10266">Душевые уголки и элементы</category>
+   <category id="10270" parentId="10266">Комплектующие</category>
+   <category id="10276" parentId="10255">Унитазы</category>
+   <category id="10277" parentId="10255">Писсуары</category>
+   <category id="10278" parentId="10255">Биде</category>
+   <category id="10281" parentId="10255">Трубы и водоснабжение</category>
+   <category id="10282" parentId="10281">Водопроводные трубы</category>
+   <category id="10283" parentId="10281">Баки и теплообменники</category>
+   <category id="10284" parentId="10281">Клапаны</category>
+   <category id="10285" parentId="10281">Заливные шланги</category>
+   <category id="10286" parentId="10281">Сливные шланги</category>
+   <category id="10288" parentId="10281">Коллекторы</category>
+   <category id="30544" parentId="10281">Опрессовщики</category>
+   <category id="10291" parentId="10281">Фитинги для труб</category>
+   <category id="10302" parentId="10281">Инструменты для прочистки труб</category>
+   <category id="10303" parentId="10302">Устройство для прочистки труб</category>
+   <category id="10304" parentId="10302">Спираль для прочистки труб</category>
+   <category id="10305" parentId="10302">Редуктор давления для прочистных машин</category>
+   <category id="10306" parentId="10302">Инжектор для прочистных машин</category>
+   <category id="10292" parentId="10255">Водоочистка и фильтры</category>
+   <category id="10293" parentId="10292">Фильтры-насадки на краны</category>
+   <category id="10294" parentId="10292">Фильтры грубой очистки</category>
+   <category id="10295" parentId="10292">Фильтры для моек</category>
+   <category id="10296" parentId="10292">Системы очистки воды</category>
+   <category id="10297" parentId="10292">Системы обратного осмоса</category>
+   <category id="10298" parentId="10292">Предфильтры</category>
+   <category id="10299" parentId="10292">Постфильтры</category>
+   <category id="10300" parentId="10292">Колбы магистральных фильтров</category>
+   <category id="10301" parentId="10292">Комплектующие для фильтров</category>
+   <category id="30345" parentId="10292">Тестеры жесткости воды</category>
+   <category id="10310" parentId="10255">Арматура и аксессуары для сантехники</category>
+   <category id="10311" parentId="10310">Лейки для душа</category>
+   <category id="10312" parentId="10310">Сифоны для сантехники</category>
+   <category id="10313" parentId="10310">Шланги для душа</category>
+   <category id="10314" parentId="10310">Изливы для смесителей</category>
+   <category id="10315" parentId="10310">Подводки для воды</category>
+   <category id="10316" parentId="10310">Сливные гарнитуры</category>
+   <category id="30340" parentId="10310">Смесительные узлы</category>
+   <category id="10317" parentId="10310">Душевые комплекты</category>
+   <category id="10318" parentId="10310">Держатели и штанги для душа</category>
+   <category id="10319" parentId="10310">Краны</category>
+   <category id="30532" parentId="10310">Чашки-отражатели</category>
+   <category id="10321" parentId="10310">Вентили для сантехники</category>
+   <category id="10322" parentId="10310">Запорные вентили</category>
+   <category id="10323" parentId="10310">Переходники и соединители</category>
+   <category id="30354" parentId="10310">Маховики для смесителей</category>
+   <category id="10377" parentId="10310">Ниппели</category>
+   <category id="10324" parentId="10310">Диверторы</category>
+   <category id="10325" parentId="10310">Трапы сантехнические</category>
+   <category id="10378" parentId="10310">Термостаты сантехнические</category>
+   <category id="10308" parentId="10310">Счетчики воды</category>
+   <category id="10103" parentId="10310">Манометры</category>
+   <category id="10327" parentId="10310">Термостатические головки и комплекты</category>
+   <category id="10328" parentId="10310">Эксцентрики сантехнические</category>
+   <category id="10329" parentId="10310">Комплектующие для ванн</category>
+   <category id="10330" parentId="10310">Заглушки для ванны</category>
+   <category id="30327" parentId="10310">Системы защиты от протечек</category>
+   <category id="10331" parentId="10310">Комплектующие для смесителей</category>
+   <category id="30498" parentId="10310">Кронштейны установочные</category>
+   <category id="10332" parentId="10310">Комплектующие для унитазов, писсуаров, биде</category>
+   <category id="10333" parentId="10310">Инсталляции для унитазов, писсуаров, биде</category>
+   <category id="10335" parentId="10310">Бачки для унитазов и арматуры</category>
+   <category id="9775" parentId="10310">Крепежи для бачка унитаза</category>
+   <category id="10336" parentId="10310">Ремкомплекты для сантехники</category>
+   <category id="30350" parentId="10310">Нити уплотнительные</category>
+   <category id="30356" parentId="10255">Расходные материалы для сантехники</category>
+   <category id="30452" parentId="30356">Прокладки сантехнические</category>
+   <category id="30355" parentId="30356">Смазки для канализационных труб</category>
+   <category id="30352" parentId="30356">Лен сантехнический</category>
+   <category id="30351" parentId="30356">Пасты уплотнительные</category>
+   <category id="10338" parentId="9700">Сауны и бани</category>
+   <category id="10346" parentId="10338">Аксессуары для саун и бань</category>
+   <category id="10365" parentId="10346">Светильники для сауны</category>
+   <category id="10189" parentId="9700">Спецодежда и средства индивидуальной защиты</category>
+   <category id="10190" parentId="10189">Спецодежда</category>
+   <category id="30835" parentId="10189">Обувь рабочая</category>
+   <category id="10191" parentId="10189">Строительные фартуки</category>
+   <category id="10192" parentId="10189">Защитные очки</category>
+   <category id="10193" parentId="10189">Респираторы</category>
+   <category id="10195" parentId="10189">Строительные каски</category>
+   <category id="10196" parentId="10189">Защитные наушники</category>
+   <category id="10197" parentId="10189">Страховочные пояса</category>
+  </categories>
