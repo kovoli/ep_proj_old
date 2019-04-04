@@ -18,7 +18,7 @@ import re
 
 # Бытовая техника
 #tree = ET.parse('xml_imports/10500.xml')
-tree = ET.parse('imports/9700.xml')
+tree = ET.parse('imports/8500.xml')
 root = tree.getroot()
 
 categories = root.findall('.//category')

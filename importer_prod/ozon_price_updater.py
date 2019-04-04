@@ -13,8 +13,10 @@ def download_all_category_files():
     filename_list = []
     # 1. Бытовая техника
     # 2. Электроника
+    # 3. Строительство и ремонт
     categories_list = ['https://api.ozon.ru/partner-tools.affiliates/XmlFeed/10500',
-                       'https://api.ozon.ru/partner-tools.affiliates/XmlFeed/15500']
+                       'https://api.ozon.ru/partner-tools.affiliates/XmlFeed/15500',
+                       'https://api.ozon.ru/partner-tools.affiliates/XmlFeed/9700']
 
     url = 'https://api.ozon.ru/affiliates/partner-api/account/token'
     data = {'grant_type': 'password', 'email': 'kovoli1985@gmail.com', 'password': 'Mafusal1985!'}

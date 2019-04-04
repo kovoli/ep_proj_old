@@ -1,0 +1,363 @@
+<categories>
+   <category id="8500">Автотовары</category>
+   <category id="8514" parentId="8500">Масла и автохимия</category>
+   <category id="8569" parentId="8514">Жидкости омывателя</category>
+   <category id="8517" parentId="8514">Моторные масла</category>
+   <category id="8516" parentId="8514">Трансмиссионные масла</category>
+   <category id="31089" parentId="8514">Присадки и добавки</category>
+   <category id="8518" parentId="31089">Присадки</category>
+   <category id="8565" parentId="31089">Антигели</category>
+   <category id="30594" parentId="31089">Автоконсерванты</category>
+   <category id="8806" parentId="31089">Герметики радиатора</category>
+   <category id="30490" parentId="31089">Герметики двигателя</category>
+   <category id="8794" parentId="31089">Защита зажигания</category>
+   <category id="8530" parentId="8514">Промывки и очистители</category>
+   <category id="8546" parentId="8530">Очистители радиатора</category>
+   <category id="8537" parentId="8530">Очистители датчиков</category>
+   <category id="8538" parentId="8530">Очистители двигателя</category>
+   <category id="8540" parentId="8530">Очистители топливной системы</category>
+   <category id="8543" parentId="8530">Очистители кондиционеров</category>
+   <category id="8549" parentId="8530">Очистители тормозов</category>
+   <category id="8541" parentId="8514">Эксплуатационные жидкости</category>
+   <category id="8515" parentId="8541">Антифризы</category>
+   <category id="8521" parentId="8541">Тормозные жидкости</category>
+   <category id="8793" parentId="8541">Жидкости для гидроусилителя</category>
+   <category id="30599" parentId="8541">Дистиллированная вода</category>
+   <category id="8542" parentId="8541">Пропитки воздушных фильтров</category>
+   <category id="8519" parentId="8514">Смазки</category>
+   <category id="8520" parentId="8514">Специальные масла</category>
+   <category id="8786" parentId="8514">Жидкости для быстрого запуска</category>
+   <category id="8533" parentId="8514">Клей и герметики</category>
+   <category id="8553" parentId="8514">Средства для очистки рук</category>
+   <category id="8501" parentId="8500">Шины и диски</category>
+   <category id="8502" parentId="8501">Шины</category>
+   <category id="8506" parentId="8502">Шины летние</category>
+   <category id="8803" parentId="8502">Шины зимние</category>
+   <category id="30247" parentId="8502">Камеры</category>
+   <category id="8504" parentId="8501">Диски</category>
+   <category id="8621" parentId="8501">Колпаки на диски</category>
+   <category id="8664" parentId="8501">Чехлы для колес</category>
+   <category id="8712" parentId="8501">Ниппели, вентили и колпачки</category>
+   <category id="8505" parentId="8501">Мотошины</category>
+   <category id="8667" parentId="8501">Эмблемы на колесные диски</category>
+   <category id="8572" parentId="8501">Уход за шинами и дисками</category>
+   <category id="8573" parentId="8572">Средства для ремонта шин</category>
+   <category id="8551" parentId="8572">Чернители шин</category>
+   <category id="8539" parentId="8572">Очистители дисков</category>
+   <category id="8642" parentId="8501">Цепи и ленты антипробуксовочные</category>
+   <category id="8603" parentId="8500">Каталог ТО</category>
+   <category id="8679" parentId="8603">Автосвет</category>
+   <category id="8682" parentId="8679">Светодиодные и галогенные лампы</category>
+   <category id="8681" parentId="8679">Ксеноновые лампы</category>
+   <category id="8680" parentId="8679">Комплектующие для ксенона</category>
+   <category id="8683" parentId="8679">Светодиодные ленты</category>
+   <category id="8817" parentId="8679">Дневные ходовые огни</category>
+   <category id="30369" parentId="8679">Выключатели стоп-сигнала</category>
+   <category id="8684" parentId="8679">Фары</category>
+   <category id="8685" parentId="8603">Аккумуляторы и аксессуары</category>
+   <category id="8686" parentId="8685">Аккумуляторные батареи</category>
+   <category id="30317" parentId="8685">Клеммы аккумуляторные</category>
+   <category id="8687" parentId="8685">Зарядные устройства для аккумуляторов</category>
+   <category id="8688" parentId="8685">Провода прикуривания</category>
+   <category id="30381" parentId="8685">Кронштейны для АКБ</category>
+   <category id="8781" parentId="8603">Готовые наборы для ТО</category>
+   <category id="8507" parentId="8603">Щетки стеклоочистителей</category>
+   <category id="8705" parentId="8603">Фильтры для автомобилей</category>
+   <category id="8706" parentId="8705">Воздушные фильтры</category>
+   <category id="8707" parentId="8705">Масляные фильтры</category>
+   <category id="8708" parentId="8705">Салонные фильтры</category>
+   <category id="8709" parentId="8705">Топливные фильтры</category>
+   <category id="8807" parentId="8603">Свечи</category>
+   <category id="30364" parentId="8807">Свечи зажигания</category>
+   <category id="8802" parentId="8807">Свечи накаливания</category>
+   <category id="8703" parentId="8603">Тормозная система</category>
+   <category id="30375" parentId="8703">Тормозные барабаны и диски</category>
+   <category id="30376" parentId="8703">Тормозные колодки</category>
+   <category id="30387" parentId="8703">Тормозные трубки</category>
+   <category id="30374" parentId="8703">Датчики износа тормозных колодок</category>
+   <category id="30377" parentId="8703">Тормозные цилиндры</category>
+   <category id="30386" parentId="8703">Тормозные суппорты</category>
+   <category id="30388" parentId="8703">Тросы для ручного тормоза</category>
+   <category id="30384" parentId="8703">Ремкомплекты для тормозной системы</category>
+   <category id="8523" parentId="8500">Уход за автомобилем</category>
+   <category id="31092" parentId="8523">Щетки, губки, салфетки</category>
+   <category id="1715" parentId="31092">Салфетки и губки для авто</category>
+   <category id="31082" parentId="31092">Рукавицы для уборки салона</category>
+   <category id="8631" parentId="31092">Щетки и скребки</category>
+   <category id="31081" parentId="31092">Шубки полировальные</category>
+   <category id="8534" parentId="8523">Чистящие средства для автомобиля</category>
+   <category id="8536" parentId="8534">Очистители грязи</category>
+   <category id="8545" parentId="8534">Очистители от краски</category>
+   <category id="8544" parentId="8534">Очистители кузова</category>
+   <category id="8548" parentId="8534">Очистители стекол</category>
+   <category id="8554" parentId="8534">Удалители наклеек</category>
+   <category id="31093" parentId="8523">Влажные салфетки</category>
+   <category id="8557" parentId="8523">Автошампуни</category>
+   <category id="8558" parentId="8523">Антигравий</category>
+   <category id="8559" parentId="8523">Антикоры</category>
+   <category id="8562" parentId="8523">Воски и полироли</category>
+   <category id="8525" parentId="8523">Краски и грунтовки</category>
+   <category id="8527" parentId="8525">Краски</category>
+   <category id="8526" parentId="8525">Грунтовки</category>
+   <category id="8528" parentId="8525">Лаки</category>
+   <category id="8529" parentId="8525">Шпатлевки автомобильные</category>
+   <category id="8555" parentId="8523">Чехлы и утеплители</category>
+   <category id="8780" parentId="8555">Чехлы</category>
+   <category id="8630" parentId="8555">Утеплители</category>
+   <category id="8547" parentId="8523">Уход за салоном</category>
+   <category id="8524" parentId="8523">Ароматизаторы автомобильные</category>
+   <category id="8560" parentId="8524">Ароматизаторы</category>
+   <category id="30602" parentId="8524">Нейтрализаторы запахов</category>
+   <category id="8566" parentId="8523">Уход за стеклами и фарами</category>
+   <category id="8567" parentId="8566">Антидождь</category>
+   <category id="8568" parentId="8566">Антизапотеватели</category>
+   <category id="8773" parentId="8566">Размораживатели замков и стекол</category>
+   <category id="8607" parentId="8566">Наборы для ремонта стекол</category>
+   <category id="30628" parentId="8523">Наборы автохимии</category>
+   <category id="30458" parentId="8523">Средства для ремонта царапин</category>
+   <category id="8608" parentId="8500">Автоаксессуары и принадлежности</category>
+   <category id="30291" parentId="8608">Аварийные принадлежности</category>
+   <category id="8510" parentId="30291">Аварийные наборы</category>
+   <category id="6216" parentId="30291">Автомобильные аптечки</category>
+   <category id="8656" parentId="30291">Огнетушители</category>
+   <category id="31244" parentId="30291">Домкраты</category>
+   <category id="8512" parentId="30291">Знаки аварийной остановки</category>
+   <category id="8659" parentId="30291">Светоотражатели</category>
+   <category id="7820" parentId="30291">Светоотражащие жилеты</category>
+   <category id="8509" parentId="30291">Буксировочные тросы</category>
+   <category id="30143" parentId="30291">Канистры для бензина</category>
+   <category id="8668" parentId="30291">Противооткатные башмаки и упоры</category>
+   <category id="8785" parentId="30291">Автомобильные фонари</category>
+   <category id="8633" parentId="8608">Обустройство салона</category>
+   <category id="8640" parentId="8633">Чехлы и накидки на сиденья</category>
+   <category id="8634" parentId="8633">Коврики в салон</category>
+   <category id="8635" parentId="8633">Оплетки на руль</category>
+   <category id="8764" parentId="8633">Подушки автомобильные</category>
+   <category id="8650" parentId="8633">Коврики на торпеду</category>
+   <category id="8661" parentId="8633">Столики автомобильные</category>
+   <category id="30494" parentId="8633">Вешалки автомобильные</category>
+   <category id="8638" parentId="8633">Подлокотники</category>
+   <category id="8641" parentId="8633">Шторки солнцезащитные</category>
+   <category id="8628" parentId="8633">Подушки и чехлы на подголовник</category>
+   <category id="8655" parentId="8633">Накладки на ремни безопасности</category>
+   <category id="30992" parentId="8633">Подстаканники автомобильные</category>
+   <category id="8736" parentId="8633">Вентиляторы и увлажнители воздуха</category>
+   <category id="30504" parentId="8736">Вентиляторы автомобильные</category>
+   <category id="8761" parentId="8736">Тепловентиляторы автомобильные</category>
+   <category id="30581" parentId="8736">Увлажнители воздуха автомобильные</category>
+   <category id="8715" parentId="8633">Нагревательные элементы</category>
+   <category id="8644" parentId="8633">Адаптеры на ремни безопасности</category>
+   <category id="8690" parentId="8633">Зеркала заднего вида</category>
+   <category id="30757" parentId="8633">Консоли в авто</category>
+   <category id="8636" parentId="8633">Ручки КПП</category>
+   <category id="8654" parentId="8633">Накладки на педали</category>
+   <category id="8637" parentId="8633">Пепельницы автомобильные</category>
+   <category id="30379" parentId="8633">Козырьки солнцезащитные</category>
+   <category id="8765" parentId="8608">Сувениры автомобильные</category>
+   <category id="8674" parentId="8765">Брелоки и декоративные элементы</category>
+   <category id="8643" parentId="8765">Автофлаги</category>
+   <category id="8675" parentId="8765">Автовизитки</category>
+   <category id="8732" parentId="8765">Чехлы для автомобильных брелков</category>
+   <category id="8676" parentId="8765">Наклейки и знаки</category>
+   <category id="8804" parentId="8608">Органайзеры и сумки</category>
+   <category id="8609" parentId="8804">Автохолодильники</category>
+   <category id="8599" parentId="8804">Органайзеры</category>
+   <category id="8639" parentId="8804">Сумки автомобильные</category>
+   <category id="8645" parentId="8804">Автоведра</category>
+   <category id="30896" parentId="8608">Подарочные наборы для автомобилистов</category>
+   <category id="8610" parentId="8608">Перевозка багажа</category>
+   <category id="8810" parentId="8610">Коврики в багажник</category>
+   <category id="8612" parentId="8610">Багажные боксы</category>
+   <category id="8763" parentId="8610">Багажные дуги</category>
+   <category id="30465" parentId="8610">Багажные системы</category>
+   <category id="8611" parentId="8610">Рейлинги</category>
+   <category id="8614" parentId="8610">Фаркопы</category>
+   <category id="8613" parentId="8610">Крепления и сетки</category>
+   <category id="8658" parentId="8610">Ремни и резинки для багажа</category>
+   <category id="31168" parentId="8610">Замки для багажников</category>
+   <category id="8734" parentId="8608">Противоугонные устройства</category>
+   <category id="8615" parentId="8608">Защита</category>
+   <category id="8626" parentId="8615">Защита переднего бампера</category>
+   <category id="8627" parentId="8615">Защита заднего бампера</category>
+   <category id="8619" parentId="8615">Защита картера и КПП</category>
+   <category id="8776" parentId="8615">Защита топливной системы</category>
+   <category id="8767" parentId="8615">Защита рулевых тяг</category>
+   <category id="30761" parentId="8615">Защита дифференциала</category>
+   <category id="8777" parentId="8615">Защита раздаточной коробки</category>
+   <category id="30760" parentId="8615">Защита кондиционера</category>
+   <category id="8778" parentId="8615">Защита радиатора</category>
+   <category id="8779" parentId="8615">Защита редуктора</category>
+   <category id="8620" parentId="8615">Защита системы выпуска</category>
+   <category id="8618" parentId="8615">Защита внешних частей</category>
+   <category id="8691" parentId="8615">Дуги кузова</category>
+   <category id="8815" parentId="8608">Тюнинг и внешний декор</category>
+   <category id="8625" parentId="8815">Рамки для номеров</category>
+   <category id="8617" parentId="8815">Дефлекторы капота</category>
+   <category id="8762" parentId="8815">Дефлекторы окон и зеркал</category>
+   <category id="8653" parentId="8815">Накладки на задний бампер</category>
+   <category id="8673" parentId="8815">Накладки на пороги</category>
+   <category id="8616" parentId="8815">Брызговики</category>
+   <category id="8622" parentId="8815">Тонировочные пленки</category>
+   <category id="8699" parentId="8815">Звуковые сигналы</category>
+   <category id="8623" parentId="8815">Подкрылки</category>
+   <category id="30758" parentId="8815">Шумоизоляция</category>
+   <category id="8647" parentId="8815">Внешний декор</category>
+   <category id="30743" parentId="8815">Амортизаторы капота</category>
+   <category id="8782" parentId="8815">Амортизаторы багажника</category>
+   <category id="8774" parentId="8815">Решетки и сетки радиаторов</category>
+   <category id="8624" parentId="8815">Прочие элементы тюнинга</category>
+   <category id="8677" parentId="8608">Аксессуары для тахографов</category>
+   <category id="8657" parentId="8608">Пакеты для мусора</category>
+   <category id="8671" parentId="8608">Влагоотделители</category>
+   <category id="8576" parentId="8500">Инструменты и оборудование</category>
+   <category id="30298" parentId="8576">Ручные инструменты</category>
+   <category id="8598" parentId="30298">Ключи</category>
+   <category id="8816" parentId="30298">Воротки</category>
+   <category id="9944" parentId="30298">Наборы для восстановления резьбы</category>
+   <category id="8784" parentId="30298">Метчики</category>
+   <category id="30846" parentId="30298">Держатели для метчиков</category>
+   <category id="9988" parentId="30298">Щипцы</category>
+   <category id="8809" parentId="30298">Клещи</category>
+   <category id="8772" parentId="30298">Длинногубцы</category>
+   <category id="30923" parentId="30298">Гайковерты ручные</category>
+   <category id="8606" parentId="30298">Экстракторы и шпильковёрты</category>
+   <category id="31197" parentId="30298">Отвертки</category>
+   <category id="31108" parentId="30298">Наборы автоинструментов</category>
+   <category id="30299" parentId="8576">Пневмоинструменты для авто</category>
+   <category id="8589" parentId="30299">Пистолеты для подкачки шин</category>
+   <category id="8783" parentId="30299">Шлифовальные машинки</category>
+   <category id="8578" parentId="8576">Оборудование для авторемонта</category>
+   <category id="8587" parentId="8578">Домкраты</category>
+   <category id="8812" parentId="8578">Резиновые подкладки для домкратов</category>
+   <category id="8577" parentId="8578">Автомобильные компрессоры</category>
+   <category id="8670" parentId="8578">Ремонтные лежаки</category>
+   <category id="30880" parentId="8578">Грузоподъемное оборудование</category>
+   <category id="8775" parentId="8578">Автомобильные насосы</category>
+   <category id="8632" parentId="8578">Лебедки автомобильные</category>
+   <category id="30584" parentId="8578">Поддоны для масел</category>
+   <category id="30843" parentId="8578">Фонари инспекционные</category>
+   <category id="8791" parentId="8578">Гидравлические цилиндры</category>
+   <category id="8597" parentId="8576">Аксессуары для автоинструмента</category>
+   <category id="8792" parentId="8597">Держатели головок</category>
+   <category id="30464" parentId="8597">Удлинители автомобильные</category>
+   <category id="30845" parentId="8597">Карданы</category>
+   <category id="8798" parentId="8597">Ударные адаптеры</category>
+   <category id="31198" parentId="8597">Торцевые головки</category>
+   <category id="31199" parentId="8597">Вставки и биты</category>
+   <category id="8579" parentId="8576">Крепеж</category>
+   <category id="31202" parentId="8579">Винты и болты</category>
+   <category id="8805" parentId="8579">Стопорные кольца</category>
+   <category id="8801" parentId="8579">Крепежные клипсы</category>
+   <category id="8768" parentId="8579">Оправки</category>
+   <category id="8581" parentId="8576">Диагностическое оборудование</category>
+   <category id="8663" parentId="8581">Компьютерная диагностика</category>
+   <category id="8669" parentId="8581">Тестеры напряжения</category>
+   <category id="8582" parentId="8581">Видеоэндоскопы</category>
+   <category id="30531" parentId="8581">Ареометры</category>
+   <category id="8583" parentId="8581">Компрессометры</category>
+   <category id="8584" parentId="8581">Манометры</category>
+   <category id="8799" parentId="8581">Индикаторы напряжения</category>
+   <category id="8800" parentId="8581">Индикаторы износа шин</category>
+   <category id="14681" parentId="8581">Инспекционное зеркало</category>
+   <category id="8585" parentId="8581">Стробоскопы</category>
+   <category id="8770" parentId="8581">Щупы для диагностики</category>
+   <category id="30881" parentId="8581">Коннекторы для мультиметров</category>
+   <category id="8586" parentId="8576">Инструменты для кузовных работ</category>
+   <category id="8769" parentId="8586">Захваты</category>
+   <category id="8795" parentId="8586">Крюки вытяжные</category>
+   <category id="8590" parentId="8586">Специнструменты</category>
+   <category id="8665" parentId="8586">Сетки для ремонта кузовных деталей</category>
+   <category id="8600" parentId="8576">Специнструменты для слесарных работ</category>
+   <category id="8601" parentId="8600">Заправочно-смазочное оборудование</category>
+   <category id="30908" parentId="8601">Заправочные шланги</category>
+   <category id="8648" parentId="8601">Воронки технические</category>
+   <category id="8796" parentId="8601">Дренажные лотки</category>
+   <category id="8788" parentId="8601">Масленки и смазочные шприцы</category>
+   <category id="8522" parentId="8601">Шприцы для залива масел</category>
+   <category id="30763" parentId="8601">Распылители химостойкие</category>
+   <category id="30312" parentId="8601">Насосы для ГСМ</category>
+   <category id="8580" parentId="8600">Фиксаторы</category>
+   <category id="8605" parentId="8600">Съемники</category>
+   <category id="6256" parentId="8576">Алкотестеры</category>
+   <category id="8751" parentId="8500">Электроника для авто</category>
+   <category id="30740" parentId="8751">GPS-навигаторы</category>
+   <category id="8731" parentId="8751">Автосигнализации</category>
+   <category id="8749" parentId="8751">Автомобильные системы видеонаблюдения</category>
+   <category id="8755" parentId="8751">Видеорегистраторы</category>
+   <category id="8758" parentId="8751">Радар-детекторы</category>
+   <category id="30905" parentId="8751">GPS модули для видеорегистраторов</category>
+   <category id="8733" parentId="8751">Автозвук</category>
+   <category id="8742" parentId="8733">Автомагнитолы</category>
+   <category id="8738" parentId="8733">Колонки для авто</category>
+   <category id="8739" parentId="8733">Сабвуферы для авто</category>
+   <category id="8747" parentId="8733">Усилители для авто</category>
+   <category id="8737" parentId="8733">FM-трансмиттеры</category>
+   <category id="8745" parentId="8733">Автомобильные антенны</category>
+   <category id="8748" parentId="8733">Чейнджеры</category>
+   <category id="8740" parentId="8733">Головные устройства</category>
+   <category id="8750" parentId="8733">Комплекты установки автозвука</category>
+   <category id="8756" parentId="8751">Камеры заднего вида</category>
+   <category id="30178" parentId="8751">Автомобильные телевизоры</category>
+   <category id="8743" parentId="8751">Автомобильные мониторы</category>
+   <category id="8746" parentId="8751">Проекторы для авто</category>
+   <category id="8760" parentId="8751">Автомобильная громкая связь</category>
+   <category id="8753" parentId="8751">Рации и радиостанции</category>
+   <category id="8752" parentId="8751">Автомобильные инверторы</category>
+   <category id="8759" parentId="8751">Розетки и разветвители прикуривателя</category>
+   <category id="8744" parentId="8751">Датчики для авто</category>
+   <category id="8757" parentId="8744">Парктроники</category>
+   <category id="8662" parentId="8744">Термометры автомобильные</category>
+   <category id="30828" parentId="8751">Выключатели зажигания</category>
+   <category id="31094" parentId="8751">Блоки питания для авто</category>
+   <category id="8672" parentId="8751">Транспондеры</category>
+   <category id="8754" parentId="8751">Автофены</category>
+   <category id="8678" parentId="8500">Автозапчасти</category>
+   <category id="8701" parentId="8678">Автопроводка и предохранители</category>
+   <category id="8813" parentId="8701">Кабели для автопроводки</category>
+   <category id="8716" parentId="8701">Предохранители</category>
+   <category id="30383" parentId="8701">Реле автомобильные</category>
+   <category id="8814" parentId="8678">Двигатель</category>
+   <category id="8689" parentId="8814">Опоры двигателей</category>
+   <category id="1682" parentId="8814">Системы охлаждения для двигателей</category>
+   <category id="1681" parentId="8814">Системы подачи воздуха для двигателей</category>
+   <category id="30367" parentId="8814">Генераторы в сборе</category>
+   <category id="1684" parentId="8814">Системы смазки для двигателей</category>
+   <category id="1685" parentId="8814">Элементы двигателей</category>
+   <category id="8697" parentId="8678">Запчасти для ГРМ</category>
+   <category id="30360" parentId="8697">Ролики для ремней ГРМ</category>
+   <category id="8700" parentId="8678">Система зажигания</category>
+   <category id="8698" parentId="8700">Провода для зажигания</category>
+   <category id="30385" parentId="8700">Стартеры в сборе</category>
+   <category id="30366" parentId="8700">Бендиксы стартера</category>
+   <category id="8717" parentId="8700">Предпусковые подогреватели двигателей</category>
+   <category id="8714" parentId="8700">Подогреватели тосола</category>
+   <category id="8704" parentId="8678">Трансмиссия</category>
+   <category id="30361" parentId="8704">ШРУС</category>
+   <category id="30368" parentId="8704">Валы карданные</category>
+   <category id="30380" parentId="8704">Крестовины для карданных валов</category>
+   <category id="8695" parentId="8704">Привод</category>
+   <category id="1680" parentId="8704">Сцепление</category>
+   <category id="8710" parentId="8704">Запчасти для КПП</category>
+   <category id="30370" parentId="8704">Гидротрансформаторы</category>
+   <category id="30363" parentId="8678">Ходовая часть</category>
+   <category id="1678" parentId="30363">Передний мост</category>
+   <category id="1677" parentId="30363">Задний мост</category>
+   <category id="8693" parentId="30363">Подвеска</category>
+   <category id="1676" parentId="30363">Ступицы и запчасти для осей колес</category>
+   <category id="30373" parentId="30363">Датчики ABS</category>
+   <category id="8702" parentId="8678">Топливная система</category>
+   <category id="1683" parentId="8678">Системы выпуска отработавших газов</category>
+   <category id="8696" parentId="8678">Рулевое управление</category>
+   <category id="1675" parentId="8678">Педальное управление</category>
+   <category id="8694" parentId="8678">Подшипники для автомобилей</category>
+   <category id="30690" parentId="8678">Нагревательные элементы</category>
+   <category id="8692" parentId="8678">Трубки для омывателя</category>
+   <category id="8719" parentId="8500">Мототехника и экипировка</category>
+   <category id="8720" parentId="8719">Мото-аксессуары</category>
+   <category id="8721" parentId="8720">Мотокофры</category>
+   <category id="8722" parentId="8720">Чехлы для мототехнику</category>
+   <category id="8723" parentId="8720">Тенты для мототехники</category>
+   <category id="30774" parentId="8720">Замки для мотоциклов</category>
+   <category id="30775" parentId="8720">Вешалки для шлемов</category>
+   <category id="1692" parentId="8719">Экипировка для мотоциклистов</category>
+  </categories>
