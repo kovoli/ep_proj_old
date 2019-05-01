@@ -25,7 +25,7 @@ root = tree.getroot()
 
 update_product = 0
 create_product = 0
-
+errors = 0
 for prod in root.findall('.//offer'):
 
     product_data = {'name': None,
@@ -65,16 +65,17 @@ for prod in root.findall('.//offer'):
                     price_curent.save()
                     get_product.save()
                     update_product += 1
-                    print('Update')
+                    #print('Update')
             except Price.DoesNotExist:
                 if result_contain > 50:
                     get_price_shop = get_product.prices.create(**product_data)
                     get_product.save()
                     create_product += 1
-                    print('Create')
+                    #print('Create')
     except Exception as error:
-        print(error)
+        errors += 1
 
 print('Цен созданно', create_product)
 print('Цен обновленно', update_product)
+print('Ошибок', errors)
 print(len(root.findall('.//offer')))

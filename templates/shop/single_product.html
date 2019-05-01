@@ -9,7 +9,7 @@
 
 {% block content %}
 <!-- Single Product Section Start -->
-<div class="product-section section mt-50 mb-40">
+<div class="product-section section mt-50 mb-40" itemscope itemtype="http://schema.org/Product">
     <div class="container">
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
@@ -50,17 +50,16 @@
 
                     <!-- Category & Title -->
                     <div class="head-content">
-                        <h1 class="title">{{ product.name }}</h1>
-                        {% if min_max_price.max != min_max_price.min %}
-                        <p>от <span class="price_min_max">{{ min_max_price.min }}</span> до <span class="price_min_max">{{ min_max_price.max }} </span><i class="fas fa-ruble-sign"></i></p>
-                        {% endif %}
+                        <h1 class="title" itemprop="name">{{ product.name }}</h1>
                     </div>
 
                     <div class="category-title">
-
-                        <p>Категория: <a href="{{ product.category.get_absolute_url }}" class="cat">{{ product.category.name }}</a></p>
+                        {% if min_max_price.max != min_max_price.min %}
+                        <p itemprop="offers" itemscope itemtype="http://schema.org/AggregateOffer">от <span class="price_min_max" itemprop="lowPrice">{{ min_max_price.min }}</span> до <span class="price_min_max" itemprop="highPrice">{{ min_max_price.max }} </span><i class="fas fa-ruble-sign" itemprop="priceCurrency" content="RUR"></i></p>
+                        {% endif %}
+                        <p itemprop="category">Категория: <a href="{{ product.category.get_absolute_url }}" class="cat">{{ product.category.name }}</a></p>
                         {% if product.vendor %}
-                        <p>Бренд: <a href="{{ product.vendor.get_absolute_url }}" class="cat">{{ product.vendor.name|upper }}</a></p>
+                        <p itemprop="brand">Бренд: <a href="{{ product.vendor.get_absolute_url }}" class="cat">{{ product.vendor.name|upper }}</a></p>
                         {% endif %}
                     </div>
 
@@ -103,8 +102,9 @@
                   </li>
                 {% endfor %}
                 </ul>
-                <div class="float-lg-right">Мы регулярно обновляем информацию, но за достоверность цены, наличие и доставке товара отвечает интернет-магазин!</div>
         </div>
+                        <p class="text-right alert alert-light p-0">Мы регулярно обновляем информацию, но за достоверность цены, наличие и доставку товара отвечает интернет-магазин!</p>
+
         <!-- End Price Comparison -->
         <!-- Description and Characteristics -->
         <div class="row mb-25">
@@ -142,7 +142,7 @@
                         </div>
                     </div>
                     <div class="tab-pane fade {% if not product.param %} show active {% endif %}" id="product-description">
-                        <div class="single-product-description-content col-lg-12 col-12">
+                        <div class="single-product-description-content col-lg-12 col-12" itemprop="description">
                             {{ product.description|safe }}
                         </div>
                     </div>
@@ -214,7 +214,7 @@
                                 {% for comment in comments %}
 								<div class="sin-rattings">
 									<div class="ratting-author">
-										<h3>{{ comment.name }}</h3> {{ comment.created }}
+										<h3>{{ comment.name }}</h3> <span class="float-right">{{ comment.created|date:"d.m.Y" }}</span>
 									</div>
 									<div>
                                       {{ comment.body|linebreaks }}
