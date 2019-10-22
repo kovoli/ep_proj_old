@@ -11,7 +11,7 @@ django-recaptcha==1.4.0
 django-watson==1.5.2
 idna==2.8
 pilkit==2.0
-Pillow==5.4.1
+Pillow==6.2.0
 pytz==2018.7
 requests==2.21.0
 six==1.11.0
