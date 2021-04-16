@@ -3,7 +3,7 @@ chardet==3.0.4
 django-appconf==1.0.2
 django-ckeditor==5.6.1
 django-cleanup==3.0.1
-django-debug-toolbar==1.11
+django-debug-toolbar==1.11.1
 django-imagekit==4.0.2
 django-js-asset==1.1.0
 django-mptt==0.9.1
